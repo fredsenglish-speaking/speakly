@@ -205,6 +205,25 @@ const en: Dictionary = {
     errSave: "The profile wasn't saved.",
     ok: "Profile saved.",
   },
+  pay: {
+    title: "Payment",
+    what: "Service",
+    amount: "Amount",
+    code: "Payment code",
+    kinds: { test: "Level test", certificate: "Online certificate", booking: "Speaking class", lesson: "Lesson" } as Record<string, string>,
+    howTo: "Press the button below and send the ready message on WhatsApp. We will reply there with how to pay. As soon as the payment is confirmed, the service opens automatically.",
+    whatsapp: "Write on WhatsApp",
+    noNumber: "The WhatsApp number has not been added yet. Please check again a little later.",
+    pending: "Your payment is waiting for confirmation. This page refreshes by itself.",
+    check: "Check status",
+    paid: "Payment confirmed!",
+    continue: "Continue",
+    cancelled: "This payment was cancelled.",
+    waiting: "You have a payment waiting for confirmation:",
+    open: "Payment page",
+    message: (p: { kind: string; amount: string; code: string; name: string }) =>
+      `Hello! I would like to pay on Speakly.\nService: ${p.kind}\nAmount: ${p.amount}\nPayment code: ${p.code}\nName: ${p.name}`,
+  },
   admin: {
     title: "Admin panel",
     tests: "Tests",
@@ -217,6 +236,10 @@ const en: Dictionary = {
     registered: "Signed up",
     approve: "Approve",
     remove: "Remove from list",
+    pending: "Payments waiting for confirmation",
+    noPending: "No payments waiting.",
+    confirm: "Paid, confirm",
+    reject: "Cancel",
   },
 };
 

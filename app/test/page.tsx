@@ -3,6 +3,7 @@ import { requireUser } from "@/lib/auth";
 import { TEST_PRICE, money } from "@/lib/levels";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
+import { PendingPayments } from "@/components/PendingPayments";
 import { SubmitButton } from "@/components/SubmitButton";
 import { getT } from "@/lib/i18n/server";
 import { startTest } from "./actions";
@@ -45,6 +46,7 @@ export default async function TestPage() {
           {t.test.lastResult} <Link href={`/test/result/${attempt.id}`}>{t.test.see}</Link>
         </p>
       )}
+      <PendingPayments userId={user.id} kind="test" />
       <div className="row between">
         <span>{t.test.price}</span>
         <span className="price total">{money(TEST_PRICE)}</span>

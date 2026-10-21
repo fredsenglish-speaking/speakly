@@ -203,6 +203,25 @@ const az = {
     errSave: "Profil saxlanmadı.",
     ok: "Profil yadda saxlandı.",
   },
+  pay: {
+    title: "Ödəniş",
+    what: "Xidmət",
+    amount: "Məbləğ",
+    code: "Ödəniş kodu",
+    kinds: { test: "Səviyyə testi", certificate: "Onlayn sertifikat", booking: "Speaking dərsi", lesson: "Lesson" } as Record<string, string>,
+    howTo: "Aşağıdakı düyməni basın və WhatsApp-da hazır mesajı göndərin. Ödəniş qaydasını sizə WhatsApp-da yazacağıq. Ödəniş təsdiqlənən kimi xidmət avtomatik açılacaq.",
+    whatsapp: "WhatsApp-a yaz",
+    noNumber: "WhatsApp nömrəsi hələ əlavə olunmayıb. Zəhmət olmasa bir az sonra yenidən yoxlayın.",
+    pending: "Ödənişiniz təsdiq gözləyir. Bu səhifə özü yenilənir.",
+    check: "Statusu yoxla",
+    paid: "Ödəniş təsdiqləndi!",
+    continue: "Davam et",
+    cancelled: "Bu ödəniş ləğv edilib.",
+    waiting: "Təsdiq gözləyən ödənişiniz var:",
+    open: "Ödəniş səhifəsi",
+    message: (p: { kind: string; amount: string; code: string; name: string }) =>
+      `Salam! Speakly-də ödəniş etmək istəyirəm.\nXidmət: ${p.kind}\nMəbləğ: ${p.amount}\nÖdəniş kodu: ${p.code}\nAd: ${p.name}`,
+  },
   admin: {
     title: "İdarə paneli",
     tests: "Testlər",
@@ -215,6 +234,10 @@ const az = {
     registered: "Qeydiyyat",
     approve: "Təsdiqlə",
     remove: "Siyahıdan çıxar",
+    pending: "Təsdiq gözləyən ödənişlər",
+    noPending: "Gözləyən ödəniş yoxdur.",
+    confirm: "Ödənildi, təsdiqlə",
+    reject: "Ləğv et",
   },
 };
 

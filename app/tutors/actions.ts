@@ -55,6 +55,18 @@ export async function createBooking(_: BookingState, form: FormData): Promise<Bo
     .single();
   if (error || !booking) return { error: t.errBooking };
 
+  // Hold the slot while the payment is checked, so nobody else can take it.
+  const { data: held } = await db
+    .from("tutor_slots")
+    .update({ booked: true })
+    .eq("id", slot.id)
+    .eq("booked", false)
+    .select("id");
+  if (!held?.length) {
+    await db.from("bookings").delete().eq("id", booking.id);
+    return { error: t.errTaken };
+  }
+
   redirect(
     await startPayment({ userId: user.id, kind: "booking", refId: booking.id, amount: price, successPath: "/dashboard" }),
   );

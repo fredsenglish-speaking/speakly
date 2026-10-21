@@ -18,7 +18,10 @@
 
 Sayt 3 dildədir: Azərbaycan, İngilis və Rus. Dil yuxarıdakı AZ / EN / RU düymələri ilə seçilir və yadda qalır. İlk girişdə brauzerin dili seçilir. Mətnlər `lib/i18n/az.ts`, `en.ts`, `ru.ts` fayllarındadır.
 
-**Ödəniş hələ test rejimindədir** (`PAYMENT_PROVIDER=mock`): hər ödəniş dərhal "ödənilib" sayılır. Real provayder seçiləndən sonra `lib/payments.ts` faylında `startPayment` funksiyasına qoşulacaq.
+Ödənişin iki rejimi var (`PAYMENT_PROVIDER`):
+
+- `mock`: test rejimi, hər ödəniş dərhal "ödənilib" sayılır.
+- `whatsapp`: tələbə "Ödə" basanda ödəniş səhifəsinə (`/pay/<id>`) keçir və hazır mesajı (xidmət, məbləğ, ödəniş kodu, ad) `WHATSAPP_NUMBER` nömrəsinə WhatsApp-da göndərir. Pul alınandan sonra admin `/admin` səhifəsində "Təsdiq gözləyən ödənişlər" bölməsində **Ödənildi, təsdiqlə** basır və test, sertifikat, dərs və ya lesson avtomatik açılır. **Ləğv et** ödənişi bağlayır və tutulmuş dərs vaxtını boşaldır.
 
 ## Quraşdırma
 

@@ -9,6 +9,16 @@ import { createAdminClient } from "@/lib/supabase/admin";
 export async function startTest() {
   const user = await requireUser("/test");
   const db = createAdminClient();
+  const { data: open } = await db
+    .from("payments")
+    .select("id")
+    .eq("user_id", user.id)
+    .eq("kind", "test")
+    .eq("status", "pending")
+    .limit(1)
+    .maybeSingle();
+  if (open) redirect(`/pay/${open.id}`);
+
   const { data, error } = await db.from("test_attempts").insert({ student_id: user.id }).select("id").single();
   if (error || !data) throw new Error("Could not start the test");
   redirect(

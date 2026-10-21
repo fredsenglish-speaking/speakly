@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LevelChip } from "@/components/LevelChip";
+import { PendingPayments } from "@/components/PendingPayments";
 import { requireUser } from "@/lib/auth";
 import { LESSON_PRICE, durationLabel, formatDateTime, isLevel, lessonText, money } from "@/lib/levels";
 import { DICTIONARIES } from "@/lib/i18n";
@@ -55,6 +56,8 @@ export default async function DashboardPage() {
           </Link>
         )}
       </div>
+
+      <PendingPayments userId={user.id} />
 
       {bookings.length === 0 && (
         <div className="panel stack">
