@@ -47,6 +47,9 @@ const az = {
     s3Text: "15 dəq, 30 dəq və ya 1 saat canlı danışıq dərsi.",
     s4Title: "Lesson",
     s4Text: "Müəllimin qeydinə görə qrammatika dərsini al.",
+    cambridgeTitle: "Rəsmi Cambridge hazırlıq mərkəzi",
+    cambridgeText: "Edustudio-Fred's English Cambridge University Press & Assessment tərəfindən Cambridge English Qualifications imtahanlarına hazırlayan rəsmi mərkəz kimi tanınır (08/2026 – 07/2027).",
+    cambridgeAlt: "Cambridge English hazırlıq mərkəzi sertifikatı: Edustudio-Fred's English, Bakı",
   },
   auth: {
     loginTitle: "Daxil ol",

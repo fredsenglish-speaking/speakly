@@ -49,6 +49,9 @@ const ru: Dictionary = {
     s3Text: "Живое разговорное занятие: 15 мин, 30 мин или 1 час.",
     s4Title: "Урок",
     s4Text: "Купите урок грамматики по рекомендации преподавателя.",
+    cambridgeTitle: "Официальный подготовительный центр Cambridge",
+    cambridgeText: "Edustudio-Fred's English признан Cambridge University Press & Assessment официальным центром подготовки к экзаменам Cambridge English Qualifications (08/2026 – 07/2027).",
+    cambridgeAlt: "Сертификат подготовительного центра Cambridge English: Edustudio-Fred's English, Баку",
   },
   auth: {
     loginTitle: "Вход",

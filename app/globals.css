@@ -143,7 +143,12 @@ label.check { display: flex; gap: 8px; align-items: center; font-size: 15px; col
 table.list { width: 100%; border-collapse: collapse; font-size: 15px; }
 table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
 
+.cambridge { display: grid; grid-template-columns: 1fr 260px; gap: 24px; align-items: center; }
+.cambridge img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); }
+
 @media (max-width: 720px) {
+  .cambridge img { max-width: 320px; justify-self: center; }
+  .cambridge,
   .hero, .tutors, .lessons, .result, .topics { grid-template-columns: 1fr; }
   .steps, .steps.three, .stepper { grid-template-columns: repeat(2, 1fr); }
   .nav { margin-left: 0; width: 100%; }

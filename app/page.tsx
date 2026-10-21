@@ -58,6 +58,20 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
+      <section className="panel cambridge">
+        <div className="stack">
+          <h2>{t.home.cambridgeTitle}</h2>
+          <p className="muted">{t.home.cambridgeText}</p>
+        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/cambridge-preparation-centre-certificate.jpg"
+          alt={t.home.cambridgeAlt}
+          width={700}
+          height={990}
+          loading="lazy"
+        />
+      </section>
     </>
   );
 }
