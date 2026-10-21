@@ -55,7 +55,6 @@ export async function joinRoom(form: FormData) {
     .is("guest_id", null)
     .neq("host_id", user.id)
     .eq("level", user.level)
-    .eq("host_paid", true)
     .eq("cancelled", false)
     .gt("starts_at", new Date().toISOString())
     .select("id");

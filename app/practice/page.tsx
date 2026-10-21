@@ -48,7 +48,6 @@ export default async function PracticePage({ searchParams }: { searchParams: Pro
       .from("practice_rooms")
       .select(ROOM_COLUMNS)
       .eq("level", user.level)
-      .eq("host_paid", true)
       .eq("cancelled", false)
       .is("guest_id", null)
       .neq("host_id", user.id)
