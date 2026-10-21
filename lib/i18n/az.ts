@@ -70,6 +70,7 @@ const az = {
     errName: "Adınızı yazın.",
     errPassword: "Şifrə ən azı 8 simvol olmalıdır.",
     confirmEmail: "Qeydiyyat tamamlandı. E-poçtunuza gələn linklə hesabınızı təsdiqləyin.",
+    confirmed: "E-poçtunuz təsdiqləndi. İndi daxil olun.",
   },
   test: {
     title: "Səviyyə testi",

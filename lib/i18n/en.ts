@@ -72,6 +72,7 @@ const en: Dictionary = {
     errName: "Enter your name.",
     errPassword: "The password must be at least 8 characters.",
     confirmEmail: "You're signed up. Confirm your account with the link we sent to your email.",
+    confirmed: "Your email is confirmed. Sign in now.",
   },
   test: {
     title: "Level test",

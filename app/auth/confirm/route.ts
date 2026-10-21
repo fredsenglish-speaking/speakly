@@ -10,9 +10,18 @@ export async function GET(request: NextRequest) {
   const code = searchParams.get("code");
   const supabase = await createClient();
 
-  let ok = false;
-  if (tokenHash && type) ok = !(await supabase.auth.verifyOtp({ type, token_hash: tokenHash })).error;
-  else if (code) ok = !(await supabase.auth.exchangeCodeForSession(code)).error;
-
-  return NextResponse.redirect(new URL(ok ? "/dashboard" : "/login", request.url));
+  if (tokenHash && type) {
+    const ok = !(await supabase.auth.verifyOtp({ type, token_hash: tokenHash })).error;
+    return NextResponse.redirect(new URL(ok ? "/dashboard" : "/login", request.url));
+  }
+  if (code) {
+    if (!(await supabase.auth.exchangeCodeForSession(code)).error) {
+      return NextResponse.redirect(new URL("/dashboard", request.url));
+    }
+    // Supabase only sends a code after the address is verified. The exchange
+    // fails when the link is opened in another browser (e.g. a phone's mail
+    // app), so the account is confirmed and the person just needs to sign in.
+    return NextResponse.redirect(new URL("/login?confirmed=1", request.url));
+  }
+  return NextResponse.redirect(new URL("/login", request.url));
 }
