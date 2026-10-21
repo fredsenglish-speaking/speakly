@@ -157,3 +157,49 @@ table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
 .langs { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
 .langs button { border: 0; background: none; padding: 4px 10px; font-size: 13px; font-weight: 700; color: var(--muted); }
 .langs button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+
+/* Certificate: a fixed A4-landscape sheet that scales with its width (cqw), light even in dark mode */
+.certificate { container-type: inline-size; width: 100%; }
+.certificate-sheet {
+  --c-ink: #082d97; --c-gold: #b0873a; --c-paper: #fffdf6; --c-muted: #5d6475;
+  aspect-ratio: 297 / 210; background: var(--c-paper); color: var(--c-ink); position: relative;
+  padding: 5cqw 7cqw 3.4cqw; display: flex; flex-direction: column; align-items: center; text-align: center;
+  border: 0.9cqw solid var(--c-ink); box-shadow: inset 0 0 0 0.35cqw var(--c-paper), inset 0 0 0 0.5cqw var(--c-gold);
+  font-family: "EB Garamond", Georgia, serif; border-radius: 4px;
+  background-image: radial-gradient(ellipse at center, rgba(176, 135, 58, 0.07), transparent 70%);
+}
+.certificate-sheet::before, .certificate-sheet::after {
+  content: ""; position: absolute; width: 9cqw; height: 9cqw; border: 0.25cqw solid var(--c-gold); pointer-events: none;
+}
+.certificate-sheet::before { top: 2cqw; left: 2cqw; border-right: 0; border-bottom: 0; }
+.certificate-sheet::after { bottom: 2cqw; right: 2cqw; border-left: 0; border-top: 0; }
+.cert-brand { display: flex; align-items: center; gap: 0.8cqw; font-family: var(--display); font-weight: 700; font-size: 1.9cqw; letter-spacing: 0.25em; text-transform: uppercase; }
+.cert-brand i { display: inline-grid; place-items: center; width: 3cqw; height: 3cqw; border-radius: 0.8cqw; background: var(--c-ink); color: var(--c-paper); font-style: normal; font-size: 1.8cqw; letter-spacing: 0; }
+.cert-logo { height: 7cqw; width: auto; }
+.cert-centre { font-size: 1.35cqw; letter-spacing: 0.2em; text-transform: uppercase; color: var(--c-gold); margin-top: 0.8cqw; font-weight: 600; }
+.cert-title { font-family: "EB Garamond", Georgia, serif; font-weight: 600; font-size: 5cqw; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 1.2cqw; line-height: 1; color: var(--c-ink); }
+.cert-sub { font-size: 1.8cqw; letter-spacing: 0.18em; text-transform: uppercase; color: var(--c-gold); margin-top: 0.8cqw; }
+.cert-lead { font-size: 1.9cqw; font-style: italic; color: var(--c-muted); margin-top: 1.5cqw; }
+.cert-name { font-size: 4.2cqw; font-weight: 600; line-height: 1.1; margin-top: 0.6cqw; padding: 0 4cqw 0.8cqw; border-bottom: 0.15cqw solid var(--c-gold); min-width: 50%; }
+.cert-level { display: flex; align-items: center; gap: 2.4cqw; margin-top: 1.6cqw; text-align: left; max-width: 72%; }
+.cert-seal {
+  flex: none; display: grid; place-items: center; width: 8.4cqw; height: 8.4cqw; border-radius: 50%;
+  background: var(--c-ink); color: #f3d9a0; font-family: var(--display); font-weight: 700; font-size: 3.2cqw;
+  box-shadow: 0 0 0 0.45cqw var(--c-paper), 0 0 0 0.7cqw var(--c-gold);
+}
+.cert-level-text { display: grid; gap: 0.4cqw; font-size: 1.7cqw; color: var(--c-muted); line-height: 1.3; }
+.cert-level-text strong { font-size: 2.3cqw; color: var(--c-ink); font-weight: 600; }
+.cert-foot { margin-top: auto; padding-top: 2cqw; width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 4cqw; }
+.cert-foot > div { display: grid; gap: 0.5cqw; align-content: end; }
+.cert-line { font-size: 1.9cqw; line-height: 1.3; padding-bottom: 0.5cqw; display: flex; align-items: flex-end; justify-content: center; border-bottom: 0.12cqw solid var(--c-ink); min-height: 2.8cqw; }
+.cert-sign { font-style: italic; font-size: 2.4cqw; }
+.cert-code { font-family: ui-monospace, Menlo, monospace; font-size: 1.6cqw; letter-spacing: 0.06em; }
+.cert-label { font-size: 1.35cqw; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-muted); }
+
+@media print {
+  @page { size: A4 landscape; margin: 0; }
+  main.wrap { padding: 0; max-width: none; display: block; }
+  .certificate-sheet { border-radius: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .certificate { width: 297mm; }
+}
+.cert-verify { font-size: 1.2cqw; color: var(--c-muted); margin-top: 1.2cqw; }
