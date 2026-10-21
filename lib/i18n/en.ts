@@ -234,7 +234,7 @@ const en: Dictionary = {
       `Talk for ${min} minutes in pairs with a student at your level. Each topic has 10 questions and you take turns asking them. Price per student: ${price}.`,
     needTest: "Take the level test first to use the speaking club.",
     takeTest: "Start the test",
-    peers: (n: number) => `${n} students at your level`,
+    peers: (n: number) => (n === 1 ? "1 student at your level" : `${n} students at your level`),
     noPeers: "There are no other students at your level yet. Invite your friends!",
     openRooms: "Rooms you can join",
     noOpenRooms: "No open rooms yet. Be the first to open one!",
