@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "test": "node --test --experimental-strip-types lib/*.test.ts lib/i18n/*.test.ts"
+    "test": "node --test --experimental-strip-types lib/*.test.ts lib/i18n/*.test.ts lib/supabase/*.test.ts"
   },
   "dependencies": {
     "@supabase/ssr": "0.12.7",
