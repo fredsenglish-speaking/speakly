@@ -182,7 +182,7 @@ table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
 .cert-brand i { display: inline-grid; place-items: center; width: 3cqw; height: 3cqw; border-radius: 0.8cqw; background: var(--c-ink); color: var(--c-paper); font-style: normal; font-size: 1.8cqw; letter-spacing: 0; }
 .cert-logo { height: 7cqw; width: auto; }
 .cert-centre { font-size: 1.35cqw; letter-spacing: 0.2em; text-transform: uppercase; color: var(--c-gold); margin-top: 0.8cqw; font-weight: 600; }
-.cert-title { font-family: "EB Garamond", Georgia, serif; font-weight: 600; font-size: 5cqw; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 1.2cqw; line-height: 1; color: var(--c-ink); }
+.cert-title { font-family: "EB Garamond", Georgia, serif; font-weight: 600; font-size: 4.6cqw; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1.2cqw; line-height: 1; color: var(--c-ink); }
 .cert-sub { font-size: 1.8cqw; letter-spacing: 0.18em; text-transform: uppercase; color: var(--c-gold); margin-top: 0.8cqw; }
 .cert-lead { font-size: 1.9cqw; font-style: italic; color: var(--c-muted); margin-top: 1.5cqw; }
 .cert-name { font-size: 4.2cqw; font-weight: 600; line-height: 1.1; margin-top: 0.6cqw; padding: 0 4cqw 0.8cqw; border-bottom: 0.15cqw solid var(--c-gold); min-width: 50%; }
