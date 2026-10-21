@@ -66,6 +66,7 @@ const az = {
     signupLink: "Qeydiyyat",
     loginLink: "Daxil olun",
     errWrong: "E-poçt və ya şifrə yanlışdır.",
+    errNotConfirmed: "E-poçtunuz hələ təsdiqlənməyib. Gələn məktubdakı linkə basın (spam qovluğuna da baxın).",
     errName: "Adınızı yazın.",
     errPassword: "Şifrə ən azı 8 simvol olmalıdır.",
     confirmEmail: "Qeydiyyat tamamlandı. E-poçtunuza gələn linklə hesabınızı təsdiqləyin.",

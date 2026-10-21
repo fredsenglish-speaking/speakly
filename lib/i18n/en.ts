@@ -68,6 +68,7 @@ const en: Dictionary = {
     signupLink: "Sign up",
     loginLink: "Sign in",
     errWrong: "Wrong email or password.",
+    errNotConfirmed: "Your email isn't confirmed yet. Click the link in the email we sent (check spam too).",
     errName: "Enter your name.",
     errPassword: "The password must be at least 8 characters.",
     confirmEmail: "You're signed up. Confirm your account with the link we sent to your email.",

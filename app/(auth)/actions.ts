@@ -25,7 +25,10 @@ export async function signIn(_: AuthState, form: FormData): Promise<AuthState> {
     email: String(form.get("email") ?? ""),
     password: String(form.get("password") ?? ""),
   });
-  if (error) return { error: (await getT()).auth.errWrong };
+  if (error) {
+    const t = (await getT()).auth;
+    return { error: error.code === "email_not_confirmed" ? t.errNotConfirmed : t.errWrong };
+  }
   redirect(safeNext(form.get("next")));
 }
 
