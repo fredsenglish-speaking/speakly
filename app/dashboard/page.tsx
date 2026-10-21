@@ -1,17 +1,14 @@
 import Link from "next/link";
 import { LevelChip } from "@/components/LevelChip";
 import { requireUser } from "@/lib/auth";
-import { LESSON_PRICE, durationLabel, formatDateTime, isLevel, money } from "@/lib/levels";
+import { LESSON_PRICE, durationLabel, formatDateTime, isLevel, lessonText, money } from "@/lib/levels";
+import { DICTIONARIES } from "@/lib/i18n";
+import { getLocale } from "@/lib/i18n/server";
 import { createClient } from "@/lib/supabase/server";
 
-export const metadata = { title: "Dərslərim" };
-
-const STATUS: Record<string, string> = {
-  pending_payment: "Ödəniş gözlənilir",
-  scheduled: "Planlaşdırılıb",
-  completed: "Keçirilib",
-  cancelled: "Ləğv edilib",
-};
+export async function generateMetadata() {
+  return { title: DICTIONARIES[await getLocale()].dashboard.title };
+}
 
 type Booking = {
   id: string;
@@ -25,6 +22,8 @@ type Booking = {
 
 export default async function DashboardPage() {
   const user = await requireUser("/dashboard");
+  const locale = await getLocale();
+  const t = DICTIONARIES[locale];
   const supabase = await createClient();
 
   const [{ data: bookingRows }, { data: lessons }, { data: owned }, { data: certs }] = await Promise.all([
@@ -34,7 +33,7 @@ export default async function DashboardPage() {
       .eq("student_id", user.id)
       .neq("status", "pending_payment")
       .order("starts_at", { ascending: false }),
-    supabase.from("lessons").select("id, slug, level, title"),
+    supabase.from("lessons").select("id, slug, level, title, title_en, title_ru"),
     supabase.from("lesson_purchases").select("lesson_id").eq("student_id", user.id),
     supabase.from("certificates").select("code, level, issued_at").eq("student_id", user.id),
   ]);
@@ -45,23 +44,23 @@ export default async function DashboardPage() {
   return (
     <section className="stack">
       <div className="row between">
-        <h2>Dərslərim</h2>
+        <h2>{t.dashboard.title}</h2>
         {user.level ? (
           <span className="small muted">
-            Səviyyəniz: <LevelChip level={user.level} />
+            {t.common.yourLevel}: <LevelChip level={user.level} />
           </span>
         ) : (
           <Link href="/test" className="btn small">
-            Səviyyə testini keç
+            {t.dashboard.takeTest}
           </Link>
         )}
       </div>
 
       {bookings.length === 0 && (
         <div className="panel stack">
-          <p className="muted">Hələ speaking dərsiniz yoxdur.</p>
+          <p className="muted">{t.dashboard.noClasses}</p>
           <Link href={user.level ? `/tutors?level=${user.level}` : "/tutors"} className="btn self-start">
-            Müəllim seç
+            {t.dashboard.chooseTutor}
           </Link>
         </div>
       )}
@@ -77,34 +76,34 @@ export default async function DashboardPage() {
                 <div>
                   <h3>{tutorName}</h3>
                   <p className="small muted">
-                    {formatDateTime(b.starts_at)} · {durationLabel(b.duration_min)}
+                    {formatDateTime(b.starts_at, locale)} · {durationLabel(b.duration_min, t)}
                   </p>
                 </div>
               </div>
-              <span className={`status ${b.status}`}>{STATUS[b.status]}</span>
+              <span className={`status ${b.status}`}>{t.dashboard.status[b.status]}</span>
             </div>
             {upcoming &&
               (b.meeting_url ? (
                 <a href={b.meeting_url} target="_blank" rel="noreferrer" className="btn self-start">
-                  Dərsə qoşul
+                  {t.dashboard.join}
                 </a>
               ) : (
-                <p className="small muted">Dərs linki müəllim tərəfindən əlavə olunacaq.</p>
+                <p className="small muted">{t.dashboard.linkLater}</p>
               ))}
             {b.tutor_notes && (
               <div className="note">
-                <strong className="small">Müəllimin qeydi</strong>
+                <strong className="small">{t.dashboard.tutorNote}</strong>
                 <p style={{ whiteSpace: "pre-line" }}>{b.tutor_notes.note}</p>
                 {b.tutor_notes.lesson_ids.length > 0 && (
                   <>
-                    <span className="small muted">Tövsiyə olunan lesson-lar:</span>
+                    <span className="small muted">{t.dashboard.recommended}</span>
                     <div className="filters">
                       {b.tutor_notes.lesson_ids.map((id) => {
                         const l = lessonById.get(id);
                         if (!l) return null;
                         return (
                           <Link key={id} href={`/lessons/${l.slug}`} className="chip">
-                            <LevelChip level={l.level} /> {l.title}
+                            <LevelChip level={l.level} /> {lessonText(l, locale).title}
                             {!ownedIds.has(id) && isLevel(l.level) && ` · ${money(LESSON_PRICE[l.level])}`}
                           </Link>
                         );
@@ -120,7 +119,7 @@ export default async function DashboardPage() {
 
       {(certs ?? []).length > 0 && (
         <div className="panel stack">
-          <h3>Sertifikatlarım</h3>
+          <h3>{t.dashboard.certificates}</h3>
           <div className="filters">
             {certs!.map((c) => (
               <Link key={c.code} href={`/certificate/${c.code}`} className="chip">

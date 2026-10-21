@@ -1,9 +1,9 @@
 "use client";
 
-export function PrintButton() {
+export function PrintButton({ label }: { label: string }) {
   return (
     <button type="button" className="btn ghost no-print" onClick={() => window.print()}>
-      Çap et və ya PDF kimi saxla
+      {label}
     </button>
   );
 }

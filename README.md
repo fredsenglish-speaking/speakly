@@ -16,12 +16,14 @@
 | Müəllim profili: təqdimat, səviyyələr, qiymətlər, video, dərs linki | `/tutor/profile` |
 | İdarə: müəllimləri təsdiqləmək, gəlir | `/admin` |
 
+Sayt 3 dildədir: Azərbaycan, İngilis və Rus. Dil yuxarıdakı AZ / EN / RU düymələri ilə seçilir və yadda qalır. İlk girişdə brauzerin dili seçilir. Mətnlər `lib/i18n/az.ts`, `en.ts`, `ru.ts` fayllarındadır.
+
 **Ödəniş hələ test rejimindədir** (`PAYMENT_PROVIDER=mock`): hər ödəniş dərhal "ödənilib" sayılır. Real provayder seçiləndən sonra `lib/payments.ts` faylında `startPayment` funksiyasına qoşulacaq.
 
 ## Quraşdırma
 
 1. [supabase.com](https://supabase.com)-da pulsuz layihə yaradın.
-2. Supabase → **SQL Editor**-da əvvəlcə `supabase/migrations/0001_init.sql`, sonra `supabase/seed.sql` faylının məzmununu işə salın. Bu, cədvəlləri, 20 test sualını, 20 lesson-u və 80 məşq sualını yaradır.
+2. Supabase → **SQL Editor**-da `supabase/setup_all.sql` faylının məzmununu işə salın. Bu, cədvəlləri, 20 test sualını, 20 lesson-u (3 dildə adları ilə) və 80 məşq sualını yaradır. Artıq qurulmuş bazaya yalnız yeni `supabase/migrations/` faylları əlavə olunur (məs. `0002_lesson_translations.sql`).
 3. Supabase → **Authentication → URL Configuration**-da Site URL olaraq saytın ünvanını yazın.
 4. `.env.example` faylını `.env.local` adı ilə köçürün və Supabase → **Project Settings → API**-dakı açarları yazın.
 5. Lokal işə salmaq üçün:

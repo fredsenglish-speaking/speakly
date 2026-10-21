@@ -37,8 +37,8 @@ export function levelForScore(score: number, total: number): Level {
   return "C1";
 }
 
-export function durationLabel(minutes: number): string {
-  return minutes === 60 ? "1 saat" : `${minutes} dəq`;
+export function durationLabel(minutes: number, t: { common: { hour: string; min: string } }): string {
+  return minutes === 60 ? t.common.hour : `${minutes} ${t.common.min}`;
 }
 
 export function money(amount: number | string): string {
@@ -47,9 +47,10 @@ export function money(amount: number | string): string {
 }
 
 const BAKU = "Asia/Baku";
+const INTL: Record<string, string> = { az: "az-AZ", en: "en-GB", ru: "ru-RU" };
 
-export function formatDateTime(iso: string): string {
-  return new Intl.DateTimeFormat("az-AZ", {
+export function formatDateTime(iso: string, locale = "az"): string {
+  return new Intl.DateTimeFormat(INTL[locale] ?? "az-AZ", {
     timeZone: BAKU,
     day: "numeric",
     month: "long",
@@ -58,8 +59,8 @@ export function formatDateTime(iso: string): string {
   }).format(new Date(iso));
 }
 
-export function formatDate(iso: string): string {
-  return new Intl.DateTimeFormat("az-AZ", {
+export function formatDate(iso: string, locale = "az"): string {
+  return new Intl.DateTimeFormat(INTL[locale] ?? "az-AZ", {
     timeZone: BAKU,
     day: "numeric",
     month: "long",
@@ -72,4 +73,20 @@ export function bakuLocalToIso(local: string): string | null {
   if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(local)) return null;
   const d = new Date(`${local}:00+04:00`);
   return Number.isNaN(d.getTime()) ? null : d.toISOString();
+}
+
+type LocalizedLesson = {
+  title: string;
+  summary?: string;
+  title_en?: string | null;
+  title_ru?: string | null;
+  summary_en?: string | null;
+  summary_ru?: string | null;
+};
+
+/** Lesson titles and summaries are stored in Azerbaijani with optional English and Russian versions. */
+export function lessonText(l: LocalizedLesson, locale: string): { title: string; summary: string } {
+  const pick = (base: string | undefined, en?: string | null, ru?: string | null) =>
+    (locale === "en" && en) || (locale === "ru" && ru) || base || "";
+  return { title: pick(l.title, l.title_en, l.title_ru), summary: pick(l.summary, l.summary_en, l.summary_ru) };
 }

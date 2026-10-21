@@ -1,11 +1,15 @@
 import { requireTutor } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { ProfileForm } from "./ProfileForm";
+import { getT } from "@/lib/i18n/server";
 
-export const metadata = { title: "Profilim" };
+export async function generateMetadata() {
+  return { title: (await getT()).profile.title };
+}
 
 export default async function TutorProfilePage() {
   const user = await requireTutor();
+  const tr = await getT();
   const supabase = await createClient();
   const { data: t } = await supabase
     .from("tutors")
@@ -15,7 +19,7 @@ export default async function TutorProfilePage() {
 
   return (
     <section className="stack">
-      <h2>Profilim</h2>
+      <h2>{tr.profile.title}</h2>
       <ProfileForm
         fullName={user.full_name}
         bio={t?.bio ?? ""}

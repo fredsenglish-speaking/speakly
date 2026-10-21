@@ -4,6 +4,8 @@ import { useActionState } from "react";
 import { SubmitButton } from "@/components/SubmitButton";
 import { LevelChip } from "@/components/LevelChip";
 import { addSlot, saveNote, type FormState } from "./actions";
+import { lessonText } from "@/lib/levels";
+import { useLocale, useT } from "@/lib/i18n/client";
 
 function Status({ state }: { state: FormState }) {
   if (state.error) return <p className="error small">{state.error}</p>;
@@ -13,19 +15,20 @@ function Status({ state }: { state: FormState }) {
 
 export function AddSlotForm() {
   const [state, action] = useActionState(addSlot, {});
+  const t = useT();
   return (
     <form action={action} className="row" style={{ alignItems: "end" }}>
       <label className="field" style={{ flex: 1, minWidth: 200 }}>
-        Yeni boş vaxt (Bakı vaxtı)
+        {t.tutorPanel.newSlot}
         <input type="datetime-local" name="starts_at" id="starts_at" required />
       </label>
-      <SubmitButton>Əlavə et</SubmitButton>
+      <SubmitButton>{t.tutorPanel.add}</SubmitButton>
       <Status state={state} />
     </form>
   );
 }
 
-type Lesson = { id: number; level: string; title: string };
+type Lesson = { id: number; level: string; title: string; title_en: string | null; title_ru: string | null };
 
 export function NoteForm({
   bookingId,
@@ -39,23 +42,25 @@ export function NoteForm({
   existing?: { note: string; lesson_ids: number[] } | null;
 }) {
   const [state, action] = useActionState(saveNote, {});
+  const t = useT();
+  const locale = useLocale();
   const suggested = studentLevel ? lessons.filter((l) => l.level <= studentLevel) : lessons;
   return (
     <form action={action} className="stack">
       <input type="hidden" name="booking_id" value={bookingId} />
       <label className="field">
-        Tələbəyə qeyd: nəyə diqqət etməlidir?
+        {t.tutorPanel.noteLabel}
         <textarea
           name="note"
           id={`note-${bookingId}`}
           rows={3}
           defaultValue={existing?.note ?? ""}
-          placeholder="Məs: Danışıq axıcıdır, amma keçmiş zamanda səhvlər var."
+          placeholder={t.tutorPanel.notePlaceholder}
           required
         />
       </label>
       <details>
-        <summary className="small muted">Tövsiyə olunan lesson-lar ({suggested.length})</summary>
+        <summary className="small muted">{t.tutorPanel.recommended(suggested.length)}</summary>
         <div className="topics" style={{ marginTop: 8 }}>
           {suggested.map((l) => (
             <label key={l.id} className="check">
@@ -66,13 +71,13 @@ export function NoteForm({
                 id={`l-${bookingId}-${l.id}`}
                 defaultChecked={existing?.lesson_ids.includes(l.id)}
               />
-              <LevelChip level={l.level} /> {l.title}
+              <LevelChip level={l.level} /> {lessonText(l, locale).title}
             </label>
           ))}
         </div>
       </details>
       <div className="row">
-        <SubmitButton className="btn self-start">{existing ? "Qeydi yenilə" : "Dərsi bitir və qeydi göndər"}</SubmitButton>
+        <SubmitButton className="btn self-start">{existing ? t.tutorPanel.updateNote : t.tutorPanel.sendNote}</SubmitButton>
         <Status state={state} />
       </div>
     </form>

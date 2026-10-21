@@ -4,13 +4,17 @@ import { getCurrentUser } from "@/lib/auth";
 import { LEVELS, isLevel, money } from "@/lib/levels";
 import { createClient } from "@/lib/supabase/server";
 import { TUTOR_COLUMNS, type TutorRow } from "@/lib/types";
+import { getT } from "@/lib/i18n/server";
 
-export const metadata = { title: "Müəllimlər" };
+export async function generateMetadata() {
+  return { title: (await getT()).tutors.title };
+}
 
 
 export default async function TutorsPage({ searchParams }: { searchParams: Promise<{ level?: string }> }) {
   const params = await searchParams;
   const user = await getCurrentUser();
+  const tr = await getT();
   const level = isLevel(params.level) ? params.level : null;
 
   const supabase = await createClient();
@@ -25,16 +29,16 @@ export default async function TutorsPage({ searchParams }: { searchParams: Promi
   return (
     <section className="stack">
       <div className="row between">
-        <h2>Müəllimlər</h2>
+        <h2>{tr.tutors.title}</h2>
         {user?.level && (
           <span className="small muted">
-            Sizin səviyyəniz: <LevelChip level={user.level} />
+            {tr.common.yourLevel}: <LevelChip level={user.level} />
           </span>
         )}
       </div>
-      <nav className="filters" aria-label="Səviyyə filtri">
+      <nav className="filters" aria-label={tr.common.levelFilter}>
         <Link href="/tutors" className="chip" aria-current={!level}>
-          Hamısı
+          {tr.common.all}
         </Link>
         {LEVELS.map((l) => (
           <Link key={l} href={`/tutors?level=${l}`} className="chip" aria-current={level === l}>
@@ -42,7 +46,7 @@ export default async function TutorsPage({ searchParams }: { searchParams: Promi
           </Link>
         ))}
       </nav>
-      {tutors.length === 0 && <p className="muted">Bu səviyyə üçün hələ müəllim yoxdur.</p>}
+      {tutors.length === 0 && <p className="muted">{tr.tutors.none}</p>}
       <div className="tutors">
         {tutors.map((t) => (
           <article key={t.id} className="panel tutor">
@@ -51,7 +55,7 @@ export default async function TutorsPage({ searchParams }: { searchParams: Promi
               <div>
                 <h3>{t.profiles?.full_name}</h3>
                 <p className="small muted">
-                  {t.years_experience} il təcrübə{t.languages && ` · ${t.languages}`}
+                  {t.years_experience} {tr.common.yearsExp}{t.languages && ` · ${t.languages}`}
                 </p>
               </div>
               <div className="row" style={{ gap: 4 }}>
@@ -61,13 +65,13 @@ export default async function TutorsPage({ searchParams }: { searchParams: Promi
               </div>
               <p className="small">{t.bio}</p>
               <div className="prices">
-                <span>15 dəq {money(t.price_15)}</span>
-                <span>30 dəq {money(t.price_30)}</span>
-                <span>1 saat {money(t.price_60)}</span>
+                <span>15 {tr.common.min} {money(t.price_15)}</span>
+                <span>30 {tr.common.min} {money(t.price_30)}</span>
+                <span>{tr.common.hour} {money(t.price_60)}</span>
               </div>
               <div>
                 <Link href={`/tutors/${t.id}`} className="btn">
-                  Seç və yazıl
+                  {tr.tutors.choose}
                 </Link>
               </div>
             </div>

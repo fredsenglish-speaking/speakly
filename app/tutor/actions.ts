@@ -5,20 +5,22 @@ import { requireTutor } from "@/lib/auth";
 import { LEVELS, bakuLocalToIso } from "@/lib/levels";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
+import { getT } from "@/lib/i18n/server";
 
 export type FormState = { error?: string; ok?: string };
 
 export async function addSlot(_: FormState, form: FormData): Promise<FormState> {
   const user = await requireTutor();
+  const t = (await getT()).tutorPanel;
   const iso = bakuLocalToIso(String(form.get("starts_at") ?? ""));
-  if (!iso) return { error: "Tarix və saatı seçin." };
-  if (new Date(iso) <= new Date()) return { error: "Keçmiş vaxt əlavə etmək olmaz." };
+  if (!iso) return { error: t.errTime };
+  if (new Date(iso) <= new Date()) return { error: t.errPast };
 
   const supabase = await createClient();
   const { error } = await supabase.from("tutor_slots").insert({ tutor_id: user.id, starts_at: iso });
-  if (error) return { error: error.code === "23505" ? "Bu vaxt artıq əlavə olunub." : "Vaxt əlavə olunmadı." };
+  if (error) return { error: error.code === "23505" ? t.errDup : t.errSlot };
   revalidatePath("/tutor");
-  return { ok: "Vaxt əlavə olundu." };
+  return { ok: t.okSlot };
 }
 
 export async function deleteSlot(form: FormData) {
@@ -31,10 +33,11 @@ export async function deleteSlot(form: FormData) {
 
 export async function saveNote(_: FormState, form: FormData): Promise<FormState> {
   const user = await requireTutor();
+  const t = (await getT()).tutorPanel;
   const bookingId = String(form.get("booking_id"));
   const note = String(form.get("note") ?? "").trim();
   const lessonIds = form.getAll("lesson_ids").map(Number).filter(Number.isInteger);
-  if (!note) return { error: "Qeyd yazın." };
+  if (!note) return { error: t.errNote };
 
   const db = createAdminClient();
   const { data: booking } = await db
@@ -43,23 +46,24 @@ export async function saveNote(_: FormState, form: FormData): Promise<FormState>
     .eq("id", bookingId)
     .eq("tutor_id", user.id)
     .single();
-  if (!booking || !["scheduled", "completed"].includes(booking.status)) return { error: "Dərs tapılmadı." };
+  if (!booking || !["scheduled", "completed"].includes(booking.status)) return { error: t.errClass };
 
   const { error } = await db.from("tutor_notes").upsert(
     { booking_id: booking.id, tutor_id: user.id, student_id: booking.student_id, note, lesson_ids: lessonIds },
     { onConflict: "booking_id" },
   );
-  if (error) return { error: "Qeyd saxlanmadı." };
+  if (error) return { error: t.errSave };
   await db.from("bookings").update({ status: "completed" }).eq("id", booking.id);
   revalidatePath("/tutor");
-  return { ok: "Qeyd tələbəyə göndərildi." };
+  return { ok: t.okNote };
 }
 
 export async function updateProfile(_: FormState, form: FormData): Promise<FormState> {
   const user = await requireTutor();
+  const t = (await getT()).profile;
   const fullName = String(form.get("full_name") ?? "").trim();
   const prices = [15, 30, 60].map((d) => Number(form.get(`price_${d}`)));
-  if (prices.some((p) => !Number.isFinite(p) || p <= 0)) return { error: "Qiymətlər müsbət rəqəm olmalıdır." };
+  if (prices.some((p) => !Number.isFinite(p) || p <= 0)) return { error: t.errPrices };
   const levels = form.getAll("levels").map(String).filter((l) => (LEVELS as readonly string[]).includes(l));
   const urlOrNull = (v: FormDataEntryValue | null) => {
     const s = String(v ?? "").trim();
@@ -82,7 +86,7 @@ export async function updateProfile(_: FormState, form: FormData): Promise<FormS
       price_60: prices[2],
     })
     .eq("id", user.id);
-  if (error) return { error: "Profil saxlanmadı." };
+  if (error) return { error: t.errSave };
   revalidatePath("/tutor/profile");
-  return { ok: "Profil yadda saxlandı." };
+  return { ok: t.ok };
 }

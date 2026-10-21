@@ -5,6 +5,7 @@ import { requireUser } from "@/lib/auth";
 import { isDuration } from "@/lib/levels";
 import { startPayment } from "@/lib/payments";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { getT } from "@/lib/i18n/server";
 
 export type BookingState = { error?: string };
 
@@ -13,10 +14,11 @@ export async function createBooking(_: BookingState, form: FormData): Promise<Bo
   const slotId = String(form.get("slot_id") ?? "");
   const duration = Number(form.get("duration"));
   const user = await requireUser(`/tutors/${tutorId}`);
+  const t = (await getT()).tutors;
 
-  if (!isDuration(duration)) return { error: "Dərsin müddətini seçin." };
-  if (!slotId) return { error: "Vaxt seçin." };
-  if (user.id === tutorId) return { error: "Özünüzə dərs sifariş edə bilməzsiniz." };
+  if (!isDuration(duration)) return { error: t.errDuration };
+  if (!slotId) return { error: t.errSlot };
+  if (user.id === tutorId) return { error: t.errSelf };
 
   const db = createAdminClient();
   const { data: tutor } = await db
@@ -25,7 +27,7 @@ export async function createBooking(_: BookingState, form: FormData): Promise<Bo
     .eq("id", tutorId)
     .eq("approved", true)
     .single();
-  if (!tutor) return { error: "Müəllim tapılmadı." };
+  if (!tutor) return { error: t.errTutor };
 
   const { data: slot } = await db
     .from("tutor_slots")
@@ -34,7 +36,7 @@ export async function createBooking(_: BookingState, form: FormData): Promise<Bo
     .eq("tutor_id", tutorId)
     .single();
   if (!slot || slot.booked || new Date(slot.starts_at) <= new Date()) {
-    return { error: "Bu vaxt artıq tutulub. Başqa vaxt seçin." };
+    return { error: t.errTaken };
   }
 
   const price = Number(tutor[`price_${duration}` as const]);
@@ -51,7 +53,7 @@ export async function createBooking(_: BookingState, form: FormData): Promise<Bo
     })
     .select("id")
     .single();
-  if (error || !booking) return { error: "Sifariş yaradılmadı, yenidən cəhd edin." };
+  if (error || !booking) return { error: t.errBooking };
 
   redirect(
     await startPayment({ userId: user.id, kind: "booking", refId: booking.id, amount: price, successPath: "/dashboard" }),

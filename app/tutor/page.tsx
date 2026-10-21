@@ -5,8 +5,12 @@ import { durationLabel, formatDateTime, money } from "@/lib/levels";
 import { createClient } from "@/lib/supabase/server";
 import { deleteSlot } from "./actions";
 import { AddSlotForm, NoteForm } from "./Forms";
+import { DICTIONARIES } from "@/lib/i18n";
+import { getLocale } from "@/lib/i18n/server";
 
-export const metadata = { title: "Müəllim paneli" };
+export async function generateMetadata() {
+  return { title: DICTIONARIES[await getLocale()].tutorPanel.title };
+}
 
 type Booking = {
   id: string;
@@ -20,6 +24,8 @@ type Booking = {
 
 export default async function TutorPanel() {
   const user = await requireTutor();
+  const locale = await getLocale();
+  const t = DICTIONARIES[locale];
   const supabase = await createClient();
   const now = new Date();
   const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
@@ -38,7 +44,7 @@ export default async function TutorPanel() {
       .eq("tutor_id", user.id)
       .gt("starts_at", now.toISOString())
       .order("starts_at"),
-    supabase.from("lessons").select("id, level, title").order("level").order("position"),
+    supabase.from("lessons").select("id, level, title, title_en, title_ru").order("level").order("position"),
   ]);
   const bookings = (rows ?? []) as unknown as Booking[];
   const upcoming = bookings.filter((b) => b.status === "scheduled" && new Date(b.starts_at) > now);
@@ -49,30 +55,29 @@ export default async function TutorPanel() {
   return (
     <section className="stack">
       <div className="row between">
-        <h2>Müəllim paneli</h2>
+        <h2>{t.tutorPanel.title}</h2>
         <Link href="/tutor/profile" className="btn ghost small">
-          Profilimi redaktə et
+          {t.tutorPanel.editProfile}
         </Link>
       </div>
       {!tutor?.approved && (
         <p className="notice">
-          Profiliniz təsdiq gözləyir. Təsdiqdən sonra tələbələr sizi müəllimlər siyahısında görəcək. Bu vaxt{" "}
-          <Link href="/tutor/profile">profilinizi</Link> doldurun.
+          {t.tutorPanel.pending} <Link href="/tutor/profile">{t.tutorPanel.editProfile}</Link>
         </p>
       )}
 
       <div className="steps three">
         <div className="step">
-          <b>Bu ay</b>
-          <h3 className="price">{thisMonth.length} dərs</h3>
+          <b>{t.tutorPanel.thisMonth}</b>
+          <h3 className="price">{t.tutorPanel.classes(thisMonth.length)}</h3>
         </div>
         <div className="step">
-          <b>Dərs məbləği</b>
+          <b>{t.tutorPanel.amount}</b>
           <h3 className="price">{money(earned)}</h3>
-          <p className="small muted">platforma komissiyasından əvvəl</p>
+          <p className="small muted">{t.tutorPanel.beforeFee}</p>
         </div>
         <div className="step">
-          <b>Qeyd gözləyir</b>
+          <b>{t.tutorPanel.needNote}</b>
           <h3 className="price">{needNote.length}</h3>
         </div>
       </div>
@@ -84,7 +89,7 @@ export default async function TutorPanel() {
               {b.profiles?.full_name} {b.profiles?.level && <LevelChip level={b.profiles.level} />}
             </h3>
             <span className="small muted">
-              {formatDateTime(b.starts_at)} · {durationLabel(b.duration_min)}
+              {formatDateTime(b.starts_at, locale)} · {durationLabel(b.duration_min, t)}
             </span>
           </div>
           <NoteForm bookingId={b.id} lessons={lessons ?? []} studentLevel={b.profiles?.level ?? null} />
@@ -92,17 +97,17 @@ export default async function TutorPanel() {
       ))}
 
       <div className="panel stack">
-        <h3>Qarşıdakı dərslər</h3>
+        <h3>{t.tutorPanel.upcoming}</h3>
         {upcoming.length === 0 ? (
-          <p className="muted small">Hələ sifariş yoxdur.</p>
+          <p className="muted small">{t.tutorPanel.noBookings}</p>
         ) : (
           <table className="list">
             <tbody>
               {upcoming.map((b) => (
                 <tr key={b.id}>
-                  <td>{formatDateTime(b.starts_at)}</td>
+                  <td>{formatDateTime(b.starts_at, locale)}</td>
                   <td>{b.profiles?.full_name}</td>
-                  <td>{durationLabel(b.duration_min)}</td>
+                  <td>{durationLabel(b.duration_min, t)}</td>
                   <td className="price">{money(b.price)}</td>
                 </tr>
               ))}
@@ -112,21 +117,21 @@ export default async function TutorPanel() {
       </div>
 
       <div className="panel stack">
-        <h3>Boş vaxtlarım</h3>
+        <h3>{t.tutorPanel.slots}</h3>
         <AddSlotForm />
         {(slots ?? []).length === 0 ? (
-          <p className="muted small">Tələbələrin yazıla bilməsi üçün boş vaxt əlavə edin.</p>
+          <p className="muted small">{t.tutorPanel.noSlots}</p>
         ) : (
           <div className="filters">
             {slots!.map((s) => (
               <span key={s.id} className="chip">
-                {formatDateTime(s.starts_at)}
+                {formatDateTime(s.starts_at, locale)}
                 {s.booked ? (
-                  <span className="small muted">· tutulub</span>
+                  <span className="small muted">· {t.tutorPanel.booked}</span>
                 ) : (
                   <form action={deleteSlot} style={{ display: "inline" }}>
                     <input type="hidden" name="slot_id" value={s.id} />
-                    <button type="submit" aria-label="Vaxtı sil" style={{ border: 0, background: "none", color: "inherit", padding: 0 }}>
+                    <button type="submit" aria-label={t.tutorPanel.deleteSlot} style={{ border: 0, background: "none", color: "inherit", padding: 0 }}>
                       ✕
                     </button>
                   </form>

@@ -1,11 +1,11 @@
 import { embedUrl } from "@/lib/video";
 
-export function Video({ url, title }: { url: string | null | undefined; title: string }) {
+export function Video({ url, title, emptyText }: { url: string | null | undefined; title: string; emptyText: string }) {
   const src = embedUrl(url);
   if (!src) {
     return (
       <div className="video">
-        <span className="small">Video hələ əlavə olunmayıb</span>
+        <span className="small">{emptyText}</span>
       </div>
     );
   }

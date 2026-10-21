@@ -6,10 +6,12 @@ import { getCurrentUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { TUTOR_COLUMNS, type TutorRow } from "@/lib/types";
 import { BookingForm } from "./BookingForm";
+import { getT } from "@/lib/i18n/server";
 
 export default async function TutorPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const user = await getCurrentUser();
+  const tr = await getT();
   const supabase = await createClient();
   const { data } = await supabase.from("tutors").select(TUTOR_COLUMNS).eq("id", id).eq("approved", true).maybeSingle();
   if (!data) notFound();
@@ -28,14 +30,14 @@ export default async function TutorPage({ params }: { params: Promise<{ id: stri
   return (
     <section className="stack">
       <Link href="/tutors" className="btn ghost self-start">
-        ← Müəllimlər
+        {tr.tutors.backToList}
       </Link>
       <div className="panel tutor">
         <div className="ava">{name.slice(0, 1)}</div>
         <div className="stack">
           <h2>{name}</h2>
           <p className="small muted">
-            {t.years_experience} il təcrübə{t.languages && ` · ${t.languages}`}
+            {t.years_experience} {tr.common.yearsExp}{t.languages && ` · ${t.languages}`}
           </p>
           <div className="row" style={{ gap: 4 }}>
             {t.levels.map((l) => (
@@ -45,7 +47,7 @@ export default async function TutorPage({ params }: { params: Promise<{ id: stri
           <p style={{ whiteSpace: "pre-line" }}>{t.bio}</p>
         </div>
       </div>
-      {t.intro_video_url && <Video url={t.intro_video_url} title={`${name} təqdimat videosu`} />}
+      {t.intro_video_url && <Video url={t.intro_video_url} title={`${name}: ${tr.tutors.introVideo}`} emptyText={tr.common.noVideo} />}
       <BookingForm
         tutorId={t.id}
         prices={{ 15: Number(t.price_15), 30: Number(t.price_30), 60: Number(t.price_60) }}

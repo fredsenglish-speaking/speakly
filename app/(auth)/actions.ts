@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { getT } from "@/lib/i18n/server";
 
 export type AuthState = { error?: string; message?: string };
 
@@ -16,7 +17,7 @@ export async function signIn(_: AuthState, form: FormData): Promise<AuthState> {
     email: String(form.get("email") ?? ""),
     password: String(form.get("password") ?? ""),
   });
-  if (error) return { error: "E-poçt və ya şifrə yanlışdır." };
+  if (error) return { error: (await getT()).auth.errWrong };
   redirect(safeNext(form.get("next")));
 }
 
@@ -24,8 +25,9 @@ export async function signUp(_: AuthState, form: FormData): Promise<AuthState> {
   const fullName = String(form.get("full_name") ?? "").trim();
   const password = String(form.get("password") ?? "");
   const role = form.get("role") === "tutor" ? "tutor" : "student";
-  if (!fullName) return { error: "Adınızı yazın." };
-  if (password.length < 8) return { error: "Şifrə ən azı 8 simvol olmalıdır." };
+  const t = await getT();
+  if (!fullName) return { error: t.auth.errName };
+  if (password.length < 8) return { error: t.auth.errPassword };
 
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signUp({
@@ -37,7 +39,7 @@ export async function signUp(_: AuthState, form: FormData): Promise<AuthState> {
     },
   });
   if (error) return { error: error.message };
-  if (!data.session) return { message: "Qeydiyyat tamamlandı. E-poçtunuza gələn linklə hesabınızı təsdiqləyin." };
+  if (!data.session) return { message: t.auth.confirmEmail };
   redirect(role === "tutor" ? "/tutor/profile" : "/test");
 }
 

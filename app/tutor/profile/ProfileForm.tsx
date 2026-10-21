@@ -5,6 +5,7 @@ import { SubmitButton } from "@/components/SubmitButton";
 import { LevelChip } from "@/components/LevelChip";
 import { LEVELS } from "@/lib/levels";
 import { updateProfile } from "../actions";
+import { useT } from "@/lib/i18n/client";
 
 type Props = {
   fullName: string;
@@ -19,27 +20,28 @@ type Props = {
 
 export function ProfileForm(p: Props) {
   const [state, action] = useActionState(updateProfile, {});
+  const t = useT();
   return (
     <form action={action} className="panel stack" style={{ maxWidth: 640 }}>
       <label className="field">
-        Ad və soyad
+        {t.auth.fullName}
         <input type="text" name="full_name" id="full_name" defaultValue={p.fullName} />
       </label>
       <label className="field">
-        Özünüzü təqdim edin
-        <textarea name="bio" id="bio" rows={5} defaultValue={p.bio} placeholder="Təcrübəniz, dərs üslubunuz, kimlərlə işləyirsiniz." />
+        {t.profile.bio}
+        <textarea name="bio" id="bio" rows={5} defaultValue={p.bio} placeholder={t.profile.bioPlaceholder} />
       </label>
       <div className="row">
         <label className="field" style={{ flex: 2, minWidth: 200 }}>
-          Danışdığınız dillər
-          <input type="text" name="languages" id="languages" defaultValue={p.languages} placeholder="İngilis, Azərbaycan" />
+          {t.profile.languages}
+          <input type="text" name="languages" id="languages" defaultValue={p.languages} placeholder={t.profile.languagesPlaceholder} />
         </label>
         <label className="field" style={{ flex: 1, minWidth: 120 }}>
-          Təcrübə (il)
+          {t.profile.years}
           <input type="number" name="years_experience" id="years_experience" min={0} defaultValue={p.years} />
         </label>
       </div>
-      <span className="small muted">Dərs verdiyiniz səviyyələr</span>
+      <span className="small muted">{t.profile.levels}</span>
       <div className="row">
         {LEVELS.map((l) => (
           <label key={l} className="check">
@@ -48,26 +50,26 @@ export function ProfileForm(p: Props) {
           </label>
         ))}
       </div>
-      <span className="small muted">Qiymətlər (USD)</span>
+      <span className="small muted">{t.profile.prices}</span>
       <div className="row">
         {([15, 30, 60] as const).map((d) => (
           <label key={d} className="field" style={{ flex: 1, minWidth: 90 }}>
-            {d === 60 ? "1 saat" : `${d} dəq`}
+            {d === 60 ? t.common.hour : `${d} ${t.common.min}`}
             <input type="number" name={`price_${d}`} id={`price_${d}`} min={1} step="0.5" defaultValue={p.prices[d]} required />
           </label>
         ))}
       </div>
       <label className="field">
-        Təqdimat videosu (YouTube və ya Vimeo linki)
+        {t.profile.video}
         <input type="url" name="intro_video_url" id="intro_video_url" defaultValue={p.introVideoUrl} placeholder="https://youtu.be/…" />
       </label>
       <label className="field">
-        Dərs linki (Zoom və ya Google Meet)
+        {t.profile.meeting}
         <input type="url" name="meeting_url" id="meeting_url" defaultValue={p.meetingUrl} placeholder="https://meet.google.com/…" />
       </label>
       {state.error && <p className="error">{state.error}</p>}
       {state.ok && <p style={{ color: "var(--accent)" }}>{state.ok}</p>}
-      <SubmitButton className="btn self-start">Yadda saxla</SubmitButton>
+      <SubmitButton className="btn self-start">{t.common.save}</SubmitButton>
     </form>
   );
 }

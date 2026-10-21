@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import { Video } from "@/components/Video";
+import { useT } from "@/lib/i18n/client";
 
 type Question = { id: number; part: number; question: string; options: string[]; correct: number };
-
-const PARTS = ["1. Müəllimin izahı", "2. Practice test", "3. Subtitrli izah", "4. Practice test"];
 
 export function LessonPlayer({
   title,
@@ -18,6 +17,8 @@ export function LessonPlayer({
   subtitledUrl: string | null;
   questions: Question[];
 }) {
+  const t = useT();
+  const PARTS = t.lessons.steps;
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [finished, setFinished] = useState(false);
@@ -32,12 +33,10 @@ export function LessonPlayer({
     const right = questions.filter((q) => answers[q.id] === q.correct).length;
     return (
       <div className="panel stack">
-        <h3>Lesson tamamlandı</h3>
-        <p>
-          Testlərdə {total} sualdan {right} düzgün cavab.
-        </p>
+        <h3>{t.lessons.done}</h3>
+        <p>{t.lessons.doneScore(total, right)}</p>
         <button type="button" className="btn ghost self-start" onClick={() => { setFinished(false); setStep(0); setAnswers({}); }}>
-          Yenidən keç
+          {t.lessons.again}
         </button>
       </div>
     );
@@ -56,9 +55,9 @@ export function LessonPlayer({
       <div className="panel stack">
         {isVideo ? (
           <>
-            <Video url={step === 0 ? explanationUrl : subtitledUrl} title={`${title}: ${PARTS[step]}`} />
+            <Video url={step === 0 ? explanationUrl : subtitledUrl} title={`${title}: ${PARTS[step]}`} emptyText={t.common.noVideo} />
             <p className="small muted">
-              {step === 0 ? "Müəllim mövzunu izah edir." : "Eyni mövzu, subtitrlə."}
+              {step === 0 ? t.lessons.explainHint : t.lessons.subtitleHint}
             </p>
           </>
         ) : (
@@ -66,7 +65,7 @@ export function LessonPlayer({
             const picked = answers[q.id];
             return (
               <div key={q.id} className="stack" style={{ gap: 8 }}>
-                <p className="q" style={{ fontSize: 17 }}>
+                <p className="q" style={{ fontSize: 17 }} lang="en">
                   {n + 1}. {q.question}
                 </p>
                 <div className="opts">
@@ -91,9 +90,7 @@ export function LessonPlayer({
           })
         )}
         {!isVideo && allAnswered && partQuestions.length > 0 && (
-          <p className="small muted">
-            {partQuestions.length} sualdan {correct} düzgün.
-          </p>
+          <p className="small muted">{t.lessons.partScore(partQuestions.length, correct)}</p>
         )}
         <button
           type="button"
@@ -101,7 +98,7 @@ export function LessonPlayer({
           disabled={!isVideo && !allAnswered}
           onClick={() => (step < 3 ? setStep(step + 1) : setFinished(true))}
         >
-          {step < 3 ? "Növbəti hissə" : "Lesson-u bitir"}
+          {step < 3 ? t.lessons.nextPart : t.lessons.finish}
         </button>
       </div>
     </>

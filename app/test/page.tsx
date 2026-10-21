@@ -4,13 +4,17 @@ import { TEST_PRICE, money } from "@/lib/levels";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 import { SubmitButton } from "@/components/SubmitButton";
+import { getT } from "@/lib/i18n/server";
 import { startTest } from "./actions";
 import { TestRunner } from "./TestRunner";
 
-export const metadata = { title: "Səviyyə testi" };
+export async function generateMetadata() {
+  return { title: (await getT()).test.title };
+}
 
 export default async function TestPage() {
   const user = await requireUser("/test");
+  const t = await getT();
   const supabase = await createClient();
   const { data: attempt } = await supabase
     .from("test_attempts")
@@ -34,21 +38,19 @@ export default async function TestPage() {
 
   return (
     <section className="panel stack narrow">
-      <h2>Səviyyə testi</h2>
-      <p className="muted">
-        {count ?? 0} sual, təxminən 10 dəqiqə. Nəticədə səviyyənizi (A1–C1) öyrənəcəksiniz.
-      </p>
+      <h2>{t.test.title}</h2>
+      <p className="muted">{t.test.intro(count ?? 0)}</p>
       {attempt && (
         <p className="small">
-          Son nəticəniz: <Link href={`/test/result/${attempt.id}`}>bax</Link>
+          {t.test.lastResult} <Link href={`/test/result/${attempt.id}`}>{t.test.see}</Link>
         </p>
       )}
       <div className="row between">
-        <span>Testin qiyməti</span>
+        <span>{t.test.price}</span>
         <span className="price total">{money(TEST_PRICE)}</span>
       </div>
       <form action={startTest}>
-        <SubmitButton>{attempt ? "Yenidən test ver" : "Ödə və başla"}</SubmitButton>
+        <SubmitButton>{attempt ? t.test.retake : t.test.payStart}</SubmitButton>
       </form>
     </section>
   );

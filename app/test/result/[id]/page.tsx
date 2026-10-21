@@ -5,12 +5,16 @@ import { CERTIFICATE_PRICE, money } from "@/lib/levels";
 import { createClient } from "@/lib/supabase/server";
 import { SubmitButton } from "@/components/SubmitButton";
 import { buyCertificate } from "../../actions";
+import { getT } from "@/lib/i18n/server";
 
-export const metadata = { title: "Test nəticəsi" };
+export async function generateMetadata() {
+  return { title: (await getT()).test.resultTitle };
+}
 
 export default async function ResultPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const user = await requireUser(`/test/result/${id}`);
+  const t = await getT();
   const supabase = await createClient();
   const { data: attempt } = await supabase
     .from("test_attempts")
@@ -26,22 +30,20 @@ export default async function ResultPage({ params }: { params: Promise<{ id: str
     <section className="panel result">
       <div className={`big-lv lv-${attempt.level}`}>{attempt.level}</div>
       <div className="stack">
-        <h2>Sizin səviyyəniz: {attempt.level}</h2>
-        <p className="muted">
-          {attempt.total} sualdan {attempt.score} düzgün cavab.
-        </p>
+        <h2>{t.test.yourLevel(attempt.level)}</h2>
+        <p className="muted">{t.test.score(attempt.total, attempt.score)}</p>
         <div className="row">
           <Link href={`/tutors?level=${attempt.level}`} className="btn">
-            {attempt.level} müəllimlərini gör
+            {t.test.seeTutors(attempt.level)}
           </Link>
           {cert ? (
             <Link href={`/certificate/${cert.code}`} className="btn gold">
-              Sertifikatıma bax
+              {t.test.myCertificate}
             </Link>
           ) : (
             <form action={buyCertificate}>
               <input type="hidden" name="attempt_id" value={attempt.id} />
-              <SubmitButton className="btn gold">Sertifikat al · {money(CERTIFICATE_PRICE)}</SubmitButton>
+              <SubmitButton className="btn gold">{t.test.buyCertificate} · {money(CERTIFICATE_PRICE)}</SubmitButton>
             </form>
           )}
         </div>

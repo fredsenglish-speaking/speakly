@@ -3,7 +3,9 @@ import { notFound } from "next/navigation";
 import { LevelChip } from "@/components/LevelChip";
 import { SubmitButton } from "@/components/SubmitButton";
 import { getCurrentUser } from "@/lib/auth";
-import { LESSON_PRICE, isLevel, money } from "@/lib/levels";
+import { LESSON_PRICE, isLevel, lessonText, money } from "@/lib/levels";
+import { DICTIONARIES } from "@/lib/i18n";
+import { getLocale } from "@/lib/i18n/server";
 import { createClient } from "@/lib/supabase/server";
 import { buyLesson } from "../actions";
 import { LessonPlayer } from "./LessonPlayer";
@@ -11,13 +13,16 @@ import { LessonPlayer } from "./LessonPlayer";
 export default async function LessonPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const user = await getCurrentUser();
+  const locale = await getLocale();
+  const t = DICTIONARIES[locale];
   const supabase = await createClient();
   const { data: lesson } = await supabase
     .from("lessons")
-    .select("id, slug, level, title, summary, explanation_video_url, subtitled_video_url")
+    .select("id, slug, level, title, summary, title_en, title_ru, summary_en, summary_ru, explanation_video_url, subtitled_video_url")
     .eq("slug", slug)
     .maybeSingle();
   if (!lesson || !isLevel(lesson.level)) notFound();
+  const text = lessonText(lesson, locale);
 
   const { data: purchase } = user
     ? await supabase
@@ -31,11 +36,11 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
   const head = (
     <>
       <Link href={`/lessons?level=${lesson.level}`} className="btn ghost self-start">
-        ← Lessons
+        {t.lessons.back}
       </Link>
       <div className="row" style={{ gap: 10 }}>
         <LevelChip level={lesson.level} />
-        <h2>{lesson.title}</h2>
+        <h2>{text.title}</h2>
       </div>
     </>
   );
@@ -45,21 +50,23 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
       <section className="stack">
         {head}
         <div className="panel stack narrow">
-          <p>{lesson.summary}</p>
-          <p>Bu lesson 4 hissədən ibarətdir:</p>
+          <p>{text.summary}</p>
+          <p>{t.lessons.consistsOf}</p>
           <ol className="small" style={{ margin: 0, paddingLeft: 20 }}>
-            <li>Müəllimin izahı (video)</li>
-            <li>Practice test</li>
-            <li>Müəllimin izahı, subtitrlə</li>
-            <li>Practice test</li>
+            <li>{t.lessons.part1}</li>
+            <li>{t.lessons.part2}</li>
+            <li>{t.lessons.part3}</li>
+            <li>{t.lessons.part4}</li>
           </ol>
           <div className="row between">
-            <span>Qiymət ({lesson.level})</span>
+            <span>
+              {t.common.price} ({lesson.level})
+            </span>
             <span className="price total">{money(LESSON_PRICE[lesson.level])}</span>
           </div>
           <form action={buyLesson}>
             <input type="hidden" name="slug" value={lesson.slug} />
-            <SubmitButton>{user ? "Lesson-u al" : "Daxil ol və al"}</SubmitButton>
+            <SubmitButton>{user ? t.lessons.buy : t.lessons.loginBuy}</SubmitButton>
           </form>
         </div>
       </section>
@@ -77,7 +84,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
     <section className="stack">
       {head}
       <LessonPlayer
-        title={lesson.title}
+        title={text.title}
         explanationUrl={lesson.explanation_video_url}
         subtitledUrl={lesson.subtitled_video_url}
         questions={questions ?? []}

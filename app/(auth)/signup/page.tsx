@@ -1,11 +1,15 @@
+import { getT } from "@/lib/i18n/server";
 import { AuthForm } from "../AuthForm";
 
-export const metadata = { title: "Qeydiyyat" };
+export async function generateMetadata() {
+  return { title: (await getT()).auth.signupTitle };
+}
 
-export default function SignupPage() {
+export default async function SignupPage() {
+  const t = await getT();
   return (
     <section className="panel stack narrow">
-      <h2>Qeydiyyat</h2>
+      <h2>{t.auth.signupTitle}</h2>
       <AuthForm mode="signup" />
     </section>
   );

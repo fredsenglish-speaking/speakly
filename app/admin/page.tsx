@@ -4,8 +4,12 @@ import { LevelChip } from "@/components/LevelChip";
 import { requireUser } from "@/lib/auth";
 import { formatDate, money } from "@/lib/levels";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { DICTIONARIES } from "@/lib/i18n";
+import { getLocale } from "@/lib/i18n/server";
 
-export const metadata = { title: "İdarə" };
+export async function generateMetadata() {
+  return { title: DICTIONARIES[await getLocale()].admin.title };
+}
 
 async function setApproved(form: FormData) {
   "use server";
@@ -30,6 +34,8 @@ type Row = {
 export default async function AdminPage() {
   const user = await requireUser("/admin");
   if (user.role !== "admin") redirect("/");
+  const locale = await getLocale();
+  const t = DICTIONARIES[locale];
   const db = createAdminClient();
   const [{ data }, { data: paid }] = await Promise.all([
     db.from("tutors").select("id, approved, bio, levels, created_at, profiles(full_name)").order("created_at", { ascending: false }),
@@ -41,31 +47,31 @@ export default async function AdminPage() {
 
   return (
     <section className="stack">
-      <h2>İdarə paneli</h2>
+      <h2>{t.admin.title}</h2>
       <div className="steps">
-        <div className="step"><b>Testlər</b><h3 className="price">{money(totals.test)}</h3></div>
-        <div className="step"><b>Sertifikatlar</b><h3 className="price">{money(totals.certificate)}</h3></div>
-        <div className="step"><b>Speaking dərsləri</b><h3 className="price">{money(totals.booking)}</h3></div>
-        <div className="step"><b>Lessons</b><h3 className="price">{money(totals.lesson)}</h3></div>
+        <div className="step"><b>{t.admin.tests}</b><h3 className="price">{money(totals.test)}</h3></div>
+        <div className="step"><b>{t.admin.certificates}</b><h3 className="price">{money(totals.certificate)}</h3></div>
+        <div className="step"><b>{t.admin.bookings}</b><h3 className="price">{money(totals.booking)}</h3></div>
+        <div className="step"><b>{t.admin.lessons}</b><h3 className="price">{money(totals.lesson)}</h3></div>
       </div>
       <div className="panel stack">
-        <h3>Müəllimlər</h3>
-        {tutors.length === 0 && <p className="muted small">Hələ müəllim qeydiyyatdan keçməyib.</p>}
-        {tutors.map((t) => (
-          <div key={t.id} className="row between" style={{ borderBottom: "1px solid var(--line)", paddingBottom: 10 }}>
+        <h3>{t.admin.tutors}</h3>
+        {tutors.length === 0 && <p className="muted small">{t.admin.noTutors}</p>}
+        {tutors.map((row) => (
+          <div key={row.id} className="row between" style={{ borderBottom: "1px solid var(--line)", paddingBottom: 10 }}>
             <div className="stack" style={{ gap: 4, minWidth: 0, flex: 1 }}>
-              <strong>{t.profiles?.full_name || "Adsız"}</strong>
-              <span className="small muted">Qeydiyyat: {formatDate(t.created_at)}</span>
+              <strong>{row.profiles?.full_name || t.admin.unnamed}</strong>
+              <span className="small muted">{t.admin.registered}: {formatDate(row.created_at, locale)}</span>
               <div className="row" style={{ gap: 4 }}>
-                {t.levels.map((l) => <LevelChip key={l} level={l} />)}
+                {row.levels.map((l) => <LevelChip key={l} level={l} />)}
               </div>
-              {t.bio && <p className="small">{t.bio}</p>}
+              {row.bio && <p className="small">{row.bio}</p>}
             </div>
             <form action={setApproved}>
-              <input type="hidden" name="tutor_id" value={t.id} />
-              <input type="hidden" name="approved" value={String(!t.approved)} />
-              <button type="submit" className={t.approved ? "btn ghost small" : "btn small"}>
-                {t.approved ? "Siyahıdan çıxar" : "Təsdiqlə"}
+              <input type="hidden" name="tutor_id" value={row.id} />
+              <input type="hidden" name="approved" value={String(!row.approved)} />
+              <button type="submit" className={row.approved ? "btn ghost small" : "btn small"}>
+                {row.approved ? t.admin.remove : t.admin.approve}
               </button>
             </form>
           </div>
