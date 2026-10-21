@@ -68,17 +68,18 @@ export default async function AdminPage() {
   ]);
   const pending = (pendingRows ?? []) as unknown as PendingRow[];
   const tutors = (data ?? []) as unknown as Row[];
-  const totals = { test: 0, certificate: 0, booking: 0, lesson: 0 } as Record<string, number>;
+  const totals = { test: 0, certificate: 0, booking: 0, lesson: 0, practice: 0 } as Record<string, number>;
   for (const p of paid ?? []) totals[p.kind] += Number(p.amount);
 
   return (
     <section className="stack">
       <h2>{t.admin.title}</h2>
-      <div className="steps">
+      <div className="steps five">
         <div className="step"><b>{t.admin.tests}</b><h3 className="price">{money(totals.test)}</h3></div>
         <div className="step"><b>{t.admin.certificates}</b><h3 className="price">{money(totals.certificate)}</h3></div>
         <div className="step"><b>{t.admin.bookings}</b><h3 className="price">{money(totals.booking)}</h3></div>
         <div className="step"><b>{t.admin.lessons}</b><h3 className="price">{money(totals.lesson)}</h3></div>
+        <div className="step"><b>{t.admin.practice}</b><h3 className="price">{money(totals.practice)}</h3></div>
       </div>
       <div className="panel stack">
         <h3>{t.admin.pending}</h3>

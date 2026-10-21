@@ -85,6 +85,7 @@ main { padding-block: 28px 64px; display: grid; gap: 24px; }
 .rung .fill span { display: block; height: 100%; }
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .steps.three { grid-template-columns: repeat(3, 1fr); }
+.steps.five { grid-template-columns: repeat(5, 1fr); }
 .step { padding: 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); display: grid; gap: 6px; align-content: start; }
 .step b { font-family: var(--display); font-size: 13px; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
 
@@ -150,7 +151,7 @@ table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
   .cambridge img { max-width: 320px; justify-self: center; }
   .cambridge,
   .hero, .tutors, .lessons, .result, .topics { grid-template-columns: 1fr; }
-  .steps, .steps.three, .stepper { grid-template-columns: repeat(2, 1fr); }
+  .steps, .steps.three, .steps.five, .stepper { grid-template-columns: repeat(2, 1fr); }
   .nav { margin-left: 0; width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

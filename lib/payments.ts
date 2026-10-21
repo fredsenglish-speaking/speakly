@@ -2,7 +2,7 @@ import "server-only";
 import { randomBytes } from "node:crypto";
 import { createAdminClient } from "./supabase/admin";
 
-export type PaymentKind = "test" | "certificate" | "booking" | "lesson";
+export type PaymentKind = "test" | "certificate" | "booking" | "lesson" | "practice";
 
 export type Payment = {
   id: string;
@@ -92,6 +92,17 @@ export async function cancelPayment(paymentId: string): Promise<void> {
     .eq("status", "pending")
     .select(PAYMENT_COLUMNS)
     .single<Payment>();
+  if (payment?.kind === "practice") {
+    // The host not paying closes the room; the guest not paying frees the seat.
+    await db.from("practice_rooms").update({ cancelled: true }).eq("id", payment.ref_id).eq("host_id", payment.user_id);
+    await db
+      .from("practice_rooms")
+      .update({ guest_id: null })
+      .eq("id", payment.ref_id)
+      .eq("guest_id", payment.user_id)
+      .eq("guest_paid", false);
+    return;
+  }
   if (payment?.kind !== "booking") return;
 
   const { data: booking } = await db
@@ -117,6 +128,8 @@ export async function successPathFor(p: Pick<Payment, "kind" | "ref_id">): Promi
       const { data } = await createAdminClient().from("lessons").select("slug").eq("id", Number(p.ref_id)).single();
       return data ? `/lessons/${data.slug}` : "/lessons";
     }
+    case "practice":
+      return `/practice/${p.ref_id}`;
   }
 }
 
@@ -163,6 +176,12 @@ async function fulfil(p: Payment) {
       await db
         .from("lesson_purchases")
         .upsert({ student_id: p.user_id, lesson_id: Number(p.ref_id) }, { ignoreDuplicates: true });
+      return;
+    }
+    case "practice": {
+      // The same payment kind serves both seats; the payer decides which one is paid.
+      await db.from("practice_rooms").update({ host_paid: true }).eq("id", p.ref_id).eq("host_id", p.user_id);
+      await db.from("practice_rooms").update({ guest_paid: true }).eq("id", p.ref_id).eq("guest_id", p.user_id);
       return;
     }
   }

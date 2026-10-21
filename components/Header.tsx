@@ -21,6 +21,7 @@ export async function Header() {
         <nav className="nav">
           <Link href="/test">{t.nav.test}</Link>
           <Link href="/tutors">{t.nav.tutors}</Link>
+          <Link href="/practice">{t.nav.practice}</Link>
           <Link href="/lessons">{t.nav.lessons}</Link>
           {user && <Link href="/dashboard">{t.nav.myClasses}</Link>}
           {isTutor && <Link href="/tutor">{t.nav.tutorPanel}</Link>}

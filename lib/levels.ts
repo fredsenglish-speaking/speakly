@@ -12,6 +12,10 @@ export const LESSON_PRICE: Record<Level, number> = {
   C1: 18,
 };
 
+/** Speaking club: two students of the same level practise one topic together. */
+export const PRACTICE_PRICE = 2;
+export const PRACTICE_MINUTES = 40;
+
 export const DURATIONS = [15, 30, 60] as const;
 export type Duration = (typeof DURATIONS)[number];
 
@@ -73,6 +77,17 @@ export function bakuLocalToIso(local: string): string | null {
   if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(local)) return null;
   const d = new Date(`${local}:00+04:00`);
   return Number.isNaN(d.getTime()) ? null : d.toISOString();
+}
+
+/** "Aysel Məmmədova" → "Aysel M." so students see each other without full names. */
+export function shortName(fullName: string): string {
+  const [first = "", second = ""] = fullName.trim().split(/\s+/);
+  return second ? `${first} ${second[0].toUpperCase()}.` : first;
+}
+
+/** Practice topic titles are stored in Azerbaijani with English and Russian versions. */
+export function topicTitle(t: { title: string; title_en: string; title_ru: string }, locale: string): string {
+  return (locale === "en" && t.title_en) || (locale === "ru" && t.title_ru) || t.title;
 }
 
 type LocalizedLesson = {
