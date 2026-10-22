@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Avatar } from "@/components/Avatar";
+import { Presence } from "@/components/Presence";
 import { getCurrentUser } from "@/lib/auth";
 import { LOCALES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
@@ -43,11 +45,18 @@ export async function Header() {
             ))}
           </form>
           {user ? (
+            <>
+            <Link href="/profile" className="me-link" title={t.nav.profile}>
+              <Avatar name={user.full_name} url={user.avatar_url} size={34} online />
+              <span className="me-name">{user.full_name}</span>
+            </Link>
             <form action={signOut}>
               <button className="btn ghost small" type="submit">
                 {t.nav.signOut}
               </button>
             </form>
+            <Presence />
+            </>
           ) : (
             <>
               <Link href="/login" className="btn ghost small">

@@ -12,7 +12,8 @@
 | Müəllimlər siyahısı (səviyyəyə görə) və dərsə yazılma | `/tutors`, `/tutors/<id>` |
 | Tələbənin dərsləri, müəllim qeydləri, tövsiyə olunan lesson-lar | `/dashboard` |
 | Lessons kataloqu, alış, 4 hissəli lesson | `/lessons`, `/lessons/<slug>` |
-| Speaking klub: eyni səviyyəli tələbələr cüt halında mövzu üzrə danışır ($2, 40 dəq, hər səviyyəyə 20 mövzu × 10 sual) | `/practice`, `/practice/<id>` |
+| Speaking klub: eyni səviyyəli tələbələr cüt halında mövzu üzrə danışır. Otaq açmaq pulsuzdur, hər tələbə danışığa girəndə $2 ödəyir (40 dəq, hər səviyyəyə 20 mövzu × 10 sual). Online tələbələr yaşıl işıqla görünür və dərhal dəvət oluna bilər | `/practice`, `/practice/<id>` |
+| Profil: ad və şəkil, saytın küncündə görünür | `/profile` |
 | Müəllim paneli: boş vaxtlar, qarşıdakı dərslər, qeyd yazmaq | `/tutor` |
 | Müəllim profili: təqdimat, səviyyələr, qiymətlər, video, dərs linki | `/tutor/profile` |
 | İdarə: müəllimləri təsdiqləmək, gəlir | `/admin` |
@@ -27,7 +28,7 @@ Sayt 3 dildədir: Azərbaycan, İngilis və Rus. Dil yuxarıdakı AZ / EN / RU d
 ## Quraşdırma
 
 1. [supabase.com](https://supabase.com)-da pulsuz layihə yaradın.
-2. Supabase → **SQL Editor**-da `supabase/setup_all.sql` faylının məzmununu işə salın. Bu, cədvəlləri, 20 test sualını, 60 lesson-u (hər səviyyəyə 12, 3 dildə adları ilə) və 240 məşq sualını yaradır. Artıq qurulmuş bazaya yalnız yeni `supabase/migrations/` faylları əlavə olunur (məs. `0004_speaking_club.sql`).
+2. Supabase → **SQL Editor**-da `supabase/setup_all.sql` faylının məzmununu işə salın. Bu, cədvəlləri, 20 test sualını, 60 lesson-u (hər səviyyəyə 12, 3 dildə adları ilə) və 240 məşq sualını yaradır. Artıq qurulmuş bazaya yalnız yeni `supabase/migrations/` faylları əlavə olunur (məs. `0005_profiles_presence.sql`).
 3. Supabase → **Authentication → URL Configuration**-da Site URL olaraq saytın ünvanını yazın.
 4. `.env.example` faylını `.env.local` adı ilə köçürün və Supabase → **Project Settings → API**-dakı açarları yazın.
 5. Lokal işə salmaq üçün:

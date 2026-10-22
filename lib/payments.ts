@@ -92,32 +92,7 @@ export async function cancelPayment(paymentId: string): Promise<void> {
     .eq("status", "pending")
     .select(PAYMENT_COLUMNS)
     .single<Payment>();
-  if (payment?.kind === "practice") {
-    // The host not paying closes the room (and the guest's open payment with it);
-    // the guest not paying frees the seat.
-    const { data: closed } = await db
-      .from("practice_rooms")
-      .update({ cancelled: true })
-      .eq("id", payment.ref_id)
-      .eq("host_id", payment.user_id)
-      .select("id");
-    if (closed?.length) {
-      const { data: others } = await db
-        .from("payments")
-        .select("id")
-        .eq("kind", "practice")
-        .eq("ref_id", payment.ref_id)
-        .eq("status", "pending");
-      for (const other of others ?? []) await cancelPayment(other.id);
-    }
-    await db
-      .from("practice_rooms")
-      .update({ guest_id: null })
-      .eq("id", payment.ref_id)
-      .eq("guest_id", payment.user_id)
-      .eq("guest_paid", false);
-    return;
-  }
+  // A cancelled speaking club payment just leaves that seat unpaid.
   if (payment?.kind !== "booking") return;
 
   const { data: booking } = await db

@@ -8,6 +8,7 @@ export type Profile = {
   full_name: string;
   role: "student" | "tutor" | "admin";
   level: Level | null;
+  avatar_url: string | null;
 };
 
 export async function getCurrentUser(): Promise<Profile | null> {
@@ -16,8 +17,11 @@ export async function getCurrentUser(): Promise<Profile | null> {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return null;
-  const { data } = await supabase.from("profiles").select("id, full_name, role, level").eq("id", user.id).single();
-  return (data as Profile | null) ?? null;
+  const { data } = await supabase.from("profiles").select("*").eq("id", user.id).single();
+  if (!data) return null;
+  // select("*") keeps this working before the avatar_url column has been added.
+  const { id, full_name, role, level, avatar_url = null } = data as Profile;
+  return { id, full_name, role, level, avatar_url };
 }
 
 export async function requireUser(next: string): Promise<Profile> {

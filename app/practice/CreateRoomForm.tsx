@@ -5,7 +5,7 @@ import { SubmitButton } from "@/components/SubmitButton";
 import { useT } from "@/lib/i18n/client";
 import { createRoom, type RoomState } from "./actions";
 
-export function CreateRoomForm({ topics, price }: { topics: { id: number; title: string }[]; price: string }) {
+export function CreateRoomForm({ topics }: { topics: { id: number; title: string }[] }) {
   const [state, action] = useActionState<RoomState, FormData>(createRoom, {});
   const t = useT().practice;
   return (
@@ -29,7 +29,7 @@ export function CreateRoomForm({ topics, price }: { topics: { id: number; title:
         <input type="datetime-local" name="starts_at" required />
       </label>
       {state.error && <p className="error">{state.error}</p>}
-      <SubmitButton className="btn self-start">{t.create(price)}</SubmitButton>
+      <SubmitButton className="btn self-start">{t.create}</SubmitButton>
     </form>
   );
 }

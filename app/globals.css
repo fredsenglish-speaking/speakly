@@ -212,3 +212,21 @@ table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
 
 /* iOS Safari gives date inputs an intrinsic width and no height when empty */
 input[type="datetime-local"] { -webkit-appearance: none; appearance: none; min-width: 0; max-width: 100%; min-height: 44px; display: block; }
+
+.avatar { position: relative; flex: none; display: inline-grid; place-items: center; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-family: var(--display); font-weight: 700; }
+.avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.avatar .dot { position: absolute; right: -1px; bottom: -1px; width: 30%; height: 30%; min-width: 10px; min-height: 10px; border-radius: 50%; background: #9aa5ad; border: 2px solid var(--surface); }
+.avatar .dot.on { background: #22c55e; }
+.me-link { display: flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; }
+.me-link span.me-name { max-width: 14ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.peers { display: grid; gap: 8px; }
+.peer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.peer > .name { flex: 1; min-width: 0; font-weight: 600; }
+.peer details { width: 100%; }
+.peer details > summary { list-style: none; display: inline-block; }
+.peer details > summary::-webkit-details-marker { display: none; }
+.peer details[open] > summary { display: none; }
+.peer form { display: flex; gap: 8px; flex-wrap: wrap; align-items: end; margin-top: 6px; }
+.peer form select { flex: 1; min-width: 180px; }
+.invites { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 20; width: min(560px, calc(100% - 32px)); display: grid; gap: 8px; }
+.invite { background: var(--surface); border: 2px solid var(--accent); border-radius: 14px; padding: 14px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18); display: grid; gap: 10px; }
