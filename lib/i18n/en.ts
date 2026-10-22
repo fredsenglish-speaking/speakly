@@ -156,7 +156,10 @@ const en: Dictionary = {
     steps: ["1. Explanation", "2. Practice test", "3. With subtitles", "4. Practice test"],
     explainHint: "The tutor explains the topic.",
     subtitleHint: "The same topic, with subtitles.",
-    partScore: (n, s) => `${s} of ${n} correct.`,
+    result: "Your result",
+    answered: (a, n) => `Answered: ${a} / ${n}`,
+    scoreNote: (pct) =>
+      pct >= 80 ? "Excellent result!" : pct >= 50 ? "Good, but practise a bit more." : "Watch the video again and retry the test.",
     nextPart: "Next part",
     finish: "Finish the lesson",
     done: "Lesson complete",

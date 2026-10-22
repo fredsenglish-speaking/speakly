@@ -34,7 +34,19 @@ export function LessonPlayer({
     return (
       <div className="panel stack">
         <h3>{t.lessons.done}</h3>
-        <p>{t.lessons.doneScore(total, right)}</p>
+        <ScoreBox label={t.lessons.result} right={right} total={total} note={t.lessons.scoreNote} />
+        {[1, 3].map((s) => {
+          const qs = questions.filter((q) => q.part === s + 1);
+          if (qs.length === 0) return null;
+          const r = qs.filter((q) => answers[q.id] === q.correct).length;
+          return (
+            <div key={s} className="row between">
+              <span>{PARTS[s]}</span>
+              <strong>{r}/{qs.length}</strong>
+            </div>
+          );
+        })}
+        <p className="small muted">{t.lessons.doneScore(total, right)}</p>
         <button type="button" className="btn ghost self-start" onClick={() => { setFinished(false); setStep(0); setAnswers({}); }}>
           {t.lessons.again}
         </button>
@@ -61,7 +73,13 @@ export function LessonPlayer({
             </p>
           </>
         ) : (
-          partQuestions.map((q, n) => {
+          <>
+          {partQuestions.length > 0 && (
+            <p className="small muted">
+              {t.lessons.answered(partQuestions.filter((q) => answers[q.id] !== undefined).length, partQuestions.length)}
+            </p>
+          )}
+          {partQuestions.map((q, n) => {
             const picked = answers[q.id];
             return (
               <div key={q.id} className="stack" style={{ gap: 8 }}>
@@ -87,10 +105,11 @@ export function LessonPlayer({
                 </div>
               </div>
             );
-          })
+          })}
+          </>
         )}
         {!isVideo && allAnswered && partQuestions.length > 0 && (
-          <p className="small muted">{t.lessons.partScore(partQuestions.length, correct)}</p>
+          <ScoreBox label={t.lessons.result} right={correct} total={partQuestions.length} note={t.lessons.scoreNote} />
         )}
         <button
           type="button"
@@ -102,5 +121,21 @@ export function LessonPlayer({
         </button>
       </div>
     </>
+  );
+}
+
+function ScoreBox({ label, right, total, note }: { label: string; right: number; total: number; note: (pct: number) => string }) {
+  const pct = Math.round((right / total) * 100);
+  const tone = pct >= 80 ? "good" : pct >= 50 ? "ok" : "low";
+  return (
+    <div className={`score-box ${tone}`} role="status">
+      <span>{label}</span>
+      <strong>
+        {right}/{total}
+      </strong>
+      <small>
+        {pct}% · {note(pct)}
+      </small>
+    </div>
   );
 }

@@ -154,7 +154,10 @@ const az = {
     steps: ["1. Müəllimin izahı", "2. Practice test", "3. Subtitrli izah", "4. Practice test"],
     explainHint: "Müəllim mövzunu izah edir.",
     subtitleHint: "Eyni mövzu, subtitrlə.",
-    partScore: (n: number, s: number) => `${n} sualdan ${s} düzgün.`,
+    result: "Nəticən",
+    answered: (a: number, n: number) => `Cavablandı: ${a} / ${n}`,
+    scoreNote: (pct: number): string =>
+      pct >= 80 ? "Əla nəticə!" : pct >= 50 ? "Yaxşıdır, amma bir az da təkrar et." : "Videonu yenidən izlə və testi təkrar et.",
     nextPart: "Növbəti hissə",
     finish: "Lesson-u bitir",
     done: "Lesson tamamlandı",

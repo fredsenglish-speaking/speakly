@@ -230,3 +230,14 @@ input[type="datetime-local"] { -webkit-appearance: none; appearance: none; min-w
 .peer form select { flex: 1; min-width: 180px; }
 .invites { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 20; width: min(560px, calc(100% - 32px)); display: grid; gap: 8px; }
 .invite { background: var(--surface); border: 2px solid var(--accent); border-radius: 14px; padding: 14px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18); display: grid; gap: 10px; }
+
+/* Practice test result, e.g. 12/15 */
+.score-box { display: grid; justify-items: center; gap: 4px; padding: 18px; border-radius: 14px; text-align: center; background: var(--accent-soft); border: 2px solid var(--accent); }
+.score-box span { font-weight: 700; }
+.score-box strong { font-size: 44px; line-height: 1.1; }
+.score-box.ok { background: #fff4d6; border-color: #d9a400; color: #4a3800; }
+.score-box.low { background: #fde4e1; border-color: #c8402f; color: #5a1a12; }
+@media (prefers-color-scheme: dark) {
+  .score-box.ok { background: #3a2f0c; color: #ffe6a3; }
+  .score-box.low { background: #3d1a15; color: #ffc9c1; }
+}
