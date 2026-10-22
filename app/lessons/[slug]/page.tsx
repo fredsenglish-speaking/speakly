@@ -18,7 +18,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
   const supabase = await createClient();
   const { data: lesson } = await supabase
     .from("lessons")
-    .select("id, slug, level, title, summary, title_en, title_ru, summary_en, summary_ru, explanation_video_url, subtitled_video_url")
+    .select("id, slug, level, title, summary, title_en, title_ru, summary_en, summary_ru, explanation_video_url")
     .eq("slug", slug)
     .maybeSingle();
   if (!lesson || !isLevel(lesson.level)) notFound();
@@ -56,7 +56,6 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
             <li>{t.lessons.part1}</li>
             <li>{t.lessons.part2}</li>
             <li>{t.lessons.part3}</li>
-            <li>{t.lessons.part4}</li>
           </ol>
           <div className="row between">
             <span>
@@ -85,8 +84,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
       {head}
       <LessonPlayer
         title={text.title}
-        explanationUrl={lesson.explanation_video_url}
-        subtitledUrl={lesson.subtitled_video_url}
+        videoUrl={lesson.explanation_video_url}
         questions={questions ?? []}
       />
     </section>

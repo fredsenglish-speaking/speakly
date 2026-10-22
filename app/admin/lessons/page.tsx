@@ -19,11 +19,11 @@ export default async function LessonVideosPage() {
   const t = DICTIONARIES[locale].admin;
   const { data } = await createAdminClient()
     .from("lessons")
-    .select("id, level, title, title_en, title_ru, explanation_video_url, subtitled_video_url")
+    .select("id, level, title, title_en, title_ru, explanation_video_url")
     .order("level")
     .order("position");
   const lessons = data ?? [];
-  const withVideo = lessons.filter((l) => l.explanation_video_url || l.subtitled_video_url).length;
+  const withVideo = lessons.filter((l) => l.explanation_video_url).length;
 
   return (
     <section className="stack">
@@ -36,7 +36,7 @@ export default async function LessonVideosPage() {
           <summary className="row" style={{ cursor: "pointer" }}>
             <LevelChip level={level} />
             <span className="small muted">
-              {lessons.filter((l) => l.level === level && l.explanation_video_url && l.subtitled_video_url).length} /{" "}
+              {lessons.filter((l) => l.level === level && l.explanation_video_url).length} /{" "}
               {lessons.filter((l) => l.level === level).length}
             </span>
           </summary>
@@ -49,7 +49,6 @@ export default async function LessonVideosPage() {
                   lessonId={l.id}
                   title={lessonText(l, locale).title}
                   main={l.explanation_video_url}
-                  subs={l.subtitled_video_url}
                 />
               ))}
           </div>

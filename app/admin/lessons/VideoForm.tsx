@@ -9,12 +9,10 @@ export function VideoForm({
   lessonId,
   title,
   main,
-  subs,
 }: {
   lessonId: number;
   title: string;
   main: string | null;
-  subs: string | null;
 }) {
   const t = useT();
   const [state, action] = useActionState<VideoState, FormData>(saveLessonVideos, {});
@@ -22,16 +20,12 @@ export function VideoForm({
     <form action={action} className="stack" style={{ gap: 8, borderBottom: "1px solid var(--line)", paddingBottom: 14 }}>
       <input type="hidden" name="lesson_id" value={lessonId} />
       <strong>
-        {main && subs ? "✅ " : main || subs ? "🟡 " : "⚪️ "}
+        {main ? "✅ " : "⚪️ "}
         {title}
       </strong>
       <label className="field">
         {t.admin.videoMain}
         <input type="url" name="explanation_video_url" defaultValue={main ?? ""} placeholder="https://youtu.be/…" />
-      </label>
-      <label className="field">
-        {t.admin.videoSubs}
-        <input type="url" name="subtitled_video_url" defaultValue={subs ?? ""} placeholder="https://youtu.be/…" />
       </label>
       <div className="row">
         <SubmitButton className="btn small">{t.common.save}</SubmitButton>
