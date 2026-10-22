@@ -312,6 +312,13 @@ const az = {
     noPending: "Gözləyən ödəniş yoxdur.",
     confirm: "Ödənildi, təsdiqlə",
     reject: "Ləğv et",
+    videos: "Lesson videoları",
+    videosIntro: "Hər lesson üçün iki video: müəllimin izahı və subtitrli izah. YouTube (unlisted) və ya Vimeo linkini yapışdırıb Yadda saxla basın.",
+    videoMain: "1. Müəllimin izahı",
+    videoSubs: "3. Subtitrli izah",
+    videoCount: (n: number, total: number) => `${total} lesson-dan ${n}-də video var`,
+    errVideo: "Link tanınmadı. YouTube və ya Vimeo linki yapışdırın.",
+    savedVideo: "Yadda saxlandı.",
   },
 };
 

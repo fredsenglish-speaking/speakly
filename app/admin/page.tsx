@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { LevelChip } from "@/components/LevelChip";
@@ -73,7 +74,10 @@ export default async function AdminPage() {
 
   return (
     <section className="stack">
-      <h2>{t.admin.title}</h2>
+      <div className="row between">
+        <h2>{t.admin.title}</h2>
+        <Link href="/admin/lessons" className="btn ghost small">🎬 {t.admin.videos}</Link>
+      </div>
       <div className="steps five">
         <div className="step"><b>{t.admin.tests}</b><h3 className="price">{money(totals.test)}</h3></div>
         <div className="step"><b>{t.admin.certificates}</b><h3 className="price">{money(totals.certificate)}</h3></div>

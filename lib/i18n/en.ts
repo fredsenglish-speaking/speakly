@@ -314,6 +314,13 @@ const en: Dictionary = {
     noPending: "No payments waiting.",
     confirm: "Paid, confirm",
     reject: "Cancel",
+    videos: "Lesson videos",
+    videosIntro: "Each lesson has two videos: the tutor's explanation and the explanation with subtitles. Paste a YouTube (unlisted) or Vimeo link and press Save.",
+    videoMain: "1. Tutor's explanation",
+    videoSubs: "3. Explanation with subtitles",
+    videoCount: (n: number, total: number) => `${n} of ${total} lessons have a video`,
+    errVideo: "Link not recognised. Paste a YouTube or Vimeo link.",
+    savedVideo: "Saved.",
   },
 };
 

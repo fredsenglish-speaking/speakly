@@ -314,6 +314,13 @@ const ru: Dictionary = {
     noPending: "Нет ожидающих оплат.",
     confirm: "Оплачено, подтвердить",
     reject: "Отменить",
+    videos: "Видео уроков",
+    videosIntro: "В каждом уроке два видео: объяснение преподавателя и объяснение с субтитрами. Вставьте ссылку YouTube (unlisted) или Vimeo и нажмите «Сохранить».",
+    videoMain: "1. Объяснение преподавателя",
+    videoSubs: "3. Объяснение с субтитрами",
+    videoCount: (n: number, total: number) => `Видео есть в ${n} из ${total} уроков`,
+    errVideo: "Ссылка не распознана. Вставьте ссылку YouTube или Vimeo.",
+    savedVideo: "Сохранено.",
   },
 };
 
