@@ -319,10 +319,10 @@ const en: Dictionary = {
     confirm: "Paid, confirm",
     reject: "Cancel",
     videos: "Lesson videos",
-    videosIntro: "Each lesson has one video: the tutor's explanation. Paste a YouTube (unlisted) or Vimeo link and press Save.",
+    videosIntro: "Each lesson has one video: the tutor's explanation. Paste a YouTube (unlisted), Vimeo or HeyGen (Share) link and press Save.",
     videoMain: "Video lesson",
     videoCount: (n: number, total: number) => `${n} of ${total} lessons have a video`,
-    errVideo: "Link not recognised. Paste a YouTube or Vimeo link.",
+    errVideo: "Link not recognised. Paste a YouTube, Vimeo or HeyGen link.",
     savedVideo: "Saved.",
   },
 };

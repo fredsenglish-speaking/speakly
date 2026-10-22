@@ -317,10 +317,10 @@ const az = {
     confirm: "Ödənildi, təsdiqlə",
     reject: "Ləğv et",
     videos: "Lesson videoları",
-    videosIntro: "Hər lesson üçün bir video: müəllimin izahı. YouTube (unlisted) və ya Vimeo linkini yapışdırıb Yadda saxla basın.",
+    videosIntro: "Hər lesson üçün bir video: müəllimin izahı. YouTube (unlisted), Vimeo və ya HeyGen (Share) linkini yapışdırıb Yadda saxla basın.",
     videoMain: "Video dərs",
     videoCount: (n: number, total: number) => `${total} lesson-dan ${n}-də video var`,
-    errVideo: "Link tanınmadı. YouTube və ya Vimeo linki yapışdırın.",
+    errVideo: "Link tanınmadı. YouTube, Vimeo və ya HeyGen linki yapışdırın.",
     savedVideo: "Yadda saxlandı.",
   },
 };

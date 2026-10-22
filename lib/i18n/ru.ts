@@ -319,10 +319,10 @@ const ru: Dictionary = {
     confirm: "Оплачено, подтвердить",
     reject: "Отменить",
     videos: "Видео уроков",
-    videosIntro: "В каждом уроке одно видео: объяснение преподавателя. Вставьте ссылку YouTube (unlisted) или Vimeo и нажмите «Сохранить».",
+    videosIntro: "В каждом уроке одно видео: объяснение преподавателя. Вставьте ссылку YouTube (unlisted), Vimeo или HeyGen (Share) и нажмите «Сохранить».",
     videoMain: "Видеоурок",
     videoCount: (n: number, total: number) => `Видео есть в ${n} из ${total} уроков`,
-    errVideo: "Ссылка не распознана. Вставьте ссылку YouTube или Vimeo.",
+    errVideo: "Ссылка не распознана. Вставьте ссылку YouTube, Vimeo или HeyGen.",
     savedVideo: "Сохранено.",
   },
 };

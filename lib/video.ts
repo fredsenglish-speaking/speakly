@@ -1,4 +1,4 @@
-/** Turns a YouTube or Vimeo link into an embeddable player URL. */
+/** Turns a YouTube, Vimeo or HeyGen link into an embeddable player URL. */
 export function embedUrl(url: string | null | undefined): string | null {
   if (!url) return null;
   let u: URL;
@@ -18,5 +18,9 @@ export function embedUrl(url: string | null | undefined): string | null {
     return id ? `https://player.vimeo.com/video/${id}` : null;
   }
   if (host === "player.vimeo.com") return url;
+  if (host === "app.heygen.com") {
+    const id = u.pathname.match(/^\/(?:share|embeds|videos)\/([\w-]+)/)?.[1];
+    return id ? `https://app.heygen.com/embeds/${id}` : null;
+  }
   return null;
 }

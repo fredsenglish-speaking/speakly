@@ -9,3 +9,9 @@ test("embedUrl understands YouTube and Vimeo links", () => {
   assert.equal(embedUrl("https://example.com/video.mp4"), null);
   assert.equal(embedUrl(""), null);
 });
+
+test("embedUrl handles HeyGen share links", () => {
+  assert.equal(embedUrl("https://app.heygen.com/share/abc123def"), "https://app.heygen.com/embeds/abc123def");
+  assert.equal(embedUrl("https://app.heygen.com/embeds/abc123def"), "https://app.heygen.com/embeds/abc123def");
+  assert.equal(embedUrl("https://app.heygen.com/home"), null);
+});
