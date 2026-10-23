@@ -49,17 +49,17 @@ export function LessonPlayer({
       { kind: "quiz", label: L[1], qs: questions.filter((q) => q.part === PRACTICE_PART).map(fromGrammar) },
     ];
     if (vocab.length > 0) {
-      list.push({ kind: "words", label: L[2] }, { kind: "quiz", label: L[3], qs: vocabPractice(vocab, locale, t.lessons.meaningOf) });
+      list.push({ kind: "words", label: L[2] }, { kind: "quiz", label: L[3], qs: vocabPractice(vocab, locale, t.lessons) });
     }
     list.push({
       kind: "quiz",
       label: L[4],
       final: true,
-      qs: [...questions.filter((q) => q.part === FINAL_PART).map(fromGrammar), ...vocabFinal(vocab, locale, t.lessons.meaningOf)],
+      qs: [...questions.filter((q) => q.part === FINAL_PART).map(fromGrammar), ...vocabFinal(vocab, locale, t.lessons)],
     });
     // Renumber in case a lesson has no vocabulary yet.
     return list.map((s, i) => ({ ...s, label: `${i + 1}. ${s.label.replace(/^\d+\.\s*/, "")}` }));
-  }, [L, questions, vocab, locale, t.lessons.meaningOf]);
+  }, [L, questions, vocab, locale, t.lessons]);
 
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});

@@ -187,7 +187,7 @@ const en: Dictionary = {
     vocabHint: "Read the words and examples, and press 🔊 to hear them. The test comes next.",
     listen: "Listen",
     meaningOf: (term: string) => `What does "${term}" mean?`,
-    gapHint: "Choose the word that fits the gap.",
+    inEnglish: (meaning: string) => `Which word means "${meaning}"?`,
     finalHint: "Final test: the lesson topic and its words. Your grade comes from this test.",
     practiceScores: "Practice tests",
   },

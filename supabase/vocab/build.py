@@ -49,12 +49,21 @@ def main():
         rows += parse(f)
 
     lessons = {}
-    for slug, kind, term, *_ in rows:
-        lessons.setdefault(slug, {"w": [], "p": []})[kind].append(term.lower())
+    for slug, kind, term, az, ru, example in rows:
+        lessons.setdefault(slug, {"w": [], "p": [], "az": [], "ru": [], "gap": []})[kind].append(term.lower())
+        lessons[slug]["az"].append(az.lower())
+        lessons[slug]["ru"].append(ru.lower())
+        lessons[slug]["gap"].append(example.split("[")[1].split("]")[0].lower())
+    problems = []
     for slug, k in lessons.items():
-        assert len(k["w"]) == WORDS and len(k["p"]) == PHRASALS, f"{slug}: {len(k['w'])} words, {len(k['p'])} phrasal verbs"
-        terms = k["w"] + k["p"]
-        assert len(set(terms)) == len(terms), f"{slug}: duplicate term"
+        if len(k["w"]) != WORDS or len(k["p"]) != PHRASALS:
+            problems.append(f"{slug}: {len(k['w'])} words, {len(k['p'])} phrasal verbs")
+        k["term"] = k["w"] + k["p"]
+        for col in ("term", "az", "ru", "gap"):
+            dup = {x for x in k[col] if k[col].count(x) > 1}
+            if dup:
+                problems.append(f"{slug}: duplicate {col} {dup}")
+    assert not problems, "\n".join(problems)
 
     values, position = [], {}
     # Words first, then phrasal verbs, in file order.

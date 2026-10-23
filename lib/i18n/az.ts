@@ -185,7 +185,7 @@ const az = {
     vocabHint: "Sözləri və nümunələri oxuyun, 🔊 düyməsi ilə tələffüzə qulaq asın. Sonra test gələcək.",
     listen: "Dinlə",
     meaningOf: (term: string): string => `"${term}" nə deməkdir?`,
-    gapHint: "Boşluğa uyğun sözü seçin.",
+    inEnglish: (meaning: string): string => `"${meaning}" ingiliscə necədir?`,
     finalHint: "Yekun test: dərsin mövzusu və sözləri. Qiymət bu testə görə verilir.",
     practiceScores: "Practice testlər",
   },

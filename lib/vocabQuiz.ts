@@ -60,30 +60,37 @@ function gapQuestion(item: VocabItem, all: VocabItem[], tag: string): QuizQuesti
   return { key: `${tag}${item.id}`, question: gapSentence(item.example), ...choices(gapAnswer(item.example), pool, `${tag}${item.id}`), optionsLang: "en" };
 }
 
-function meaningQuestion(item: VocabItem, all: VocabItem[], locale: "az" | "ru", tag: string, meaningOf: (term: string) => string): QuizQuestion {
+function meaningQuestion(item: VocabItem, all: VocabItem[], locale: "az" | "ru", tag: string, ask: (term: string) => string): QuizQuestion {
   const pool = all.filter((v) => v.kind === item.kind && v.id !== item.id).map((v) => translation(v, locale));
-  return { key: `${tag}${item.id}`, question: meaningOf(item.term), ...choices(translation(item, locale), pool, `${tag}${item.id}`), optionsLang: locale };
+  return { key: `${tag}${item.id}`, question: ask(item.term), ...choices(translation(item, locale), pool, `${tag}${item.id}`), optionsLang: locale };
 }
 
-// Vocabulary test: one question per item. Words ask for the meaning (in English, a
-// gap to fill instead); phrasal verbs are always a gap in their example.
-export function vocabPractice(vocab: VocabItem[], locale: string, meaningOf: (term: string) => string): QuizQuestion[] {
-  return vocab.map((v) =>
-    v.kind === "word" && locale !== "en" ? meaningQuestion(v, vocab, locale === "ru" ? "ru" : "az", "v", meaningOf) : gapQuestion(v, vocab, "v"),
-  );
+// The other way round: the translation is given, the English term is the answer.
+function termQuestion(item: VocabItem, all: VocabItem[], locale: "az" | "ru", tag: string, ask: (meaning: string) => string): QuizQuestion {
+  const pool = all.filter((v) => v.kind === item.kind && v.id !== item.id).map((v) => v.term);
+  return { key: `${tag}${item.id}`, question: ask(translation(item, locale)), ...choices(item.term, pool, `${tag}${item.id}`), optionsLang: "en" };
+}
+
+export type Ask = { meaningOf: (term: string) => string; inEnglish: (meaning: string) => string };
+
+// Vocabulary test: one question per item, asking for its meaning. In English,
+// which has no translation to ask for, each item is a gap in its example instead.
+export function vocabPractice(vocab: VocabItem[], locale: string, ask: Ask): QuizQuestion[] {
+  if (locale === "en") return vocab.map((v) => gapQuestion(v, vocab, "v"));
+  const lang = locale === "ru" ? "ru" : "az";
+  return vocab.map((v) => meaningQuestion(v, vocab, lang, "v", ask.meaningOf));
 }
 
 // The vocabulary part of the final test: 7 words and 3 phrasal verbs, asked the
-// other way round from the vocabulary test where the reader's language allows it.
-export function vocabFinal(vocab: VocabItem[], locale: string, meaningOf: (term: string) => string): QuizQuestion[] {
+// other way round (meaning -> English term).
+export function vocabFinal(vocab: VocabItem[], locale: string, ask: Ask): QuizQuestion[] {
   const pick = (kind: VocabItem["kind"], n: number) =>
     seededShuffle(
       vocab.filter((v) => v.kind === kind),
       `final${kind}`,
     ).slice(0, n);
+  const items = [...pick("word", 7), ...pick("phrasal", 3)];
+  if (locale === "en") return items.map((v) => gapQuestion(v, vocab, "f"));
   const lang = locale === "ru" ? "ru" : "az";
-  return [
-    ...pick("word", 7).map((v) => gapQuestion(v, vocab, "f")),
-    ...pick("phrasal", 3).map((v) => (locale === "en" ? gapQuestion(v, vocab, "f") : meaningQuestion(v, vocab, lang, "f", meaningOf))),
-  ];
+  return items.map((v) => termQuestion(v, vocab, lang, "f", ask.inEnglish));
 }

@@ -1,0 +1,323 @@
+## a2-past-simple
+w | holiday | tətil | отпуск, каникулы | Last summer we went on [holiday] to Gabala.
+w | trip | səfər | поездка | The [trip] to Sheki took five hours.
+w | airport | hava limanı | аэропорт | We arrived at the [airport] at six o'clock.
+w | ticket | bilet | билет | I bought a train [ticket] yesterday.
+w | luggage | baqaj | багаж | Our [luggage] was very heavy.
+w | hotel | otel, mehmanxana | гостиница | We stayed in a small [hotel] near the sea.
+w | beach | çimərlik | пляж | The children played on the [beach] all day.
+w | museum | muzey | музей | We visited an old [museum] in London.
+w | journey | yol, səyahət | путешествие (дорога) | The [journey] by bus was long and boring.
+w | arrive | çatmaq, gəlmək | прибывать | Our plane [arrived] late at night.
+w | leave | tərk etmək, getmək | уезжать, покидать | We [left] the hotel at nine.
+w | visit | ziyarət etmək | посещать | Last year I [visited] my aunt in Baku.
+w | spend | keçirmək, xərcləmək | проводить, тратить | We [spent] two weeks in Turkey.
+w | enjoy | zövq almaq | наслаждаться | Did you [enjoy] the concert?
+w | forget | unutmaq | забывать | I [forgot] my passport at home!
+w | lose | itirmək | терять | She [lost] her phone on the train.
+w | yesterday | dünən | вчера | I called my grandmother [yesterday].
+w | ago | əvvəl (öncə) | назад | We moved to this flat two years [ago].
+w | abroad | xaricdə, xaricə | за границей, за границу | My cousin went [abroad] last year.
+w | souvenir | suvenir | сувенир | I brought you a [souvenir] from Paris.
+p | set off | yola düşmək | отправляться | We [set off] early in the morning.
+p | get back | geri qayıtmaq | возвращаться | When did you [get back] from your holiday?
+p | look around | ətrafa baxmaq, gəzmək | осматриваться | We [looked around] the old city.
+p | check in | qeydiyyatdan keçmək | регистрироваться | We [checked in] at the hotel at two.
+p | pick up | götürmək (maşınla) | забирать (кого-то) | My dad will [pick up] the children from school.
+
+## a2-comparatives
+w | cheap | ucuz | дешёвый | This phone is [cheaper] than that one.
+w | expensive | bahalı | дорогой | Gold is more [expensive] than silver.
+w | fast | sürətli | быстрый | A car is [faster] than a bicycle.
+w | slow | yavaş | медленный | The old train is very [slow].
+w | heavy | ağır | тяжёлый | My bag is [heavier] than yours.
+w | light | yüngül | лёгкий | This jacket is [lighter] than my coat.
+w | easy | asan | лёгкий (простой) | The second test was [easier] than the first.
+w | difficult | çətin | трудный | Chinese is more [difficult] than English for me.
+w | large | böyük, geniş | большой | Russia is [larger] than Canada.
+w | narrow | dar | узкий | The streets in the old city are [narrow].
+w | wide | enli, geniş | широкий | This river is very [wide].
+w | modern | müasir | современный | Baku is more [modern] than my village.
+w | quiet | sakit | тихий | The village is [quieter] than the city.
+w | noisy | səs-küylü | шумный | Our classroom is too [noisy] today.
+w | healthy | sağlam | здоровый | Fruit is [healthier] than chocolate.
+w | dangerous | təhlükəli | опасный | A lion is more [dangerous] than a cat.
+w | comfortable | rahat | удобный | This sofa is more [comfortable] than that chair.
+w | famous | məşhur | знаменитый | He is the most [famous] singer in the country.
+w | similar | oxşar | похожий | My sister and I have [similar] faces.
+w | different | fərqli | разный, другой | Your bag is [different] from mine.
+p | grow up | böyümək | вырастать | I [grew up] in a small town.
+p | slow down | sürəti azaltmaq | замедляться | Please [slow down], you are driving too fast!
+p | speed up | sürəti artırmaq | ускоряться | The bus [sped up] on the motorway.
+p | catch up | çatmaq (geri qalmayıb) | догонять | Walk faster and [catch up] with us!
+p | fall behind | geri qalmaq | отставать | He was ill, so he [fell behind] the other students.
+
+## a2-going-to
+w | plan | plan | план | What are your [plans] for the weekend?
+w | weekend | həftə sonu | выходные | We are going to visit friends at the [weekend].
+w | tomorrow | sabah | завтра | I'm going to buy a new bag [tomorrow].
+w | tonight | bu axşam | сегодня вечером | We're going to watch a film [tonight].
+w | soon | tezliklə | скоро | The bus is going to come [soon].
+w | wedding | toy | свадьба | My cousin's [wedding] is next month.
+w | party | qonaqlıq, ziyafət | вечеринка | We are going to have a birthday [party].
+w | invite | dəvət etmək | приглашать | I'm going to [invite] all my friends.
+w | decide | qərar vermək | решать | Have you [decided] what to study?
+w | prepare | hazırlamaq | готовить(ся) | She is going to [prepare] dinner for ten people.
+w | save | yığmaq (pul) | копить | I'm going to [save] money for a new laptop.
+w | rent | kirayə etmək | снимать (арендовать) | They are going to [rent] a flat in the centre.
+w | move | köçmək | переезжать | We are going to [move] to a new house.
+w | course | kurs | курс | I'm going to start an English [course].
+w | exam | imtahan | экзамен | He is going to pass the [exam] easily.
+w | future | gələcək | будущее | What are you going to do in the [future]?
+w | goal | məqsəd | цель | My [goal] is to speak English well.
+w | probably | yəqin ki, ehtimal | вероятно | It's [probably] going to rain.
+w | together | birlikdə | вместе | We are going to travel [together].
+w | next | gələn, növbəti | следующий | I'm going to see him [next] week.
+p | take up | (hobbiyə) başlamaq | начинать заниматься | I'm going to [take up] swimming.
+p | give up | atmaq, əl çəkmək | бросать (привычку) | My dad is going to [give up] smoking.
+p | sign up | yazılmaq | записываться | I'm going to [sign up] for a dance class.
+p | look forward to | səbirsizliklə gözləmək | с нетерпением ждать | I [look forward to] the summer holidays.
+p | put off | təxirə salmaq | откладывать | Don't [put off] your homework until Sunday.
+
+## a2-countable
+w | bread | çörək | хлеб | Can you buy some [bread], please?
+w | rice | düyü | рис | We need a kilo of [rice] for plov.
+w | sugar | şəkər | сахар | I don't take [sugar] in my tea.
+w | salt | duz | соль | There isn't much [salt] in this soup.
+w | flour | un | мука | You need two cups of [flour] for the cake.
+w | butter | kərə yağı | сливочное масло | Put some [butter] on the bread.
+w | cheese | pendir | сыр | Is there any [cheese] in the fridge?
+w | meat | ət | мясо | My brother doesn't eat [meat].
+w | egg | yumurta | яйцо | How many [eggs] do we need?
+w | onion | soğan | лук | Cut the [onions] into small pieces.
+w | potato | kartof | картофель | I'd like fried [potatoes], please.
+w | tomato | pomidor | помидор | There are a few [tomatoes] on the table.
+w | juice | şirə | сок | Would you like a glass of orange [juice]?
+w | bottle | şüşə (butulka) | бутылка | Can I have a [bottle] of water?
+w | piece | parça, tikə | кусок | Would you like a [piece] of cake?
+w | packet | paçka, qutu | пачка | Buy a [packet] of biscuits, please.
+w | kilo | kiloqram | килограмм | Two [kilos] of apples, please.
+w | recipe | resept | рецепт | This is my grandmother's [recipe] for dolma.
+w | fridge | soyuducu | холодильник | Put the milk in the [fridge].
+w | shopping list | alış-veriş siyahısı | список покупок | Don't forget the [shopping list]!
+p | run out of | qurtarmaq (bitmək) | заканчиваться | We have [run out of] milk.
+p | cut up | doğramaq | нарезать | [Cut up] the carrots and put them in the pot.
+p | eat out | çöldə (restoranda) yemək | есть вне дома | We often [eat out] on Fridays.
+p | heat up | qızdırmaq | разогревать | I'll [heat up] the soup for you.
+p | pour out | tökmək (qaba) | наливать | Can you [pour out] the tea, please?
+
+## a2-simple-vs-continuous
+w | usually | adətən | обычно | I [usually] walk to school.
+w | at the moment | hazırda | в данный момент | She is cooking [at the moment].
+w | right now | elə indi | прямо сейчас | I can't talk [right now].
+w | nowadays | bu günlərdə | в наши дни | [Nowadays] many people work from home.
+w | office | ofis | офис | My mum works in an [office].
+w | factory | zavod, fabrik | завод, фабрика | My uncle works in a car [factory].
+w | manager | menecer, müdir | менеджер | The [manager] is having a meeting now.
+w | nurse | tibb bacısı | медсестра | The [nurse] is helping a patient.
+w | engineer | mühəndis | инженер | My father is an [engineer].
+w | driver | sürücü | водитель | The bus [driver] is waiting for us.
+w | customer | müştəri | клиент, покупатель | The shop assistant is talking to a [customer].
+w | job | iş | работа | She loves her new [job].
+w | busy | məşğul | занятый | I'm very [busy] this week.
+w | build | tikmək | строить | They are [building] a new school.
+w | repair | təmir etmək | ремонтировать | Dad is [repairing] the car.
+w | wear | geyinmək (əynində olmaq) | носить (одежду) | She is [wearing] a red dress today.
+w | wait | gözləmək | ждать | We are [waiting] for the bus.
+w | sell | satmaq | продавать | That shop [sells] shoes.
+w | earn | qazanmaq | зарабатывать | He [earns] a good salary.
+w | currently | hal-hazırda | в настоящее время | I'm [currently] living with my parents.
+p | look for | axtarmaq | искать | I'm [looking for] my keys.
+p | work out | idman etmək | тренироваться | He [works out] at the gym every day.
+p | hang out | vaxt keçirmək (dostlarla) | проводить время | The kids are [hanging out] in the park.
+p | look after | qayğı göstərmək | присматривать | She [looks after] her little brother.
+p | carry on | davam etmək | продолжать | [Carry on] reading, please.
+
+## a2-will
+w | weather | hava | погода | The [weather] will be sunny tomorrow.
+w | rain | yağış | дождь | I think there will be [rain] later.
+w | snow | qar | снег | Will there be [snow] in January?
+w | wind | külək | ветер | The [wind] is very strong today.
+w | cloud | bulud | облако | Look at those dark [clouds]!
+w | storm | fırtına | буря, шторм | There will be a [storm] tonight.
+w | sunny | günəşli | солнечный | It will be [sunny] on Saturday.
+w | temperature | temperatur | температура | The [temperature] will be 30 degrees.
+w | forecast | proqnoz | прогноз | The weather [forecast] says it will rain.
+w | umbrella | çətir | зонт | Take an [umbrella]. It will rain.
+w | promise | söz vermək | обещать | I [promise] I will call you.
+w | maybe | bəlkə | может быть | [Maybe] I will go to the party.
+w | definitely | mütləq, şübhəsiz | определённо | I will [definitely] come to your wedding.
+w | hope | ümid etmək | надеяться | I [hope] you will feel better soon.
+w | believe | inanmaq | верить | I [believe] you will pass the exam.
+w | robot | robot | робот | In the future, [robots] will do housework.
+w | world | dünya | мир | The [world] will be different in 2100.
+w | century | əsr | век | People will live on Mars this [century].
+w | offer | təklif etmək | предлагать | He [offered] to carry my bag.
+w | help | kömək etmək | помогать | Don't worry, I'll [help] you.
+p | turn on | yandırmaq (açmaq) | включать | It's dark. I'll [turn on] the light.
+p | turn off | söndürmək | выключать | I'll [turn off] the TV now.
+p | clear up | açılmaq (hava) | проясняться | The weather will [clear up] in the afternoon.
+p | call back | geri zəng etmək | перезванивать | I'm busy now. I'll [call back] in ten minutes.
+p | find out | öyrənmək, aşkar etmək | узнавать | I'll [find out] the time of the train.
+
+## a2-should
+w | health | sağlamlıq | здоровье | Sport is good for your [health].
+w | headache | baş ağrısı | головная боль | I have a terrible [headache].
+w | fever | qızdırma | жар, температура | You have a [fever]. You should stay in bed.
+w | cough | öskürək | кашель | You should drink warm milk for your [cough].
+w | cold (illness) | soyuqdəymə | простуда | I think I have a [cold].
+w | medicine | dərman | лекарство | You should take this [medicine] twice a day.
+w | pharmacy | aptek | аптека | Is there a [pharmacy] near here?
+w | dentist | diş həkimi | стоматолог | You should see a [dentist] about your tooth.
+w | appointment | qəbul (həkimə) | приём, запись | I have a doctor's [appointment] at four.
+w | rest | dincəlmək | отдыхать | You should [rest] for a few days.
+w | sleep | yatmaq | спать | You should [sleep] eight hours a night.
+w | exercise | idman etmək | делать упражнения | You should [exercise] three times a week.
+w | advice | məsləhət | совет | Can you give me some [advice]?
+w | diet | pəhriz | диета | You should eat a balanced [diet].
+w | vegetables | tərəvəz | овощи | You should eat more [vegetables].
+w | stomach | mədə | желудок, живот | My [stomach] hurts.
+w | pain | ağrı | боль | I have a [pain] in my back.
+w | ill | xəstə | больной | She is [ill] today, so she isn't at school.
+w | stress | stres | стресс | You should not have so much [stress].
+w | careful | ehtiyatlı | осторожный | You should be [careful] on the road.
+p | lie down | uzanmaq | ложиться | You look tired. You should [lie down].
+p | cut down on | azaltmaq | сокращать | You should [cut down on] sugar.
+p | get over | sağalmaq | поправляться | It took me a week to [get over] the flu.
+p | stay up | gec yatmaq | не ложиться спать | You shouldn't [stay up] so late.
+p | calm down | sakitləşmək | успокаиваться | [Calm down] and drink some water.
+
+## a2-adverbs-frequency
+w | always | həmişə | всегда | I [always] brush my teeth before bed.
+w | often | tez-tez | часто | We [often] go to the cinema.
+w | sometimes | bəzən | иногда | I [sometimes] walk to work.
+w | rarely | nadir hallarda | редко | He [rarely] eats fast food.
+w | never | heç vaxt | никогда | She [never] drinks coffee.
+w | once | bir dəfə | один раз | I go swimming [once] a week.
+w | twice | iki dəfə | два раза | We have English lessons [twice] a week.
+w | every day | hər gün | каждый день | I read a book [every day].
+w | routine | gündəlik qayda | распорядок | My morning [routine] is very simple.
+w | breakfast | səhər yeməyi | завтрак | I always have [breakfast] at seven.
+w | lunch | nahar | обед | We usually have [lunch] at one o'clock.
+w | dinner | şam yeməyi | ужин | My family has [dinner] together.
+w | shower | duş | душ | I take a [shower] every morning.
+w | homework | ev tapşırığı | домашнее задание | I always do my [homework] after school.
+w | housework | ev işi | работа по дому | My brother never helps with the [housework].
+w | gym | idman zalı | спортзал | She goes to the [gym] three times a week.
+w | early | erkən | рано | I usually get up [early].
+w | weekday | iş günü | будний день | On [weekdays] I work from nine to five.
+w | hardly ever | demək olar ki, heç vaxt | почти никогда | I [hardly ever] watch TV.
+w | habit | vərdiş | привычка | Reading is a good [habit].
+p | get dressed | geyinmək | одеваться | I [get dressed] after breakfast.
+p | brush up | təkmilləşdirmək (yadda təzələmək) | освежать (знания) | I often [brush up] my English before a trip.
+p | go out | çölə çıxmaq, gəzməyə getmək | выходить (гулять) | We sometimes [go out] on Saturday night.
+p | tidy up | yığışdırmaq | убирать | I always [tidy up] my room on Sunday.
+p | wash up | qab yumaq | мыть посуду | Who usually [washes up] in your family?
+
+## a2-object-pronouns
+w | parents | valideynlər | родители | I love my [parents] very much.
+w | husband | ər | муж | Her [husband] is a doctor.
+w | wife | arvad, həyat yoldaşı | жена | His [wife] works in a bank.
+w | son | oğul | сын | Their [son] is five years old.
+w | daughter | qız (övlad) | дочь | My [daughter] loves drawing.
+w | uncle | əmi, dayı | дядя | My [uncle] lives in Moscow.
+w | aunt | xala, bibi | тётя | My [aunt] makes great cakes.
+w | cousin | əmioğlu, xalaqızı və s. | двоюродный брат/сестра | My [cousin] and I are the same age.
+w | grandparents | baba və nənə | бабушка и дедушка | I visit my [grandparents] every Sunday.
+w | neighbour | qonşu | сосед | Our [neighbour] has a big dog.
+w | classmate | sinif yoldaşı | одноклассник | My [classmate] helped me with maths.
+w | guest | qonaq | гость | We have [guests] for dinner tonight.
+w | baby | körpə | младенец | The [baby] is sleeping. Don't wake her!
+w | call | zəng etmək | звонить | Please [call] me tomorrow.
+w | meet | görüşmək | встречать(ся) | I'll [meet] you at the station.
+w | tell | demək, danışmaq | говорить, рассказывать | Can you [tell] me the answer?
+w | send | göndərmək | отправлять | I'll [send] you a message.
+w | thank | təşəkkür etmək | благодарить | I want to [thank] you for your help.
+w | love | sevmək | любить | My grandma [loves] us very much.
+w | relative | qohum | родственник | All my [relatives] came to the wedding.
+p | take after | oxşamaq (ailədə) | быть похожим на | She [takes after] her mother.
+p | get on with | yola getmək | ладить | I [get on with] my sister very well.
+p | bring up | böyütmək | воспитывать | My grandparents [brought up] five children.
+p | look up to | (kiməsə) hörmət etmək, nümunə götürmək | уважать, равняться на | I [look up to] my father.
+p | ring up | telefonla zəng vurmaq | позвонить по телефону | I'll [ring up] my aunt this evening.
+
+## a2-possessive-pronouns
+w | key | açar | ключ | Is this [key] yours or mine?
+w | wallet | pul kisəsi | бумажник | I can't find my [wallet].
+w | glasses | eynək | очки | These [glasses] are hers.
+w | umbrella | çətir | зонт | Whose [umbrella] is this?
+w | jacket | gödəkçə | куртка | That black [jacket] is mine.
+w | watch | qol saatı | часы (наручные) | Is this your [watch]?
+w | ring | üzük | кольцо | Her [ring] is gold.
+w | backpack | bel çantası | рюкзак | My [backpack] is blue. Yours is red.
+w | toy | oyuncaq | игрушка | This [toy] is his, not yours.
+w | laptop | noutbuk | ноутбук | Can I use your [laptop]?
+w | charger | adapter (enerji dolduran) | зарядка | Is this phone [charger] yours?
+w | notebook | dəftər | тетрадь | I left my [notebook] at school.
+w | pen | qələm | ручка | Can I borrow your [pen]? Mine doesn't work.
+w | belong | aid olmaq | принадлежать | This book [belongs] to me.
+w | own | öz | собственный | I have my [own] room.
+w | owner | sahib | владелец | Who is the [owner] of this car?
+w | borrow | borc almaq (müvəqqəti) | брать взаймы | Can I [borrow] your bike?
+w | lend | borc vermək (müvəqqəti) | одалживать | Can you [lend] me your pen?
+w | share | bölüşmək | делиться | I [share] a room with my brother.
+w | whose | kimin | чей | [Whose] bag is this?
+p | give back | qaytarmaq | возвращать | Please [give back] the book tomorrow.
+p | put away | yerinə qoymaq | убирать (на место) | [Put away] your toys, please.
+p | hand in | təhvil vermək | сдавать | I [handed in] my homework yesterday.
+p | mix up | qarışdırmaq | путать | Sorry, I [mixed up] our bags.
+p | try on | geyinib yoxlamaq | примерять | Can I [try on] your hat?
+
+## a2-too-enough
+w | size | ölçü | размер | What [size] are these shoes?
+w | price | qiymət | цена | The [price] is too high.
+w | discount | endirim | скидка | Is there a [discount] on this coat?
+w | sale | endirimli satış | распродажа | There is a big [sale] at the mall.
+w | cash | nağd pul | наличные | Can I pay in [cash]?
+w | receipt | qəbz, çek | чек | Can I have the [receipt], please?
+w | shop assistant | satıcı | продавец | The [shop assistant] was very helpful.
+w | changing room | paltar dəyişmə otağı | примерочная | Where is the [changing room]?
+w | tight | dar (paltar) | тесный | These jeans are too [tight].
+w | loose | boş, gen (paltar) | свободный | This shirt is too [loose] for me.
+w | short | qısa | короткий | The skirt is too [short].
+w | long | uzun | длинный | Your hair is [long] and beautiful.
+w | afford | (pulu) çatmaq | позволить себе | I can't [afford] a new car.
+w | pay | ödəmək | платить | How much did you [pay] for it?
+w | cost | dəyərində olmaq | стоить | How much does this bag [cost]?
+w | money | pul | деньги | I don't have enough [money].
+w | enough | kifayət qədər | достаточно | Is it big [enough] for you?
+w | wallet | pul kisəsi | бумажник | I left my [wallet] at home.
+w | trousers | şalvar | брюки | These [trousers] are too long.
+w | coat | palto | пальто | This [coat] isn't warm enough.
+p | try on | geyinib yoxlamaq | примерять | Can I [try on] these shoes?
+p | take back | qaytarmaq (mağazaya) | возвращать (в магазин) | It was too small, so I will [take back] the shirt tomorrow.
+p | pay for | pulunu ödəmək | платить за | I [paid for] the tickets.
+p | shop around | qiymətləri müqayisə etmək | сравнивать цены | It's good to [shop around] before you buy.
+p | go up | artmaq (qiymət) | расти (о цене) | Prices [go up] every year.
+
+## a2-adverbs-manner
+w | carefully | diqqətlə | внимательно, осторожно | Please drive [carefully].
+w | quickly | tez, cəld | быстро | He finished his lunch very [quickly].
+w | slowly | yavaş-yavaş | медленно | Can you speak more [slowly], please?
+w | quietly | sakitcə | тихо | The baby is sleeping, so talk [quietly].
+w | loudly | ucadan | громко | The music was playing [loudly].
+w | well | yaxşı | хорошо | She sings very [well].
+w | badly | pis | плохо | Our team played [badly] yesterday.
+w | hard | çox (ciddi) | усердно | My sister works very [hard].
+w | easily | asanlıqla | легко | He won the race [easily].
+w | happily | xoşbəxtliklə, sevinclə | радостно | The children laughed [happily].
+w | politely | nəzakətlə | вежливо | Please ask [politely].
+w | race | yarış | гонка, забег | Who won the [race]?
+w | team | komanda | команда | Our [team] played very well.
+w | match | oyun, matç | матч | We watched the football [match].
+w | player | oyunçu | игрок | He is the best [player] in the team.
+w | win | qalib gəlmək | побеждать | Did your team [win]?
+w | throw | atmaq | бросать | He [throws] the ball very far.
+w | catch | tutmaq | ловить | [Catch] the ball!
+w | jump | tullanmaq | прыгать | She can [jump] very high.
+w | swim | üzmək | плавать | Fish [swim] fast in the water.
+p | warm up | qızışmaq (idmandan əvvəl) | разминаться | Always [warm up] before you run.
+p | join in | qoşulmaq | присоединяться | Come and [join in] the game!
+p | fall over | yıxılmaq | падать | He [fell over] and hurt his knee.
+p | knock out | (yarışdan) çıxarmaq | выбивать (из турнира) | Our team was [knocked out] in the first round.
+p | take part in | iştirak etmək | участвовать | Many students [take part in] the race.
