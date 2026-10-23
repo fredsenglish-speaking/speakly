@@ -1,0 +1,323 @@
+## b2-passive
+w | headline | başlıq (xəbər) | заголовок | The news was printed in big [headlines].
+w | journalist | jurnalist | журналист | The story was written by a young [journalist].
+w | article | məqalə | статья | This [article] was published yesterday.
+w | publish | dərc etmək | публиковать | The book was [published] in 2019.
+w | broadcast | yayımlamaq | транслировать | The match will be [broadcast] live.
+w | audience | tamaşaçılar, auditoriya | аудитория, зрители | The show is watched by a large [audience].
+w | interview | müsahibə götürmək | брать интервью | The minister was [interviewed] on TV.
+w | announce | elan etmək | объявлять | The winner will be [announced] tomorrow.
+w | rumour | şayiə | слух | The [rumour] was spread on social media.
+w | source | mənbə | источник | The information came from a reliable [source].
+w | reliable | etibarlı | надёжный | Is this website [reliable]?
+w | bias | qərəz | предвзятость | The report was criticised for its [bias].
+w | censor | senzura etmək | цензурировать | The film was [censored] in some countries.
+w | coverage | işıqlandırma (mediada) | освещение (в СМИ) | The event got a lot of media [coverage].
+w | editor | redaktor | редактор | The article was checked by the [editor].
+w | reveal | aşkara çıxarmaq | раскрывать | The truth was finally [revealed].
+w | investigate | araşdırmaq | расследовать | The case is being [investigated] by the police.
+w | issue | məsələ, problem | вопрос, проблема | Climate change is a serious [issue].
+w | breaking news | son dəqiqə xəbəri | срочные новости | We interrupt this programme for [breaking news].
+w | viewer | izləyici | зритель | Thousands of [viewers] complained about the show.
+p | cover up | ört-basdır etmək | скрывать | The mistake was [covered up] by the company.
+p | leak out | sızmaq (məlumat) | просочиться | The secret plans [leaked out] to the press.
+p | follow up | davamını izləmək, araşdırmaq | продолжить (расследование) | The story was [followed up] by other newspapers.
+p | play down | əhəmiyyətini azaltmaq | преуменьшать | The problem was [played down] by the government.
+p | blow up | partlatmaq | взрывать | The old bridge was [blown up] in the war.
+
+## b2-conditionals
+w | regret | təəssüflənmək, peşman olmaq | сожалеть | I [regret] not studying harder.
+w | decision | qərar | решение | It was the right [decision].
+w | consequence | nəticə (fəsad) | последствие | If you break the rules, there will be [consequences].
+w | risk | risk | риск | If I had taken the [risk], I might be rich now.
+w | invest | sərmayə qoymaq | инвестировать | If I had money, I would [invest] it in property.
+w | loan | kredit, borc | кредит, заём | If we got a [loan], we could buy a house.
+w | debt | borc | долг | He wouldn't be in [debt] if he had saved money.
+w | afford | imkanı olmaq | позволить себе | If I could [afford] it, I would travel more.
+w | budget | büdcə | бюджет | We need to stay within our [budget].
+w | income | gəlir | доход | If my [income] were higher, I would move.
+w | savings | əmanət, yığım | сбережения | We spent all our [savings] on the trip.
+w | lottery | lotereya | лотерея | What would you do if you won the [lottery]?
+w | fortune | sərvət | состояние (богатство) | He made a [fortune] in business.
+w | wealthy | varlı | богатый | If I were [wealthy], I would help poor families.
+w | otherwise | əks halda | иначе | Hurry up, [otherwise] we'll miss the train.
+w | provided that | şərti ilə ki | при условии, что | You can go, [provided that] you come back early.
+w | suppose | fərz etmək | предполагать | [Suppose] you lost your job, what would you do?
+w | hesitate | tərəddüd etmək | колебаться | If I were you, I wouldn't [hesitate].
+w | outcome | nəticə (yekun) | результат, исход | The [outcome] would have been different.
+w | alternative | alternativ | альтернатива | If there were an [alternative], I would take it.
+p | pay off | ödəyib qurtarmaq | выплачивать | If I [pay off] the loan, I'll be free.
+p | save up | yığmaq (pul, uzun müddət) | копить | If you [save up], you can buy a car.
+p | fall through | baş tutmamaq | сорваться | If the deal [falls through], we'll lose money.
+p | go ahead | başlamaq (icazə ilə), davam etmək | приступать | If everyone agrees, we'll [go ahead] with the plan.
+p | back out | geri çəkilmək (razılaşmadan) | отказаться (от договора) | He would never [back out] of a promise.
+
+## b2-reported-speech
+w | admit | etiraf etmək | признавать | He [admitted] that he had lied.
+w | deny | inkar etmək | отрицать | She [denied] taking the money.
+w | claim | iddia etmək | утверждать | He [claimed] that he was innocent.
+w | complain | şikayət etmək | жаловаться | The customer [complained] about the service.
+w | explain | izah etmək | объяснять | She [explained] why she was late.
+w | insist | israr etmək | настаивать | He [insisted] on paying for dinner.
+w | warn | xəbərdar etmək | предупреждать | They [warned] us not to swim there.
+w | persuade | razı salmaq | убеждать | She [persuaded] me to join the club.
+w | mention | qeyd etmək, xatırlatmaq | упоминать | He [mentioned] that he was moving.
+w | recommend | tövsiyə etmək | рекомендовать | The doctor [recommended] resting for a week.
+w | threaten | hədələmək | угрожать | He [threatened] to call the police.
+w | whisper | pıçıldamaq | шептать | She [whispered] that she had a secret.
+w | announce | bəyan etmək | объявлять | The company [announced] that it would close.
+w | confirm | təsdiqləmək | подтверждать | The hotel [confirmed] our booking.
+w | statement | bəyanat | заявление | The police made a [statement] this morning.
+w | message | mesaj | сообщение | She left a [message] saying she'd be late.
+w | rumour | şayiə | слух | There's a [rumour] that the boss is leaving.
+w | misunderstand | səhv başa düşmək | неправильно понять | I think you [misunderstood] me.
+w | accuse | ittiham etmək | обвинять | They [accused] him of stealing.
+w | encourage | həvəsləndirmək | поощрять | My teacher [encouraged] me to write.
+p | pass on | ötürmək (xəbər) | передавать | Please [pass on] the message to Ali.
+p | make up | uydurmaq | выдумывать | He [made up] a story about his dog.
+p | speak up | ucadan danışmaq, fikrini demək | говорить громче | Could you [speak up]? I can't hear you.
+p | get across | çatdırmaq (fikri) | донести (мысль) | It's hard to [get across] my ideas in English.
+p | own up | boynuna almaq | признаться | Nobody [owned up] to breaking the window.
+
+## b2-relative-clauses
+w | personality | şəxsiyyət, xarakter | личность, характер | She has a strong [personality].
+w | generous | səxavətli | щедрый | He's a man who is very [generous] with his time.
+w | selfish | eqoist | эгоистичный | People who are [selfish] only think of themselves.
+w | reliable | etibarlı | надёжный | I need a friend who is [reliable].
+w | ambitious | iddialı (məqsədyönlü) | амбициозный | She's an [ambitious] woman who wants to be a director.
+w | stubborn | inadkar | упрямый | My brother, who is very [stubborn], never says sorry.
+w | sensitive | həssas | чувствительный | She's a [sensitive] girl who cries easily.
+w | patient | səbirli | терпеливый | A teacher who is [patient] is a good teacher.
+w | arrogant | təkəbbürlü | высокомерный | I don't like people who are [arrogant].
+w | modest | təvazökar | скромный | He's very [modest] about his success.
+w | outgoing | ünsiyyətcil | общительный | Ali, who is very [outgoing], has lots of friends.
+w | sociable | cəmiyyəti sevən | компанейский | She's a [sociable] person who loves parties.
+w | trustworthy | etibar ediləsi | заслуживающий доверия | We need someone who is [trustworthy].
+w | creative | yaradıcı | творческий | The designer, whose ideas are very [creative], won a prize.
+w | curious | maraqlı (bilməyə həvəsli) | любопытный | Children are naturally [curious].
+w | tolerant | dözümlü | терпимый | We should be [tolerant] of other cultures.
+w | mature | yetkin | зрелый | He's very [mature] for his age.
+w | sincere | səmimi | искренний | She gave me a [sincere] apology.
+w | character | xarakter | характер | He is a man of strong [character].
+w | quality | keyfiyyət, xüsusiyyət | качество | Honesty is the [quality] I value most.
+p | show off | lovğalanmaq | хвастаться | I don't like people who [show off].
+p | stand out | seçilmək | выделяться | She's the one who [stands out] in a crowd.
+p | count on | bel bağlamaq | рассчитывать на | He's a friend who you can [count on].
+p | let in on | sirrə ortaq etmək | посвятить в (тайну) | She's the only one I [let in on] the secret.
+p | look down on | xor baxmaq | смотреть свысока | I don't like people who [look down on] others.
+
+## b2-future-continuous-perfect
+w | urban | şəhər (sifət) | городской | [Urban] areas will be growing fast.
+w | population | əhali | население | By 2050 the [population] will have grown a lot.
+w | skyscraper | göydələn | небоскрёб | They will have built a new [skyscraper] by next year.
+w | infrastructure | infrastruktur | инфраструктура | The city will be improving its [infrastructure].
+w | sustainable | dayanıqlı | устойчивый | We need more [sustainable] cities.
+w | renewable | bərpa olunan | возобновляемый | We will be using [renewable] energy.
+w | electric | elektrik (sifət) | электрический | Most people will be driving [electric] cars.
+w | commute | işə gedib-gəlmək | ездить на работу | Millions of people [commute] every day.
+w | suburb | şəhərətrafı | пригород | They will be living in the [suburbs].
+w | overcrowded | həddindən artıq sıx | перенаселённый | The city will have become [overcrowded].
+w | housing | mənzil | жильё | The government will have built cheap [housing].
+w | facility | obyekt, imkan | объект, удобство | The city will have new sports [facilities].
+w | district | rayon | район | A new business [district] will be built here.
+w | construction | tikinti | строительство | [Construction] of the metro will have finished by 2030.
+w | resident | sakin | житель | The [residents] will be moving into new flats.
+w | pedestrian | piyada | пешеход | The centre will be for [pedestrians] only.
+w | smart | ağıllı | умный | We will be living in [smart] homes.
+w | predict | proqnozlaşdırmaq | предсказывать | Experts [predict] that cities will grow.
+w | decade | onillik | десятилетие | In a [decade], life will be very different.
+w | expand | genişlənmək | расширяться | The airport will have [expanded] by then.
+p | pull down | sökmək | сносить | They will have [pulled down] the old factory.
+p | phase out | tədricən aradan qaldırmaq | постепенно отказываться | Petrol cars will be [phased out].
+p | move in | köçüb gəlmək | въезжать | We will be [moving in] next month.
+p | spread out | yayılmaq | раскинуться | The city will have [spread out] into the countryside.
+p | fit in | yerləşmək, uyğunlaşmaq | вписываться | The new buildings must [fit in] with the old ones.
+
+## b2-wish
+w | lifestyle | həyat tərzi | образ жизни | I wish I had a healthier [lifestyle].
+w | habit | vərdiş | привычка | I wish I could break this bad [habit].
+w | stressful | gərgin | напряжённый | I wish my job wasn't so [stressful].
+w | routine | gündəlik rejim | распорядок | I wish my daily [routine] was more interesting.
+w | balance | balans | баланс | I need a better work-life [balance].
+w | ambition | arzu, iddia | амбиция | My [ambition] is to open my own café.
+w | dream | arzu, xəyal | мечта | It was my [dream] to live by the sea.
+w | wealthy | varlı | состоятельный | I wish I were [wealthy].
+w | appearance | xarici görünüş | внешность | She worries too much about her [appearance].
+w | confidence | özünə inam | уверенность | I wish I had more [confidence].
+w | patience | səbir | терпение | I wish I had more [patience] with my kids.
+w | spare time | boş vaxt | свободное время | I wish I had more [spare time].
+w | complain | gileylənmək | жаловаться | I wish you wouldn't [complain] all the time.
+w | wasted | boşa getmiş | потраченный впустую | I wish I hadn't [wasted] so much time.
+w | apologise | üzr istəmək | извиняться | I wish I had [apologised] to her.
+w | ideally | ideal halda | в идеале | [Ideally], I'd like to work from home.
+w | if only | kaş ki | если бы только | [If only] I had listened to you!
+w | fluent | sərbəst (dildə) | беглый | I wish I were [fluent] in French.
+w | content | razı, məmnun | довольный | She is [content] with her simple life.
+w | longing | həsrət | тоска | He felt a [longing] for home.
+p | settle down | yerləşib sakit həyat qurmaq | остепениться | I wish he would [settle down] and get married.
+p | slow down | sakit yaşamağa başlamaq | сбавить темп | I wish I could [slow down] and enjoy life.
+p | miss out on | qaçırmaq (fürsət) | упустить | I wish I hadn't [missed out on] that trip.
+p | catch up on | çatdırmaq (gecikəni) | наверстать | I wish I could [catch up on] some sleep.
+p | get rid of | yaxa qurtarmaq | избавиться от | I wish I could [get rid of] this old car.
+
+## b2-deduction
+w | evidence | sübut | доказательство | There is no [evidence] that he was there.
+w | clue | ipucu | улика, подсказка | The detective found an important [clue].
+w | suspect | şübhəli | подозреваемый | The [suspect] must have left early.
+w | detective | detektiv | детектив | The [detective] solved the case.
+w | mystery | sirr, müəmma | загадка, тайна | His disappearance is still a [mystery].
+w | footprint | ayaq izi | след | There were [footprints] in the snow.
+w | fingerprint | barmaq izi | отпечаток пальца | They found his [fingerprints] on the glass.
+w | alibi | alibi | алиби | He can't have done it. He has an [alibi].
+w | motive | motiv | мотив | What was the [motive] for the crime?
+w | guilty | təqsirli | виновный | He must be [guilty]. He's lying.
+w | innocent | günahsız | невиновный | She can't be guilty. She's [innocent].
+w | obvious | aydın, açıq-aşkar | очевидный | It's [obvious] that someone was here.
+w | conclusion | nəticə (qənaət) | вывод | What [conclusion] can we draw?
+w | logical | məntiqi | логичный | That's the only [logical] answer.
+w | assume | ehtimal etmək, fərz etmək | предполагать | I [assume] he must be at home.
+w | certain | əmin | уверенный | I'm [certain] she was there.
+w | disappear | itmək, yoxa çıxmaq | исчезать | The painting [disappeared] last night.
+w | puzzled | çaşqın | озадаченный | The police were [puzzled] by the case.
+w | solve | həll etmək | раскрыть, решить | They might never [solve] the crime.
+w | apparently | görünür | по-видимому | [Apparently], the door wasn't locked.
+p | figure out | anlamaq, tapmaq | разобраться | I can't [figure out] how he got in.
+p | rule out | istisna etmək | исключать | The police have [ruled out] murder.
+p | add up | məntiqli olmaq | сходиться (иметь смысл) | His story doesn't [add up].
+p | track down | izinə düşüb tapmaq | выследить | They finally [tracked down] the thief.
+p | look into | araşdırmaq | изучать, расследовать | The police are [looking into] the case.
+
+## b2-causative
+w | haircut | saç kəsimi | стрижка | I need to get a [haircut].
+w | hairdresser | bərbər (qadın), saç ustası | парикмахер | I had my hair cut at the [hairdresser's].
+w | mechanic | mexanik | механик | I had my car fixed by a [mechanic].
+w | plumber | santexnik | сантехник | We had the pipes repaired by a [plumber].
+w | electrician | elektrik ustası | электрик | We need an [electrician] to check the lights.
+w | decorate | bəzəmək, təmir etmək (otağı) | отделывать (комнату) | We're having the living room [decorated].
+w | install | quraşdırmaq | устанавливать | We had a new kitchen [installed].
+w | deliver | çatdırmaq | доставлять | I had the sofa [delivered] yesterday.
+w | service | texniki baxış | техобслуживание | You should have your car [serviced] every year.
+w | renovate | yeniləmək, əsaslı təmir etmək | реконструировать | They are having the old house [renovated].
+w | tailor | dərzi | портной | I had my suit made by a [tailor].
+w | alter | dəyişmək (paltarı) | переделывать | I had my dress [altered].
+w | dry-clean | kimyəvi təmizləmək | сдавать в химчистку | I must get this coat [dry-cleaned].
+w | photocopy | surətini çıxarmaq | ксерокопировать | I had the documents [photocopied].
+w | professional | peşəkar | профессионал | It's better to get a [professional] to do it.
+w | estimate | təxmini qiymət | смета, оценка | The builder gave us an [estimate].
+w | appliance | məişət cihazı | бытовой прибор | We had all the [appliances] checked.
+w | leak | sızma | протечка | We had the [leak] in the roof fixed.
+w | handyman | usta (hər işə) | мастер на все руки | We called a [handyman] to fix the door.
+w | warranty | zəmanət | гарантия | The repair is free under [warranty].
+p | do up | təmir edib yeniləmək | ремонтировать (обновлять) | We had the old flat [done up].
+p | put in | taxmaq, yerinə qoymaq | вставлять, ставить | We had new windows [put in].
+p | take apart | sökmək (hissələrə) | разбирать | The mechanic [took apart] the engine.
+p | paint over | üstündən rəngləmək | закрашивать | We had the old wallpaper [painted over].
+p | knock down | sökmək (divarı) | сносить | We had the wall between the rooms [knocked down].
+
+## b2-contrast
+w | although | baxmayaraq ki | хотя | [Although] it was raining, we went out.
+w | despite | -a baxmayaraq | несмотря на | [Despite] the rain, we had fun.
+w | however | lakin | однако | The test was hard. [However], I passed it.
+w | whereas | halbuki | тогда как | I like tea, [whereas] my sister likes coffee.
+w | nevertheless | buna baxmayaraq | тем не менее | It was expensive. [Nevertheless], we bought it.
+w | argument | arqument | аргумент | That's a strong [argument].
+w | advantage | üstünlük | преимущество | One [advantage] of online learning is flexibility.
+w | disadvantage | çatışmazlıq | недостаток | The main [disadvantage] is the cost.
+w | debate | müzakirə | дебаты | We had a [debate] about school uniforms.
+w | point of view | baxış bucağı | точка зрения | I understand your [point of view].
+w | convince | inandırmaq | убеждать | You haven't [convinced] me.
+w | oppose | qarşı çıxmaq | выступать против | Many people [oppose] the new law.
+w | support | dəstəkləmək | поддерживать | I [support] your idea.
+w | controversial | mübahisəli | спорный | It's a very [controversial] topic.
+w | evidence | dəlil | доказательства | Is there any [evidence] for that?
+w | benefit | fayda | польза | Exercise has many [benefits].
+w | drawback | mənfi cəhət | минус | The only [drawback] is the noise.
+w | in contrast | əksinə | напротив | [In contrast], the second film was boring.
+w | on the other hand | digər tərəfdən | с другой стороны | It's cheap. [On the other hand], it's slow.
+w | balanced | balanslı, tarazlı | сбалансированный | We need a [balanced] view of the problem.
+p | come up with | ortaya atmaq (fikir) | придумывать | She [came up with] a great idea.
+p | stand for | müdafiə etmək (dəyəri) | отстаивать | I don't agree with what he [stands for].
+p | back up | sübutla dəstəkləmək | подкреплять | Can you [back up] your argument with facts?
+p | go against | ziddinə getmək | идти против | This [goes against] everything I believe.
+p | sum up | yekunlaşdırmaq | подводить итог | To [sum up], both sides have good points.
+
+## b2-past-perfect-continuous
+w | athlete | idmançı | спортсмен | The [athlete] had been training for years.
+w | coach | məşqçi | тренер | Our [coach] had been working with us since May.
+w | championship | çempionat | чемпионат | They had been preparing for the [championship].
+w | tournament | turnir | турнир | She had been playing in the [tournament] all week.
+w | competitor | rəqib (yarışda) | соперник, участник | There were fifty [competitors] in the race.
+w | opponent | rəqib | противник | He had been watching his [opponent] carefully.
+w | stadium | stadion | стадион | Fans had been waiting outside the [stadium].
+w | referee | hakim (idman) | судья (в спорте) | The [referee] stopped the game.
+w | injury | zədə | травма | He had been playing with an [injury].
+w | medal | medal | медаль | She won a gold [medal].
+w | score | hesab, xal | счёт | What was the final [score]?
+w | defeat | məğlubiyyət | поражение | It was a terrible [defeat].
+w | victory | qələbə | победа | The team celebrated their [victory].
+w | record | rekord | рекорд | She broke the world [record].
+w | stamina | dözümlülük | выносливость | Marathon runners need a lot of [stamina].
+w | fitness | fiziki forma | физическая форма | His [fitness] had been improving.
+w | sweaty | tərli | потный | They were [sweaty] because they had been running.
+w | out of breath | nəfəsi kəsilmiş | запыхавшийся | She was [out of breath] after the race.
+w | determined | qətiyyətli | целеустремлённый | He was [determined] to win.
+w | spectator | tamaşaçı | зритель | Thousands of [spectators] watched the final.
+p | build up | artırmaq (tədricən) | наращивать | She had been [building up] her strength.
+p | pull out | çıxmaq (yarışdan) | сняться (с соревнования) | He [pulled out] of the race because of an injury.
+p | wear out | əldən salmaq, yormaq | изматывать | The long training had [worn out] the players.
+p | keep at | əl çəkməmək, səbirlə davam etmək | упорно продолжать | She had [kept at] it and finally won.
+p | burn out | tükənmək | выгорать | He had been training too hard and [burned out].
+
+## b2-used-to-be-used-to
+w | culture shock | mədəni şok | культурный шок | I had [culture shock] when I moved to Japan.
+w | adapt | uyğunlaşmaq | адаптироваться | It took me a year to [adapt] to the new country.
+w | adjust | alışmaq | приспосабливаться | I'm still [adjusting] to the new time zone.
+w | custom | adət | обычай | Every country has its own [customs].
+w | tradition | ənənə | традиция | Novruz is an old [tradition].
+w | homesick | vətən həsrəti çəkən | тоскующий по дому | I was [homesick] in my first month abroad.
+w | foreign | xarici | иностранный | It's hard to live in a [foreign] country.
+w | local | yerli | местный | The [local] people were very kind.
+w | unfamiliar | tanış olmayan | незнакомый | Everything was [unfamiliar] at first.
+w | accent | ləhcə, aksent | акцент | I'm not used to the Scottish [accent].
+w | cuisine | mətbəx | кухня (национальная) | I got used to the spicy [cuisine].
+w | climate | iqlim | климат | I'm used to a warm [climate].
+w | immigrant | mühacir | иммигрант | Many [immigrants] live in this city.
+w | integrate | inteqrasiya olmaq | интегрироваться | It takes time to [integrate] into a new society.
+w | manners | ədəb-ərkan | манеры | Table [manners] are different here.
+w | strange | qəribə | странный | Driving on the left felt [strange].
+w | gradually | tədricən | постепенно | I [gradually] got used to the cold.
+w | struggle | əziyyət çəkmək | бороться, с трудом справляться | I [struggled] with the language at first.
+w | routine | rejim | режим, распорядок | I'm used to a different daily [routine].
+w | belong | özünü aid hiss etmək | чувствовать себя своим | I finally feel that I [belong] here.
+p | settle in | alışmaq, yerləşmək | освоиться | Have you [settled in] to your new flat?
+p | get used to | öyrəşmək | привыкать к | I can't [get used to] the food.
+p | stick out | gözə çarpmaq | выделяться | Tourists always [stick out] in a crowd.
+p | pick up | (dil) öyrənib götürmək | нахватать (язык) | She [picked up] Spanish in six months.
+p | find out | öyrənmək | узнавать | I [found out] a lot about the local culture.
+
+## b2-phrasal-verbs
+w | business | biznes | бизнес | She runs her own [business].
+w | company | şirkət | компания | He works for a big [company].
+w | client | müştəri (sifarişçi) | клиент | We have a meeting with a new [client].
+w | contract | müqavilə | контракт | They signed a [contract].
+w | negotiate | danışıqlar aparmaq | вести переговоры | We need to [negotiate] a better price.
+w | profit | mənfəət | прибыль | The company made a big [profit].
+w | loss | zərər, itki | убыток | The shop had a [loss] last year.
+w | competition | rəqabət | конкуренция | There is a lot of [competition] in this market.
+w | market | bazar | рынок | They want to enter the Asian [market].
+w | product | məhsul | продукт | Our new [product] sells well.
+w | brand | brend | бренд | Apple is a famous [brand].
+w | advertise | reklam etmək | рекламировать | They [advertise] on TV.
+w | launch | təqdim etmək (yeni məhsul) | запускать | They will [launch] the new phone in May.
+w | staff | işçi heyəti | персонал | The [staff] are very friendly.
+w | boss | rəis | начальник | My [boss] is on holiday.
+w | resign | istefa vermək | увольняться (по желанию) | He [resigned] from his job.
+w | hire | işə götürmək | нанимать | We need to [hire] more people.
+w | fire | işdən çıxarmaq | увольнять | He was [fired] for being late.
+w | target | hədəf | цель, план | We reached our sales [target].
+w | strategy | strategiya | стратегия | We need a new marketing [strategy].
+p | lay off | ixtisar etmək | сокращать (персонал) | The factory [laid off] 100 workers.
+p | take over | ələ keçirmək (şirkəti) | поглощать (компанию) | A big firm [took over] our company.
+p | set up | yaratmaq, təsis etmək | основать | She [set up] her business in 2020.
+p | run out of | tükənmək | заканчиваться | We have [run out of] stock.
+p | carry out | həyata keçirmək | выполнять, проводить | They [carried out] a survey of customers.
