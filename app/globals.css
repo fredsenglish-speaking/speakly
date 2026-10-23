@@ -249,7 +249,7 @@ input[type="datetime-local"] { -webkit-appearance: none; appearance: none; min-w
 
 /* Lessons page: one coloured block per level */
 .level-block { --lc: var(--lv-a1); display: grid; gap: 12px; margin-top: 8px; }
-.lvl-A2 { --lc: var(--lv-a2); } .lvl-B1 { --lc: var(--lv-b1); } .lvl-B2 { --lc: var(--lv-b2); } .lvl-C1 { --lc: var(--lv-c1); }
+.lvl-A1 { --lc: var(--lv-a1); } .lvl-A2 { --lc: var(--lv-a2); } .lvl-B1 { --lc: var(--lv-b1); } .lvl-B2 { --lc: var(--lv-b2); } .lvl-C1 { --lc: var(--lv-c1); }
 .level-banner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 18px 20px; border-radius: 16px; background: var(--lc); color: #fff; }
 .level-banner h3 { margin: 0; color: #fff; }
 .level-code { display: inline-grid; place-items: center; width: 58px; height: 58px; border-radius: 14px; background: rgba(255, 255, 255, 0.22); font-family: var(--display); font-size: 24px; font-weight: 700; }
@@ -274,3 +274,9 @@ input[type="datetime-local"] { -webkit-appearance: none; appearance: none; min-w
   .status.average { background: #3a2f0c; color: #ffe6a3; }
   .status.weak { background: #3d1a15; color: #ffc9c1; }
 }
+
+/* Avatar teachers on the Tutors page */
+.video-teachers { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.video-teacher { display: grid; gap: 12px; align-content: start; border-top: 4px solid var(--lc); }
+.video-teacher h3 { margin: 0; }
+.video-teacher p { margin: 0; }

@@ -1,10 +1,13 @@
 import Link from "next/link";
+import { Avatar } from "@/components/Avatar";
 import { LevelChip } from "@/components/LevelChip";
+import { Video } from "@/components/Video";
 import { getCurrentUser } from "@/lib/auth";
 import { LEVELS, isLevel, money } from "@/lib/levels";
 import { createClient } from "@/lib/supabase/server";
 import { TUTOR_COLUMNS, type TutorRow } from "@/lib/types";
-import { getT } from "@/lib/i18n/server";
+import { getLocale, getT } from "@/lib/i18n/server";
+import { LEVEL_TEACHER_COLUMNS, localIntro, type LevelTeacher } from "@/lib/levelTeachers";
 
 export async function generateMetadata() {
   return { title: (await getT()).tutors.title };
@@ -25,6 +28,11 @@ export default async function TutorsPage({ searchParams }: { searchParams: Promi
   if (level) query = query.contains("levels", [level]);
   const { data } = await query;
   const tutors = (data ?? []) as unknown as TutorRow[];
+  const locale = await getLocale();
+  const { data: teacherRows } = await supabase.from("level_teachers").select(LEVEL_TEACHER_COLUMNS);
+  const videoTeachers = ((teacherRows ?? []) as LevelTeacher[])
+    .filter((v) => !level || v.level === level)
+    .sort((a, b) => a.level.localeCompare(b.level));
 
   return (
     <section className="stack">
@@ -46,6 +54,35 @@ export default async function TutorsPage({ searchParams }: { searchParams: Promi
           </Link>
         ))}
       </nav>
+      {videoTeachers.length > 0 && (
+        <>
+          <div className="stack" style={{ gap: 4 }}>
+            <h3>{tr.tutors.videoTeachers}</h3>
+            <p className="small muted">{tr.tutors.videoTeachersNote}</p>
+          </div>
+          <div className="video-teachers">
+            {videoTeachers.map((v) => (
+              <article key={v.level} className={`panel video-teacher lvl-${v.level}`}>
+                <div className="row" style={{ gap: 12 }}>
+                  <Avatar name={v.name} url={v.photo_url} size={64} />
+                  <div className="stack" style={{ gap: 4 }}>
+                    <h3>{v.name}</h3>
+                    <LevelChip level={v.level} />
+                  </div>
+                </div>
+                {v.video_url && <Video url={v.video_url} title={`${v.name} · ${v.level}`} emptyText={tr.common.noVideo} />}
+                <p className="small" lang={localIntro(v, locale) ? undefined : "en"} style={{ whiteSpace: "pre-line" }}>
+                  {localIntro(v, locale) ?? v.intro}
+                </p>
+                <Link href={`/lessons?level=${v.level}`} className="btn ghost self-start">
+                  {tr.tutors.seeLessons(v.level)}
+                </Link>
+              </article>
+            ))}
+          </div>
+          <h3>{tr.tutors.liveTutors}</h3>
+        </>
+      )}
       {tutors.length === 0 && <p className="muted">{tr.tutors.none}</p>}
       <div className="tutors">
         {tutors.map((t) => (

@@ -105,6 +105,10 @@ const az = {
   },
   tutors: {
     title: "Müəllimlər",
+    videoTeachers: "Video müəllimlərimiz",
+    videoTeachersNote: "Onlar hər səviyyənin video dərslərini izah edir. Canlı danışıq dərsi üçün aşağıdakı müəllimlərdən birini seçin.",
+    liveTutors: "Canlı dərs müəllimləri",
+    seeLessons: (level: string) => `${level} dərslərinə bax`,
     none: "Bu səviyyə üçün hələ müəllim yoxdur.",
     choose: "Seç və yazıl",
     backToList: "← Müəllimlər",

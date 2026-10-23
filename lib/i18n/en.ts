@@ -107,6 +107,10 @@ const en: Dictionary = {
   },
   tutors: {
     title: "Tutors",
+    videoTeachers: "Our video teachers",
+    videoTeachersNote: "They explain the video lessons for each level. For a live speaking class, choose one of the tutors below.",
+    liveTutors: "Live class tutors",
+    seeLessons: (level: string) => `See ${level} lessons`,
     none: "No tutors for this level yet.",
     choose: "Choose and book",
     backToList: "← Tutors",
