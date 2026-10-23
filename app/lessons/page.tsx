@@ -33,7 +33,9 @@ export default async function LessonsPage({ searchParams }: { searchParams: Prom
       ? supabase.from("lesson_results").select("lesson_id, best_right, total").eq("student_id", user.id)
       : Promise.resolve({ data: [] as Result[] }),
   ]);
-  const ownedIds = new Set((owned ?? []).map((o) => o.lesson_id));
+  const ownedIds = new Set(
+    user?.role === "admin" ? (lessons ?? []).map((x) => x.id) : (owned ?? []).map((o) => o.lesson_id),
+  );
   const teachers = new Map(((teacherRows ?? []) as LevelTeacher[]).map((x) => [x.level, x]));
   const results = new Map(((resultRows ?? []) as Result[]).map((r) => [r.lesson_id, r]));
   const levels = level ? [level] : LEVELS;

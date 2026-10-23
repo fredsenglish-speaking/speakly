@@ -34,8 +34,12 @@ export async function startPayment(opts: {
   amount: number;
   successPath: string;
 }): Promise<string> {
-  const provider = paymentProvider();
   const db = createAdminClient();
+  const { data: payer } = await db.from("profiles").select("role").eq("id", opts.userId).single();
+  // The admin can open every paid section for free; the $0 record keeps the
+  // revenue totals in /admin right.
+  const isAdmin = payer?.role === "admin";
+  const provider = isAdmin ? "admin" : paymentProvider();
 
   if (provider === "whatsapp") {
     // Pressing "buy" twice should not give the admin two payments to check.
@@ -53,12 +57,12 @@ export async function startPayment(opts: {
 
   const { data, error } = await db
     .from("payments")
-    .insert({ user_id: opts.userId, kind: opts.kind, ref_id: opts.refId, amount: opts.amount, provider })
+    .insert({ user_id: opts.userId, kind: opts.kind, ref_id: opts.refId, amount: isAdmin ? 0 : opts.amount, provider })
     .select("id")
     .single();
   if (error || !data) throw new Error(`Could not create payment: ${error?.message}`);
 
-  if (provider === "mock") {
+  if (provider === "mock" || isAdmin) {
     await markPaid(data.id, null);
     return opts.successPath;
   }
