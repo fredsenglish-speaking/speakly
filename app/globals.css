@@ -5,6 +5,7 @@
   --glow-2: rgba(59, 167, 160, 0.16);
   --glow-3: rgba(233, 162, 59, 0.14);
   --dots: rgba(8, 45, 151, 0.07);
+  --bubbles: 0.07;
   --surface: #ffffff;
   --ink: #18222e;
   --muted: #5b6672;
@@ -30,6 +31,7 @@
     --glow-2: rgba(59, 167, 160, 0.11);
     --glow-3: rgba(233, 162, 59, 0.07);
     --dots: rgba(255, 255, 255, 0.05);
+    --bubbles: 0.05;
     --surface: #19222a;
     --ink: #e8eef0;
     --muted: #9aa7b0;
@@ -46,8 +48,7 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; }
 body { position: relative; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.5; }
-/* Page background: soft colour glows, a faint dot grid, and line drawings of London and
-   New York landmarks with UK and US flags (public/bg-pattern*.svg, scripts/bg_pattern.py).
+/* Page background: soft colour glows, a faint dot grid and outlined speech bubbles.
    Drawn on a fixed layer behind everything so it also works on phones. */
 body::before, body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; }
 body::before {
@@ -57,9 +58,12 @@ body::before {
     radial-gradient(55vmax 40vmax at 60% 110%, var(--glow-3), transparent 70%),
     radial-gradient(var(--dots) 1.2px, transparent 1.6px) 0 0 / 22px 22px;
 }
-body::after { background: url("/bg-pattern.svg") 0 0 / 600px 600px; }
+body::after {
+  opacity: var(--bubbles);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' fill='none' stroke='%23082d97' stroke-width='3' stroke-linejoin='round'%3E%3Cpath d='M60 70h120a24 24 0 0 1 24 24v50a24 24 0 0 1-24 24h-70l-30 26v-26H60a24 24 0 0 1-24-24V94a24 24 0 0 1 24-24z'/%3E%3Cpath d='M330 250h110a22 22 0 0 1 22 22v44a22 22 0 0 1-22 22h-20v24l-28-24h-62a22 22 0 0 1-22-22v-44a22 22 0 0 1 22-22z'/%3E%3Ccircle cx='96' cy='119' r='5' fill='%23082d97'/%3E%3Ccircle cx='120' cy='119' r='5' fill='%23082d97'/%3E%3Ccircle cx='144' cy='119' r='5' fill='%23082d97'/%3E%3Cpath d='M120 400c0-30 26-52 58-52s58 22 58 52-26 52-58 52c-9 0-17-2-25-5l-27 13 7-25c-8-9-13-22-13-35z'/%3E%3Ctext x='360' y='118' font-family='Georgia,serif' font-size='54' font-weight='700' fill='%23082d97' stroke='none'%3EAa%3C/text%3E%3Ctext x='300' y='470' font-family='Georgia,serif' font-size='40' fill='%23082d97' stroke='none'%3E%E2%80%9CHi!%E2%80%9D%3C/text%3E%3C/svg%3E") 0 0 / 520px 520px;
+}
 @media (prefers-color-scheme: dark) {
-  body::after { background-image: url("/bg-pattern-dark.svg"); }
+  body::after { filter: invert(1); }
 }
 h1, h2, h3 { font-family: var(--display); line-height: 1.15; text-wrap: balance; margin: 0; }
 h1 { font-size: clamp(28px, 5vw, 42px); }
@@ -165,18 +169,6 @@ table.list { width: 100%; border-collapse: collapse; font-size: 15px; }
 table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
 
 .cambridge { display: grid; grid-template-columns: 1fr 260px; gap: 24px; align-items: center; }
-.scale-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; align-items: end; }
-.scale-step { display: grid; gap: 6px; text-align: center; --lc: #6a4bc4; }
-.scale-exam { font-size: 13px; font-weight: 700; color: var(--muted); line-height: 1.2; }
-.scale-bar { height: calc(70px + var(--i) * 26px); border-radius: 10px 10px 4px 4px; background: var(--lc); color: #fff; display: grid; align-content: start; justify-items: center; padding-top: 10px; }
-.scale-bar b { font-family: var(--display); font-size: 22px; }
-.scale-bar small { font-size: 13px; opacity: 0.9; font-variant-numeric: tabular-nums; }
-@media (max-width: 640px) {
-  .scale-steps { grid-template-columns: 1fr; }
-  .scale-step { grid-template-columns: 1fr 108px; align-items: center; text-align: left; }
-  .scale-step .scale-bar { order: -1; height: auto; width: calc(45% + var(--i) * 11%); grid-template-columns: auto auto; justify-content: space-between; align-items: center; padding: 6px 12px; border-radius: 4px 10px 10px 4px; }
-  .scale-bar b { font-size: 17px; }
-}
 .cambridge img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); }
 
 @media (max-width: 720px) {

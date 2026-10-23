@@ -54,9 +54,6 @@ const en: Dictionary = {
     cambridgeTitle: "Official Cambridge preparation centre",
     cambridgeText: "Edustudio-Fred's English is recognised by Cambridge University Press & Assessment as a preparation centre for Cambridge English Qualifications (08/2026 – 07/2027).",
     cambridgeAlt: "Cambridge English preparation centre certificate: Edustudio-Fred's English, Baku",
-    scaleTitle: "Cambridge level scale",
-    scaleText: "Each CEFR level with its Cambridge English Scale score and the matching Cambridge exam.",
-    scaleNote: "Scores are on the Cambridge English Scale (Cambridge University Press & Assessment). Our lessons cover A1 to C1.",
   },
   auth: {
     loginTitle: "Sign in",
