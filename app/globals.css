@@ -1,6 +1,11 @@
 /* Layout: sticky top bar + one centred column (max 960px); each page is a stack of panels */
 :root {
-  --bg: #f4f6f3;
+  --bg: #f2f5fb;
+  --glow-1: rgba(91, 141, 239, 0.22);
+  --glow-2: rgba(59, 167, 160, 0.16);
+  --glow-3: rgba(233, 162, 59, 0.14);
+  --dots: rgba(8, 45, 151, 0.07);
+  --bubbles: 0.07;
   --surface: #ffffff;
   --ink: #18222e;
   --muted: #5b6672;
@@ -21,7 +26,12 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #11171d;
+    --bg: #0f151c;
+    --glow-1: rgba(91, 141, 239, 0.16);
+    --glow-2: rgba(59, 167, 160, 0.11);
+    --glow-3: rgba(233, 162, 59, 0.07);
+    --dots: rgba(255, 255, 255, 0.05);
+    --bubbles: 0.05;
     --surface: #19222a;
     --ink: #e8eef0;
     --muted: #9aa7b0;
@@ -37,7 +47,24 @@
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; }
-body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.5; }
+body { position: relative; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.5; }
+/* Page background: soft colour glows, a faint dot grid and outlined speech bubbles.
+   Drawn on a fixed layer behind everything so it also works on phones. */
+body::before, body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+body::before {
+  background:
+    radial-gradient(60vmax 45vmax at 0% 0%, var(--glow-1), transparent 70%),
+    radial-gradient(50vmax 40vmax at 100% 15%, var(--glow-2), transparent 70%),
+    radial-gradient(55vmax 40vmax at 60% 110%, var(--glow-3), transparent 70%),
+    radial-gradient(var(--dots) 1.2px, transparent 1.6px) 0 0 / 22px 22px;
+}
+body::after {
+  opacity: var(--bubbles);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' fill='none' stroke='%23082d97' stroke-width='3' stroke-linejoin='round'%3E%3Cpath d='M60 70h120a24 24 0 0 1 24 24v50a24 24 0 0 1-24 24h-70l-30 26v-26H60a24 24 0 0 1-24-24V94a24 24 0 0 1 24-24z'/%3E%3Cpath d='M330 250h110a22 22 0 0 1 22 22v44a22 22 0 0 1-22 22h-20v24l-28-24h-62a22 22 0 0 1-22-22v-44a22 22 0 0 1 22-22z'/%3E%3Ccircle cx='96' cy='119' r='5' fill='%23082d97'/%3E%3Ccircle cx='120' cy='119' r='5' fill='%23082d97'/%3E%3Ccircle cx='144' cy='119' r='5' fill='%23082d97'/%3E%3Cpath d='M120 400c0-30 26-52 58-52s58 22 58 52-26 52-58 52c-9 0-17-2-25-5l-27 13 7-25c-8-9-13-22-13-35z'/%3E%3Ctext x='360' y='118' font-family='Georgia,serif' font-size='54' font-weight='700' fill='%23082d97' stroke='none'%3EAa%3C/text%3E%3Ctext x='300' y='470' font-family='Georgia,serif' font-size='40' fill='%23082d97' stroke='none'%3E%E2%80%9CHi!%E2%80%9D%3C/text%3E%3C/svg%3E") 0 0 / 520px 520px;
+}
+@media (prefers-color-scheme: dark) {
+  body::after { filter: invert(1); }
+}
 h1, h2, h3 { font-family: var(--display); line-height: 1.15; text-wrap: balance; margin: 0; }
 h1 { font-size: clamp(28px, 5vw, 42px); }
 h2 { font-size: 24px; }
@@ -48,7 +75,7 @@ button { font: inherit; cursor: pointer; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .wrap { max-width: 960px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 
-.bar { position: sticky; top: 0; z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--surface) 82%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 .bar .wrap { display: flex; align-items: center; gap: 12px; padding-block: 10px; flex-wrap: wrap; }
 .logo { font-family: var(--display); font-weight: 700; font-size: 22px; text-decoration: none; display: flex; align-items: center; gap: 8px; }
 .logo i { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: var(--accent); color: var(--accent-ink); font-style: normal; font-size: 16px; }
