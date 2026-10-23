@@ -64,6 +64,7 @@ def main():
             if dup:
                 problems.append(f"{slug}: duplicate {col} {dup}")
     assert not problems, "\n".join(problems)
+    assert len(lessons) == 60, f"expected 60 lessons, got {len(lessons)}"
 
     values, position = [], {}
     # Words first, then phrasal verbs, in file order.

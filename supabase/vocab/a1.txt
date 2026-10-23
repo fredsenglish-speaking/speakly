@@ -21,7 +21,7 @@ w | country | ölkə | страна | Azerbaijan is a beautiful [country].
 w | city | şəhər | город | Baku is a big [city].
 p | come in | içəri gəlmək | входить | Please [come in] and sit down.
 p | sit down | oturmaq | садиться | [Sit down], please.
-p | stand up | ayağa qalxmaq | вставать | [Stand up] when the teacher comes in.
+p | stand up | ayağa qalxmaq | вставать (на ноги) | [Stand up] when the teacher comes in.
 p | wake up | oyanmaq | просыпаться | I [wake up] at seven.
 p | get up | yataqdan qalxmaq | вставать (с постели) | We [get up] early on Monday.
 
@@ -128,7 +128,7 @@ w | address | ünvan | адрес | What is your [address]?
 w | birthday | ad günü | день рождения | Today is my [birthday].
 w | favourite | sevimli | любимый | Blue is my [favourite] colour.
 p | look after | qayğısına qalmaq | заботиться | I [look after] my little brother.
-p | look like | oxşamaq | быть похожим | You [look like] your mother.
+p | look like | (xarici görünüşcə) oxşamaq | быть похожим внешне | You [look like] your mother.
 p | take after | (valideynə) oxşamaq | быть похожим (на родителя) | She [takes after] her father.
 p | get on with | yola getmək | ладить | I [get on with] my sister.
 p | bring up | böyütmək, tərbiyə etmək | воспитывать | My grandparents [brought up] my father.
@@ -222,7 +222,7 @@ w | next to | yanında | рядом с | The bank is [next to] the shop.
 w | behind | arxasında | за, позади | The garden is [behind] the house.
 w | in front of | qarşısında | перед | The car is [in front of] the house.
 w | between | arasında | между | The café is [between] the bank and the shop.
-w | near | yaxınlığında | рядом, близко | I live [near] the sea.
+w | near | yaxınlığında | недалеко от | I live [near] the sea.
 w | opposite | qarşı tərəfində | напротив | The school is [opposite] the park.
 w | floor | döşəmə, mərtəbə | пол, этаж | The bag is on the [floor].
 w | wall | divar | стена | The picture is on the [wall].
@@ -276,8 +276,8 @@ w | who | kim | кто | [Who] is your teacher?
 w | why | niyə | почему | [Why] are you late?
 w | how | necə | как | [How] are you?
 w | how old | neçə yaşında | сколько лет | [How old] are you?
-w | how many | neçə (sayılan) | сколько | [How many] brothers do you have?
-w | how much | nə qədər | сколько (стоит) | [How much] is this bag?
+w | how many | neçə (sayılan) | сколько (штук) | [How many] brothers do you have?
+w | how much | nə qədər (qiymət, miqdar) | сколько (денег, количества) | [How much] is this bag?
 w | which | hansı | какой, который | [Which] colour do you like?
 w | whose | kimin | чей | [Whose] phone is this?
 w | question | sual | вопрос | Can I ask a [question]?

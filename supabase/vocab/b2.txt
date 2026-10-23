@@ -44,7 +44,7 @@ w | otherwise | əks halda | иначе | Hurry up, [otherwise] we'll miss the t
 w | provided that | şərti ilə ki | при условии, что | You can go, [provided that] you come back early.
 w | suppose | fərz etmək | предполагать | [Suppose] you lost your job, what would you do?
 w | hesitate | tərəddüd etmək | колебаться | If I were you, I wouldn't [hesitate].
-w | outcome | nəticə (yekun) | результат, исход | The [outcome] would have been different.
+w | pension | pensiya | пенсия | If I had saved more, I would have a bigger [pension] now.
 w | alternative | alternativ | альтернатива | If there were an [alternative], I would take it.
 p | pay off | ödəyib qurtarmaq | выплачивать | If I [pay off] the loan, I'll be free.
 p | save up | yığmaq (pul, uzun müddət) | копить | If you [save up], you can buy a car.
@@ -91,14 +91,14 @@ w | patient | səbirli | терпеливый | A teacher who is [patient] is a 
 w | arrogant | təkəbbürlü | высокомерный | I don't like people who are [arrogant].
 w | modest | təvazökar | скромный | He's very [modest] about his success.
 w | outgoing | ünsiyyətcil | общительный | Ali, who is very [outgoing], has lots of friends.
-w | sociable | cəmiyyəti sevən | компанейский | She's a [sociable] person who loves parties.
-w | trustworthy | etibar ediləsi | заслуживающий доверия | We need someone who is [trustworthy].
+w | loyal | sadiq | верный | A dog is a [loyal] friend who never leaves you.
+w | lazy | tənbəl | ленивый | People who are [lazy] don't like hard work.
 w | creative | yaradıcı | творческий | The designer, whose ideas are very [creative], won a prize.
 w | curious | maraqlı (bilməyə həvəsli) | любопытный | Children are naturally [curious].
 w | tolerant | dözümlü | терпимый | We should be [tolerant] of other cultures.
 w | mature | yetkin | зрелый | He's very [mature] for his age.
 w | sincere | səmimi | искренний | She gave me a [sincere] apology.
-w | character | xarakter | характер | He is a man of strong [character].
+w | bossy | hökmlü (əmr verməyi sevən) | властный | My boss, who is very [bossy], tells everyone what to do.
 w | quality | keyfiyyət, xüsusiyyət | качество | Honesty is the [quality] I value most.
 p | show off | lovğalanmaq | хвастаться | I don't like people who [show off].
 p | stand out | seçilmək | выделяться | She's the one who [stands out] in a crowd.
@@ -139,7 +139,7 @@ w | habit | vərdiş | привычка | I wish I could break this bad [habit].
 w | stressful | gərgin | напряжённый | I wish my job wasn't so [stressful].
 w | routine | gündəlik rejim | распорядок | I wish my daily [routine] was more interesting.
 w | balance | balans | баланс | I need a better work-life [balance].
-w | ambition | arzu, iddia | амбиция | My [ambition] is to open my own café.
+w | ambition | məqsəd, iddia | амбиция | My [ambition] is to open my own café.
 w | dream | arzu, xəyal | мечта | It was my [dream] to live by the sea.
 w | wealthy | varlı | состоятельный | I wish I were [wealthy].
 w | appearance | xarici görünüş | внешность | She worries too much about her [appearance].
@@ -193,7 +193,7 @@ w | hairdresser | bərbər (qadın), saç ustası | парикмахер | I had
 w | mechanic | mexanik | механик | I had my car fixed by a [mechanic].
 w | plumber | santexnik | сантехник | We had the pipes repaired by a [plumber].
 w | electrician | elektrik ustası | электрик | We need an [electrician] to check the lights.
-w | decorate | bəzəmək, təmir etmək (otağı) | отделывать (комнату) | We're having the living room [decorated].
+w | decorate | rəngləyib bəzəmək | делать отделку | We're having the living room [decorated].
 w | install | quraşdırmaq | устанавливать | We had a new kitchen [installed].
 w | deliver | çatdırmaq | доставлять | I had the sofa [delivered] yesterday.
 w | service | texniki baxış | техобслуживание | You should have your car [serviced] every year.
@@ -219,7 +219,7 @@ w | although | baxmayaraq ki | хотя | [Although] it was raining, we went out
 w | despite | -a baxmayaraq | несмотря на | [Despite] the rain, we had fun.
 w | however | lakin | однако | The test was hard. [However], I passed it.
 w | whereas | halbuki | тогда как | I like tea, [whereas] my sister likes coffee.
-w | nevertheless | buna baxmayaraq | тем не менее | It was expensive. [Nevertheless], we bought it.
+w | compromise | güzəşt | компромисс | Both sides had to make a [compromise].
 w | argument | arqument | аргумент | That's a strong [argument].
 w | advantage | üstünlük | преимущество | One [advantage] of online learning is flexibility.
 w | disadvantage | çatışmazlıq | недостаток | The main [disadvantage] is the cost.
@@ -231,7 +231,7 @@ w | support | dəstəkləmək | поддерживать | I [support] your idea
 w | controversial | mübahisəli | спорный | It's a very [controversial] topic.
 w | evidence | dəlil | доказательства | Is there any [evidence] for that?
 w | benefit | fayda | польза | Exercise has many [benefits].
-w | drawback | mənfi cəhət | минус | The only [drawback] is the noise.
+w | criticism | tənqid | критика | The plan received a lot of [criticism].
 w | in contrast | əksinə | напротив | [In contrast], the second film was boring.
 w | on the other hand | digər tərəfdən | с другой стороны | It's cheap. [On the other hand], it's slow.
 w | balanced | balanslı, tarazlı | сбалансированный | We need a [balanced] view of the problem.
@@ -247,7 +247,7 @@ w | coach | məşqçi | тренер | Our [coach] had been working with us sinc
 w | championship | çempionat | чемпионат | They had been preparing for the [championship].
 w | tournament | turnir | турнир | She had been playing in the [tournament] all week.
 w | competitor | rəqib (yarışda) | соперник, участник | There were fifty [competitors] in the race.
-w | opponent | rəqib | противник | He had been watching his [opponent] carefully.
+w | trophy | kubok | кубок | The captain lifted the [trophy].
 w | stadium | stadion | стадион | Fans had been waiting outside the [stadium].
 w | referee | hakim (idman) | судья (в спорте) | The [referee] stopped the game.
 w | injury | zədə | травма | He had been playing with an [injury].

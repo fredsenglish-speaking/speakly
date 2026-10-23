@@ -1,0 +1,323 @@
+## c1-inversion
+w | seldom | nadir hallarda | редко | [Seldom] have I seen such a beautiful view.
+w | scarcely | çətinliklə, ancaq | едва | [Scarcely] had we arrived when it began to rain.
+w | under no circumstances | heç bir halda | ни при каких обстоятельствах | [Under no circumstances] should you open this door.
+w | not only | təkcə ... deyil | не только | [Not only] is she clever, but she is also kind.
+w | remarkable | diqqətəlayiq | замечательный | Rarely have I met such a [remarkable] person.
+w | unprecedented | misli görünməmiş | беспрецедентный | Never before had the city seen such [unprecedented] growth.
+w | exceptional | müstəsna, qeyri-adi | исключительный | Only once have I seen such [exceptional] talent.
+w | magnificent | möhtəşəm | великолепный | Never had I seen such a [magnificent] palace.
+w | profound | dərin | глубокий | Seldom has a book had such a [profound] effect on me.
+w | witness | şahidi olmaq | быть свидетелем | Rarely do we [witness] such kindness.
+w | grasp | dərk etmək | понимать, постигать | Only later did I [grasp] what he meant.
+w | inevitably | qaçılmaz olaraq | неизбежно | [Inevitably], prices went up.
+w | genuinely | həqiqətən, səmimi olaraq | искренне | Never have I been so [genuinely] happy.
+w | thoroughly | hərtərəfli | тщательно | Not until I read it [thoroughly] did I understand.
+w | astonishing | heyrətləndirici | поразительный | Little did we know how [astonishing] the result would be.
+w | formal | rəsmi | официальный | Inversion is common in [formal] writing.
+w | emphasis | vurğu | акцент, ударение | Inversion adds [emphasis] to a sentence.
+w | at no time | heç bir anda | ни разу | [At no time] did he say he was sorry.
+w | only then | yalnız o zaman | только тогда | [Only then] did I understand the truth.
+w | no sooner | ...cək dərhal | не успел ... как | [No sooner] had I left than it started to snow.
+p | bring about | səbəb olmaq | вызывать | Never has a law [brought about] so much change.
+p | stem from | qaynaqlanmaq | проистекать из | Rarely do such problems [stem from] one cause.
+p | come about | baş vermək | происходить | Only later did we learn how it had [come about].
+p | set in | başlamaq (pis bir şey) | наступать | No sooner had winter [set in] than the roads froze.
+p | dawn on | ağlına gəlmək, aydın olmaq | осенить | Only then did it [dawn on] me that I was wrong.
+
+## c1-mixed-conditionals
+w | turning point | dönüş nöqtəsi | поворотный момент | That job was a [turning point] in my life.
+w | path | yol (həyat yolu) | путь | If I had chosen a different [path], I'd be a doctor now.
+w | circumstances | şərait | обстоятельства | In different [circumstances], we would be friends.
+w | opportunity | imkan | возможность | If I had taken that [opportunity], I'd be living abroad.
+w | hindsight | sonradan baxış | взгляд в прошлое | With [hindsight], I would have done it differently.
+w | reckless | ehtiyatsız, düşüncəsiz | безрассудный | If he weren't so [reckless], he wouldn't have crashed.
+w | cautious | ehtiyatlı | осторожный | If I were more [cautious], I wouldn't have lost money.
+w | impulsive | düşünmədən hərəkət edən | импульсивный | If she weren't so [impulsive], she'd have thought first.
+w | pursue | dalınca getmək (arzunun) | следовать (цели) | If I had [pursued] music, I'd be a pianist now.
+w | abandon | tərk etmək, imtina etmək | бросать, оставлять | If he hadn't [abandoned] his studies, he'd have a degree.
+w | qualified | ixtisaslı | квалифицированный | If I were [qualified], I'd have applied for the job.
+w | fate | tale | судьба | It was [fate] that we met.
+w | coincidence | təsadüf | совпадение | What a [coincidence] that we were on the same train!
+w | inherit | miras almaq | унаследовать | If he hadn't [inherited] money, he'd still be working.
+w | stable | sabit | стабильный | If I had a [stable] job, I'd have bought a house.
+w | consequence | fəsad | последствие | We are living with the [consequences] of that choice.
+w | foresee | qabaqcadan görmək | предвидеть | Nobody could have [foreseen] the crisis.
+w | dilemma | dilemma, çıxılmaz seçim | дилемма | I faced a difficult [dilemma].
+w | trade-off | güzəşt (bir şeyi digərinə qurban vermək) | компромисс | There's always a [trade-off] between time and money.
+w | regretful | peşman | сожалеющий | He felt [regretful] about the past.
+p | pass up | əldən buraxmaq | упустить | If I hadn't [passed up] that offer, I'd be rich now.
+p | end up | axırda düşmək (bir vəziyyətə) | в итоге оказаться | If I hadn't moved, I wouldn't have [ended up] here.
+p | turn down | rədd etmək | отклонять | If she hadn't [turned down] the job, she'd be in London now.
+p | drop out | (təhsili) yarımçıq atmaq | бросать (учёбу) | If he hadn't [dropped out], he'd be an engineer.
+p | follow through | sona çatdırmaq | довести до конца | If I had [followed through] with my plan, I'd be fluent now.
+
+## c1-cleft-sentences
+w | leadership | rəhbərlik | лидерство | What the team needs is strong [leadership].
+w | vision | baxış, gələcək təsəvvürü | видение | It was her [vision] that made the company successful.
+w | priority | prioritet | приоритет | What matters most is setting [priorities].
+w | initiative | təşəbbüs | инициатива | What I admire is his [initiative].
+w | responsibility | məsuliyyət | ответственность | It's the manager who takes [responsibility].
+w | motivate | həvəsləndirmək | мотивировать | What [motivates] me is helping people.
+w | inspire | ilham vermək | вдохновлять | It was my teacher who [inspired] me.
+w | delegate | həvalə etmək | делегировать | What a good leader does is [delegate] tasks.
+w | feedback | rəy | обратная связь | What I need is honest [feedback].
+w | efficient | səmərəli | эффективный (продуктивный) | What we want is a more [efficient] system.
+w | collaborate | əməkdaşlıq etmək | сотрудничать | It's by [collaborating] that we succeed.
+w | crucial | həlledici | решающий | What is [crucial] is good communication.
+w | workload | iş yükü | рабочая нагрузка | What worries the staff is the heavy [workload].
+w | assertive | qətiyyətli (fikrini açıq deyən) | напористый | What she needs to be is more [assertive].
+w | morale | ruh yüksəkliyi | моральный дух | What affects [morale] most is the salary.
+w | accountable | hesabat verməli | подотчётный | It's the director who is [accountable].
+w | transparent | şəffaf | прозрачный | What people want is a [transparent] process.
+w | consensus | konsensus, ümumi razılıq | консенсус | What we need is a [consensus].
+w | underline | vurğulamaq | подчёркивать | What I want to [underline] is the cost.
+w | objective | məqsəd | цель, задача | What our main [objective] is, is growth.
+p | stand up for | müdafiə etmək | отстаивать | What I respect is how she [stands up for] her team.
+p | step down | vəzifədən getmək | уходить в отставку | It was the CEO who [stepped down].
+p | take charge | idarəni ələ almaq | взять на себя руководство | It was Leyla who [took charge] of the project.
+p | live up to | gözləntiləri doğrultmaq | оправдывать | What worries me is whether I can [live up to] their hopes.
+p | win over | öz tərəfinə çəkmək | склонить на свою сторону | What he did was [win over] the whole board.
+
+## c1-advanced-modals
+w | justice | ədalət | справедливость | Victims should have received [justice].
+w | trial | məhkəmə prosesi | судебный процесс | He should have had a fair [trial].
+w | verdict | hökm | вердикт | The jury must have reached a [verdict].
+w | jury | münsiflər heyəti | присяжные | The [jury] might have been wrong.
+w | lawyer | vəkil | адвокат | You should have called a [lawyer].
+w | sentence | cəza (məhkəmə) | приговор | He could have got a longer [sentence].
+w | appeal | apellyasiya | апелляция | They will make an [appeal].
+w | negligent | səhlənkar | халатный | The company must have been [negligent].
+w | breach | pozuntu | нарушение | That was a [breach] of contract.
+w | liable | məsuliyyət daşıyan | несущий ответственность | They may be [liable] for the damage.
+w | compensation | təzminat | компенсация | They should have paid [compensation].
+w | ethical | etik | этичный | It can't have been [ethical] to do that.
+w | integrity | dürüstlük, bütövlük | честность, порядочность | A judge must have [integrity].
+w | prosecute | mühakimə etmək | преследовать в суде | He could be [prosecuted] for fraud.
+w | fraud | dələduzluq | мошенничество | He must have committed [fraud].
+w | testimony | ifadə (şahid) | показания | Her [testimony] can't have been true.
+w | acquit | bəraət vermək | оправдывать | He needn't have worried. He was [acquitted].
+w | unlawful | qanunsuz | незаконный | It might have been [unlawful].
+w | obligation | öhdəlik | обязательство | You were under no [obligation] to help.
+w | misconduct | qanunsuz davranış | ненадлежащее поведение | He was fired for serious [misconduct].
+p | get away with | cəzasız qalmaq | сойти с рук | He shouldn't have [got away with] it.
+p | let off | bağışlamaq (cəzasız buraxmaq) | отпустить без наказания | The judge [let off] the boy with a warning.
+p | own up to | boynuna almaq | признаться в | He should have [owned up to] the mistake.
+p | lock up | həbs etmək | сажать в тюрьму | They should have [locked up] the criminal.
+p | hand over | təhvil vermək | передавать | He must [hand over] all the documents.
+
+## c1-participle-clauses
+w | novel | roman | роман | Written in 1866, the [novel] is still popular.
+w | plot | süjet | сюжет | Having read the first chapter, I loved the [plot].
+w | protagonist | baş qəhrəman | главный герой | The [protagonist], left alone, must find his way home.
+w | narrator | təhkiyəçi, nəql edən | рассказчик | Told by an old [narrator], the story is very moving.
+w | chapter | fəsil | глава | Having finished the last [chapter], I closed the book.
+w | setting | hadisələrin baş verdiyi yer | место действия | Set in Baku, the [setting] is beautiful.
+w | vivid | canlı | яркий | The writer gives a [vivid] description of the city.
+w | gripping | maraqlı, insanı özünə bağlayan | захватывающий | It's a [gripping] story from start to finish.
+w | portray | təsvir etmək | изображать | The hero is [portrayed] as a brave man.
+w | theme | mövzu (əsas fikir) | тема | Love is the main [theme] of the book.
+w | climax | kulminasiya | кульминация | The [climax] comes in the last chapter.
+w | twist | gözlənilməz dönüş | неожиданный поворот | There's a surprising [twist] at the end.
+w | sequel | davamı | продолжение | The [sequel] was published two years later.
+w | author | müəllif | автор | Born in 1920, the [author] wrote fifty books.
+w | poetry | şeir, poeziya | поэзия | Nizami is famous for his [poetry].
+w | masterpiece | şah əsər | шедевр | Considered a [masterpiece], the book won many prizes.
+w | critic | tənqidçi | критик | Praised by [critics], the film was a big success.
+w | tragic | faciəli | трагический | The story has a [tragic] ending.
+w | metaphor | metafora | метафора | The sea is a [metaphor] for freedom in the poem.
+w | captivate | valeh etmək | очаровывать | [Captivated] by the story, I read all night.
+p | flick through | vərəqləmək | пролистывать | Having [flicked through] the book, I decided to buy it.
+p | lay out | təqdim etmək, sıralamaq | излагать | The ideas are clearly [laid out] in chapter one.
+p | draw on | istifadə etmək (təcrübədən) | опираться на | [Drawing on] her childhood, she wrote a novel.
+p | piece together | toplayıb bütövləşdirmək | собирать по кусочкам | Slowly the detective [pieced together] the story.
+p | unfold | açılmaq, cərəyan etmək | разворачиваться | The story [unfolds] in a small village.
+
+## c1-subjunctive
+w | government | hökumət | правительство | The [government] insists that taxes be paid on time.
+w | policy | siyasət | политика (курс) | They propose that the [policy] be changed.
+w | parliament | parlament | парламент | [Parliament] demanded that the minister resign.
+w | legislation | qanunvericilik | законодательство | New [legislation] requires that all cars be tested.
+w | demand | tələb etmək | требовать | The workers [demand] that they be paid more.
+w | propose | təklif etmək (rəsmi) | предлагать (официально) | I [propose] that the meeting be postponed.
+w | essential | çox vacib | крайне важно | It is [essential] that he arrive on time.
+w | minister | nazir | министр | The [minister] insists that the law be respected.
+w | mandatory | məcburi | обязательный (по закону) | It is [mandatory] that every citizen vote.
+w | stipulate | şərt qoymaq | оговаривать | The contract [stipulates] that payment be made monthly.
+w | referendum | referendum | референдум | They demanded that a [referendum] be held.
+w | reform | islahat | реформа | The minister proposed a major [reform].
+w | citizen | vətəndaş | гражданин | Every [citizen] has the right to vote.
+w | election | seçki | выборы | It is important that the [election] be fair.
+w | candidate | namizəd | кандидат | The [candidate] insisted that he be heard.
+w | campaign | kampaniya | кампания | The [campaign] lasted six weeks.
+w | authority | səlahiyyət, hakimiyyət | власть, полномочия | The [authorities] require that visitors register.
+w | regulation | qayda (rəsmi) | регламент, правило | New [regulations] require that food be labelled.
+w | urge | təkidlə çağırmaq | настоятельно призывать | Experts [urge] that action be taken now.
+w | lest | ...məsin deyə | чтобы не | He spoke quietly [lest] he be heard.
+p | call for | tələb etmək (açıq) | призывать к | Protesters [called for] new elections.
+p | push through | qəbul etdirmək (zorla) | протолкнуть | The government [pushed through] the new law.
+p | vote down | səsvermə ilə rədd etmək | провалить голосованием | The proposal was [voted down].
+p | crack down on | sərt tədbir görmək | принимать жёсткие меры | The police will [crack down on] crime.
+p | rule on | qərar çıxarmaq | выносить решение | The court will [rule on] the case next week.
+
+## c1-emphatic-do
+w | appreciate | qiymətləndirmək | ценить | I do [appreciate] your help.
+w | sincerely | səmimiyyətlə | искренне | I do [sincerely] apologise.
+w | reassure | arxayın etmək | успокаивать, заверять | Let me [reassure] you that it's fine.
+w | commitment | sadiqlik, öhdəlik | преданность, обязательство | He does show real [commitment] to his work.
+w | devoted | sadiq, fədakar | преданный | She is a [devoted] mother.
+w | affection | məhəbbət | привязанность | He does show his [affection] in small ways.
+w | gratitude | minnətdarlıq | благодарность | I do want to express my [gratitude].
+w | resent | küsmək, narazı qalmaq | обижаться | She does [resent] being ignored.
+w | insist | təkid etmək | настаивать | I do [insist] that you stay for dinner.
+w | admire | heyran olmaq | восхищаться | I do [admire] your courage.
+w | regret | təəssüf etmək | сожалеть | I do [regret] what I said.
+w | mean | nəzərdə tutmaq | иметь в виду | I did [mean] it when I said sorry.
+w | understanding | anlayışlı | понимающий | He's very [understanding] about my problems.
+w | supportive | dəstək verən | поддерживающий | My family is very [supportive].
+w | considerate | diqqətli (başqalarına) | внимательный к другим | It was very [considerate] of you to call.
+w | apology | üzr | извинение | Please accept my [apology].
+w | bond | bağ | связь (эмоциональная) | They have a strong [bond].
+w | empathy | empatiya | эмпатия | She does show a lot of [empathy].
+w | trust | etibar etmək | доверять | I do [trust] you, really.
+w | forgive | bağışlamaq | прощать | I do [forgive] you, I promise.
+p | make up | barışmaq | мириться | They argued but they did [make up] later.
+p | fall out | küsüşmək | поссориться | We did [fall out] once, but we're fine now.
+p | open up | açılmaq (hisslərini bölüşmək) | раскрываться | He does [open up] when he trusts you.
+p | stand by | yanında olmaq | поддерживать | I did [stand by] her when things were hard.
+p | drift apart | uzaqlaşmaq (bir-birindən) | отдаляться | We did [drift apart] after school.
+
+## c1-ellipsis-substitution
+w | discussion | müzakirə | обсуждение | We had a long [discussion] about the plan.
+w | viewpoint | baxış | точка зрения | I can see your [viewpoint].
+w | concede | etiraf etmək (güzəşt) | признавать (уступать) | I [concede] that you have a point.
+w | counter | cavab vermək (etirazla) | возражать | She [countered] that the price was too high.
+w | elaborate | ətraflı izah etmək | подробно объяснять | Could you [elaborate] on that?
+w | clarify | aydınlaşdırmaq | прояснять | Let me [clarify] what I mean.
+w | interrupt | sözünü kəsmək | перебивать | Sorry to [interrupt], but I disagree.
+w | dispute | mübahisə etmək | оспаривать | Nobody [disputes] the facts.
+w | valid | əsaslı, keçərli | обоснованный | That's a [valid] point.
+w | assumption | fərziyyə | предположение | Your [assumption] is wrong.
+w | nuance | incəlik | нюанс | He missed the [nuance] of her words.
+w | implication | dolayı məna | подтекст, последствие | What are the [implications] of this?
+w | relevant | aidiyyəti olan | уместный, актуальный | That's not [relevant] to our topic.
+w | redundant | artıq (lazımsız) | излишний | That word is [redundant] here.
+w | concise | qısa və dəqiq | краткий | Please be [concise].
+w | coherent | ardıcıl, məntiqli | связный | Her argument was clear and [coherent].
+w | ambiguous | ikimənalı | двусмысленный | The question was [ambiguous].
+w | rephrase | başqa sözlə demək | перефразировать | Can I [rephrase] that?
+w | digress | mövzudan yayınmaq | отклоняться от темы | Sorry, I [digress].
+w | tactful | ehtiyatlı (nəzakətlə) | тактичный | She gave a [tactful] answer.
+p | brush aside | əhəmiyyət verməmək | отмахиваться | He [brushed aside] my question.
+p | go along with | razılaşmaq | соглашаться с | I'll [go along with] your idea.
+p | butt in | sözə qarışmaq | вмешиваться (в разговор) | Sorry to [butt in], but that's not right.
+p | spell out | açıq-aydın demək | разъяснять | Do I have to [spell out] everything?
+p | talk over | müzakirə etmək | обсуждать | Let's [talk over] the plan tomorrow.
+
+## c1-impersonal-passive
+w | research | tədqiqat | исследование | [Research] suggests that sleep improves memory.
+w | experiment | eksperiment | эксперимент | The [experiment] was repeated three times.
+w | data | məlumatlar | данные | The [data] are believed to be accurate.
+w | survey | sorğu | опрос | A [survey] was carried out among students.
+w | findings | nəticələr (tədqiqat) | результаты | The [findings] are expected to be published soon.
+w | hypothesis | fərziyyə (elmi) | гипотеза | The [hypothesis] is thought to be correct.
+w | theory | nəzəriyyə | теория | The [theory] is widely accepted.
+w | phenomenon | hadisə (fenomen) | явление | This [phenomenon] is not fully understood.
+w | evidence | dəlil (elmi) | доказательства | There is strong [evidence] for this.
+w | analyse | təhlil etmək | анализировать | The samples were [analysed] in a lab.
+w | conduct | aparmaq (tədqiqat) | проводить | The study was [conducted] in 2022.
+w | allegedly | iddiaya görə | якобы | He [allegedly] stole the data.
+w | widely | geniş şəkildə | широко | It is [widely] believed that diet affects mood.
+w | estimate | təxmin etmək | оценивать | It is [estimated] that 5 million people live here.
+w | reportedly | xəbərə görə | по сообщениям | The minister has [reportedly] resigned.
+w | significant | əhəmiyyətli | значительный | There was a [significant] increase in sales.
+w | sample | nümunə | образец, выборка | A [sample] of 500 people was used.
+w | laboratory | laboratoriya | лаборатория | The tests were done in a [laboratory].
+w | breakthrough | sıçrayış (kəşf) | прорыв | It is said to be a medical [breakthrough].
+w | peer-reviewed | rəy alınmış (ekspert) | рецензируемый | The article is [peer-reviewed].
+p | point to | göstərmək (dəlil) | указывать на | The data [point to] a clear link.
+p | bear out | təsdiqləmək | подтверждать | The results [bear out] the theory.
+p | rule out | istisna etmək | исключать | Other causes have been [ruled out].
+p | narrow down | daraltmaq | сужать | Scientists have [narrowed down] the list of causes.
+p | carry out | aparmaq (sınaq) | проводить (опыт) | Tests are being [carried out] now.
+
+## c1-future-in-past
+w | destiny | tale (qismət) | судьба (предназначение) | He felt it was his [destiny] to become a leader.
+w | empire | imperiya | империя | The [empire] was to last for 300 years.
+w | dynasty | sülalə | династия | The [dynasty] would rule for centuries.
+w | reign | hakimiyyət dövrü | правление | His [reign] was going to be short.
+w | revolution | inqilab | революция | Nobody knew the [revolution] would change everything.
+w | era | dövr | эпоха | It was the start of a new [era].
+w | ancient | qədim | древний | The [ancient] city would soon be forgotten.
+w | conquer | fəth etmək | завоевать | He was to [conquer] half the world.
+w | invade | işğal etmək | вторгаться | They were about to [invade] the country.
+w | treaty | müqavilə (dövlətlərarası) | договор | The [treaty] would bring peace for 20 years.
+w | colony | müstəmləkə | колония | The [colony] would become independent later.
+w | independence | müstəqillik | независимость | The country was to gain [independence] in 1991.
+w | emerge | meydana çıxmaq | появляться | A new leader would [emerge] from the war.
+w | decline | tənəzzül | упадок | Nobody saw the coming [decline] of the empire.
+w | heritage | irs | наследие | The old town is part of our [heritage].
+w | monarch | hökmdar | монарх | The young [monarch] would rule for fifty years.
+w | historian | tarixçi | историк | [Historians] would later call it a golden age.
+w | archaeologist | arxeoloq | археолог | The [archaeologist] was about to make a discovery.
+w | turning | dönüş | поворот | It was a [turning] moment in history.
+w | doomed | məhvə məhkum | обречённый | The plan was [doomed] to fail.
+p | set out | yola çıxmaq | отправляться | In 1492 Columbus [set out] to find a new route.
+p | break out | başlamaq (müharibə) | вспыхивать | War was about to [break out].
+p | fall apart | dağılmaq | развалиться | The empire would soon [fall apart].
+p | hand down | nəsildən-nəslə ötürmək | передавать (по наследству) | The story was [handed down] for generations.
+p | wipe out | məhv etmək | уничтожать | The disease would [wipe out] half the population.
+
+## c1-would-rather
+w | preference | üstünlük (seçim) | предпочтение | Do you have a [preference]?
+w | prefer | üstün tutmaq | предпочитать | I [prefer] tea to coffee.
+w | exhibition | sərgi | выставка | I'd rather go to an art [exhibition].
+w | gallery | qalereya | галерея | Let's visit the [gallery] instead.
+w | performance | çıxış, tamaşa | выступление | I'd rather see a live [performance].
+w | orchestra | orkestr | оркестр | The [orchestra] played beautifully.
+w | sculpture | heykəl | скульптура | I'd rather look at [sculptures] than paintings.
+w | contemporary | müasir (sənət) | современный | I'd rather see [contemporary] art.
+w | classical | klassik | классический | He'd rather listen to [classical] music.
+w | leisure | asudə vaxt | досуг | How do you spend your [leisure] time?
+w | solitude | tənhalıq (könüllü) | уединение | I'd rather enjoy some [solitude].
+w | spontaneous | spontan, planlaşdırılmamış | спонтанный | I'd rather be [spontaneous] than plan everything.
+w | indulge | özünü əyləndirmək (ləzzət vermək) | баловать себя | I'd rather [indulge] in a long bath.
+w | pastime | məşğuliyyət | времяпрепровождение | Reading is my favourite [pastime].
+w | audience | tamaşaçılar | публика | The [audience] gave a standing ovation.
+w | applause | alqış | аплодисменты | The [applause] lasted five minutes.
+w | venue | məkan | место проведения | The [venue] was too small for the concert.
+w | rehearsal | məşq (tamaşa) | репетиция | I'd rather skip the [rehearsal].
+w | taste | zövq | вкус | We have different [taste] in music.
+w | unwind | dincəlib rahatlamaq | расслабиться | I'd rather [unwind] at home tonight.
+p | stay in | evdə qalmaq | оставаться дома | I'd rather [stay in] tonight.
+p | sit through | sona qədər oturmaq (darıxdırıcı) | высидеть | I'd rather not [sit through] another boring film.
+p | splash out | çoxlu pul xərcləmək | раскошелиться | I'd rather [splash out] on a good concert.
+p | sleep in | gec oyanmaq | поспать подольше | I'd rather [sleep in] on Sunday.
+p | opt for | seçmək | выбирать | I'd [opt for] the cheaper tickets.
+
+## c1-nominalisation
+w | economy | iqtisadiyyat | экономика | The [economy] grew by 3% last year.
+w | growth | artım | рост | Economic [growth] slowed down.
+w | inflation | inflyasiya | инфляция | [Inflation] reached 10%.
+w | unemployment | işsizlik | безработица | [Unemployment] is falling.
+w | investment | investisiya | инвестиция | Foreign [investment] increased.
+w | recession | resessiya | рецессия | The country is in a [recession].
+w | expansion | genişlənmə | расширение | The [expansion] of the company was rapid.
+w | reduction | azalma | сокращение | There was a [reduction] in costs.
+w | productivity | məhsuldarlıq | производительность | [Productivity] rose by 5% last year.
+w | consumption | istehlak | потребление | Energy [consumption] is rising.
+w | distribution | bölgü, paylanma | распределение | The [distribution] of wealth is unequal.
+w | implementation | həyata keçirilmə | реализация | The [implementation] of the plan took a year.
+w | assessment | qiymətləndirmə | оценка | An [assessment] of the risks is needed.
+w | contribution | töhfə | вклад | Her [contribution] was very important.
+w | fluctuation | dalğalanma | колебание | There are [fluctuations] in the price of oil.
+w | stagnation | durğunluq | застой | The [stagnation] lasted ten years.
+w | recovery | bərpa, dirçəliş | восстановление | The economic [recovery] was slow.
+w | revenue | gəlir (dövlət, şirkət) | выручка | The company's [revenue] doubled.
+w | prosperity | rifah | процветание | The country enjoyed years of [prosperity].
+w | deficit | kəsir | дефицит | The budget [deficit] is growing.
+p | level off | sabitləşmək | стабилизироваться | Prices have [levelled off].
+p | bounce back | tez bərpa olunmaq | восстановиться | The economy [bounced back] quickly.
+p | drive up | qaldırmaq (qiyməti) | взвинчивать | High demand [drives up] prices.
+p | scale back | kiçiltmək | сокращать (масштаб) | The firm [scaled back] its plans.
+p | factor in | nəzərə almaq | учитывать | We must [factor in] the cost of transport.

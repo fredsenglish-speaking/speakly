@@ -32,9 +32,9 @@ w | fast | sürətli | быстрый | A car is [faster] than a bicycle.
 w | slow | yavaş | медленный | The old train is very [slow].
 w | heavy | ağır | тяжёлый | My bag is [heavier] than yours.
 w | light | yüngül | лёгкий | This jacket is [lighter] than my coat.
-w | easy | asan | лёгкий (простой) | The second test was [easier] than the first.
+w | easy | asan | простой, нетрудный | The second test was [easier] than the first.
 w | difficult | çətin | трудный | Chinese is more [difficult] than English for me.
-w | large | böyük, geniş | большой | Russia is [larger] than Canada.
+w | large | iri, böyük | крупный, большой | Russia is [larger] than Canada.
 w | narrow | dar | узкий | The streets in the old city are [narrow].
 w | wide | enli, geniş | широкий | This river is very [wide].
 w | modern | müasir | современный | Baku is more [modern] than my village.
@@ -109,7 +109,7 @@ p | pour out | tökmək (qaba) | наливать | Can you [pour out] the tea, 
 ## a2-simple-vs-continuous
 w | usually | adətən | обычно | I [usually] walk to school.
 w | at the moment | hazırda | в данный момент | She is cooking [at the moment].
-w | right now | elə indi | прямо сейчас | I can't talk [right now].
+w | shift | növbə (iş) | смена | He is working the night [shift] this week.
 w | nowadays | bu günlərdə | в наши дни | [Nowadays] many people work from home.
 w | office | ofis | офис | My mum works in an [office].
 w | factory | zavod, fabrik | завод, фабрика | My uncle works in a car [factory].
@@ -126,7 +126,7 @@ w | wear | geyinmək (əynində olmaq) | носить (одежду) | She is [w
 w | wait | gözləmək | ждать | We are [waiting] for the bus.
 w | sell | satmaq | продавать | That shop [sells] shoes.
 w | earn | qazanmaq | зарабатывать | He [earns] a good salary.
-w | currently | hal-hazırda | в настоящее время | I'm [currently] living with my parents.
+w | part-time | yarımştat | неполный рабочий день | She has a [part-time] job in a café.
 p | look for | axtarmaq | искать | I'm [looking for] my keys.
 p | work out | idman etmək | тренироваться | He [works out] at the gym every day.
 p | hang out | vaxt keçirmək (dostlarla) | проводить время | The kids are [hanging out] in the park.
