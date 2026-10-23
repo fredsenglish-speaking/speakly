@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
 import { isLevel } from "@/lib/levels";
-import { embedUrl } from "@/lib/video";
+import { VIDEO_BUCKET, isPlayableVideo } from "@/lib/video";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { getT } from "@/lib/i18n/server";
 
@@ -15,7 +15,7 @@ export async function saveLessonVideos(_: VideoState, form: FormData): Promise<V
   if (user.role !== "admin") redirect("/");
   const t = (await getT()).admin;
   const main = String(form.get("explanation_video_url") ?? "").trim();
-  if (main && !embedUrl(main)) return { error: t.errVideo };
+  if (main && !isPlayableVideo(main)) return { error: t.errVideo };
 
   const { error } = await createAdminClient()
     .from("lessons")
@@ -39,7 +39,7 @@ export async function saveLevelTeacher(_: VideoState, form: FormData): Promise<V
   const text = (key: string, max: number) => String(form.get(key) ?? "").trim().slice(0, max) || null;
   const name = text("name", 60);
   const video = text("video_url", 300);
-  if (!name || (video && !embedUrl(video))) return { error: t.errTeacher };
+  if (!name || (video && !isPlayableVideo(video))) return { error: t.errTeacher };
 
   const db = createAdminClient();
   const row: Record<string, string | null> = {
@@ -75,4 +75,27 @@ export async function saveLevelTeacher(_: VideoState, form: FormData): Promise<V
   revalidatePath("/admin/lessons");
   revalidatePath("/lessons");
   return { ok: t.savedVideo };
+}
+
+const MAX_VIDEO_BYTES = 50 * 1024 * 1024;
+const VIDEO_TYPES: Record<string, string> = { "video/mp4": "mp4", "video/webm": "webm", "video/quicktime": "mov" };
+
+export type VideoUpload = { error?: string; path?: string; token?: string; url?: string };
+
+/** Lets the admin's browser upload one video file straight to storage (too big for a server action). */
+export async function startVideoUpload(lessonId: number, type: string, size: number): Promise<VideoUpload> {
+  const user = await requireUser("/admin/lessons");
+  if (user.role !== "admin") redirect("/");
+  const t = (await getT()).admin;
+  const ext = VIDEO_TYPES[type];
+  if (!ext) return { error: t.errVideoType };
+  if (size > MAX_VIDEO_BYTES) return { error: t.errVideoSize };
+  const db = createAdminClient();
+  const path = `lessons/${lessonId}-${Date.now()}.${ext}`;
+  const { data, error } = await db.storage.from(VIDEO_BUCKET).createSignedUploadUrl(path);
+  if (error || !data) {
+    console.error("video upload url failed", error);
+    return { error: t.errVideoUpload };
+  }
+  return { path, token: data.token, url: db.storage.from(VIDEO_BUCKET).getPublicUrl(path).data.publicUrl };
 }

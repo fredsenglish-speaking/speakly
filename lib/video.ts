@@ -29,3 +29,20 @@ export function embedUrl(url: string | null | undefined): string | null {
 export function isVertical(url: string | null | undefined): boolean {
   return !!url && /youtube\.com\/shorts\//.test(url);
 }
+
+/** Videos uploaded to the site's own storage, played with a plain <video> player. */
+export const VIDEO_BUCKET = "lesson-videos";
+
+export function isFileVideo(url: string | null | undefined): boolean {
+  if (!url) return false;
+  try {
+    return new URL(url).pathname.includes(`/storage/v1/object/public/${VIDEO_BUCKET}/`);
+  } catch {
+    return false;
+  }
+}
+
+/** Any link the site can play: an uploaded file or a YouTube, Vimeo or HeyGen link. */
+export function isPlayableVideo(url: string | null | undefined): boolean {
+  return isFileVideo(url) || embedUrl(url) !== null;
+}

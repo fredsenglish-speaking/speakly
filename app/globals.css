@@ -138,6 +138,7 @@ main { padding-block: 28px 64px; display: grid; gap: 24px; }
 .ava.sm { width: 44px; height: 44px; font-size: 18px; border-radius: 12px; }
 .prices { display: flex; gap: 6px; flex-wrap: wrap; font-size: 14px; }
 .prices span { background: var(--bg); border-radius: 6px; padding: 2px 8px; font-variant-numeric: tabular-nums; }
+.video.file { aspect-ratio: auto; width: auto; max-width: 100%; max-height: 78vh; margin-inline: auto; display: block; background: #000; }
 .video.vertical { aspect-ratio: 9 / 16; width: min(100%, 380px); margin-inline: auto; }
 .video { aspect-ratio: 16 / 9; max-width: 100%; width: 100%; border-radius: 12px; background: #18222e; border: 0; display: grid; place-items: center; color: #fff; }
 .choices { display: flex; gap: 8px; flex-wrap: wrap; }
