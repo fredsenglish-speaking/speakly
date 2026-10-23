@@ -24,3 +24,8 @@ export function embedUrl(url: string | null | undefined): string | null {
   }
   return null;
 }
+
+/** YouTube Shorts links are vertical (9:16) videos, shown in a tall player. */
+export function isVertical(url: string | null | undefined): boolean {
+  return !!url && /youtube\.com\/shorts\//.test(url);
+}

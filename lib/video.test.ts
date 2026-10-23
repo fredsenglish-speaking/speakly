@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { embedUrl } from "./video.ts";
+import { embedUrl, isVertical } from "./video.ts";
 
 test("embedUrl understands YouTube and Vimeo links", () => {
   assert.equal(embedUrl("https://www.youtube.com/watch?v=abc123"), "https://www.youtube-nocookie.com/embed/abc123");
@@ -14,4 +14,10 @@ test("embedUrl handles HeyGen share links", () => {
   assert.equal(embedUrl("https://app.heygen.com/share/abc123def"), "https://app.heygen.com/embeds/abc123def");
   assert.equal(embedUrl("https://app.heygen.com/embeds/abc123def"), "https://app.heygen.com/embeds/abc123def");
   assert.equal(embedUrl("https://app.heygen.com/home"), null);
+});
+
+test("YouTube Shorts links are vertical", () => {
+  assert.equal(isVertical("https://youtube.com/shorts/abc123?si=x"), true);
+  assert.equal(embedUrl("https://youtube.com/shorts/abc123?si=x"), "https://www.youtube-nocookie.com/embed/abc123");
+  assert.equal(isVertical("https://youtu.be/abc123"), false);
 });
