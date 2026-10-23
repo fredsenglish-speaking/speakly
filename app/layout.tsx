@@ -10,8 +10,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: { default: "Speakly", template: "%s · Speakly" },
     description: t.meta.description,
-    applicationName: "Fred's English",
-    appleWebApp: { capable: true, title: "Fred's English", statusBarStyle: "default" },
+    applicationName: "Speakly",
+    appleWebApp: { capable: true, title: "Speakly", statusBarStyle: "default" },
     icons: { icon: "/icon-192.png", apple: "/apple-touch-icon.png" },
   };
 }

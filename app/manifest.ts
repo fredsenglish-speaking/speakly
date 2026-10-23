@@ -3,8 +3,8 @@ import type { MetadataRoute } from "next";
 // Lets students add the site to their phone's home screen and open it like an app.
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Fred's English",
-    short_name: "Fred's English",
+    name: "Speakly by Fred's English",
+    short_name: "Speakly",
     description: "English lessons, level test and speaking club",
     start_url: "/",
     scope: "/",
