@@ -7,6 +7,7 @@ import { LESSON_PRICE, isLevel, lessonText, money } from "@/lib/levels";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
 import { createClient } from "@/lib/supabase/server";
+import type { VocabItem } from "@/lib/vocabQuiz";
 import { buyLesson } from "../actions";
 import { LessonPlayer } from "./LessonPlayer";
 
@@ -56,6 +57,8 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
             <li>{t.lessons.part1}</li>
             <li>{t.lessons.part2}</li>
             <li>{t.lessons.part3}</li>
+            <li>{t.lessons.part4}</li>
+            <li>{t.lessons.part5}</li>
           </ol>
           <div className="row between">
             <span>
@@ -78,6 +81,11 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
     .select("id, part, question, options, correct")
     .eq("lesson_id", lesson.id)
     .order("position");
+  const { data: vocab } = await supabase
+    .from("lesson_vocab")
+    .select("id, kind, term, az, ru, example")
+    .eq("lesson_id", lesson.id)
+    .order("position");
 
   return (
     <section className="stack">
@@ -87,6 +95,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
         title={text.title}
         videoUrl={lesson.explanation_video_url}
         questions={questions ?? []}
+        vocab={(vocab ?? []) as VocabItem[]}
       />
     </section>
   );
