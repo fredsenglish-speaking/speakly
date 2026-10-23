@@ -4,21 +4,8 @@ import { useActionState, useRef, useState } from "react";
 import { Avatar } from "@/components/Avatar";
 import { SubmitButton } from "@/components/SubmitButton";
 import { useT } from "@/lib/i18n/client";
+import { shrinkImage } from "@/lib/shrinkImage";
 import { saveProfile, type ProfileState } from "./actions";
-
-/** Shrinks a photo to a 400px square JPEG in the browser, so uploads stay small. */
-async function shrink(file: File): Promise<File> {
-  const bitmap = await createImageBitmap(file);
-  const side = Math.min(bitmap.width, bitmap.height);
-  const size = Math.min(400, side);
-  const canvas = document.createElement("canvas");
-  canvas.width = canvas.height = size;
-  canvas
-    .getContext("2d")!
-    .drawImage(bitmap, (bitmap.width - side) / 2, (bitmap.height - side) / 2, side, side, 0, 0, size, size);
-  const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.85));
-  return blob ? new File([blob], "avatar.jpg", { type: "image/jpeg" }) : file;
-}
 
 export function ProfileForm({ name, avatarUrl }: { name: string; avatarUrl: string | null }) {
   const t = useT().me;
@@ -32,7 +19,7 @@ export function ProfileForm({ name, avatarUrl }: { name: string; avatarUrl: stri
     if (!file) return;
     let small = file;
     try {
-      small = await shrink(file);
+      small = await shrinkImage(file);
     } catch {
       // The browser couldn't read it; send the original and let the server decide.
     }

@@ -166,6 +166,8 @@ const en: Dictionary = {
     done: "Lesson complete",
     doneScore: (n, s) => `${s} of ${n} test answers correct.`,
     again: "Do it again",
+    videoTeacher: (level: string, name: string) => `${level} video teacher: ${name}`,
+    introVideo: "Watch the introduction video",
   },
   tutorPanel: {
     title: "Tutor panel",
@@ -324,6 +326,16 @@ const en: Dictionary = {
     videoCount: (n: number, total: number) => `${n} of ${total} lessons have a video`,
     errVideo: "Link not recognised. Paste a YouTube, Vimeo or HeyGen link.",
     savedVideo: "Saved.",
+    teachers: "Video teachers (avatars)",
+    teachersIntro: "One avatar teacher per level. They appear above that level's lessons in the Lessons section.",
+    teacherName: "Name",
+    teacherPhoto: "Photo",
+    teacherIntro: "Introduction (English)",
+    teacherIntroAz: "Short text (Azerbaijani)",
+    teacherIntroRu: "Short text (Russian)",
+    teacherVideo: "Introduction video (optional)",
+    teacherEmpty: "Not added yet",
+    errTeacher: "Not saved. Enter a name, keep the photo under 2 MB and use a YouTube, Vimeo or HeyGen link.",
   },
 };
 

@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { LevelChip } from "@/components/LevelChip";
+import { LevelTeacherCard } from "@/components/LevelTeacherCard";
 import { getCurrentUser } from "@/lib/auth";
 import { LESSON_PRICE, LEVELS, isLevel, lessonText, money } from "@/lib/levels";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
+import { LEVEL_TEACHER_COLUMNS, localIntro, type LevelTeacher } from "@/lib/levelTeachers";
 import { createClient } from "@/lib/supabase/server";
 
 export async function generateMetadata() {
@@ -17,12 +19,15 @@ export default async function LessonsPage({ searchParams }: { searchParams: Prom
   const locale = await getLocale();
   const t = DICTIONARIES[locale];
   const supabase = await createClient();
-  const [{ data: lessons }, { data: owned }] = await Promise.all([
+  const [{ data: lessons }, { data: owned }, { data: teacherRows }] = await Promise.all([
     supabase.from("lessons").select("id, slug, level, title, summary, title_en, title_ru, summary_en, summary_ru").order("level").order("position"),
     user
       ? supabase.from("lesson_purchases").select("lesson_id").eq("student_id", user.id)
       : Promise.resolve({ data: [] as { lesson_id: number }[] }),
+    supabase.from("level_teachers").select(LEVEL_TEACHER_COLUMNS),
   ]);
+  // Before migration 0007 runs the table is missing; the page then just shows no teachers.
+  const teachers = new Map(((teacherRows ?? []) as LevelTeacher[]).map((x) => [x.level, x]));
   const ownedIds = new Set((owned ?? []).map((o) => o.lesson_id));
   const levels = level ? [level] : LEVELS;
 
@@ -45,11 +50,21 @@ export default async function LessonsPage({ searchParams }: { searchParams: Prom
       {levels.map((l) => {
         const list = (lessons ?? []).filter((x) => x.level === l);
         if (list.length === 0) return null;
+        const teacher = teachers.get(l);
         return (
           <div key={l} className="stack" style={{ gap: 10 }}>
             <h3 className="row" style={{ gap: 8 }}>
               <LevelChip level={l} /> {t.lessons.levelHeading}
             </h3>
+            {teacher && (
+              <LevelTeacherCard
+                teacher={teacher}
+                heading={t.lessons.videoTeacher(l, teacher.name)}
+                localText={localIntro(teacher, locale)}
+                videoLabel={t.lessons.introVideo}
+                noVideo={t.common.noVideo}
+              />
+            )}
             <div className="lessons">
               {list.map((x) => (
                 <div key={x.id} className="panel lesson">

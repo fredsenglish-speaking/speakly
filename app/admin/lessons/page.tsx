@@ -6,6 +6,8 @@ import { LEVELS, lessonText } from "@/lib/levels";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { LEVEL_TEACHER_COLUMNS, type LevelTeacher } from "@/lib/levelTeachers";
+import { TeacherForm } from "./TeacherForm";
 import { VideoForm } from "./VideoForm";
 
 export async function generateMetadata() {
@@ -17,7 +19,10 @@ export default async function LessonVideosPage() {
   if (user.role !== "admin") redirect("/");
   const locale = await getLocale();
   const t = DICTIONARIES[locale].admin;
-  const { data } = await createAdminClient()
+  const db = createAdminClient();
+  const { data: teacherRows } = await db.from("level_teachers").select(LEVEL_TEACHER_COLUMNS);
+  const teachers = new Map(((teacherRows ?? []) as LevelTeacher[]).map((x) => [x.level, x]));
+  const { data } = await db
     .from("lessons")
     .select("id, level, title, title_en, title_ru, explanation_video_url")
     .order("level")
@@ -28,6 +33,11 @@ export default async function LessonVideosPage() {
   return (
     <section className="stack">
       <Link href="/admin" className="small">← {t.title}</Link>
+      <h2>{t.teachers}</h2>
+      <p className="muted">{t.teachersIntro}</p>
+      {LEVELS.map((level) => (
+        <TeacherForm key={level} level={level} teacher={teachers.get(level) ?? null} />
+      ))}
       <h2>{t.videos}</h2>
       <p className="muted">{t.videosIntro}</p>
       <p className="small">{t.videoCount(withVideo, lessons.length)}</p>

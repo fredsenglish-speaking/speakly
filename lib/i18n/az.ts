@@ -164,6 +164,8 @@ const az = {
     done: "Lesson tamamlandı",
     doneScore: (n: number, s: number) => `Testlərdə ${n} sualdan ${s} düzgün cavab.`,
     again: "Yenidən keç",
+    videoTeacher: (level: string, name: string) => `${level} video müəllimi: ${name}`,
+    introVideo: "Təqdimat videosuna bax",
   },
   tutorPanel: {
     title: "Müəllim paneli",
@@ -322,6 +324,16 @@ const az = {
     videoCount: (n: number, total: number) => `${total} lesson-dan ${n}-də video var`,
     errVideo: "Link tanınmadı. YouTube, Vimeo və ya HeyGen linki yapışdırın.",
     savedVideo: "Yadda saxlandı.",
+    teachers: "Video müəllimlər (avatar)",
+    teachersIntro: "Hər səviyyə üçün bir avatar müəllim. O, Lessons bölməsində həmin səviyyənin dərslərinin yuxarısında görünür.",
+    teacherName: "Ad",
+    teacherPhoto: "Şəkil",
+    teacherIntro: "Təqdimat mətni (ingiliscə)",
+    teacherIntroAz: "Qısa mətn (azərbaycanca)",
+    teacherIntroRu: "Qısa mətn (rusca)",
+    teacherVideo: "Təqdimat videosu (istəyə görə)",
+    teacherEmpty: "Hələ əlavə olunmayıb",
+    errTeacher: "Yadda saxlanmadı. Ad yazın, şəkil 2 MB-dan kiçik olsun, video linki YouTube, Vimeo və ya HeyGen olsun.",
   },
 };
 

@@ -166,6 +166,8 @@ const ru: Dictionary = {
     done: "Урок пройден",
     doneScore: (n, s) => `Правильных ответов в тестах: ${s} из ${n}.`,
     again: "Пройти заново",
+    videoTeacher: (level: string, name: string) => `Видеопреподаватель ${level}: ${name}`,
+    introVideo: "Посмотреть видео-знакомство",
   },
   tutorPanel: {
     title: "Кабинет преподавателя",
@@ -324,6 +326,16 @@ const ru: Dictionary = {
     videoCount: (n: number, total: number) => `Видео есть в ${n} из ${total} уроков`,
     errVideo: "Ссылка не распознана. Вставьте ссылку YouTube, Vimeo или HeyGen.",
     savedVideo: "Сохранено.",
+    teachers: "Видеопреподаватели (аватары)",
+    teachersIntro: "Один аватар-преподаватель на каждый уровень. Он показывается над уроками этого уровня в разделе Lessons.",
+    teacherName: "Имя",
+    teacherPhoto: "Фото",
+    teacherIntro: "Текст-знакомство (на английском)",
+    teacherIntroAz: "Короткий текст (на азербайджанском)",
+    teacherIntroRu: "Короткий текст (на русском)",
+    teacherVideo: "Видео-знакомство (необязательно)",
+    teacherEmpty: "Ещё не добавлен",
+    errTeacher: "Не сохранено. Укажите имя, фото до 2 МБ и ссылку YouTube, Vimeo или HeyGen.",
   },
 };
 

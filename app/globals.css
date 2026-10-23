@@ -244,3 +244,8 @@ input[type="datetime-local"] { -webkit-appearance: none; appearance: none; min-w
 .answer-note { margin: 0; font-weight: 600; }
 .answer-note.right { color: var(--accent); }
 .answer-note.wrong { color: var(--danger); }
+
+/* Avatar teacher above a level's lessons */
+.level-teacher { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; }
+.level-teacher .intro { margin: 0; white-space: pre-line; }
+@media (max-width: 560px) { .level-teacher { grid-template-columns: 1fr; } }
