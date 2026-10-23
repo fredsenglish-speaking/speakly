@@ -1,0 +1,34 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'><g stroke='#ffffff' stroke-width='3' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='0.06'>
+<path d='M95 30 L78 92 H112 Z'/><path d='M95 30 V18'/>
+<rect x='76' y='92' width='38' height='34'/>
+<rect x='70' y='126' width='50' height='190'/>
+<circle cx='95' cy='152' r='17'/><path d='M95 152 V141 M95 152 L103 156'/>
+<path d='M70 180 H120 M82 196 V300 M95 196 V300 M108 196 V300 M70 316 H120'/>
+</g><g stroke='#ffffff' stroke-width='3' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='0.06'>
+<path d='M440 318 L448 268 H502 L510 318 Z'/>
+<path d='M452 268 L462 160 Q475 150 488 160 L498 268'/>
+<circle cx='475' cy='142' r='11'/>
+<path d='M464 134 L456 124 M470 131 L468 119 M475 131 V117 M480 131 L482 119 M486 134 L494 124'/>
+<path d='M486 162 L506 92'/><path d='M500 92 H512 L509 84 H503 Z'/><path d='M506 84 Q500 72 506 64 Q512 72 506 84'/>
+<rect x='452' y='176' width='14' height='24' transform='rotate(-12 459 188)'/>
+<path d='M466 200 Q475 230 470 268 M484 200 Q480 235 488 268'/>
+</g><g stroke='#ffffff' stroke-width='3' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='0.06'>
+<circle cx='215' cy='390' r='62'/><circle cx='215' cy='390' r='8'/>
+<path d='M215 390 L277 390'/><path d='M215 390 L259 434'/><path d='M215 390 L215 452'/><path d='M215 390 L171 434'/><path d='M215 390 L153 390'/><path d='M215 390 L171 346'/><path d='M215 390 L215 328'/><path d='M215 390 L259 346'/><circle cx='283' cy='390' r='5'/><circle cx='274' cy='424' r='5'/><circle cx='249' cy='449' r='5'/><circle cx='215' cy='458' r='5'/><circle cx='181' cy='449' r='5'/><circle cx='156' cy='424' r='5'/><circle cx='147' cy='390' r='5'/><circle cx='156' cy='356' r='5'/><circle cx='181' cy='331' r='5'/><circle cx='215' cy='322' r='5'/><circle cx='249' cy='331' r='5'/><circle cx='274' cy='356' r='5'/><path d='M215 390 L180 478 M215 390 L250 478 M165 478 H265'/></g><g stroke='#ffffff' stroke-width='3' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='0.06'>
+<path d='M345 440 V560 M385 440 V560 M465 440 V560 M505 440 V560'/>
+<path d='M345 440 L365 410 L385 440 Z M465 440 L485 410 L505 440 Z'/>
+<path d='M385 452 H465 M385 462 H465'/>
+<path d='M300 510 H570'/>
+<path d='M300 510 Q325 470 345 450 M385 450 Q425 500 465 450 M505 450 Q545 470 570 510'/>
+<path d='M300 575 q12 -8 24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0'/>
+</g><g transform='translate(240 64)' opacity='0.1'>
+<clipPath id='uk'><rect width='90' height='54' rx='4'/></clipPath>
+<g clip-path='url(#uk)'>
+<rect width='90' height='54' fill='#012169'/>
+<path d='M0 0 L90 54 M90 0 L0 54' stroke='#fff' stroke-width='11'/>
+<path d='M0 0 L90 54 M90 0 L0 54' stroke='#C8102E' stroke-width='4'/>
+<path d='M45 0 V54 M0 27 H90' stroke='#fff' stroke-width='17'/>
+<path d='M45 0 V54 M0 27 H90' stroke='#C8102E' stroke-width='10'/>
+</g></g><g transform='translate(300 236)' opacity='0.1'>
+<clipPath id='us'><rect width='90' height='54' rx='4'/></clipPath>
+<g clip-path='url(#us)'><rect width='90' height='54' fill='#fff'/><rect y='0.00' width='90' height='4.15' fill='#B22234'/><rect y='8.31' width='90' height='4.15' fill='#B22234'/><rect y='16.62' width='90' height='4.15' fill='#B22234'/><rect y='24.92' width='90' height='4.15' fill='#B22234'/><rect y='33.23' width='90' height='4.15' fill='#B22234'/><rect y='41.54' width='90' height='4.15' fill='#B22234'/><rect y='49.85' width='90' height='4.15' fill='#B22234'/><rect width='40' height='29' fill='#3C3B6E'/><circle cx='4.0' cy='3.5' r='1.3' fill='#fff'/><circle cx='10.5' cy='3.5' r='1.3' fill='#fff'/><circle cx='17.0' cy='3.5' r='1.3' fill='#fff'/><circle cx='23.5' cy='3.5' r='1.3' fill='#fff'/><circle cx='30.0' cy='3.5' r='1.3' fill='#fff'/><circle cx='36.5' cy='3.5' r='1.3' fill='#fff'/><circle cx='4.0' cy='8.8' r='1.3' fill='#fff'/><circle cx='10.5' cy='8.8' r='1.3' fill='#fff'/><circle cx='17.0' cy='8.8' r='1.3' fill='#fff'/><circle cx='23.5' cy='8.8' r='1.3' fill='#fff'/><circle cx='30.0' cy='8.8' r='1.3' fill='#fff'/><circle cx='36.5' cy='8.8' r='1.3' fill='#fff'/><circle cx='4.0' cy='14.1' r='1.3' fill='#fff'/><circle cx='10.5' cy='14.1' r='1.3' fill='#fff'/><circle cx='17.0' cy='14.1' r='1.3' fill='#fff'/><circle cx='23.5' cy='14.1' r='1.3' fill='#fff'/><circle cx='30.0' cy='14.1' r='1.3' fill='#fff'/><circle cx='36.5' cy='14.1' r='1.3' fill='#fff'/><circle cx='4.0' cy='19.4' r='1.3' fill='#fff'/><circle cx='10.5' cy='19.4' r='1.3' fill='#fff'/><circle cx='17.0' cy='19.4' r='1.3' fill='#fff'/><circle cx='23.5' cy='19.4' r='1.3' fill='#fff'/><circle cx='30.0' cy='19.4' r='1.3' fill='#fff'/><circle cx='36.5' cy='19.4' r='1.3' fill='#fff'/><circle cx='4.0' cy='24.7' r='1.3' fill='#fff'/><circle cx='10.5' cy='24.7' r='1.3' fill='#fff'/><circle cx='17.0' cy='24.7' r='1.3' fill='#fff'/><circle cx='23.5' cy='24.7' r='1.3' fill='#fff'/><circle cx='30.0' cy='24.7' r='1.3' fill='#fff'/><circle cx='36.5' cy='24.7' r='1.3' fill='#fff'/></g></g></svg>

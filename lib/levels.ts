@@ -10,6 +10,16 @@ export const LEVEL_NAME: Record<Level, string> = {
   C1: "Advanced",
 };
 
+/** Cambridge English Scale score range and matching Cambridge English exam per CEFR level. */
+export const CAMBRIDGE_SCALE = [
+  { cefr: "A1", from: 100, to: 119, exam: "A1 Movers" },
+  { cefr: "A2", from: 120, to: 139, exam: "A2 Key" },
+  { cefr: "B1", from: 140, to: 159, exam: "B1 Preliminary" },
+  { cefr: "B2", from: 160, to: 179, exam: "B2 First" },
+  { cefr: "C1", from: 180, to: 199, exam: "C1 Advanced" },
+  { cefr: "C2", from: 200, to: 230, exam: "C2 Proficiency" },
+] as const;
+
 export const TEST_PRICE = 3;
 export const CERTIFICATE_PRICE = 5;
 

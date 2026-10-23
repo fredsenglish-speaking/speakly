@@ -52,6 +52,9 @@ const az = {
     cambridgeTitle: "Rəsmi Cambridge hazırlıq mərkəzi",
     cambridgeText: "Edustudio-Fred's English Cambridge University Press & Assessment tərəfindən Cambridge English Qualifications imtahanlarına hazırlayan rəsmi mərkəz kimi tanınır (08/2026 – 07/2027).",
     cambridgeAlt: "Cambridge English hazırlıq mərkəzi sertifikatı: Edustudio-Fred's English, Bakı",
+    scaleTitle: "Cambridge səviyyə şkalası",
+    scaleText: "Hər CEFR səviyyəsinin Cambridge English Scale balı və ona uyğun Cambridge imtahanı.",
+    scaleNote: "Ballar Cambridge English Scale üzrədir (Cambridge University Press & Assessment). Saytımızdakı dərslər A1-dən C1-ə qədərdir.",
   },
   auth: {
     loginTitle: "Daxil ol",

@@ -54,6 +54,9 @@ const ru: Dictionary = {
     cambridgeTitle: "Официальный подготовительный центр Cambridge",
     cambridgeText: "Edustudio-Fred's English признан Cambridge University Press & Assessment официальным центром подготовки к экзаменам Cambridge English Qualifications (08/2026 – 07/2027).",
     cambridgeAlt: "Сертификат подготовительного центра Cambridge English: Edustudio-Fred's English, Баку",
+    scaleTitle: "Шкала уровней Cambridge",
+    scaleText: "Каждый уровень CEFR с баллами по Cambridge English Scale и соответствующим экзаменом Cambridge.",
+    scaleNote: "Баллы по шкале Cambridge English Scale (Cambridge University Press & Assessment). Уроки на сайте охватывают уровни A1–C1.",
   },
   auth: {
     loginTitle: "Вход",

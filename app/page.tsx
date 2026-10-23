@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { LevelChip } from "@/components/LevelChip";
 import { getT } from "@/lib/i18n/server";
-import { CERTIFICATE_PRICE, LESSON_PRICE, LEVELS, TEST_PRICE, money } from "@/lib/levels";
+import { CAMBRIDGE_SCALE, CERTIFICATE_PRICE, LESSON_PRICE, LEVELS, TEST_PRICE, money } from "@/lib/levels";
 
 const FILL = { A1: 20, A2: 40, B1: 60, B2: 80, C1: 100 } as const;
 
@@ -57,6 +57,26 @@ export default async function HomePage() {
             </div>
           ))}
         </div>
+      </section>
+      <section className="panel stack">
+        <div className="stack" style={{ gap: 6 }}>
+          <h2>{t.home.scaleTitle}</h2>
+          <p className="muted">{t.home.scaleText}</p>
+        </div>
+        <ol className="scale-steps">
+          {CAMBRIDGE_SCALE.map((s, i) => (
+            <li key={s.cefr} className={`scale-step lvl-${s.cefr}`} style={{ "--i": i } as React.CSSProperties}>
+              <span className="scale-exam">{s.exam}</span>
+              <div className="scale-bar">
+                <b>{s.cefr}</b>
+                <small>
+                  {s.from}–{s.to}
+                </small>
+              </div>
+            </li>
+          ))}
+        </ol>
+        <p className="small muted">{t.home.scaleNote}</p>
       </section>
       <section className="panel cambridge">
         <div className="stack">
