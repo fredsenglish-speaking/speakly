@@ -6,6 +6,7 @@ import { getCurrentUser } from "@/lib/auth";
 import { LESSON_PRICE, isLevel, lessonText, money } from "@/lib/levels";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 import type { VocabItem } from "@/lib/vocabQuiz";
 import { buyLesson } from "../actions";
@@ -25,7 +26,11 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
   if (!lesson || !isLevel(lesson.level)) notFound();
   const text = lessonText(lesson, locale);
 
-  const { data: purchase } = user
+  // The admin sees every lesson without buying it.
+  const isAdmin = user?.role === "admin";
+  const { data: purchase } = isAdmin
+    ? { data: { lesson_id: lesson.id } }
+    : user
     ? await supabase
         .from("lesson_purchases")
         .select("lesson_id")
@@ -75,13 +80,14 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
     );
   }
 
-  // Readable only after purchase (row level security).
-  const { data: questions } = await supabase
+  // Readable only after purchase (row level security), so the admin reads them with the service role.
+  const db = isAdmin ? createAdminClient() : supabase;
+  const { data: questions } = await db
     .from("lesson_questions")
     .select("id, part, question, options, correct")
     .eq("lesson_id", lesson.id)
     .order("position");
-  const { data: vocab } = await supabase
+  const { data: vocab } = await db
     .from("lesson_vocab")
     .select("id, kind, term, az, ru, example")
     .eq("lesson_id", lesson.id)

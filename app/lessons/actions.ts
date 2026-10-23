@@ -40,7 +40,7 @@ export async function saveLessonResult(lessonId: number, right: number, total: n
     .eq("student_id", user.id)
     .eq("lesson_id", lessonId)
     .maybeSingle();
-  if (!owned) return;
+  if (!owned && user.role !== "admin") return;
 
   const { data: prev } = await db
     .from("lesson_results")
