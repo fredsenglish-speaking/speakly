@@ -57,7 +57,7 @@ body::before {
     radial-gradient(55vmax 40vmax at 60% 110%, var(--glow-3), transparent 70%),
     radial-gradient(var(--dots) 1.2px, transparent 1.6px) 0 0 / 22px 22px;
 }
-body::after { background: url("/bg-pattern.svg") 0 0 / 640px 720px; }
+body::after { background: url("/bg-pattern.svg") 0 0 / 680px 644px; }
 @media (prefers-color-scheme: dark) {
   body::after { background-image: url("/bg-pattern-dark.svg"); }
 }

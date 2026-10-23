@@ -1,36 +1,39 @@
 # Builds public/bg-pattern.svg and public/bg-pattern-dark.svg: common English
-# abbreviations with their meaning ("BTW – by the way"), tiled faintly behind every page.
-# Run: python3 scripts/bg_pattern.py
+# abbreviations with their meaning ("BTW – by the way"), tiled faintly and densely
+# behind every page. Run: python3 scripts/bg_pattern.py
 from xml.sax.saxutils import escape
 
 PHRASES = [
-    ("BTW", "by the way", 40, 70, -6),
-    ("ASAP", "as soon as possible", 330, 50, 4),
-    ("FYI", "for your information", 170, 175, 0),
-    ("IMO", "in my opinion", 470, 205, -5),
-    ("TBH", "to be honest", 30, 300, 3),
-    ("e.g.", "for example", 290, 320, -3),
-    ("DIY", "do it yourself", 120, 445, -4),
-    ("i.e.", "that is", 420, 420, 5),
-    ("P.S.", "postscript", 60, 570, 2),
-    ("RSVP", "please reply", 300, 560, -2),
-    ("ETA", "estimated time of arrival", 440, 640, -4),
-    ("FAQ", "frequently asked questions", 150, 680, 3),
+    ("BTW", "by the way"), ("ASAP", "as soon as possible"), ("FYI", "for your information"), ("IMO", "in my opinion"),
+    ("TBH", "to be honest"), ("e.g.", "for example"), ("DIY", "do it yourself"), ("i.e.", "that is"),
+    ("P.S.", "postscript"), ("RSVP", "please reply"), ("ETA", "arrival time"), ("FAQ", "common questions"),
+    ("AKA", "also known as"), ("TBC", "to be confirmed"), ("ID", "identity"), ("etc.", "and so on"),
+    ("vs", "versus"), ("Mr", "mister"), ("Dr", "doctor"), ("a.m.", "morning"),
+    ("p.m.", "afternoon"), ("TBA", "to be announced"), ("N/A", "not available"), ("VIP", "very important person"),
+    ("DOB", "date of birth"), ("THX", "thanks"), ("OMG", "oh my god"), ("LOL", "laughing out loud"),
 ]
+COLS, ROWS, CELL_W, CELL_H = 4, 7, 170, 92
+TILTS = [-5, 3, -2, 4, -4, 2, 0]
 
 
 def svg(color, alpha):
-    items = "".join(
-        f"<g transform='translate({x} {y}) rotate({r})'>"
-        f"<text font-family='Georgia,serif' font-size='34' font-weight='700'>{escape(a)}</text>"
-        f"<text y='22' font-family='Helvetica,Arial,sans-serif' font-size='16'>{escape(m)}</text></g>"
-        for a, m, x, y, r in PHRASES
-    )
+    items = []
+    for i, (a, m) in enumerate(PHRASES):
+        row, col = divmod(i, COLS)
+        x = col * CELL_W + (12 if row % 2 else 40)
+        y = row * CELL_H + 40
+        tilt = TILTS[(row + col) % len(TILTS)]
+        items.append(
+            f"<g transform='translate({x} {y}) rotate({tilt})'>"
+            f"<text font-family='Georgia,serif' font-size='28' font-weight='700'>{escape(a)}</text>"
+            f"<text y='20' font-family='Helvetica,Arial,sans-serif' font-size='14'>{escape(m)}</text></g>"
+        )
+    w, h = COLS * CELL_W, ROWS * CELL_H
     return (
-        "<svg xmlns='http://www.w3.org/2000/svg' width='640' height='720' viewBox='0 0 640 720'>"
-        f"<g fill='{color}' opacity='{alpha}'>{items}</g></svg>"
+        f"<svg xmlns='http://www.w3.org/2000/svg' width='{w}' height='{h}' viewBox='0 0 {w} {h}'>"
+        f"<g fill='{color}' opacity='{alpha}'>{''.join(items)}</g></svg>"
     )
 
 
-open("public/bg-pattern.svg", "w").write(svg("#082d97", 0.09))
+open("public/bg-pattern.svg", "w").write(svg("#082d97", 0.085))
 open("public/bg-pattern-dark.svg", "w").write(svg("#ffffff", 0.06))
