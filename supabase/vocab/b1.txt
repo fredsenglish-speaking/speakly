@@ -1,0 +1,323 @@
+## b1-present-perfect
+w | experience | təcrübə | опыт | Have you had any [experience] of working with children?
+w | achieve | nail olmaq | достигать | She has [achieved] a lot in her career.
+w | achievement | nailiyyət | достижение | Learning to drive was a big [achievement] for me.
+w | ever | nə vaxtsa | когда-либо | Have you [ever] been to Japan?
+w | already | artıq | уже | I have [already] finished my homework.
+w | yet | hələ (inkarda, sualda) | ещё (не), уже (в вопросе) | Has the film started [yet]?
+w | recently | son vaxtlar | недавно | Have you seen any good films [recently]?
+w | since | -dan bəri | с (какого-то времени) | I have lived here [since] 2015.
+w | adventure | macəra | приключение | Climbing the mountain was a real [adventure].
+w | improve | yaxşılaşdırmaq | улучшать | My English has [improved] a lot this year.
+w | manage | bacarmaq, öhdəsindən gəlmək | суметь, справиться | I have finally [managed] to fix my bike.
+w | succeed | uğur qazanmaq | преуспевать | He has [succeeded] in every exam.
+w | fail | uğursuz olmaq, kəsilmək | проваливать | I have never [failed] a test.
+w | prize | mükafat | приз | She has won first [prize] in the competition.
+w | degree | diplom (ali təhsil) | учёная степень, диплом | He has just got his university [degree].
+w | skill | bacarıq | навык | Cooking is a useful [skill].
+w | proud | fəxr edən | гордый | My parents are [proud] of me.
+w | opportunity | fürsət | возможность | This job is a great [opportunity].
+w | lifetime | ömür | вся жизнь | It was the trip of a [lifetime].
+w | memory | xatirə | воспоминание | I have happy [memories] of my school days.
+p | come across | təsadüfən rastlaşmaq | наткнуться | I have [come across] some old photos.
+p | turn out | məlum olmaq, alınmaq | оказаться | The party has [turned out] really well.
+p | go through | yaşamaq (çətinlik) | пережить | She has [gone through] a lot this year.
+p | make up for | əvəzini çıxmaq | восполнить | I want to [make up for] the time I lost.
+p | keep up with | ayaqlaşmaq | не отставать | It's hard to [keep up with] the news.
+
+## b1-past-continuous
+w | accident | qəza | авария, несчастный случай | I saw an [accident] on my way to work.
+w | crash | toqquşmaq | разбиться, врезаться | The car [crashed] into a tree.
+w | injure | yaralamaq | ранить | Two people were [injured] in the accident.
+w | ambulance | təcili yardım maşını | скорая помощь | Call an [ambulance]!
+w | police officer | polis əməkdaşı | полицейский | A [police officer] was standing at the corner.
+w | thief | oğru | вор | The [thief] was wearing a black hat.
+w | steal | oğurlamaq | красть | Someone [stole] my bike while I was shopping.
+w | witness | şahid | свидетель | The [witness] saw everything.
+w | suddenly | birdən | вдруг | I was reading when [suddenly] the lights went out.
+w | scream | qışqırmaq | кричать | Someone was [screaming] in the street.
+w | noise | səs-küy | шум | We heard a strange [noise] at night.
+w | dark | qaranlıq | тёмный | It was [dark] when we got home.
+w | flash | parıltı | вспышка | We saw a [flash] of light in the sky.
+w | ring (a bell) | çalmaq (zəng) | звонить (о звонке) | The phone [rang] while I was having a bath.
+w | notice | fərqinə varmaq | замечать | I didn't [notice] the man behind me.
+w | slip | sürüşmək | поскользнуться | She [slipped] on the ice.
+w | fall | yıxılmaq | падать | He [fell] off his bike.
+w | scene | hadisə yeri, səhnə | место происшествия, сцена | The police arrived at the [scene].
+w | while | ...ərkən | пока, в то время как | I cut my finger [while] I was cooking.
+w | report | məlumat vermək | сообщать | She [reported] the crime to the police.
+p | break down | xarab olmaq | ломаться | Our car [broke down] on the motorway.
+p | run away | qaçmaq | убегать | The thief [ran away] when he saw the police.
+p | break into | (evə) soxulmaq | вламываться | Someone [broke into] our house last night.
+p | go off | işə düşmək (siqnal) | срабатывать | The alarm [went off] at midnight.
+p | get away | qaçıb canını qurtarmaq | скрыться | The robbers [got away] in a fast car.
+
+## b1-first-conditional
+w | environment | ətraf mühit | окружающая среда | If we don't protect the [environment], we will have problems.
+w | pollution | çirklənmə | загрязнение | Air [pollution] is a big problem in big cities.
+w | rubbish | zibil | мусор | Please put your [rubbish] in the bin.
+w | recycle | təkrar emal etmək | перерабатывать | If we [recycle] paper, we will save trees.
+w | plastic | plastik | пластик | Don't use [plastic] bags.
+w | energy | enerji | энергия | If you turn off the lights, you'll save [energy].
+w | waste | israf etmək | тратить впустую | Don't [waste] water.
+w | protect | qorumaq | защищать | We must [protect] wild animals.
+w | climate | iqlim | климат | The [climate] is getting warmer.
+w | planet | planet | планета | We have only one [planet].
+w | forest | meşə | лес | If we cut down the [forests], animals will lose their homes.
+w | ocean | okean | океан | There is too much plastic in the [ocean].
+w | solar | günəş (enerjisi) | солнечный | We have [solar] panels on our roof.
+w | traffic | nəqliyyat axını, tıxac | дорожное движение | If you leave now, you'll miss the [traffic].
+w | public transport | ictimai nəqliyyat | общественный транспорт | Use [public transport] and the air will be cleaner.
+w | unless | əgər ...məsə | если не | We'll be late [unless] we hurry.
+w | disappear | yox olmaq | исчезать | Many animals will [disappear] if we do nothing.
+w | wildlife | vəhşi təbiət | дикая природа | Pollution is dangerous for [wildlife].
+w | reduce | azaltmaq | сокращать | We need to [reduce] the amount of rubbish.
+w | warning | xəbərdarlıq | предупреждение | Scientists have given us a [warning].
+p | throw away | atmaq (zibilə) | выбрасывать | Don't [throw away] old clothes. Give them to charity.
+p | cut down | kəsmək (ağac) | вырубать | They want to [cut down] the old trees.
+p | use up | tükətmək | израсходовать | We will [use up] all the oil one day.
+p | pick up | yerdən götürmək | поднимать | If you see rubbish on the beach, [pick up] the bottles and bags.
+p | die out | nəsli kəsilmək | вымирать | Some animals will [die out] if we don't help them.
+
+## b1-must-have-to
+w | rule | qayda | правило | You must follow the school [rules].
+w | uniform | forma | форма | We have to wear a [uniform] at school.
+w | allowed | icazəli | разрешено | You aren't [allowed] to use phones in class.
+w | forbidden | qadağan | запрещено | Smoking is [forbidden] here.
+w | necessary | lazımi, zəruri | необходимый | Is it [necessary] to book a table?
+w | permission | icazə | разрешение | You must ask for [permission] first.
+w | obey | tabe olmaq, əməl etmək | подчиняться | Drivers must [obey] the traffic laws.
+w | law | qanun | закон | It's against the [law] to drive without a licence.
+w | licence | vəsiqə, lisenziya | удостоверение, лицензия | You have to have a driving [licence].
+w | passport | pasport | паспорт | You must show your [passport] at the border.
+w | seat belt | təhlükəsizlik kəməri | ремень безопасности | You must wear a [seat belt] in the car.
+w | helmet | kaska, dəbilqə | шлем | You have to wear a [helmet] on a motorbike.
+w | deadline | son tarix | крайний срок | The [deadline] for the project is Friday.
+w | fine | cərimə | штраф | He had to pay a [fine] for parking there.
+w | sign | lövhə, nişan | знак | The [sign] says "No parking".
+w | punish | cəzalandırmaq | наказывать | The teacher [punished] the boy for lying.
+w | polite | nəzakətli | вежливый | You must be [polite] to customers.
+w | on time | vaxtında | вовремя | You have to arrive [on time].
+w | duty | vəzifə, borc | обязанность | It is your [duty] to help them.
+w | compulsory | məcburi | обязательный | English is [compulsory] at our school.
+p | fill in | doldurmaq (forma) | заполнять | You must [fill in] this form.
+p | hand out | paylamaq | раздавать | The teacher will [hand out] the tests.
+p | stick to | əməl etmək, sadiq qalmaq | придерживаться | You have to [stick to] the plan.
+p | put out | söndürmək (od) | тушить | You must [put out] the fire before you leave.
+p | turn up | gəlib çıxmaq | появляться | You have to [turn up] on time for the interview.
+
+## b1-used-to
+w | childhood | uşaqlıq | детство | I had a happy [childhood].
+w | village | kənd | деревня | We used to live in a small [village].
+w | primary school | ibtidai məktəb | начальная школа | I used to walk to [primary school].
+w | toy | oyuncaq | игрушка | My favourite [toy] was a red car.
+w | cartoon | cizgi filmi | мультфильм | We used to watch [cartoons] every morning.
+w | shy | utancaq | застенчивый | I used to be very [shy].
+w | naughty | dəcəl | непослушный | My brother used to be very [naughty].
+w | climb | dırmaşmaq | лазить | We used to [climb] trees in the garden.
+w | hide | gizlənmək | прятаться | I used to [hide] under the bed.
+w | believe in | inanmaq (varlığına) | верить в | Did you use to [believe in] Santa Claus?
+w | afraid | qorxan | боящийся | I used to be [afraid] of dogs.
+w | dark (n) | qaranlıq (isim) | темнота | Were you afraid of the [dark]?
+w | sweets | şirniyyat | сладости | We used to eat lots of [sweets].
+w | neighbourhood | məhəllə | район, окрестности | Our old [neighbourhood] was very friendly.
+w | still | hələ də | всё ещё | Do you [still] play the piano?
+w | anymore | daha (artıq) | больше (не) | I don't eat meat [anymore].
+w | change | dəyişmək | менять(ся) | The town has [changed] a lot.
+w | past | keçmiş | прошлое | In the [past], people didn't have phones.
+w | remember | xatırlamaq | помнить | I [remember] my first teacher.
+w | miss | darıxmaq | скучать | I [miss] my old friends.
+p | grow up | böyümək | вырастать | Where did you [grow up]?
+p | look back on | geriyə baxmaq (xatırlamaq) | вспоминать | I [look back on] my school days with a smile.
+p | move away | köçüb getmək | уезжать (переезжать) | My best friend [moved away] when I was ten.
+p | get on | yola getmək | ладить | My sister and I didn't use to [get on].
+p | tell off | danlamaq | ругать | My mother used to [tell off] my brother for being late.
+
+## b1-zero-conditional
+w | water | su | вода | If you heat [water] to 100 degrees, it boils.
+w | boil | qaynamaq | кипеть | Water [boils] at 100°C.
+w | freeze | donmaq | замерзать | Water [freezes] at 0°C.
+w | melt | ərimək | таять | Ice [melts] if you leave it in the sun.
+w | ice | buz | лёд | If water gets very cold, it turns into [ice].
+w | plant | bitki | растение | [Plants] die if they don't get water.
+w | grow | böyümək, bitmək | расти | Plants [grow] fast in spring.
+w | light | işıq | свет | Plants need [light] to grow.
+w | float | suyun üzündə qalmaq | плавать (на поверхности) | Wood [floats] on water.
+w | sink | batmaq | тонуть | Stones [sink] in water.
+w | mix | qarışdırmaq | смешивать | If you [mix] red and blue, you get purple.
+w | burn | yanmaq | гореть | Paper [burns] easily.
+w | expand | genişlənmək | расширяться | Metal [expands] when it gets hot.
+w | gas | qaz | газ | Steam is water in the form of [gas].
+w | liquid | maye | жидкость | Water is a [liquid].
+w | heat | istilik | тепло | The sun gives us [heat] and light.
+w | experiment | təcrübə (elmi) | эксперимент | We did an [experiment] in the science lesson.
+w | scientist | alim | учёный | [Scientists] study how the world works.
+w | nature | təbiət | природа | I love walking in [nature].
+w | press | basmaq | нажимать | If you [press] this button, the machine starts.
+p | heat up | qızmaq | нагреваться | If the engine [heats up], it stops.
+p | cool down | soyumaq | остывать | Let the soup [cool down] before you eat it.
+p | dry up | qurumaq | высыхать | Rivers [dry up] when it doesn't rain.
+p | go out | sönmək | гаснуть | A fire [goes out] without oxygen.
+p | give off | buraxmaq (istilik, qoxu) | выделять | Old cars [give off] a lot of smoke.
+
+## b1-gerund-infinitive
+w | hobby | hobbi | хобби | My [hobby] is collecting coins.
+w | free time | boş vaxt | свободное время | What do you do in your [free time]?
+w | enjoy | xoşlamaq | любить (делать), наслаждаться | I [enjoy] reading detective stories.
+w | avoid | çəkinmək | избегать | Try to [avoid] eating late at night.
+w | mind | etiraz etmək | возражать | Do you [mind] opening the window?
+w | suggest | təklif etmək | предлагать | He [suggested] going to the cinema.
+w | refuse | imtina etmək | отказываться | She [refused] to answer the question.
+w | agree | razılaşmaq | соглашаться | They [agreed] to help us.
+w | learn | öyrənmək | учиться | I want to [learn] to play the guitar.
+w | practise | məşq etmək | практиковать | You should [practise] speaking every day.
+w | painting | rəsm çəkmə | живопись | [Painting] helps me relax.
+w | photography | fotoqrafiya | фотография | She is interested in [photography].
+w | gardening | bağçılıq | садоводство | My grandfather loves [gardening].
+w | knitting | toxuma | вязание | My aunt taught me [knitting].
+w | chess | şahmat | шахматы | Do you know how to play [chess]?
+w | collect | toplamaq (kolleksiya) | коллекционировать | I [collect] old stamps.
+w | relax | dincəlmək | расслабляться | I like to [relax] with a good book.
+w | bored | darıxan | скучающий | I'm [bored]. Let's go out.
+w | keen on | həvəsli (bir şeyə) | увлечённый | He is very [keen on] football.
+w | fancy | istəmək (könlü çəkmək) | хотеть (иметь желание) | Do you [fancy] going out tonight?
+p | take up | başlamaq (hobbiyə) | начинать заниматься | I've decided to [take up] yoga.
+p | be into | maraqlanmaq | увлекаться | I'm really [into] music these days.
+p | get into | həvəslənmək, maraq göstərmək | увлечься | I [got into] cycling last summer.
+p | give up | atmaq, əl çəkmək | бросать | Don't [give up] learning English!
+p | carry on | davam etmək | продолжать | She [carried on] singing after the song ended.
+
+## b1-present-perfect-continuous
+w | career | karyera | карьера | She has been building her [career] for ten years.
+w | colleague | iş yoldaşı | коллега | My [colleagues] have been working hard all week.
+w | salary | maaş | зарплата | He has been waiting for a higher [salary].
+w | interview | müsahibə | собеседование, интервью | I have been preparing for the job [interview].
+w | apply | müraciət etmək | подавать заявление | She has been [applying] for jobs since May.
+w | employ | işə götürmək | нанимать | The company [employs] 200 people.
+w | project | layihə | проект | We have been working on this [project] for months.
+w | meeting | iclas | совещание | The [meeting] has been going on for three hours.
+w | task | tapşırıq | задача | This [task] is very difficult.
+w | effort | səy | усилие | She has put a lot of [effort] into this work.
+w | exhausted | çox yorğun, əldən düşmüş | измученный | I'm [exhausted]. I've been working all day.
+w | practise | təkrarlayıb öyrənmək | практиковаться | He has been [practising] the piano for hours.
+w | train | məşq etmək (idman) | тренироваться | She has been [training] for the marathon.
+w | queue | növbə | очередь | We have been standing in this [queue] for an hour.
+w | lately | son zamanlar | в последнее время | I have been feeling tired [lately].
+w | all day | bütün gün | весь день | It has been raining [all day].
+w | for ages | çoxdan, uzun müddət | целую вечность | I've been waiting for you [for ages]!
+w | sweat | tərləmək | потеть | Why are you [sweating]? Have you been running?
+w | progress | irəliləyiş | прогресс | You have made great [progress] in English.
+w | promotion | vəzifə artımı | повышение | He has been hoping for a [promotion].
+p | work on | üzərində işləmək | работать над | I've been [working on] my essay all morning.
+p | keep on | davam etmək (təkrar) | продолжать | She has [kept on] calling me all day.
+p | wait for | gözləmək | ждать | I've been [waiting for] the bus for 20 minutes.
+p | set up | qurmaq, yaratmaq | основывать | They have [set up] a new company.
+p | take on | üzərinə götürmək | брать на себя | She has [taken on] too much work.
+
+## b1-past-perfect
+w | flight | uçuş | рейс | When we arrived, our [flight] had already left.
+w | delay | gecikmə | задержка | There was a two-hour [delay].
+w | cancel | ləğv etmək | отменять | They had [cancelled] the train.
+w | miss | qaçırmaq (avtobus və s.) | пропускать, опаздывать | I [missed] the bus because I had overslept.
+w | realise | başa düşmək, anlamaq | осознавать | I [realised] I had left my keys at home.
+w | platform | platforma (vağzal) | платформа | The train had left from [platform] 3.
+w | passenger | sərnişin | пассажир | All the [passengers] had got off the bus.
+w | gate | çıxış qapısı (aeroport) | выход (в аэропорту) | When we got to the [gate], it was closed.
+w | boarding pass | minmə talonu | посадочный талон | I couldn't find my [boarding pass].
+w | border | sərhəd | граница | We had never crossed the [border] before.
+w | hostel | hostel | хостел | We stayed in a cheap [hostel].
+w | reception | qəbul bölməsi | ресепшн | Leave your key at [reception].
+w | reservation | rezerv, sifariş | бронирование | They had lost our [reservation].
+w | guide | bələdçi | гид | The [guide] showed us the old city.
+w | tourist | turist | турист | The city was full of [tourists].
+w | before | əvvəl | до, прежде | I had never seen the sea [before].
+w | by the time | ...ana qədər | к тому времени, как | [By the time] we arrived, the film had started.
+w | unfortunately | təəssüf ki | к сожалению | [Unfortunately], the museum had closed.
+w | upset | məyus | расстроенный | She was [upset] because she had lost her bag.
+w | lost | itmiş, azmış | потерянный, заблудившийся | We got [lost] in the old city.
+p | take off | havaya qalxmaq | взлетать | The plane had already [taken off].
+p | get off | (nəqliyyatdan) düşmək | выходить (из транспорта) | We [got off] the bus at the wrong stop.
+p | get on | (nəqliyyata) minmək | садиться (в транспорт) | He [got on] the train just before it left.
+p | run into | rastlaşmaq | случайно встретить | At the airport I [ran into] an old friend.
+p | see off | yola salmaq | провожать | We went to the station to [see off] our cousins.
+
+## b1-may-might-could
+w | possible | mümkün | возможный | It's [possible] that it will snow.
+w | perhaps | bəlkə də | возможно | [Perhaps] he missed the bus.
+w | chance | şans, ehtimal | шанс | There's a [chance] of rain later.
+w | technology | texnologiya | технология | [Technology] might change our lives.
+w | device | cihaz | устройство | This [device] could save your life.
+w | invention | ixtira | изобретение | The phone is a great [invention].
+w | screen | ekran | экран | Don't look at the [screen] for too long.
+w | battery | batareya | батарея | My phone [battery] might die soon.
+w | password | parol | пароль | I may have forgotten my [password].
+w | download | yükləmək | скачивать | You can [download] the app for free.
+w | update | yeniləmək | обновлять | You should [update] your phone.
+w | online | onlayn | онлайн | We might have the meeting [online].
+w | virus | virus | вирус | Your computer might have a [virus].
+w | artificial | süni | искусственный | [Artificial] intelligence could do many jobs.
+w | replace | əvəz etmək | заменять | Robots may [replace] some workers.
+w | crowded | izdihamlı | переполненный | The bus could be [crowded] in the morning.
+w | attend | iştirak etmək | посещать | I might not [attend] the meeting.
+w | rather | olduqca, xeyli | довольно | It might be [rather] cold tonight.
+w | unlikely | ehtimal olunmayan | маловероятный | It's [unlikely] that he will come.
+w | guess | təxmin etmək | угадывать | Can you [guess] how old I am?
+p | log in | daxil olmaq (sistemə) | входить (в систему) | I can't [log in] to my account.
+p | back up | ehtiyat nüsxə çıxarmaq | делать резервную копию | You should [back up] your files.
+p | plug in | şəbəkəyə qoşmaq | подключать (в розетку) | [Plug in] the charger, please.
+p | come out | çıxmaq (satışa) | выходить (в продажу) | The new phone might [come out] next month.
+p | shut down | sönmək, bağlanmaq | выключаться | My laptop may [shut down] without warning.
+
+## b1-so-such
+w | excited | həyəcanlı (sevincli) | взволнованный (радостно) | I'm so [excited] about the trip!
+w | nervous | həyəcanlı (narahat) | нервный | She was so [nervous] before the exam.
+w | angry | əsəbi | сердитый | He was so [angry] that he couldn't speak.
+w | surprised | təəccüblənmiş | удивлённый | We were so [surprised] to see him.
+w | disappointed | məyus | разочарованный | I was so [disappointed] with the film.
+w | embarrassed | utanmış, pərt | смущённый | I felt so [embarrassed] when I fell.
+w | relieved | rahatlamış | испытывающий облегчение | I was so [relieved] when I passed the test.
+w | jealous | qısqanc | ревнивый, завистливый | He was [jealous] of his brother's new car.
+w | lonely | tənha | одинокий | She felt [lonely] in the big city.
+w | scared | qorxmuş | испуганный | The children were [scared] of the storm.
+w | confident | özünə inamlı | уверенный | She is a very [confident] speaker.
+w | grateful | minnətdar | благодарный | I'm so [grateful] for your help.
+w | amazing | heyrətamiz | потрясающий | It was such an [amazing] day!
+w | awful | dəhşətli | ужасный | We had such [awful] weather on holiday.
+w | delicious | dadlı | вкусный | It was such a [delicious] meal.
+w | brave | cəsur | смелый | The firefighter was so [brave].
+w | mood | əhval | настроение | She's in a good [mood] today.
+w | feeling | hiss | чувство | I have a strange [feeling] about this.
+w | cheerful | şən | весёлый | He is always so [cheerful].
+w | upset | kədərli, pərişan | расстроенный | Don't be so [upset]. It's not your fault.
+p | cheer up | ruhlandırmaq | подбодрить | A good film always [cheers up] my friends.
+p | let down | məyus etmək | подводить | Don't [let down] your team.
+p | put up with | dözmək | терпеть | I can't [put up with] this noise.
+p | freak out | çox qorxmaq, panikaya düşmək | паниковать | She [freaked out] when she saw the spider.
+p | chill out | rahatlamaq | расслабляться | Let's just [chill out] at home tonight.
+
+## b1-question-tags
+w | conversation | söhbət | разговор | We had a long [conversation] about music.
+w | agree | razı olmaq | соглашаться | You [agree] with me, don't you?
+w | opinion | fikir | мнение | What's your [opinion] about the film?
+w | invite | dəvət etmək | приглашать | You'll [invite] Sara, won't you?
+w | guest | qonaq | гость | The [guests] have arrived, haven't they?
+w | gossip | qeybət | сплетни | I don't like [gossip].
+w | joke | zarafat | шутка | That was a funny [joke], wasn't it?
+w | introduce | tanış etmək | представлять | Let me [introduce] my friend Ali.
+w | stranger | yad adam, tanımadığın adam | незнакомец | Don't talk to [strangers].
+w | chat | söhbət etmək | болтать | We [chatted] for hours.
+w | apologise | üzr istəmək | извиняться | You should [apologise] to her.
+w | smile | gülümsəmək | улыбаться | She always [smiles] at people.
+w | friendly | mehriban | дружелюбный | The people here are [friendly], aren't they?
+w | rude | kobud | грубый | He was very [rude] to the waiter.
+w | honest | dürüst | честный | You're being [honest], aren't you?
+w | sure | əmin | уверенный | You're [sure] about this, aren't you?
+w | lovely | gözəl, xoş | чудесный | It's a [lovely] day, isn't it?
+w | check | yoxlamaq | проверять | You [checked] the door, didn't you?
+w | remind | xatırlatmaq | напоминать | Can you [remind] me to call Mum?
+w | reply | cavab vermək | отвечать | She didn't [reply] to my message.
+p | catch up | (görüşüb) söhbətləşmək | наверстать (пообщаться) | Let's meet for coffee and [catch up].
+p | get together | bir yerə yığışmaq | собираться | We should [get together] more often.
+p | drop by | yolüstü baş çəkmək | заглядывать | You'll [drop by] later, won't you?
+p | bring up | (mövzu) açmaq | поднимать (тему) | Don't [bring up] politics at dinner.
+p | point out | qeyd etmək, göstərmək | указывать | She [pointed out] a mistake in my essay.
