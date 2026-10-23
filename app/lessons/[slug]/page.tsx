@@ -83,6 +83,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
     <section className="stack">
       {head}
       <LessonPlayer
+        lessonId={lesson.id}
         title={text.title}
         videoUrl={lesson.explanation_video_url}
         questions={questions ?? []}

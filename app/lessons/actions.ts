@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
 import { LESSON_PRICE, isLevel } from "@/lib/levels";
@@ -26,4 +27,39 @@ export async function buyLesson(form: FormData) {
       successPath: `/lessons/${slug}`,
     }),
   );
+}
+
+/** Keeps the student's best test result for a lesson they own. */
+export async function saveLessonResult(lessonId: number, right: number, total: number) {
+  const user = await requireUser("/lessons");
+  if (![lessonId, right, total].every(Number.isInteger) || total <= 0 || right < 0 || right > total) return;
+  const db = createAdminClient();
+  const { data: owned } = await db
+    .from("lesson_purchases")
+    .select("lesson_id")
+    .eq("student_id", user.id)
+    .eq("lesson_id", lessonId)
+    .maybeSingle();
+  if (!owned) return;
+
+  const { data: prev } = await db
+    .from("lesson_results")
+    .select("best_right, total, attempts")
+    .eq("student_id", user.id)
+    .eq("lesson_id", lessonId)
+    .maybeSingle();
+  const better = !prev || right / total >= prev.best_right / prev.total;
+  const { error } = await db.from("lesson_results").upsert(
+    {
+      student_id: user.id,
+      lesson_id: lessonId,
+      best_right: better ? right : prev.best_right,
+      total: better ? total : prev.total,
+      attempts: (prev?.attempts ?? 0) + 1,
+      updated_at: new Date().toISOString(),
+    },
+    { onConflict: "student_id,lesson_id" },
+  );
+  if (error) console.error("lesson result save failed", error);
+  revalidatePath("/lessons");
 }

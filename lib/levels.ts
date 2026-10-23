@@ -1,6 +1,15 @@
 export const LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
 export type Level = (typeof LEVELS)[number];
 
+/** CEFR level names; kept in English everywhere, like on the certificate. */
+export const LEVEL_NAME: Record<Level, string> = {
+  A1: "Beginner",
+  A2: "Elementary",
+  B1: "Intermediate",
+  B2: "Upper-Intermediate",
+  C1: "Advanced",
+};
+
 export const TEST_PRICE = 3;
 export const CERTIFICATE_PRICE = 5;
 

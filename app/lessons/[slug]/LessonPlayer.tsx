@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Video } from "@/components/Video";
 import { gradeFor, type Grade } from "@/lib/grade";
 import { useT } from "@/lib/i18n/client";
+import { saveLessonResult } from "../actions";
 
 type Question = { id: number; part: number; question: string; options: string[]; correct: number };
 
@@ -11,10 +12,12 @@ type Question = { id: number; part: number; question: string; options: string[];
 const TEST_PARTS = [2, 4];
 
 export function LessonPlayer({
+  lessonId,
   title,
   videoUrl,
   questions,
 }: {
+  lessonId: number;
   title: string;
   videoUrl: string | null;
   questions: Question[];
@@ -138,7 +141,12 @@ export function LessonPlayer({
           type="button"
           className="btn self-start"
           disabled={!isVideo && !allAnswered}
-          onClick={() => (last ? setFinished(true) : setStep(step + 1))}
+          onClick={() => {
+            if (!last) return setStep(step + 1);
+            setFinished(true);
+            const right = questions.filter((q) => answers[q.id] === q.correct).length;
+            if (questions.length > 0) saveLessonResult(lessonId, right, questions.length).catch(() => {});
+          }}
         >
           {last ? t.lessons.finish : t.lessons.nextPart}
         </button>

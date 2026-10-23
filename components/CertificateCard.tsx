@@ -1,15 +1,7 @@
-import type { Level } from "@/lib/levels";
+import { LEVEL_NAME, type Level } from "@/lib/levels";
 
 // The certificate itself is always in English, like most language certificates,
 // so it reads the same for any employer or school.
-const LEVEL_NAME: Record<Level, string> = {
-  A1: "Beginner",
-  A2: "Elementary",
-  B1: "Intermediate",
-  B2: "Upper-Intermediate",
-  C1: "Advanced",
-};
-
 const LEVEL_TEXT: Record<Level, string> = {
   A1: "Can understand and use familiar everyday expressions and very basic phrases.",
   A2: "Can communicate in simple, routine tasks on familiar topics and everyday matters.",

@@ -127,9 +127,6 @@ main { padding-block: 28px 64px; display: grid; gap: 24px; }
 .status.cancelled { background: var(--bg); color: var(--muted); }
 .note { border-left: 3px solid var(--gold); background: var(--gold-soft); padding: 12px 14px; border-radius: 0 10px 10px 0; display: grid; gap: 8px; }
 
-.lessons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-.lesson { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-.lesson .stack { gap: 4px; min-width: 0; }
 .stepper { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
 .stepper button { border: 1px solid var(--line); background: var(--surface); color: var(--muted); border-radius: 10px; padding: 8px; font-size: 13px; font-weight: 600; text-align: left; }
 .stepper button[aria-current="true"] { border-color: var(--accent); color: var(--ink); background: var(--accent-soft); }
@@ -150,7 +147,7 @@ table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
 @media (max-width: 720px) {
   .cambridge img { max-width: 320px; justify-self: center; }
   .cambridge,
-  .hero, .tutors, .lessons, .result, .topics { grid-template-columns: 1fr; }
+  .hero, .tutors, .result, .topics { grid-template-columns: 1fr; }
   .steps, .steps.three, .steps.five, .stepper { grid-template-columns: repeat(2, 1fr); }
   .nav { margin-left: 0; width: 100%; }
 }
@@ -249,3 +246,31 @@ input[type="datetime-local"] { -webkit-appearance: none; appearance: none; min-w
 .level-teacher { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; }
 .level-teacher .intro { margin: 0; white-space: pre-line; }
 @media (max-width: 560px) { .level-teacher { grid-template-columns: 1fr; } }
+
+/* Lessons page: one coloured block per level */
+.level-block { --lc: var(--lv-a1); display: grid; gap: 12px; margin-top: 8px; }
+.lvl-A2 { --lc: var(--lv-a2); } .lvl-B1 { --lc: var(--lv-b1); } .lvl-B2 { --lc: var(--lv-b2); } .lvl-C1 { --lc: var(--lv-c1); }
+.level-banner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 18px 20px; border-radius: 16px; background: var(--lc); color: #fff; }
+.level-banner h3 { margin: 0; color: #fff; }
+.level-code { display: inline-grid; place-items: center; width: 58px; height: 58px; border-radius: 14px; background: rgba(255, 255, 255, 0.22); font-family: var(--display); font-size: 24px; font-weight: 700; }
+.banner-teacher { gap: 10px; }
+.banner-teacher .avatar { border: 2px solid rgba(255, 255, 255, 0.8); }
+.level-progress { flex-basis: 100%; display: grid; gap: 6px; }
+.level-progress .bar { height: 8px; border-radius: 999px; background: rgba(255, 255, 255, 0.3); overflow: hidden; }
+.level-progress .bar i { display: block; height: 100%; background: #fff; border-radius: inherit; }
+.teacher-more > summary { cursor: pointer; font-weight: 600; color: var(--lc); width: fit-content; }
+.teacher-more[open] > summary { margin-bottom: 10px; }
+.lesson-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.lesson-card { display: grid; grid-template-columns: auto 1fr; grid-template-rows: 1fr auto; gap: 8px 14px; padding: 16px; border-radius: 14px; border: 1px solid var(--line); border-top: 4px solid var(--lc); background: var(--surface); color: var(--ink); text-decoration: none; transition: transform 0.15s, box-shadow 0.15s; }
+.lesson-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); }
+.lesson-num { grid-row: span 2; display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--lc); color: #fff; font-weight: 700; }
+.lesson-status { display: flex; justify-content: space-between; align-items: center; gap: 8px; color: var(--lc); font-weight: 700; }
+.status { font-size: 13px; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.status.price { background: transparent; color: var(--ink); padding-left: 0; font-size: 15px; }
+.status.owned { background: var(--bg); color: var(--muted); }
+.status.average { background: #fff4d6; color: #6b5200; }
+.status.weak { background: #fde4e1; color: #8a2a1d; }
+@media (prefers-color-scheme: dark) {
+  .status.average { background: #3a2f0c; color: #ffe6a3; }
+  .status.weak { background: #3d1a15; color: #ffc9c1; }
+}
