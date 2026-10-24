@@ -2,7 +2,7 @@ import "server-only";
 import { randomBytes } from "node:crypto";
 import { createAdminClient } from "./supabase/admin";
 
-export type PaymentKind = "test" | "certificate" | "booking" | "lesson" | "practice";
+export type PaymentKind = "test" | "certificate" | "booking" | "lesson" | "practice" | "ai_chat";
 
 export type Payment = {
   id: string;
@@ -124,6 +124,8 @@ export async function successPathFor(p: Pick<Payment, "kind" | "ref_id">): Promi
     }
     case "practice":
       return `/practice/${p.ref_id}`;
+    case "ai_chat":
+      return `/practice/ai/${p.ref_id}`;
   }
 }
 
@@ -176,6 +178,10 @@ async function fulfil(p: Payment) {
       // The same payment kind serves both seats; the payer decides which one is paid.
       await db.from("practice_rooms").update({ host_paid: true }).eq("id", p.ref_id).eq("host_id", p.user_id);
       await db.from("practice_rooms").update({ guest_paid: true }).eq("id", p.ref_id).eq("guest_id", p.user_id);
+      return;
+    }
+    case "ai_chat": {
+      await db.from("ai_chats").update({ paid: true }).eq("id", p.ref_id).eq("student_id", p.user_id);
       return;
     }
   }

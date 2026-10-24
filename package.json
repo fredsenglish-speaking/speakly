@@ -11,6 +11,7 @@
     "test": "node --test --experimental-strip-types lib/*.test.ts lib/i18n/*.test.ts lib/supabase/*.test.ts"
   },
   "dependencies": {
+    "@heygen/liveavatar-web-sdk": "0.0.19",
     "@supabase/ssr": "0.12.7",
     "@supabase/supabase-js": "2.118.0",
     "next": "15.5.28",
