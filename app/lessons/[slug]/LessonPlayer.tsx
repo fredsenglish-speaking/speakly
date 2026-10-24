@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { Video } from "@/components/Video";
 import { gradeFor, type Grade } from "@/lib/grade";
 import { useLocale, useT } from "@/lib/i18n/client";
-import { gapAnswer, translation, vocabFinal, vocabPractice, type QuizQuestion, type VocabItem } from "@/lib/vocabQuiz";
+import { exampleTranslation, gapAnswer, translation, vocabFinal, vocabPractice, type QuizQuestion, type VocabItem } from "@/lib/vocabQuiz";
 import { saveLessonResult } from "../actions";
 
 type Question = { id: number; part: number; question: string; options: string[]; correct: number };
@@ -221,6 +221,7 @@ function WordList({ vocab, locale }: { vocab: VocabItem[]; locale: string }) {
               {g.items.map((v) => {
                 const gap = gapAnswer(v.example);
                 const [before, after] = v.example.split(`[${gap}]`);
+                const exampleTr = exampleTranslation(v, locale);
                 return (
                   <li key={v.id}>
                     <div className="vocab-head">
@@ -235,6 +236,11 @@ function WordList({ vocab, locale }: { vocab: VocabItem[]; locale: string }) {
                       <mark>{gap}</mark>
                       {after}
                     </p>
+                    {exampleTr && (
+                      <p className="small vocab-tr" lang={locale === "ru" ? "ru" : "az"}>
+                        {exampleTr}
+                      </p>
+                    )}
                   </li>
                 );
               })}

@@ -1,7 +1,8 @@
 // Builds the vocabulary questions of a lesson from its word list. Everything is
 // shuffled with a fixed seed so the server and the browser render the same test.
 
-export type VocabItem = { id: number; kind: "word" | "phrasal"; term: string; az: string; ru: string; example: string };
+// example_az/example_ru translate the example; empty or missing before migration 0014 has run.
+export type VocabItem = { id: number; kind: "word" | "phrasal"; term: string; az: string; ru: string; example: string; example_az?: string; example_ru?: string };
 
 export type QuizQuestion = {
   key: string;
@@ -39,6 +40,10 @@ export function gapSentence(example: string) {
 
 export function translation(item: VocabItem, locale: string) {
   return locale === "ru" ? item.ru : item.az;
+}
+
+export function exampleTranslation(item: VocabItem, locale: string) {
+  return (locale === "ru" ? item.example_ru : item.example_az) ?? "";
 }
 
 // The right answer plus three different wrong ones taken from the same kind of item.

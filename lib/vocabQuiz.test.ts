@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { gapAnswer, gapSentence, seededShuffle, vocabFinal, vocabPractice, type VocabItem } from "./vocabQuiz.ts";
+import { exampleTranslation, gapAnswer, gapSentence, seededShuffle, vocabFinal, vocabPractice, type VocabItem } from "./vocabQuiz.ts";
 
 const words: VocabItem[] = ["teacher", "student", "doctor", "friend", "brother"].map((w, i) => ({
   id: i + 1,
@@ -55,4 +55,12 @@ test("final test takes up to 7 words and 3 phrasal verbs", () => {
   f.forEach((q) => assert.ok(q.correct >= 0));
   assert.equal(f[0].question.startsWith("English for az-"), true);
   assert.equal(f[0].optionsLang, "en");
+});
+
+test("example translation follows the site language and is empty when missing", () => {
+  const item: VocabItem = { ...words[0], example_az: "Müəllimim buradadır.", example_ru: "Мой учитель здесь." };
+  assert.equal(exampleTranslation(item, "az"), "Müəllimim buradadır.");
+  assert.equal(exampleTranslation(item, "en"), "Müəllimim buradadır.");
+  assert.equal(exampleTranslation(item, "ru"), "Мой учитель здесь.");
+  assert.equal(exampleTranslation(words[0], "ru"), "");
 });
