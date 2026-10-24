@@ -20,6 +20,7 @@
   --lv-b1: #7baa3a;
   --lv-b2: #d98a2b;
   --lv-c1: #b4508a;
+  --lv-c2: #7a4fc4;
   --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
 }
@@ -99,7 +100,7 @@ main { padding-block: 28px 64px; display: grid; gap: 24px; }
 .self-start { justify-self: start; }
 
 .lv { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; padding: 2px 8px; border-radius: 6px; font-weight: 700; font-size: 13px; color: #fff; letter-spacing: 0.03em; }
-.lv-A1 { background: var(--lv-a1); } .lv-A2 { background: var(--lv-a2); } .lv-B1 { background: var(--lv-b1); } .lv-B2 { background: var(--lv-b2); } .lv-C1 { background: var(--lv-c1); }
+.lv-A1 { background: var(--lv-a1); } .lv-A2 { background: var(--lv-a2); } .lv-B1 { background: var(--lv-b1); } .lv-B2 { background: var(--lv-b2); } .lv-C1 { background: var(--lv-c1); } .lv-C2 { background: var(--lv-c2); }
 
 .hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; align-items: center; }
 .ladder { display: grid; gap: 6px; }
@@ -274,7 +275,7 @@ input[type="datetime-local"] { -webkit-appearance: none; appearance: none; min-w
 
 /* Lessons page: one coloured block per level */
 .level-block { --lc: var(--lv-a1); display: grid; gap: 12px; margin-top: 8px; }
-.lvl-A1 { --lc: var(--lv-a1); } .lvl-A2 { --lc: var(--lv-a2); } .lvl-B1 { --lc: var(--lv-b1); } .lvl-B2 { --lc: var(--lv-b2); } .lvl-C1 { --lc: var(--lv-c1); }
+.lvl-A1 { --lc: var(--lv-a1); } .lvl-A2 { --lc: var(--lv-a2); } .lvl-B1 { --lc: var(--lv-b1); } .lvl-B2 { --lc: var(--lv-b2); } .lvl-C1 { --lc: var(--lv-c1); } .lvl-C2 { --lc: var(--lv-c2); }
 .level-banner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 18px 20px; border-radius: 16px; background: var(--lc); color: #fff; }
 .level-banner h3 { margin: 0; color: #fff; }
 .level-code { display: inline-grid; place-items: center; width: 58px; height: 58px; border-radius: 14px; background: rgba(255, 255, 255, 0.22); font-family: var(--display); font-size: 24px; font-weight: 700; }

@@ -1,6 +1,6 @@
 # Speakly
 
-İngilis dili speaking platforması: səviyyə testi ($3), onlayn sertifikat ($5), müəllimlə canlı speaking dərsləri (15 dəq / 30 dəq / 1 saat) və səviyyəyə görə qrammatika lesson-ları (A1 $7 … C1 $18).
+İngilis dili speaking platforması: səviyyə testi ($3), onlayn sertifikat ($5), müəllimlə canlı speaking dərsləri (15 dəq / 30 dəq / 1 saat) və səviyyəyə görə qrammatika lesson-ları (A1 $7 … C1 $18, C2 $21).
 
 ## Nə hazırdır
 
@@ -28,7 +28,7 @@ Sayt 3 dildədir: Azərbaycan, İngilis və Rus. Dil yuxarıdakı AZ / EN / RU d
 ## Quraşdırma
 
 1. [supabase.com](https://supabase.com)-da pulsuz layihə yaradın.
-2. Supabase → **SQL Editor**-da `supabase/setup_all.sql` faylının məzmununu işə salın. Bu, cədvəlləri, 20 test sualını, 60 lesson-u (hər səviyyəyə 12, 3 dildə adları ilə) və 240 məşq sualını yaradır. Artıq qurulmuş bazaya yalnız yeni `supabase/migrations/` faylları əlavə olunur (məs. `0005_profiles_presence.sql`).
+2. Supabase → **SQL Editor**-da `supabase/setup_all.sql` faylının məzmununu işə salın. Bu, cədvəlləri, 20 test sualını, 60 lesson-u (hər səviyyəyə 12, 3 dildə adları ilə) və 240 məşq sualını yaradır. Artıq qurulmuş bazaya yalnız yeni `supabase/migrations/` faylları əlavə olunur (məs. `0005_profiles_presence.sql`). C2 səviyyəsi üçün əvvəl `0012_c2_level.sql`, sonra ayrıca `0013_c2_content.sql` işə salınır.
 3. Supabase → **Authentication → URL Configuration**-da Site URL olaraq saytın ünvanını yazın.
 4. `.env.example` faylını `.env.local` adı ilə köçürün və Supabase → **Project Settings → API**-dakı açarları yazın.
 5. Lokal işə salmaq üçün:

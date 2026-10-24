@@ -3,7 +3,7 @@ import { LevelChip } from "@/components/LevelChip";
 import { getT } from "@/lib/i18n/server";
 import { CERTIFICATE_PRICE, LESSON_PRICE, LEVELS, TEST_PRICE, money } from "@/lib/levels";
 
-const FILL = { A1: 20, A2: 40, B1: 60, B2: 80, C1: 100 } as const;
+const FILL = { A1: 17, A2: 33, B1: 50, B2: 67, C1: 83, C2: 100 } as const;
 
 export default async function HomePage() {
   const t = await getT();

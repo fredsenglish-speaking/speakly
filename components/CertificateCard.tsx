@@ -8,6 +8,7 @@ const LEVEL_TEXT: Record<Level, string> = {
   B1: "Can deal with most everyday situations and describe experiences, plans and opinions.",
   B2: "Can interact with fluency and spontaneity and give clear, detailed views on a wide range of topics.",
   C1: "Can express ideas fluently and precisely, and use English flexibly for social, academic and professional purposes.",
+  C2: "Can understand virtually everything heard or read, and express ideas spontaneously, very fluently and precisely, even in the most complex situations.",
 };
 
 export function CertificateCard({

@@ -1,4 +1,4 @@
-export const LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
+export const LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"] as const;
 export type Level = (typeof LEVELS)[number];
 
 /** CEFR level names; kept in English everywhere, like on the certificate. */
@@ -8,6 +8,7 @@ export const LEVEL_NAME: Record<Level, string> = {
   B1: "Intermediate",
   B2: "Upper-Intermediate",
   C1: "Advanced",
+  C2: "Proficiency",
 };
 
 export const TEST_PRICE = 3;
@@ -19,6 +20,7 @@ export const LESSON_PRICE: Record<Level, number> = {
   B1: 12,
   B2: 15,
   C1: 18,
+  C2: 21,
 };
 
 /** Speaking club: two students of the same level practise one topic together. */
@@ -46,11 +48,12 @@ export function isDuration(value: number): value is Duration {
 export function levelForScore(score: number, total: number): Level {
   if (total <= 0) return "A1";
   const share = score / total;
-  if (share < 0.3) return "A1";
-  if (share < 0.5) return "A2";
-  if (share < 0.7) return "B1";
-  if (share < 0.9) return "B2";
-  return "C1";
+  if (share < 0.25) return "A1";
+  if (share < 0.42) return "A2";
+  if (share < 0.59) return "B1";
+  if (share < 0.75) return "B2";
+  if (share < 0.9) return "C1";
+  return "C2";
 }
 
 export function durationLabel(minutes: number, t: { common: { hour: string; min: string } }): string {
