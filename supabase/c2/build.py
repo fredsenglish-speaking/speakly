@@ -48,17 +48,17 @@ TEST = [
 ]
 
 TEACHER_EN = (
-    "Hello, and welcome to C2, the highest level. I'm James, your video teacher.\n\n"
+    "Hello, and welcome to C2, the highest level. I'm Edward, your video teacher.\n\n"
     "In six short lessons, we polish the details that make English truly precise: formal inversion, "
     "hedging, advanced passives, concession, modal nuances and formal linkers.\n\n"
     "Each lesson has a short video, tests and new words. Enjoy the finer points of English. Let's begin!"
 )
 TEACHER_AZ = (
-    "Salam! Mən James, C2 səviyyəsi üzrə video müəlliminizəm. Altı qısa dərsdə ingilis dilini tam dəqiq edən "
+    "Salam! Mən Edward, C2 səviyyəsi üzrə video müəlliminizəm. Altı qısa dərsdə ingilis dilini tam dəqiq edən "
     "incəlikləri keçəcəyik: rəsmi inversiya, hedging, mürəkkəb passiv, güzəşt, modal fellərin incəlikləri və rəsmi bağlayıcılar."
 )
 TEACHER_RU = (
-    "Здравствуйте! Я Джеймс, ваш видеопреподаватель уровня C2. За шесть коротких уроков мы отточим детали, "
+    "Здравствуйте! Я Эдвард, ваш видеопреподаватель уровня C2. За шесть коротких уроков мы отточим детали, "
     "которые делают английский по-настоящему точным: инверсию, хеджирование, сложный пассив, уступку, нюансы модальных глаголов и формальные связки."
 )
 
@@ -163,7 +163,7 @@ def main():
         ") as v(position, question, options, correct)\n"
         "where not exists (select 1 from test_questions x where x.question = v.question);\n\n"
         "insert into level_teachers (level, name, intro, intro_az, intro_ru) values (\n"
-        f"  'C2',\n  'James',\n  {sql(TEACHER_EN)},\n  {sql(TEACHER_AZ)},\n  {sql(TEACHER_RU)}\n"
+        f"  'C2',\n  'Edward',\n  {sql(TEACHER_EN)},\n  {sql(TEACHER_AZ)},\n  {sql(TEACHER_RU)}\n"
         ") on conflict (level) do nothing;\n\n"
         "notify pgrst, 'reload schema';\n"
     )

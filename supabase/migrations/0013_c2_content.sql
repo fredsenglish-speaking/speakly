@@ -414,14 +414,14 @@ where not exists (select 1 from test_questions x where x.question = v.question);
 
 insert into level_teachers (level, name, intro, intro_az, intro_ru) values (
   'C2',
-  'James',
-  'Hello, and welcome to C2, the highest level. I''m James, your video teacher.
+  'Edward',
+  'Hello, and welcome to C2, the highest level. I''m Edward, your video teacher.
 
 In six short lessons, we polish the details that make English truly precise: formal inversion, hedging, advanced passives, concession, modal nuances and formal linkers.
 
 Each lesson has a short video, tests and new words. Enjoy the finer points of English. Let''s begin!',
-  'Salam! Mən James, C2 səviyyəsi üzrə video müəlliminizəm. Altı qısa dərsdə ingilis dilini tam dəqiq edən incəlikləri keçəcəyik: rəsmi inversiya, hedging, mürəkkəb passiv, güzəşt, modal fellərin incəlikləri və rəsmi bağlayıcılar.',
-  'Здравствуйте! Я Джеймс, ваш видеопреподаватель уровня C2. За шесть коротких уроков мы отточим детали, которые делают английский по-настоящему точным: инверсию, хеджирование, сложный пассив, уступку, нюансы модальных глаголов и формальные связки.'
+  'Salam! Mən Edward, C2 səviyyəsi üzrə video müəlliminizəm. Altı qısa dərsdə ingilis dilini tam dəqiq edən incəlikləri keçəcəyik: rəsmi inversiya, hedging, mürəkkəb passiv, güzəşt, modal fellərin incəlikləri və rəsmi bağlayıcılar.',
+  'Здравствуйте! Я Эдвард, ваш видеопреподаватель уровня C2. За шесть коротких уроков мы отточим детали, которые делают английский по-настоящему точным: инверсию, хеджирование, сложный пассив, уступку, нюансы модальных глаголов и формальные связки.'
 ) on conflict (level) do nothing;
 
 notify pgrst, 'reload schema';
