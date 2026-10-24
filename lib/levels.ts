@@ -25,6 +25,9 @@ export const LESSON_PRICE: Record<Level, number> = {
 export const PRACTICE_PRICE = 2;
 export const PRACTICE_MINUTES = 40;
 
+/** Speaking club with the AI video teacher, by length in minutes. */
+export const AI_CHAT_PRICE = { 15: 8, 30: 15, 60: 25 } as const;
+
 export const DURATIONS = [15, 30, 60] as const;
 export type Duration = (typeof DURATIONS)[number];
 

@@ -5,6 +5,7 @@ import { LevelChip } from "@/components/LevelChip";
 import { SubmitButton } from "@/components/SubmitButton";
 import { requireUser } from "@/lib/auth";
 import { PRACTICE_MINUTES, PRACTICE_PRICE, formatDateTime, money, shortName, topicTitle } from "@/lib/levels";
+import { aiTeacherEnabled } from "@/lib/liveavatar";
 import { isOnline } from "@/lib/presence";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
@@ -15,6 +16,20 @@ import { loadRooms, roomStatus } from "./rooms";
 
 export async function generateMetadata() {
   return { title: DICTIONARIES[await getLocale()].practice.title };
+}
+
+function AiTeacherCard({ t }: { t: (typeof DICTIONARIES)["az"]["aiChat"] }) {
+  const enabled = aiTeacherEnabled();
+  return (
+    <div className="panel stack" style={{ borderColor: "var(--accent)" }}>
+      <div className="row between">
+        <h3>{t.title}</h3>
+        {!enabled && <span className="status scheduled">{t.comingSoon}</span>}
+      </div>
+      <p className="small">{t.cardText}</p>
+      <Link href="/practice/ai" className={`btn self-start${enabled ? "" : " ghost"}`}>{t.tryIt}</Link>
+    </div>
+  );
 }
 
 type Peer = { id: string; full_name: string; avatar_url?: string | null; last_seen_at?: string | null };
@@ -36,6 +51,7 @@ export default async function PracticePage({
         <p className="muted">{t.intro(price, PRACTICE_MINUTES)}</p>
         <p>{t.needTest}</p>
         <Link href="/test" className="btn self-start">{t.takeTest}</Link>
+        <AiTeacherCard t={DICTIONARIES[locale].aiChat} />
       </section>
     );
   }
@@ -86,6 +102,7 @@ export default async function PracticePage({
         <LevelChip level={level} />
       </div>
       <p className="muted">{t.intro(price, PRACTICE_MINUTES)}</p>
+      <AiTeacherCard t={DICTIONARIES[locale].aiChat} />
       {taken && <p className="notice">{t.errTaken}</p>}
       {offline && <p className="notice">{t.errOffline}</p>}
 
