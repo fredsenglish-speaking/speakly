@@ -311,6 +311,7 @@ input[type="datetime-local"] { -webkit-appearance: none; appearance: none; min-w
 .vocab-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 .vocab-list li { border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; background: var(--surface); }
 .vocab-list p { margin: 4px 0 0; }
+.vocab-list .vocab-tr { margin-top: 2px; color: var(--muted); font-style: italic; }
 .vocab-list mark { background: var(--gold-soft); color: inherit; padding: 0 3px; border-radius: 4px; font-weight: 600; }
 .vocab-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .vocab-head strong { font-size: 17px; }

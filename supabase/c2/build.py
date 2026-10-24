@@ -114,7 +114,7 @@ def vocab():
     rows = parse_vocab(HERE.parent / "vocab" / "c2.txt")
     values, position = [], {}
     for kind in ("w", "p"):
-        for slug, k, term, az, ru, example in rows:
+        for slug, k, term, az, ru, example, *_ in rows:
             if k != kind:
                 continue
             pos = position.get(slug, 1)

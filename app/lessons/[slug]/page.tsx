@@ -89,7 +89,8 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
     .order("position");
   const { data: vocab } = await db
     .from("lesson_vocab")
-    .select("id, kind, term, az, ru, example")
+    // All columns, so the list still loads on a database that doesn't have the example translations yet.
+    .select("*")
     .eq("lesson_id", lesson.id)
     .order("position");
 
