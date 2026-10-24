@@ -2,15 +2,19 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { bakuLocalToIso, levelForScore, shortName, topicTitle } from "./levels.ts";
 
-test("levelForScore bands for a 20 question test", () => {
-  assert.equal(levelForScore(0, 20), "A1");
-  assert.equal(levelForScore(5, 20), "A1");
-  assert.equal(levelForScore(6, 20), "A2");
-  assert.equal(levelForScore(10, 20), "B1");
-  assert.equal(levelForScore(14, 20), "B2");
-  assert.equal(levelForScore(17, 20), "B2");
-  assert.equal(levelForScore(18, 20), "C1");
-  assert.equal(levelForScore(20, 20), "C1");
+test("levelForScore bands for a 24 question test", () => {
+  assert.equal(levelForScore(0, 24), "A1");
+  assert.equal(levelForScore(5, 24), "A1");
+  assert.equal(levelForScore(6, 24), "A2");
+  assert.equal(levelForScore(10, 24), "A2");
+  assert.equal(levelForScore(11, 24), "B1");
+  assert.equal(levelForScore(14, 24), "B1");
+  assert.equal(levelForScore(15, 24), "B2");
+  assert.equal(levelForScore(17, 24), "B2");
+  assert.equal(levelForScore(18, 24), "C1");
+  assert.equal(levelForScore(21, 24), "C1");
+  assert.equal(levelForScore(22, 24), "C2");
+  assert.equal(levelForScore(24, 24), "C2");
 });
 
 test("levelForScore handles an empty test", () => {

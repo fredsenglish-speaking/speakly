@@ -1,0 +1,192 @@
+## c2-conditional-inversion 2
+___ you need any further information, please contact us. | Should | Would | Had
+___ I in your position, I would accept the offer. | Were | Was | Had
+___ I known about the problem, I would have helped. | Had | Should | Were
+___ it not for your help, I would never finish this project. | Were | Had | Should
+___ it not been for the storm, the flight would have left on time. | Had | Were | Should
+Should you ___ any problems, call the hotel reception. | experience | experienced | to experience
+Had they ___ earlier, they would have caught the train. | left | leave | leaving
+Were she ___ the truth, she would be very upset. | to learn | learning | learned
+___ the weather improve, the match will go ahead. | Should | Had | Were
+Had I not ___ the warning, I would have made the same mistake. | read | reading | to read
+Were it not for the traffic, we ___ there by now. | would be | will be | had been
+Had it not been for her advice, I ___ the wrong decision. | would have made | would make | had made
+___ we not arrived in time, the shop would have closed. | Had | Were | Should
+Should anyone ___, tell them I'll be back at five. | call | called | calls
+Were the government ___ taxes, people would protest. | to raise | raising | raised
+## c2-conditional-inversion 4
+Choose the correct sentence. | Had I not seen it, I wouldn't have believed it. | Hadn't I seen it, I wouldn't have believed it. | Had I not saw it, I wouldn't have believed it.
+Choose the correct sentence. | Should you change your mind, let me know. | Should you changed your mind, let me know. | If should you change your mind, let me know.
+Choose the correct sentence. | Were it not for him, we would be lost. | Was it not for him, we would be lost. | Weren't it for him, we would be lost.
+Choose the correct sentence. | Had it not been for the rain, we would have won. | Had it not been for the rain, we would win yesterday. | Had not it been for the rain, we would have won.
+Which sentence means "If I were rich, I would travel"? | Were I rich, I would travel. | Had I rich, I would travel. | Should I rich, I would travel.
+Which sentence means "If you need help, ask me"? | Should you need help, ask me. | Had you needed help, ask me. | Were you need help, ask me.
+Which sentence means "If she had studied, she would have passed"? | Had she studied, she would have passed. | Were she studied, she would have passed. | Should she studied, she would have passed.
+Had the police arrived sooner, the thief ___. | would have been caught | would be caught yesterday | had been caught
+___ it not for the internet, working from home would be impossible. | Were | Had | Should
+Were I ___ your position, I'd apologise. | in | on | at
+Should the price ___, we will buy more shares. | fall | fell | falls
+Had I ___ how difficult it was, I wouldn't have started. | realised | realise | realising
+Choose the correct sentence. | Were they to offer me the job, I would take it. | Were they offer me the job, I would take it. | Were they offering me the job, I will take it.
+Had it not been for my teacher, I ___ English now. | wouldn't speak | won't speak | hadn't spoken
+___ you see Tom, give him my regards. | Should | Had | Were
+## c2-hedging 2
+It would ___ that the meeting has been cancelled. | appear | appeared | appearing
+The results ___ to suggest that the drug is effective. | seem | seems | seeming
+Young people ___ to spend more time online. | tend | tends | tending
+This is ___ the most important discovery of the century. | arguably | argue | argued
+I agree with you ___ some extent. | to | in | at
+She seems to ___ forgotten our appointment. | have | has | had
+There ___ to be a problem with the system. | appears | appear | appearing
+It is ___ that prices will rise next year. | likely | like | likeable
+The data ___ indicate a slight improvement. | would seem to | would seems to | seem to be
+It could be ___ that the policy has failed. | argued | arguing | argue
+Sales have, ___ speaking, remained stable. | broadly | broad | broaden
+The project ___ to have been a success. | appears | appear | appearing
+There is some ___ that the climate is changing faster. | evidence | evidences | evident
+To the ___ of my knowledge, the shop is still open. | best | most | good
+It ___ be the case that he simply forgot. | may | must to | would to
+## c2-hedging 4
+Which sentence is hedged (careful)? | The plan would appear to have failed. | The plan failed completely. | The plan definitely failed.
+Which sentence is hedged (careful)? | Prices tend to rise in winter. | Prices always rise in winter. | Prices rise in winter, no doubt.
+Choose the correct sentence. | He seems to have left early. | He seems to has left early. | He seems that he have left early.
+Choose the correct sentence. | It would seem that we are late. | It would seems that we are late. | It seem would that we are late.
+Choose the correct sentence. | There appears to be a mistake. | There appear to be a mistake. | There appears be a mistake.
+"Arguably" means... | it is possible to say, with good reasons | it is completely certain | it is a silly idea
+"To some extent" means... | partly | completely | never
+"Tend to" means... | usually do | never do | must do
+Which phrase is NOT a hedge? | without any doubt | it would appear | to some extent
+The evidence ___ that the theory is correct. | suggests | proves certainly | is proving definitely
+Choose the most academic sentence. | The findings seem to indicate a link. | The findings show a link, 100%. | The findings totally show a link.
+Choose the correct sentence. | She appears to be working from home. | She appears be working from home. | She appear to be working from home.
+"It is generally believed that..." is used to... | report a common opinion carefully | give a personal order | ask a question
+Which word makes "This is the best solution" more careful? | possibly | absolutely | certainly
+Choose the correct sentence. | The company is likely to close. | The company is likely closing to. | The company likely is to close.
+## c2-advanced-passive 2
+He is said ___ very rich. | to be | being | be
+The castle is believed to have ___ in 1200. | been built | built | be built
+She is thought ___ the country last week. | to have left | to leave | leaving
+I hate ___ interrupted when I'm speaking. | being | be | to been
+She expects ___ promoted next year. | to be | being | be
+___ been warned, we left early. | Having | Being | Have
+The thieves are reported ___ escaped through a window. | to have | to having | have
+He doesn't like ___ told what to do. | being | be | been
+The minister is expected ___ later today. | to resign | resign | resigning
+The painting is known to ___ stolen twice. | have been | being | has been
+I remember ___ taken to the zoo as a child. | being | to be | been
+It ___ that the company will be sold. | is rumoured | rumours | is rumouring
+She got ___ in a traffic jam for two hours. | stuck | stick | sticking
+The bridge needs ___. | repairing | repair | repaired
+The prisoner is alleged ___ the money. | to have taken | taking | to take had
+## c2-advanced-passive 4
+Choose the correct sentence. | He is said to have been a spy. | He is said to been a spy. | He is said having been a spy.
+Choose the correct sentence. | Nobody likes being laughed at. | Nobody likes be laughed at. | Nobody likes been laughed at.
+Choose the correct sentence. | Having been told the news, she cried. | Having told the news, she cried. | Been told the news, she cried.
+Choose the correct sentence. | The suspect is thought to be hiding abroad. | The suspect is thought to hiding abroad. | The suspect thinks to be hiding abroad.
+Which sentence means "People say that he is a genius"? | He is said to be a genius. | He says to be a genius. | He is saying a genius.
+Which sentence means "People believe the ship sank in 1900"? | The ship is believed to have sunk in 1900. | The ship is believed to sink in 1900. | The ship believes to have sunk in 1900.
+Which sentence means "People expect that prices will rise"? | Prices are expected to rise. | Prices expect to rise. | Prices are expecting rising.
+"The window needs cleaning" means... | someone should clean it | it is cleaning now | it cleaned itself
+I can't stand ___ waiting. | being kept | keeping | be kept
+The results are due ___ next week. | to be published | to publish | being publish
+She was the first woman ___ to the board. | to be elected | electing | to elect
+Choose the correct sentence. | The documents appear to have been lost. | The documents appear to have lost. | The documents appear been lost.
+He narrowly avoided ___ by a car. | being hit | to be hit | hitting
+Choose the correct sentence. | It is estimated that 2 million people attended. | It estimates that 2 million people attended. | It is estimating that 2 million people attended.
+They are understood ___ an agreement yesterday. | to have reached | to reach | reaching
+## c2-concession 2
+___ as I like him, I can't agree with him. | Much | Many | More
+Try as I ___, I couldn't open the door. | might | may | must
+Strange ___ it may seem, I enjoy exams. | as | so | though as
+___ hard you try, you can't please everyone. | However | Whatever | Whenever
+No matter ___ happens, I'll support you. | what | that | which
+Tired ___ she was, she finished the report. | as | so | like
+___ what you say, I'm not going. | Whatever | However | Whoever
+Try as they ___, they couldn't find the keys. | might | may | could have
+___ much money he earns, he's never happy. | However | Whatever | Much as
+Difficult ___ it was, we completed the climb. | though | although | despite
+___ his age, he still runs marathons. | Despite | Although | Even
+Much as I'd ___ to help, I'm too busy. | like | liking | liked
+___ the fact that it rained, we had fun. | Despite | Although | Even though
+Hard as he ___, he failed the exam. | worked | work | working
+No matter ___ late it is, call me. | how | what | which
+## c2-concession 4
+Choose the correct sentence. | Much as I love my job, I need a break. | Much I love my job, I need a break. | As much I love my job, I need a break.
+Choose the correct sentence. | Try as I might, I couldn't sleep. | Try as I might, I can't slept. | As I might try, I couldn't sleep.
+Choose the correct sentence. | Strange as it may seem, he's shy. | As strange it may seem, he's shy. | Strange it may seem as, he's shy.
+Choose the correct sentence. | However hard I try, I can't remember. | However I try hard, I can't remember. | Hard however I try, I can't remember.
+Which sentence means "Although I admire him, I disagree"? | Much as I admire him, I disagree. | Try as I admire him, I disagree. | However I admire him, I disagree.
+Which sentence means "Although it was cold, we swam"? | Cold as it was, we swam. | As cold it was, we swam. | Cold it was as, we swam.
+Which sentence means "Although I tried hard, I failed"? | Try as I might, I failed. | Much as I might, I failed. | Strange as I tried, I failed.
+Choose the correct sentence. | Despite being tired, she kept working. | Despite she was tired, she kept working. | Despite of being tired, she kept working.
+Choose the correct sentence. | Although expensive, the hotel was worth it. | Despite expensive, the hotel was worth it. | However expensive, but the hotel was worth it.
+___ you do, don't tell her. | Whatever | However | Much as
+Brilliant ___ his ideas are, they are not practical. | though | despite | even
+Choose the correct sentence. | No matter how busy you are, call your mother. | No matter busy you are, call your mother. | No matter how you are busy, call your mother.
+Choose the correct sentence. | Even so, I still believe him. | Even though, I still believe him. | Even if so, I still believe him.
+___ admirable his efforts were, they came too late. | However | Whatever | Much
+Choose the correct sentence. | Be that as it may, we must decide today. | Be it as it may, we must decide today. | That be as it may, we must decide today.
+## c2-modal-nuances 2
+I ___ cooked so much food. Only three people came. | needn't have | didn't need to | mustn't have
+We ___ to wear a uniform, so we wore jeans. | didn't need | needn't have | mustn't
+She may ___ be right about the weather. | well | good | as well
+The bus has gone. We might ___ walk. | as well | well | also
+I could ___ believe my eyes. | hardly | hard | never not
+You ___ have told me! I already knew. | needn't | mustn't | shouldn't to
+He ___ well decide to quit his job. | may | must | should
+There's nothing on TV. We might as well ___ to bed. | go | going | to go
+I ___ have been more surprised. | couldn't | can't | mustn't
+They ___ to pay for the tickets; they were free. | didn't need | needn't have | hadn't need
+You ___ as well tell her the truth now. | might | must | should
+It was so noisy that I could ___ hear him. | barely | bare | not barely
+She ___ have warned us; it was very kind of her. | needn't | mustn't | can't
+The plan may well ___. | work | works | to work
+I ___ have worried; the test was easy. | needn't | mustn't | couldn't
+## c2-modal-nuances 4
+"I needn't have bought milk" means... | I bought milk, but it wasn't necessary | I didn't buy milk because it wasn't necessary | I had to buy milk
+"I didn't need to buy milk" usually means... | it wasn't necessary, so I probably didn't buy it | I bought milk by mistake | I must buy milk
+"She may well win" means... | she will probably win | she must win | she has won
+"We might as well stay" means... | there is no better option, so let's stay | we must stay | we stayed yesterday
+"I could hardly breathe" means... | it was almost impossible to breathe | I breathed very well | I couldn't breathe at all, ever
+Choose the correct sentence. | You needn't have brought a gift. | You needn't to have brought a gift. | You needn't had brought a gift.
+Choose the correct sentence. | The plan may well fail. | The plan may good fail. | The plan may well fails.
+Choose the correct sentence. | We might as well start now. | We might as good start now. | We might as well to start now.
+Choose the correct sentence. | I could hardly hear you. | I couldn't hardly hear you. | I could hard hear you.
+Choose the correct sentence. | I didn't need to take a taxi, so I walked. | I needn't have taken a taxi, so I walked. | I didn't needed to take a taxi, so I walked.
+Which sentence expresses a past action that was unnecessary? | We needn't have hurried. | We didn't hurry. | We mustn't hurry.
+"You might have told me!" expresses... | annoyance that someone didn't tell you | permission | a future plan
+"He can't have finished already" means... | I'm sure he hasn't finished | he isn't allowed to finish | he will finish soon
+"It may well rain" is closest to... | it will probably rain | it won't rain | it is raining now
+Choose the correct sentence. | She can't have seen us. | She mustn't have seen us. | She can't has seen us.
+## c2-formal-linkers 2
+It was a small, ___ important, change. | albeit | although | despite
+___ the high cost, the project continued. | Notwithstanding | Albeit | Whereby
+They introduced a system ___ users can vote online. | whereby | whereas | albeit
+Costs rose sharply; ___ the delay. | hence | thus is | therefore is
+The plan is good ___ it goes, but it needs more detail. | as far as | as long | insofar
+___ as I know, the shop closes at six. | Insofar | Hence | Albeit
+The results were positive, ___ limited. | albeit | despite | whereby
+He was late. ___, he missed the introduction. | Consequently | Albeit | Whereby
+I agree with you ___ as the costs are concerned. | insofar | hence | albeit
+___ his efforts, the business failed. | Notwithstanding | Albeit | Hence
+She is very talented, ___ her brother is lazy. | whereas | whereby | hence
+The law was changed, ___ allowing more people to vote. | thereby | whereby | albeit
+The company, ___, made a profit. | nevertheless | albeit | whereby
+___ to popular belief, bats are not blind. | Contrary | Opposite | Against
+We will proceed ___ the board agrees. | provided that | albeit | hence
+## c2-formal-linkers 4
+"Albeit" means... | although | because | therefore
+"Notwithstanding" means... | despite | because of | instead of
+"Whereby" means... | by which | where | while
+"Hence" means... | for this reason | however | although
+"Insofar as" means... | to the extent that | as soon as | in order that
+Choose the correct sentence. | He accepted, albeit reluctantly. | He accepted, albeit he was reluctant. | He albeit accepted reluctantly.
+Choose the correct sentence. | Notwithstanding the rain, the event went ahead. | Notwithstanding it rained, the event went ahead. | Notwithstanding of the rain, the event went ahead.
+Choose the correct sentence. | It's a scheme whereby staff get bonuses. | It's a scheme whereby staff gets bonuses which. | It's a scheme whereby which staff get bonuses.
+Choose the correct sentence. | Prices fell; hence the increase in sales. | Prices fell; hence sales increase is. | Prices fell; hence of the increase in sales.
+Which linker shows contrast? | whereas | hence | whereby
+Which linker shows a result? | thereby | albeit | notwithstanding
+Choose the most formal sentence. | Notwithstanding the delay, the project was completed. | Even with the delay, they got it done. | The delay happened but whatever, it got done.
+Choose the correct sentence. | Contrary to expectations, profits rose. | Contrary expectations, profits rose. | Contrary of expectations, profits rose.
+Choose the correct sentence. | The rules apply insofar as they are relevant. | The rules apply insofar they are relevant. | The rules apply insofar of they are relevant.
+Choose the correct sentence. | The bridge was closed, thereby causing delays. | The bridge was closed, thereby it caused delays. | The bridge was closed, whereby causing delays.

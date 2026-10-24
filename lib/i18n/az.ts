@@ -79,7 +79,7 @@ const az = {
   },
   test: {
     title: "Səviyyə testi",
-    intro: (n: number) => `${n} sual, təxminən 10 dəqiqə. Nəticədə səviyyənizi (A1–C1) öyrənəcəksiniz.`,
+    intro: (n: number) => `${n} sual, təxminən 10 dəqiqə. Nəticədə səviyyənizi (A1–C2) öyrənəcəksiniz.`,
     lastResult: "Son nəticəniz:",
     see: "bax",
     price: "Testin qiyməti",

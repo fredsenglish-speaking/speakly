@@ -1,0 +1,156 @@
+## c2-conditional-inversion
+w | hypothetical | fərziyyəvi | гипотетический | Let's consider a [hypothetical] situation.
+w | unforeseen | gözlənilməz | непредвиденный | Should any [unforeseen] problems arise, call me.
+w | circumstance | şərait, vəziyyət | обстоятельство | Under different [circumstances], I would agree.
+w | regret | təəssüf hissi | сожаление | Had I listened, I would have no [regret] now.
+w | intervention | müdaxilə | вмешательство | Were it not for her [intervention], the deal would have failed.
+w | alternative | alternativ | альтернатива | Had there been an [alternative], we would have taken it.
+w | outcome | nəticə, son | исход | The [outcome] would have been different had we waited.
+w | inevitable | qaçılmaz | неизбежный | Were it not for the rain, defeat would have been [inevitable].
+w | assistance | kömək, yardım | помощь | Should you require [assistance], please ask the staff.
+w | proposal | təklif | предложение | Were they to accept our [proposal], we would start at once.
+w | crucial | həlledici | решающий | Had it not been for that [crucial] goal, we would have lost.
+w | foresee | qabaqcadan görmək | предвидеть | Had we been able to [foresee] the crisis, we would have prepared.
+w | reluctant | könülsüz | неохотный | Were I less [reluctant], I would apply for the job.
+w | consequence | nəticə (adətən mənfi) | последствие | Had he known the [consequences], he would have stopped.
+w | dilemma | dilemma, çətin seçim | дилемма | Were I in your [dilemma], I would ask for advice.
+w | feasible | mümkün, həyata keçirilə bilən | осуществимый | Should the plan prove [feasible], we will invest.
+w | opportunity | fürsət | возможность | Had I had the [opportunity], I would have studied abroad.
+w | negligence | səhlənkarlıq | халатность | Were it not for his [negligence], the accident wouldn't have happened.
+w | decisive | qətiyyətli | решительный | Had the manager been more [decisive], we would have won the contract.
+w | scenario | ssenari, hal | сценарий | In the worst-case [scenario], we will cancel the trip.
+p | fall through | baş tutmamaq | сорваться | Should the deal [fall through], we'll look elsewhere.
+p | turn down | rədd etmək | отклонить | Had I [turned down] the offer, I would regret it now.
+p | come across | rast gəlmək | наткнуться | Should you [come across] my keys, please call me.
+p | step in | müdaxilə etmək | вмешаться | Had the teacher not [stepped in], they would have fought.
+p | back out | sözündən dönmək | отказаться (от обещания) | Were they to [back out] now, we would lose money.
+## c2-hedging
+w | arguably | demək olar ki, əsaslı şəkildə | пожалуй, возможно | This is [arguably] the best film of the year.
+w | presumably | yəqin ki | предположительно | He is not here, so he has [presumably] gone home.
+w | apparently | görünür, deyilənə görə | по-видимому | [Apparently], the meeting has been postponed.
+w | tentative | ehtiyatlı, ilkin | предварительный | We reached a [tentative] agreement last night.
+w | plausible | inandırıcı | правдоподобный | Her explanation seems [plausible] to me.
+w | evidence | sübut, dəlil | доказательство | There is some [evidence] that sleep improves memory.
+w | indication | əlamət | признак | There is every [indication] that sales will grow.
+w | tendency | meyl | тенденция | There is a [tendency] to blame the young.
+w | assumption | fərziyyə, güman | предположение | The plan is based on the [assumption] that prices will fall.
+w | estimate | təxmini hesab | оценка | The [estimate] seems to be rather optimistic.
+w | probable | ehtimal olunan | вероятный | It is [probable] that the project will be delayed.
+w | approximately | təxminən | приблизительно | The repairs would appear to cost [approximately] $500.
+w | predominantly | əsasən | преимущественно | The audience was [predominantly] young.
+w | relatively | nisbətən | относительно | The test seems [relatively] easy.
+w | speculation | ehtimallar, şayiə | домыслы | There is [speculation] that the CEO will resign.
+w | inconclusive | qəti olmayan | неубедительный | The results of the study were [inconclusive].
+w | allegedly | iddiaya görə | якобы | The man [allegedly] stole a car.
+w | suggest | işarə etmək, göstərmək | указывать | The figures [suggest] a small decline.
+w | perceive | qavramaq, görmək | воспринимать | Many people [perceive] the change as positive.
+w | generalisation | ümumiləşdirmə | обобщение | That is rather a broad [generalisation].
+p | point to | göstərmək, işarə etmək | указывать на | The data seem to [point to] a recovery.
+p | make out | anlamaq, seçmək | разобрать | I could barely [make out] what he was saying.
+p | rule out | istisna etmək | исключать | We cannot [rule out] the possibility of rain.
+p | play down | əhəmiyyətini azaltmaq | преуменьшать | The minister tried to [play down] the problem.
+p | bear out | təsdiqləmək | подтверждать | The results seem to [bear out] our theory.
+## c2-advanced-passive
+w | allege | iddia etmək | утверждать (без доказательств) | It is [alleged] that he took the money.
+w | rumour | şayiə | слух | There is a [rumour] that the shop will close.
+w | consider | hesab etmək | считать | She is [considered] to be the best surgeon in the city.
+w | acknowledge | etiraf etmək | признавать | He is widely [acknowledged] as an expert.
+w | presume | ehtimal etmək | предполагать | The missing climbers are [presumed] to be safe.
+w | renowned | məşhur | известный | The city is [renowned] for its architecture.
+w | suspect | şübhəli | подозреваемый | The [suspect] is thought to have left the country.
+w | interrupt | sözünü kəsmək | перебивать | I hate being [interrupted] during meetings.
+w | promote | vəzifəsini artırmaq | повышать в должности | She expects to be [promoted] this year.
+w | appoint | təyin etmək | назначать | He was [appointed] head of the department.
+w | regard | saymaq, nəzər salmaq | рассматривать (как) | The book is [regarded] as a classic.
+w | estimate | təxmin etmək | оценивать | The damage is [estimated] to be $2 million.
+w | discover | kəşf etmək | обнаруживать | The tomb was [discovered] in 1922.
+w | deceive | aldatmaq | обманывать | Nobody likes being [deceived].
+w | overlook | diqqətdən qaçırmaq | упускать из виду | His talent has been [overlooked] for years.
+w | evacuate | təxliyə etmək | эвакуировать | The building had to be [evacuated].
+w | undergo | keçmək, məruz qalmaq | подвергаться | The museum is [undergoing] major repairs.
+w | publish | dərc etmək | публиковать | The results are due to be [published] next week.
+w | entitle | hüququ vermək | давать право | Members are [entitled] to a discount.
+w | confine | məhdudlaşdırmaq | ограничивать | The fire was [confined] to one room.
+p | carry out | həyata keçirmək | проводить | The research was [carried out] in 2020.
+p | call off | ləğv etmək | отменять | The match had to be [called off].
+p | hand down | nəsildən nəslə ötürmək | передавать (по наследству) | The ring was [handed down] from my grandmother.
+p | bring about | səbəb olmaq | вызывать | The changes were [brought about] by new laws.
+p | pass over | (vəzifədə) nəzərə almamaq | обходить (при повышении) | She was [passed over] for promotion again.
+## c2-concession
+w | nevertheless | buna baxmayaraq | тем не менее | It was raining; [nevertheless], we went out.
+w | admittedly | etiraf etmək lazımdır ki | надо признать | [Admittedly], the hotel was expensive.
+w | regardless | nəzərə almadan | независимо | She continued, [regardless] of the danger.
+w | grudging | könülsüz | неохотный | He gave her [grudging] respect.
+w | persistent | israrlı | настойчивый | Try as he might, the [persistent] cough wouldn't go.
+w | stubborn | inadkar | упрямый | Much as I love him, he is very [stubborn].
+w | genuine | səmimi, həqiqi | искренний | Strange as it may seem, his apology was [genuine].
+w | tempting | cazibədar | заманчивый | [Tempting] as the offer is, I must refuse.
+w | flawed | qüsurlu | несовершенный | The plan, though [flawed], was approved.
+w | worthwhile | dəyərli | стоящий | Difficult as it was, the trip was [worthwhile].
+w | obstacle | maneə | препятствие | Despite every [obstacle], they finished the race.
+w | concede | etiraf etmək, güzəştə getmək | уступать, признавать | I [concede] that you have a point.
+w | reservation | şübhə, ehtiyat | сомнение, оговорка | I have some [reservations] about the plan.
+w | exhausted | çox yorğun | измученный | [Exhausted] as she was, she kept dancing.
+w | determined | qərarlı | решительный | However hard it gets, I am [determined] to finish.
+w | appealing | cəlbedici | привлекательный | The idea is [appealing], but too expensive.
+w | futile | faydasız | тщетный | Try as we might, our efforts were [futile].
+w | compelling | inandırıcı, güclü | убедительный | His argument was [compelling], yet I disagreed.
+w | sceptical | şübhə ilə yanaşan | скептический | Much as I respect her, I'm [sceptical].
+w | merit | dəyər, üstünlük | достоинство | The proposal has some [merit], although it is risky.
+p | put up with | dözmək | терпеть | Much as I dislike the noise, I [put up with] it.
+p | give in | təslim olmaq | сдаваться | Try as they might, they couldn't make him [give in].
+p | stick to | sadiq qalmaq | придерживаться | Whatever happens, [stick to] the plan.
+p | hold back | özünü saxlamaq | сдерживаться | Angry as she was, she [held back] her tears.
+p | get over | öhdəsindən gəlmək | преодолеть | However hard it is, you will [get over] it.
+## c2-modal-nuances
+w | unnecessary | lazımsız | ненужный | The extra food was completely [unnecessary].
+w | obligation | öhdəlik | обязательство | You are under no [obligation] to buy.
+w | likelihood | ehtimal | вероятность | There is every [likelihood] that she may well win.
+w | barely | çətinliklə | едва | I could [barely] keep my eyes open.
+w | precaution | ehtiyat tədbiri | мера предосторожности | We needn't have taken that [precaution].
+w | redundant | artıq, lazımsız | излишний | Much of the report is [redundant].
+w | optional | könüllü, isteğe bağlı | необязательный | Attendance is [optional], so you didn't need to come.
+w | compulsory | məcburi | обязательный | Wearing a helmet is [compulsory].
+w | apprehensive | narahat | встревоженный | I needn't have been so [apprehensive] about the exam.
+w | bother | zəhmət çəkmək | утруждать себя | You needn't have [bothered] to call.
+w | incredible | inanılmaz | невероятный | I could hardly believe the [incredible] news.
+w | alternatively | alternativ olaraq | в качестве альтернативы | [Alternatively], we might as well take the train.
+w | inclined | meylli | склонный | I'm [inclined] to agree with you.
+w | permissible | icazəli | допустимый | Is it [permissible] to park here?
+w | wary | ehtiyatlı | настороженный | You may well be right to be [wary] of him.
+w | rush | tələsmək | торопиться | We needn't have [rushed]; the train was late.
+w | hindsight | sonradan baxış | взгляд в прошлое | With [hindsight], I needn't have worried.
+w | conceivable | təsəvvür edilə bilən | мыслимый | It is [conceivable] that he may well return.
+w | pointless | mənasız | бессмысленный | It's [pointless] waiting, so we might as well leave.
+w | fuss | hay-küy, təlaş | суета | You needn't have made such a [fuss].
+p | turn up | gəlib çıxmaq | появляться | She may well [turn up] later.
+p | hang on | gözləmək | подождать | We might as well [hang on] a few more minutes.
+p | head off | yola düşmək | отправляться | It's late, so we might as well [head off].
+p | do without | ...sız keçinmək | обходиться без | We could have [done without] the extra luggage.
+p | stay up | gec yatmaq | не ложиться спать | You needn't have [stayed up] for me.
+## c2-formal-linkers
+w | albeit | baxmayaraq (qısa ifadədən əvvəl) | хотя и | It was a success, [albeit] a small one.
+w | notwithstanding | baxmayaraq | несмотря на | [Notwithstanding] the cost, the work continued.
+w | whereby | vasitəsilə, hansı ki | посредством которого | They agreed a deal [whereby] both sides win.
+w | hence | buna görə | следовательно | The road was closed; [hence] the delay.
+w | thereby | bununla da | тем самым | He resigned, [thereby] ending the crisis.
+w | whereas | halbuki | тогда как | I love tea, [whereas] my husband prefers coffee.
+w | furthermore | bundan başqa | более того | [Furthermore], the costs are too high.
+w | consequently | nəticədə | следовательно, в результате | He overslept and [consequently] missed the train.
+w | likewise | eynilə | подобным образом | She worked hard and [likewise] her sister.
+w | accordingly | müvafiq olaraq | соответственно | The rules changed and we acted [accordingly].
+w | moreover | üstəlik | кроме того | The flat is cheap; [moreover], it is central.
+w | insofar | o dərəcədə ki | постольку | The plan works [insofar] as it saves money.
+w | contrary | əks | противоположный | [Contrary] to expectations, prices fell.
+w | provided | şərtilə | при условии | You can go, [provided] that you finish your work.
+w | henceforth | bundan sonra | впредь | [Henceforth], all staff must wear badges.
+w | coherent | ardıcıl, məntiqli | связный | A good essay must be [coherent].
+w | cohesion | əlaqəlilik | связность | Linkers improve the [cohesion] of a text.
+w | subsequently | sonradan | впоследствии | He was arrested and [subsequently] released.
+w | nonetheless | buna baxmayaraq | тем не менее | The task was hard; [nonetheless], we finished it.
+w | inasmuch | ona görə ki | поскольку | I am guilty [inasmuch] as I knew about it.
+p | sum up | yekunlaşdırmaq | подводить итог | To [sum up], the plan is too risky.
+p | set out | izah etmək, şərh etmək | излагать | The report [sets out] the main arguments.
+p | go along with | razılaşmaq | соглашаться с | I can't [go along with] that decision.
+p | account for | izah etmək | объяснять | How do you [account for] the delay?
+p | spell out | aydın izah etmək | разъяснять | Let me [spell out] the consequences.
