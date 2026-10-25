@@ -316,3 +316,9 @@ input[type="datetime-local"] { -webkit-appearance: none; appearance: none; min-w
 .vocab-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .vocab-head strong { font-size: 17px; }
 .vocab-head span { color: var(--muted); }
+
+/* Free exercises: word order */
+.order-line { font-weight: 600; }
+.order-words { gap: 8px; }
+.order-words .chip { cursor: pointer; font-size: 15px; }
+.order-words .chip:disabled { opacity: 0.35; cursor: default; }
