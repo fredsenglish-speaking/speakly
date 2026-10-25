@@ -322,3 +322,11 @@ input[type="datetime-local"] { -webkit-appearance: none; appearance: none; min-w
 .order-words { gap: 8px; }
 .order-words .chip { cursor: pointer; font-size: 15px; }
 .order-words .chip:disabled { opacity: 0.35; cursor: default; }
+
+/* Free section: Exercises / Books / Films tabs and recommendation cards */
+.free-tabs { display: flex; gap: 4px; flex-wrap: wrap; border-bottom: 1px solid var(--line); }
+.free-tabs a { padding: 8px 14px; font-weight: 700; color: var(--muted); text-decoration: none; border-bottom: 3px solid transparent; margin-bottom: -1px; }
+.free-tabs a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+.media-card { display: grid; align-content: start; gap: 6px; padding: 16px; border-radius: 14px; border: 1px solid var(--line); border-top: 4px solid var(--lc); background: var(--surface); }
+.media-kind { font-size: 13px; font-weight: 700; color: var(--lc); }
+.media-links { gap: 8px; margin-top: 6px; }
