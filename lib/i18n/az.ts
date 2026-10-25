@@ -258,6 +258,12 @@ const az = {
     title: "Speaking klub",
     intro: (price: string, min: number) =>
       `Öz səviyyəndəki tələbə ilə cüt halında ${min} dəqiqə danış. Hər mövzuda 10 sual var, növbə ilə soruşursunuz. Otaq açmaq pulsuzdur, hər tələbə danışığa girəndə ${price} ödəyir.`,
+    steps: (price: string, min: number): [string, string][] => [
+      ["Mövzu seç", "Səviyyənə uyğun mövzunu seç. Hər mövzuda 10 sual var."],
+      ["Otaq aç və ya qoşul", "Özün otaq aç və vaxt seç, ya da başqasının açdığı otağa qoşul. Bu pulsuzdur."],
+      ["Ödə və danış", `Partnyor qoşulanda ${price} ödə. ${min} dəqiqə video zəngdə növbə ilə sual verib danışırsınız.`],
+    ],
+    jumpOpen: "Otağa qoşul",
     needTest: "Speaking klubdan istifadə etmək üçün əvvəlcə səviyyə testini keçin.",
     takeTest: "Testə başla",
     peers: (n: number) => `Sizin səviyyənizdə ${n} tələbə`,

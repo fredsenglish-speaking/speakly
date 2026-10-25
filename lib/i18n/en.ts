@@ -260,6 +260,12 @@ const en: Dictionary = {
     title: "Speaking club",
     intro: (price: string, min: number) =>
       `Talk for ${min} minutes in pairs with a student at your level. Each topic has 10 questions and you take turns asking them. Opening a room is free; each student pays ${price} when entering the conversation.`,
+    steps: (price: string, min: number): [string, string][] => [
+      ["Pick a topic", "Choose a topic for your level. Each topic has 10 questions."],
+      ["Open or join a room", "Open your own room and pick a time, or join a room someone else opened. This is free."],
+      ["Pay and talk", `When your partner joins, pay ${price}. You talk for ${min} minutes on a video call, taking turns asking the questions.`],
+    ],
+    jumpOpen: "Join a room",
     needTest: "Take the level test first to use the speaking club.",
     takeTest: "Start the test",
     peers: (n: number) => (n === 1 ? "1 student at your level" : `${n} students at your level`),
