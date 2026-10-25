@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { bakuLocalToIso, levelForScore, shortName, topicTitle } from "./levels.ts";
+import { bakuLocalToIso, levelForAnswers, levelForScore, shortName, topicTitle } from "./levels.ts";
 
 test("levelForScore bands for a 24 question test", () => {
   assert.equal(levelForScore(0, 24), "A1");
@@ -15,6 +15,32 @@ test("levelForScore bands for a 24 question test", () => {
   assert.equal(levelForScore(21, 24), "C1");
   assert.equal(levelForScore(22, 24), "C2");
   assert.equal(levelForScore(24, 24), "C2");
+});
+
+/** 5 answers per level, with the given number right at each level from A1 up. */
+function answers(...right: number[]) {
+  return ["A1", "A2", "B1", "B2", "C1", "C2"].flatMap((level, i) =>
+    Array.from({ length: 5 }, (_, k) => ({ level, correct: k < (right[i] ?? 0) })),
+  );
+}
+
+test("levelForAnswers gives the highest level passed with 3 of 5", () => {
+  assert.equal(levelForAnswers(answers()), "A1");
+  assert.equal(levelForAnswers(answers(5, 2)), "A1");
+  assert.equal(levelForAnswers(answers(5, 3, 2)), "A2");
+  assert.equal(levelForAnswers(answers(5, 5, 4, 3, 1, 0)), "B2");
+  assert.equal(levelForAnswers(answers(5, 5, 5, 5, 3, 2)), "C1");
+  assert.equal(levelForAnswers(answers(5, 5, 5, 5, 5, 3)), "C2");
+});
+
+test("levelForAnswers stops at the first failed level", () => {
+  assert.equal(levelForAnswers(answers(5, 2, 5, 5, 5, 5)), "A1");
+  assert.equal(levelForAnswers(answers(5, 5, 5, 1, 5, 5)), "B1");
+});
+
+test("levelForAnswers falls back to score bands for untagged questions", () => {
+  const untagged = Array.from({ length: 24 }, (_, i) => ({ level: null, correct: i < 18 }));
+  assert.equal(levelForAnswers(untagged), "C1");
 });
 
 test("levelForScore handles an empty test", () => {

@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
-import { CERTIFICATE_PRICE, TEST_PRICE, levelForScore } from "@/lib/levels";
+import { CERTIFICATE_PRICE, TEST_PRICE, levelForAnswers } from "@/lib/levels";
 import { startPayment } from "@/lib/payments";
 import { createAdminClient } from "@/lib/supabase/admin";
 
@@ -45,10 +45,11 @@ export async function submitTest(form: FormData) {
     .single();
   if (!attempt?.paid || attempt.finished_at) redirect("/test");
 
-  const { data: questions } = await db.from("test_questions").select("id, correct");
-  const total = questions?.length ?? 0;
-  const score = (questions ?? []).filter((q) => answers[q.id] === q.correct).length;
-  const level = levelForScore(score, total);
+  const { data: questions } = await db.from("test_questions").select("id, correct, level");
+  const results = (questions ?? []).map((q) => ({ level: q.level, correct: answers[q.id] === q.correct }));
+  const total = results.length;
+  const score = results.filter((r) => r.correct).length;
+  const level = levelForAnswers(results);
 
   await db
     .from("test_attempts")
