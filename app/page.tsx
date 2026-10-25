@@ -28,6 +28,9 @@ export default async function HomePage() {
             <Link href="/tutors" className="btn ghost">
               {t.home.seeTutors}
             </Link>
+            <Link href="/exercises" className="btn ghost">
+              {t.exercises.title} · {t.exercises.free}
+            </Link>
           </div>
         </div>
         <div className="panel ladder" aria-label={t.home.levelsLabel}>
