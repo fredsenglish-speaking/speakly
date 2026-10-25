@@ -316,4 +316,3 @@ input[type="datetime-local"] { -webkit-appearance: none; appearance: none; min-w
 .vocab-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .vocab-head strong { font-size: 17px; }
 .vocab-head span { color: var(--muted); }
-.vocab-say { margin-left: auto; border: 1px solid var(--line); background: var(--accent-soft); border-radius: 999px; width: 34px; height: 34px; cursor: pointer; }
