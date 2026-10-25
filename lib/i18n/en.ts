@@ -324,7 +324,7 @@ const en: Dictionary = {
   },
   aiChat: {
     title: "Talk with the AI video teacher",
-    cardText: "Pick a topic for your level and speak English with a video teacher for 15 minutes, 30 minutes or 1 hour, whenever you like. The teacher only talks about your topic and corrects your mistakes.",
+    cardText: "Pick a topic for your level and speak English with a video teacher for 30 minutes, whenever you like. The teacher only talks about your topic and corrects your mistakes.",
     comingSoon: "Coming soon",
     comingSoonNote: "The AI video teacher opens soon. For now you can talk with other students.",
     tryIt: "Look",

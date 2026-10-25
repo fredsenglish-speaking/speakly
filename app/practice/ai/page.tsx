@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { LevelChip } from "@/components/LevelChip";
 import { requireUser } from "@/lib/auth";
-import { AI_CHAT_PRICE, DURATIONS, durationLabel, formatDateTime, money, topicTitle } from "@/lib/levels";
+import { AI_CHAT_MINUTES, AI_CHAT_PRICE, durationLabel, formatDateTime, money, topicTitle } from "@/lib/levels";
 import { aiTeacherEnabled } from "@/lib/liveavatar";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
@@ -39,7 +39,7 @@ export default async function AiChatPage() {
     : { data: [] };
   const topicById = new Map((chatTopics ?? []).map((tp) => [tp.id, topicTitle(tp, locale)]));
   const topics = (topicRows ?? []).map((tp) => ({ id: tp.id, title: topicTitle(tp, locale) }));
-  const prices = DURATIONS.map((d) => ({ minutes: d, label: durationLabel(d, tr), price: money(AI_CHAT_PRICE[d]) }));
+  const prices = AI_CHAT_MINUTES.map((d) => ({ minutes: d, label: durationLabel(d, tr), price: money(AI_CHAT_PRICE[d]) }));
 
   return (
     <section className="stack">

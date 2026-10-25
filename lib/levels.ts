@@ -29,6 +29,8 @@ export const PRACTICE_MINUTES = 30;
 
 /** Speaking club with the AI video teacher, by length in minutes. */
 export const AI_CHAT_PRICE = { 15: 8, 30: 15, 60: 25 } as const;
+/** Lengths students can buy with the AI teacher; for now only 30 minutes. */
+export const AI_CHAT_MINUTES = [30] as const;
 
 export const DURATIONS = [15, 30, 60] as const;
 export type Duration = (typeof DURATIONS)[number];

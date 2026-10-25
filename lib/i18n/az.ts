@@ -322,7 +322,7 @@ const az = {
   },
   aiChat: {
     title: "AI video müəllimi ilə danış",
-    cardText: "Öz səviyyənə uyğun mövzu seç və video müəllimlə istədiyin vaxt 15 dəqiqə, 30 dəqiqə və ya 1 saat ingiliscə danış. Müəllim ancaq seçdiyin mövzu haqqında danışır və səhvlərini düzəldir.",
+    cardText: "Öz səviyyənə uyğun mövzu seç və video müəllimlə istədiyin vaxt 30 dəqiqə ingiliscə danış. Müəllim ancaq seçdiyin mövzu haqqında danışır və səhvlərini düzəldir.",
     comingSoon: "Tezliklə",
     comingSoonNote: "AI video müəllimi tezliklə açılacaq. Hələlik başqa tələbələrlə danışa bilərsiniz.",
     tryIt: "Bax",

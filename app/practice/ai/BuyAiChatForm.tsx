@@ -10,7 +10,7 @@ type Price = { minutes: number; label: string; price: string };
 export function BuyAiChatForm({ topics, prices }: { topics: { id: number; title: string }[]; prices: Price[] }) {
   const [state, action] = useActionState<BuyState, FormData>(buyAiChat, {});
   const t = useT().aiChat;
-  const [minutes, setMinutes] = useState(15);
+  const [minutes, setMinutes] = useState(prices[0]?.minutes ?? 30);
   const price = prices.find((p) => p.minutes === minutes)?.price ?? "";
   return (
     <form action={action} className="panel stack">

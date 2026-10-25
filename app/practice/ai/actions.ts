@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import { usedSeconds } from "@/lib/aiChat";
 import { requireUser } from "@/lib/auth";
-import { AI_CHAT_PRICE, LEVEL_NAME, isDuration, isLevel } from "@/lib/levels";
+import { AI_CHAT_MINUTES, AI_CHAT_PRICE, LEVEL_NAME, isDuration, isLevel } from "@/lib/levels";
 import { aiTeacherEnabled, createChatSession, stopChatSession } from "@/lib/liveavatar";
 import { startPayment } from "@/lib/payments";
 import { createAdminClient } from "@/lib/supabase/admin";
@@ -44,7 +44,7 @@ export async function buyAiChat(_: BuyState, form: FormData): Promise<BuyState> 
   if (!user.level) redirect("/test");
 
   const minutes = Number(form.get("minutes"));
-  if (!isDuration(minutes)) return { error: t.errDuration };
+  if (!isDuration(minutes) || !(AI_CHAT_MINUTES as readonly number[]).includes(minutes)) return { error: t.errDuration };
   const db = createAdminClient();
   const { data: topic } = await db
     .from("practice_topics")
