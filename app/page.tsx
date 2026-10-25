@@ -29,7 +29,7 @@ export default async function HomePage() {
               {t.home.seeTutors}
             </Link>
             <Link href="/exercises" className="btn ghost">
-              {t.exercises.title} · {t.exercises.free}
+              {t.library.hub}
             </Link>
           </div>
         </div>

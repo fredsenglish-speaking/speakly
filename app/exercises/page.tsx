@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FreeTabs } from "@/components/FreeTabs";
 import { allExercises } from "@/lib/exerciseTopics";
 import { LEVELS, LEVEL_NAME, isLevel, lessonText } from "@/lib/levels";
 import { DICTIONARIES } from "@/lib/i18n";
@@ -27,11 +28,7 @@ export default async function ExercisesPage({ searchParams }: { searchParams: Pr
 
   return (
     <section className="stack">
-      <div className="row between">
-        <h2>
-          {t.exercises.title} <span className="status">{t.exercises.free}</span>
-        </h2>
-      </div>
+      <FreeTabs t={t} active="exercises" level={level} />
       <p className="muted" style={{ maxWidth: "70ch" }}>
         {t.exercises.lead}
       </p>
