@@ -58,6 +58,28 @@ export function levelForScore(score: number, total: number): Level {
   return "C2";
 }
 
+/** A level counts as passed when at least this share of its questions is answered correctly. */
+export const LEVEL_PASS_SHARE = 0.6;
+
+/**
+ * Works out the level from answers to questions tagged with a level: the
+ * highest level passed without failing any level below it. Questions without
+ * a level fall back to the overall score bands of levelForScore.
+ */
+export function levelForAnswers(results: { level: string | null; correct: boolean }[]): Level {
+  if (results.some((r) => !isLevel(r.level))) {
+    return levelForScore(results.filter((r) => r.correct).length, results.length);
+  }
+  let reached: Level = "A1";
+  for (const level of LEVELS) {
+    const asked = results.filter((r) => r.level === level);
+    if (asked.length === 0) continue;
+    if (asked.filter((r) => r.correct).length < asked.length * LEVEL_PASS_SHARE) break;
+    reached = level;
+  }
+  return reached;
+}
+
 export function durationLabel(minutes: number, t: { common: { hour: string; min: string } }): string {
   return minutes === 60 ? t.common.hour : `${minutes} ${t.common.min}`;
 }

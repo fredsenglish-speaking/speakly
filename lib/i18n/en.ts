@@ -81,7 +81,7 @@ const en: Dictionary = {
   },
   test: {
     title: "Level test",
-    intro: (n) => `${n} questions, about 10 minutes. You'll get your level (A1–C2) at the end.`,
+    intro: (n) => `${n} questions, about 15 minutes. You'll get your level (A1–C2) at the end.`,
     lastResult: "Your last result:",
     see: "see",
     price: "Test price",
