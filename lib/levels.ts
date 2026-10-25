@@ -25,7 +25,7 @@ export const LESSON_PRICE: Record<Level, number> = {
 
 /** Speaking club: two students of the same level practise one topic together. */
 export const PRACTICE_PRICE = 2;
-export const PRACTICE_MINUTES = 40;
+export const PRACTICE_MINUTES = 30;
 
 /** Speaking club with the AI video teacher, by length in minutes. */
 export const AI_CHAT_PRICE = { 15: 8, 30: 15, 60: 25 } as const;
