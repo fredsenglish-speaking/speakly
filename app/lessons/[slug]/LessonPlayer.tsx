@@ -195,15 +195,6 @@ export function LessonPlayer({
   );
 }
 
-function speak(text: string) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = "en-GB";
-  u.rate = 0.9;
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(u);
-}
-
 function WordList({ vocab, locale }: { vocab: VocabItem[]; locale: string }) {
   const t = useT();
   const groups = [
@@ -227,9 +218,6 @@ function WordList({ vocab, locale }: { vocab: VocabItem[]; locale: string }) {
                     <div className="vocab-head">
                       <strong lang="en">{v.term}</strong>
                       <span>{translation(v, locale)}</span>
-                      <button type="button" className="vocab-say" aria-label={`${t.lessons.listen}: ${v.term}`} title={t.lessons.listen} onClick={() => speak(v.term)}>
-                        🔊
-                      </button>
                     </div>
                     <p className="small muted" lang="en">
                       {before}
