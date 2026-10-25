@@ -108,7 +108,7 @@ export default async function RoomPage({ params }: { params: Promise<{ id: strin
       {status !== "cancelled" && (isHost || isGuest) && (
         <form action={leaveRoom} className="row">
           <input type="hidden" name="room_id" value={room.id} />
-          <SubmitButton className="btn ghost small">{isHost ? t.cancel : t.leave}</SubmitButton>
+          <SubmitButton className="btn ghost small">{isHost && !room.guest_id ? t.cancel : t.leave}</SubmitButton>
           {iPaid && <span className="small muted">{t.refundNote}</span>}
         </form>
       )}

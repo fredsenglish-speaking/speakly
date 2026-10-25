@@ -1,17 +1,15 @@
 import Link from "next/link";
-import { Avatar } from "@/components/Avatar";
 import { AutoRefresh } from "@/components/AutoRefresh";
 import { LevelChip } from "@/components/LevelChip";
 import { SubmitButton } from "@/components/SubmitButton";
 import { requireUser } from "@/lib/auth";
 import { PRACTICE_MINUTES, PRACTICE_PRICE, formatDateTime, money, shortName, topicTitle } from "@/lib/levels";
 import { aiTeacherEnabled } from "@/lib/liveavatar";
-import { isOnline } from "@/lib/presence";
-import { DICTIONARIES } from "@/lib/i18n";
+import { SCHEDULE_DAYS, bakuDate, slotTime, slotsForDay, topicForSlot } from "@/lib/schedule";
+import { DICTIONARIES, INTL_LOCALE, type Locale } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { CreateRoomForm } from "./CreateRoomForm";
-import { inviteNow, joinRoom } from "./actions";
+import { bookSlot } from "./actions";
 import { loadRooms, roomStatus } from "./rooms";
 
 export async function generateMetadata() {
@@ -19,25 +17,47 @@ export async function generateMetadata() {
 }
 
 function AiTeacherCard({ t }: { t: (typeof DICTIONARIES)["az"]["aiChat"] }) {
-  const enabled = aiTeacherEnabled();
+  // Hidden until the AI teacher is switched on, so students only see what they can use.
+  if (!aiTeacherEnabled()) return null;
   return (
     <div className="panel stack" style={{ borderColor: "var(--accent)" }}>
-      <div className="row between">
-        <h3>{t.title}</h3>
-        {!enabled && <span className="status scheduled">{t.comingSoon}</span>}
-      </div>
+      <h3>{t.title}</h3>
       <p className="small">{t.cardText}</p>
-      <Link href="/practice/ai" className={`btn self-start${enabled ? "" : " ghost"}`}>{t.tryIt}</Link>
+      <Link href="/practice/ai" className="btn self-start">{t.tryIt}</Link>
     </div>
   );
 }
 
-type Peer = { id: string; full_name: string; avatar_url?: string | null; last_seen_at?: string | null };
+function HowItWorks({ locale, price }: { locale: Locale; price: string }) {
+  const d = DICTIONARIES[locale];
+  return (
+    <div className="steps three">
+      {d.practice.steps(price, PRACTICE_MINUTES).map(([title, text], i) => (
+        <div className="step" key={i}>
+          <b>
+            {d.home.step} {i + 1}
+          </b>
+          <h3>{title}</h3>
+          <p className="small muted">{text}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function dayLabel(offset: number, locale: Locale) {
+  const t = DICTIONARIES[locale].practice;
+  if (offset === 0) return t.today;
+  if (offset === 1) return t.tomorrow;
+  return new Intl.DateTimeFormat(INTL_LOCALE[locale], { weekday: "short", day: "numeric", timeZone: "UTC" }).format(
+    new Date(`${bakuDate(offset)}T12:00:00Z`),
+  );
+}
 
 export default async function PracticePage({
   searchParams,
 }: {
-  searchParams: Promise<{ taken?: string; offline?: string }>;
+  searchParams: Promise<{ day?: string; past?: string }>;
 }) {
   const user = await requireUser("/practice");
   const locale = await getLocale();
@@ -46,40 +66,28 @@ export default async function PracticePage({
 
   if (!user.level) {
     return (
-      <section className="panel stack narrow">
+      <section className="stack">
         <h2>{t.title}</h2>
-        <p className="muted">{t.intro(price, PRACTICE_MINUTES)}</p>
-        <p>{t.needTest}</p>
-        <Link href="/test" className="btn self-start">{t.takeTest}</Link>
+        <HowItWorks locale={locale} price={price} />
+        <div className="panel stack narrow">
+          <p>{t.needTest}</p>
+          <Link href="/test" className="btn self-start">{t.takeTest}</Link>
+        </div>
         <AiTeacherCard t={DICTIONARIES[locale].aiChat} />
       </section>
     );
   }
 
   const level = user.level;
-  const { taken, offline } = await searchParams;
+  const params = await searchParams;
+  const day = Math.min(Math.max(Math.trunc(Number(params.day) || 0), 0), SCHEDULE_DAYS - 1);
+  const slots = slotsForDay(day);
   const db = createAdminClient();
-  const now = new Date().toISOString();
-  const [{ data: topicRows }, { data: peerRows, count }, open, mine] = await Promise.all([
+  const [{ data: topicRows }, dayRooms, mine] = await Promise.all([
     db.from("practice_topics").select("id, title, title_en, title_ru").eq("level", level).order("position"),
-    db
-      .from("profiles")
-      .select("*", { count: "exact" })
-      .eq("level", level)
-      .eq("role", "student")
-      .neq("id", user.id)
-      .order("created_at", { ascending: false })
-      .limit(100),
-    loadRooms((q) =>
-      q
-        .eq("level", level)
-        .eq("cancelled", false)
-        .is("guest_id", null)
-        .is("invited_id", null)
-        .neq("host_id", user.id)
-        .gt("starts_at", now)
-        .order("starts_at"),
-    ),
+    slots.length
+      ? loadRooms((q) => q.eq("level", level).eq("cancelled", false).in("starts_at", slots))
+      : Promise.resolve([]),
     loadRooms((q) =>
       q
         .or(`host_id.eq.${user.id},guest_id.eq.${user.id}`)
@@ -88,11 +96,8 @@ export default async function PracticePage({
         .order("starts_at"),
     ),
   ]);
-  const topics = (topicRows ?? []).map((tp) => ({ id: tp.id, title: topicTitle(tp, locale) }));
-  const peers = ((peerRows ?? []) as Peer[])
-    .map((p) => ({ ...p, online: isOnline(p.last_seen_at) }))
-    .sort((a, b) => Number(b.online) - Number(a.online));
-  const onlineCount = peers.filter((p) => p.online).length;
+  const topics = topicRows ?? [];
+  const same = (a: string, b: string) => new Date(a).getTime() === new Date(b).getTime();
 
   return (
     <section className="stack">
@@ -101,47 +106,8 @@ export default async function PracticePage({
         <h2>{t.title}</h2>
         <LevelChip level={level} />
       </div>
-      <p className="muted">{t.intro(price, PRACTICE_MINUTES)}</p>
-      <AiTeacherCard t={DICTIONARIES[locale].aiChat} />
-      {taken && <p className="notice">{t.errTaken}</p>}
-      {offline && <p className="notice">{t.errOffline}</p>}
-
-      <div className="panel stack">
-        <div className="row between">
-          <h3>{t.peers(count ?? peers.length)}</h3>
-          {onlineCount > 0 && <span className="small" style={{ color: "var(--accent)" }}>● {t.onlineNow(onlineCount)}</span>}
-        </div>
-        {peers.length === 0 ? (
-          <p className="muted small">{t.noPeers}</p>
-        ) : (
-          <div className="peers">
-            {peers.map((p) => (
-              <div key={p.id} className="peer">
-                <Avatar name={p.full_name} url={p.avatar_url} size={40} online={p.online} />
-                <span className="name">{shortName(p.full_name) || "—"}</span>
-                {p.online && (
-                  <details>
-                    <summary className="btn small">{t.talk}</summary>
-                    <form action={inviteNow}>
-                      <input type="hidden" name="peer_id" value={p.id} />
-                      <label className="field" style={{ flex: 1 }}>
-                        {t.inviteTitle(shortName(p.full_name))}
-                        <select name="topic_id" required defaultValue="">
-                          <option value="" disabled>{t.chooseTopic}</option>
-                          {topics.map((tp) => (
-                            <option key={tp.id} value={tp.id}>{tp.title}</option>
-                          ))}
-                        </select>
-                      </label>
-                      <SubmitButton className="btn small">{t.sendInvite}</SubmitButton>
-                    </form>
-                  </details>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+      <HowItWorks locale={locale} price={price} />
+      {params.past && <p className="notice">{t.errPastSlot}</p>}
 
       {mine.length > 0 && (
         <div className="panel stack">
@@ -166,24 +132,43 @@ export default async function PracticePage({
       )}
 
       <div className="panel stack">
-        <h3>{t.openRooms}</h3>
-        {open.length === 0 && <p className="muted small">{t.noOpenRooms}</p>}
-        {open.map((r) => (
-          <form key={r.id} action={joinRoom} className="row between" style={{ borderBottom: "1px solid var(--line)", paddingBottom: 10 }}>
-            <input type="hidden" name="room_id" value={r.id} />
-            <Avatar name={r.host?.full_name ?? ""} url={r.host?.avatar_url} size={36} />
-            <div className="stack" style={{ gap: 2, minWidth: 0, flex: 1 }}>
-              <strong>{topicTitle(r.topic, locale)}</strong>
-              <span className="small muted">
-                {formatDateTime(r.starts_at, locale)} · {t.minutes(PRACTICE_MINUTES)} · {shortName(r.host?.full_name ?? "")}
-              </span>
-            </div>
-            <SubmitButton className="btn small">{t.join}</SubmitButton>
-          </form>
-        ))}
+        <h3>{t.schedule}</h3>
+        <div className="row" style={{ flexWrap: "wrap", gap: 8 }}>
+          {Array.from({ length: SCHEDULE_DAYS }, (_, d) => (
+            <Link key={d} href={`/practice?day=${d}`} className="chip" aria-current={d === day ? "true" : undefined}>
+              {dayLabel(d, locale)}
+            </Link>
+          ))}
+        </div>
+        {slots.length === 0 && <p className="muted small">{t.noSlotsLeft}</p>}
+        {slots.map((slot) => {
+          const topic = topicForSlot(slot, topics);
+          if (!topic) return null;
+          const rooms = dayRooms.filter((r) => same(r.starts_at, slot));
+          const myRoom = rooms.find((r) => r.host_id === user.id || r.guest_id === user.id);
+          const waiting = rooms.filter((r) => !r.guest_id && !r.invited_id && r.host_id !== user.id).length;
+          return (
+            <form key={slot} action={bookSlot} className="row between" style={{ borderBottom: "1px solid var(--line)", paddingBottom: 10 }}>
+              <input type="hidden" name="starts_at" value={slot} />
+              <input type="hidden" name="day" value={day} />
+              <strong style={{ fontVariantNumeric: "tabular-nums", minWidth: 52 }}>{slotTime(slot)}</strong>
+              <div className="stack" style={{ gap: 2, minWidth: 0, flex: 1 }}>
+                <span>{topicTitle(topic, locale)}</span>
+                {waiting > 0 && !myRoom && (
+                  <span className="small" style={{ color: "var(--accent)" }}>● {t.waitingCount(waiting)}</span>
+                )}
+              </div>
+              {myRoom ? (
+                <Link href={`/practice/${myRoom.id}`} className="btn ghost small">{t.yourSeat}</Link>
+              ) : (
+                <SubmitButton className="btn small">{t.book}</SubmitButton>
+              )}
+            </form>
+          );
+        })}
       </div>
 
-      <CreateRoomForm topics={topics} />
+      <AiTeacherCard t={DICTIONARIES[locale].aiChat} />
     </section>
   );
 }

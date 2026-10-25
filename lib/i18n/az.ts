@@ -258,6 +258,19 @@ const az = {
     title: "Speaking klub",
     intro: (price: string, min: number) =>
       `Öz səviyyəndəki tələbə ilə cüt halında ${min} dəqiqə danış. Hər mövzuda 10 sual var, növbə ilə soruşursunuz. Otaq açmaq pulsuzdur, hər tələbə danışığa girəndə ${price} ödəyir.`,
+    steps: (price: string, min: number): [string, string][] => [
+      ["Vaxt seç", "Hər gün 09:00-dan 00:00-dək hər yarım saatdan bir otaq var. Mövzunu biz seçirik."],
+      ["Yer tut", "Saatın üstünə bas. Sənin səviyyəndə başqa bir tələbə də qoşulanda partnyorun olacaq. Bu pulsuzdur."],
+      ["Ödə və danış", `Partnyor qoşulanda ${price} ödə. ${min} dəqiqə video zəngdə növbə ilə sual verib danışırsınız.`],
+    ],
+    schedule: "Cədvəl",
+    today: "Bu gün",
+    tomorrow: "Sabah",
+    book: "Yer tut",
+    yourSeat: "Sizin yeriniz",
+    waitingCount: (n: number) => `${n} nəfər partnyor gözləyir`,
+    noSlotsLeft: "Bu gün üçün otaq qalmayıb. Sabahı seçin.",
+    errPastSlot: "Bu vaxt artıq keçib. Başqa vaxt seçin.",
     needTest: "Speaking klubdan istifadə etmək üçün əvvəlcə səviyyə testini keçin.",
     takeTest: "Testə başla",
     peers: (n: number) => `Sizin səviyyənizdə ${n} tələbə`,
@@ -309,7 +322,7 @@ const az = {
   },
   aiChat: {
     title: "AI video müəllimi ilə danış",
-    cardText: "Öz səviyyənə uyğun mövzu seç və video müəllimlə istədiyin vaxt 15 dəqiqə, 30 dəqiqə və ya 1 saat ingiliscə danış. Müəllim ancaq seçdiyin mövzu haqqında danışır və səhvlərini düzəldir.",
+    cardText: "Öz səviyyənə uyğun mövzu seç və video müəllimlə istədiyin vaxt 30 dəqiqə ingiliscə danış. Müəllim ancaq seçdiyin mövzu haqqında danışır və səhvlərini düzəldir.",
     comingSoon: "Tezliklə",
     comingSoonNote: "AI video müəllimi tezliklə açılacaq. Hələlik başqa tələbələrlə danışa bilərsiniz.",
     tryIt: "Bax",

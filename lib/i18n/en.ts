@@ -260,6 +260,19 @@ const en: Dictionary = {
     title: "Speaking club",
     intro: (price: string, min: number) =>
       `Talk for ${min} minutes in pairs with a student at your level. Each topic has 10 questions and you take turns asking them. Opening a room is free; each student pays ${price} when entering the conversation.`,
+    steps: (price: string, min: number): [string, string][] => [
+      ["Pick a time", "Every day there is a room every half hour from 09:00 to 00:00. We choose the topic."],
+      ["Book a seat", "Tap a time. When another student of your level books the same time, they become your partner. This is free."],
+      ["Pay and talk", `When your partner joins, pay ${price}. You talk for ${min} minutes on a video call, taking turns asking the questions.`],
+    ],
+    schedule: "Timetable",
+    today: "Today",
+    tomorrow: "Tomorrow",
+    book: "Book",
+    yourSeat: "Your seat",
+    waitingCount: (n: number) => (n === 1 ? "1 student waiting for a partner" : `${n} students waiting for a partner`),
+    noSlotsLeft: "No rooms left for today. Pick tomorrow.",
+    errPastSlot: "That time has already passed. Pick another time.",
     needTest: "Take the level test first to use the speaking club.",
     takeTest: "Start the test",
     peers: (n: number) => (n === 1 ? "1 student at your level" : `${n} students at your level`),
@@ -311,7 +324,7 @@ const en: Dictionary = {
   },
   aiChat: {
     title: "Talk with the AI video teacher",
-    cardText: "Pick a topic for your level and speak English with a video teacher for 15 minutes, 30 minutes or 1 hour, whenever you like. The teacher only talks about your topic and corrects your mistakes.",
+    cardText: "Pick a topic for your level and speak English with a video teacher for 30 minutes, whenever you like. The teacher only talks about your topic and corrects your mistakes.",
     comingSoon: "Coming soon",
     comingSoonNote: "The AI video teacher opens soon. For now you can talk with other students.",
     tryIt: "Look",
