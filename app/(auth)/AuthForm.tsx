@@ -5,9 +5,9 @@ import { useActionState, useState } from "react";
 import { signIn, signUp, type AuthState } from "./actions";
 import { SubmitButton } from "@/components/SubmitButton";
 import { useT } from "@/lib/i18n/client";
-import { COURSES, GOALS, GRADES, HEARD_FROM, OCCUPATIONS, STUDENT_LEVELS, STUDY_PLACES } from "@/lib/studentDetails";
+import { COURSES, GOALS, GRADES, HEARD_FROM, NO_TEACHER, OCCUPATIONS, STUDENT_LEVELS, STUDY_PLACES } from "@/lib/studentDetails";
 
-export function AuthForm({ mode, next }: { mode: "login" | "signup"; next?: string }) {
+export function AuthForm({ mode, next, teachers = [] }: { mode: "login" | "signup"; next?: string; teachers?: string[] }) {
   const [state, action] = useActionState<AuthState, FormData>(mode === "login" ? signIn : signUp, {});
   const t = useT();
   const [role, setRole] = useState<"student" | "tutor">("student");
@@ -37,7 +37,7 @@ export function AuthForm({ mode, next }: { mode: "login" | "signup"; next?: stri
               </label>
             </div>
           </div>
-          {role === "student" && <StudentQuestions />}
+          {role === "student" && <StudentQuestions teachers={teachers} />}
         </>
       )}
       <label className="field">
@@ -74,7 +74,7 @@ export function AuthForm({ mode, next }: { mode: "login" | "signup"; next?: stri
 }
 
 /** The questions only students answer at sign-up. All are required. */
-function StudentQuestions() {
+function StudentQuestions({ teachers }: { teachers: string[] }) {
   const t = useT();
   const D = t.auth.details;
   const [occupation, setOccupation] = useState("");
@@ -151,7 +151,18 @@ function StudentQuestions() {
       {select("heard_from", D.heardFrom, HEARD_FROM, (o) => D.heard[o as keyof typeof D.heard])}
       <label className="field">
         {D.teacher}
-        <input type="text" name="teacher_name" required minLength={2} placeholder={D.teacherHint} />
+        <select name="teacher_name" required defaultValue="">
+          <option value="" disabled>
+            {D.choose}
+          </option>
+          {teachers.map((name) => (
+            <option key={name} value={name}>
+              {name}
+            </option>
+          ))}
+          <option value={NO_TEACHER}>{D.noTeacher}</option>
+        </select>
+        <span className="small muted">{D.teacherHint}</span>
       </label>
       {select("study_place", D.studyPlace, STUDY_PLACES, (o) => D.places[o as keyof typeof D.places])}
     </fieldset>

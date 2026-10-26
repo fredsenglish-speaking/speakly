@@ -4,6 +4,9 @@ import { LEVELS } from "./levels.ts";
 export const STUDENT_LEVELS = [...LEVELS, "unknown"] as const;
 export const GOALS = ["speaking", "exam", "work", "travel", "study", "other"] as const;
 export const HEARD_FROM = ["instagram", "facebook", "tiktok", "google", "friend", "teacher", "other"] as const;
+/** The sign-up answer for a student without a teacher from the list. */
+export const NO_TEACHER = "none";
+
 export const OCCUPATIONS = ["pupil", "student", "working", "other"] as const;
 export const GRADES = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"] as const;
 export const COURSES = ["1", "2", "3", "4", "5", "6", "master", "phd"] as const;
@@ -31,9 +34,10 @@ function pick<T extends readonly string[]>(list: T, value: string): T[number] | 
   return (list as readonly string[]).includes(value) ? (value as T[number]) : null;
 }
 
-/** Reads and checks the sign-up answers. Every question must be answered. */
+/** Reads and checks the sign-up answers. Every question must be answered; the teacher must be one from the list. */
 export function parseStudentDetails(
   get: (name: string) => unknown,
+  teachers: readonly string[],
   today = new Date(),
 ): { details: StudentDetails } | { error: DetailsError } {
   const text = (name: string) => String(get(name) ?? "").trim().slice(0, 200);
@@ -55,7 +59,7 @@ export function parseStudentDetails(
   const heard_from = pick(HEARD_FROM, text("heard_from"));
   if (!heard_from) return { error: "heard_from" };
   const teacher_name = text("teacher_name");
-  if (teacher_name.length < 2) return { error: "teacher_name" };
+  if (teacher_name !== NO_TEACHER && !teachers.includes(teacher_name)) return { error: "teacher_name" };
   const study_place = pick(STUDY_PLACES, text("study_place"));
   if (!study_place) return { error: "study_place" };
 

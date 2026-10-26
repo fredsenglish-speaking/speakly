@@ -2,7 +2,7 @@ import { getCurrentUser } from "@/lib/auth";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
 import { loadStudentReport } from "@/lib/studentData";
-import { studentColumns, studentRow } from "@/lib/studentRows";
+import { studentColumns, studentRow, teacherLabel } from "@/lib/studentRows";
 import { buildXlsx } from "@/lib/xlsx";
 
 export const dynamic = "force-dynamic";
@@ -16,7 +16,7 @@ export async function GET() {
   const { students, stats, teachers } = await loadStudentReport();
   const file = buildXlsx([
     { name: S.sheetStudents, header: studentColumns(t), rows: students.map((s) => studentRow(s, stats.get(s.id), t)) },
-    { name: S.sheetTeachers, header: [S.teacherCol, S.studentsCol], rows: teachers.map((x) => [x.teacher, x.count]) },
+    { name: S.sheetTeachers, header: [S.teacherCol, S.studentsCol], rows: teachers.map((x) => [teacherLabel(x.teacher, t), x.count]) },
   ]);
   const name = `speakly-students-${new Date().toISOString().slice(0, 10)}.xlsx`;
   return new Response(new Uint8Array(file), {
