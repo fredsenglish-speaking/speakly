@@ -11,6 +11,9 @@ const good: Record<string, string> = {
   heard_from: "teacher",
   teacher_name: "Ms Jane",
   study_place: "uk",
+  occupation: "pupil",
+  occupation_level: "9",
+  occupation_place: "20 nömrəli məktəb",
 };
 const today = new Date("2026-10-26T00:00:00Z");
 const parse = (over: Record<string, string> = {}) => parseStudentDetails((k) => ({ ...good, ...over })[k], today);
@@ -34,4 +37,14 @@ test("odd answers are rejected", () => {
   assert.deepEqual(parse({ birth_date: "2025-01-01" }), { error: "birth_date" });
   assert.deepEqual(parse({ goal: "fun" }), { error: "goal" });
   assert.deepEqual(parse({ study_place: "mars" }), { error: "study_place" });
+});
+
+test("the extra questions follow the occupation", () => {
+  assert.deepEqual(parse({ occupation_level: "12" }), { error: "occupation_level" });
+  const uni = parse({ occupation: "student", occupation_level: "master", occupation_place: "BDU" });
+  assert.ok("details" in uni && uni.details.occupation_level === "master");
+  assert.deepEqual(parse({ occupation: "working", occupation_level: "" }), { error: "occupation_level" });
+  const other = parse({ occupation: "other", occupation_level: "ignored", occupation_place: "Evdar qadınam" });
+  assert.ok("details" in other && other.details.occupation_level === "");
+  assert.deepEqual(parse({ occupation: "other", occupation_place: "" }), { error: "occupation_place" });
 });
