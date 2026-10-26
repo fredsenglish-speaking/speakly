@@ -8,7 +8,7 @@ export async function loadStudentReport() {
   const [{ data: profiles }, { data: rooms }, { data: results }, { data: lessons }, emails] = await Promise.all([
     db
       .from("profiles")
-      .select("id, full_name, level, created_at, student_details(phone, birth_date, city, english_level, goal, heard_from, teacher_name, study_place)")
+      .select("id, full_name, level, created_at, student_details(phone, birth_date, city, english_level, goal, heard_from, teacher_name, study_place, occupation, occupation_level, occupation_place)")
       .eq("role", "student")
       .order("created_at", { ascending: false }),
     db.from("practice_rooms").select("host_id, guest_id, host_paid, guest_paid, cancelled, starts_at"),

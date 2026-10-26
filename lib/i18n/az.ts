@@ -1,3 +1,9 @@
+/** 9 → "9-cu", 6 → "6-cı": the suffix follows the vowel of the number's last word. */
+function azOrdinal(n: string): string {
+  const suffix: Record<string, string> = { "1": "ci", "2": "ci", "3": "cü", "4": "cü", "5": "ci", "6": "cı", "7": "ci", "8": "ci", "9": "cu", "10": "cu", "11": "ci" };
+  return `${n}-${suffix[n] ?? "ci"}`;
+}
+
 const az = {
   langName: "Azərbaycanca",
   meta: {
@@ -95,6 +101,20 @@ const az = {
       goals: { speaking: "Danışmaq üçün", exam: "İmtahan üçün (IELTS, TOEFL və s.)", work: "İş üçün", travel: "Səyahət üçün", study: "Xaricdə oxumaq üçün", other: "Digər" },
       heard: { instagram: "Instagram", facebook: "Facebook", tiktok: "TikTok", google: "Google", friend: "Dostdan", teacher: "Müəllimimdən", other: "Digər" },
       places: { azerbaijan: "Azərbaycan", turkey: "Türkiyə", uk: "Böyük Britaniya", usa: "ABŞ", canada: "Kanada", germany: "Almaniya", russia: "Rusiya", other: "Digər ölkə", unsure: "Hələ bilmirəm" },
+      occupation: "Siz…",
+      occupations: { pupil: "Məktəbliyəm", student: "Tələbəyəm", working: "İşləyirəm", other: "Digər" },
+      grade: "Sinif",
+      gradeOf: (g: string) => `${azOrdinal(g)} sinif`,
+      school: "Oxuduğunuz məktəb",
+      schoolHint: "Məsələn: 20 nömrəli məktəb",
+      course: "Kurs",
+      courseOf: (c: string) => (c === "master" ? "Magistratura" : c === "phd" ? "Doktorantura" : `${azOrdinal(c)} kurs`),
+      university: "Universitetin adı",
+      universityHint: "Məsələn: BDU",
+      position: "Vəzifəniz",
+      positionHint: "Məsələn: mühasib",
+      workplace: "İş yeriniz",
+      otherWhat: "Nə ilə məşğulsunuz?",
       errors: {
         phone: "Telefon nömrəsini düzgün yazın (məsələn +994 50 123 45 67).",
         birth_date: "Doğum tarixini seçin.",
@@ -104,6 +124,9 @@ const az = {
         heard_from: "Bizi haradan eşitdiyinizi seçin.",
         teacher_name: "Müəlliminizin adını yazın (yoxdursa \"yoxdur\").",
         study_place: "Harada oxumaq istədiyinizi seçin.",
+        occupation: "Məktəbli, tələbə, işləyirsiniz, yoxsa digər? Seçin.",
+        occupation_level: "Sinif, kurs və ya vəzifəni qeyd edin.",
+        occupation_place: "Məktəbi, universiteti və ya iş yerini yazın.",
       },
     },
   },
@@ -511,6 +534,9 @@ const az = {
         lessonsMonth: "Bitirilən dərslər (son 30 gün)",
         lessonsTotal: "Bitirilən dərslər (cəmi)",
         levelsDone: "Bitirilən səviyyələr",
+        occupation: "Məşğuliyyət",
+        occupationLevel: "Sinif / kurs / vəzifə",
+        occupationPlace: "Məktəb / universitet / iş yeri",
       },
     },
     videos: "Dərs videoları",

@@ -5,7 +5,7 @@ import { useActionState, useState } from "react";
 import { signIn, signUp, type AuthState } from "./actions";
 import { SubmitButton } from "@/components/SubmitButton";
 import { useT } from "@/lib/i18n/client";
-import { GOALS, HEARD_FROM, STUDENT_LEVELS, STUDY_PLACES } from "@/lib/studentDetails";
+import { COURSES, GOALS, GRADES, HEARD_FROM, OCCUPATIONS, STUDENT_LEVELS, STUDY_PLACES } from "@/lib/studentDetails";
 
 export function AuthForm({ mode, next }: { mode: "login" | "signup"; next?: string }) {
   const [state, action] = useActionState<AuthState, FormData>(mode === "login" ? signIn : signUp, {});
@@ -77,6 +77,7 @@ export function AuthForm({ mode, next }: { mode: "login" | "signup"; next?: stri
 function StudentQuestions() {
   const t = useT();
   const D = t.auth.details;
+  const [occupation, setOccupation] = useState("");
   const select = (name: string, label: string, options: readonly string[], labelOf: (o: string) => string) => (
     <label className="field">
       {label}
@@ -90,6 +91,12 @@ function StudentQuestions() {
           </option>
         ))}
       </select>
+    </label>
+  );
+  const textField = (name: string, label: string, hint?: string) => (
+    <label className="field">
+      {label}
+      <input type="text" name={name} required minLength={2} placeholder={hint} />
     </label>
   );
   return (
@@ -107,6 +114,38 @@ function StudentQuestions() {
         {D.city}
         <input type="text" name="city" required minLength={2} placeholder={D.cityHint} />
       </label>
+      <label className="field">
+        {D.occupation}
+        <select name="occupation" required value={occupation} onChange={(e) => setOccupation(e.target.value)}>
+          <option value="" disabled>
+            {D.choose}
+          </option>
+          {OCCUPATIONS.map((o) => (
+            <option key={o} value={o}>
+              {D.occupations[o]}
+            </option>
+          ))}
+        </select>
+      </label>
+      {occupation === "pupil" && (
+        <>
+          {select("occupation_level", D.grade, GRADES, D.gradeOf)}
+          {textField("occupation_place", D.school, D.schoolHint)}
+        </>
+      )}
+      {occupation === "student" && (
+        <>
+          {select("occupation_level", D.course, COURSES, D.courseOf)}
+          {textField("occupation_place", D.university, D.universityHint)}
+        </>
+      )}
+      {occupation === "working" && (
+        <>
+          {textField("occupation_level", D.position, D.positionHint)}
+          {textField("occupation_place", D.workplace)}
+        </>
+      )}
+      {occupation === "other" && textField("occupation_place", D.otherWhat)}
       {select("english_level", D.level, STUDENT_LEVELS, (o) => (o === "unknown" ? D.levelUnknown : o))}
       {select("goal", D.goal, GOALS, (o) => D.goals[o as keyof typeof D.goals])}
       {select("heard_from", D.heardFrom, HEARD_FROM, (o) => D.heard[o as keyof typeof D.heard])}
