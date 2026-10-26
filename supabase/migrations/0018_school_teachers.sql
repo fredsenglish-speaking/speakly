@@ -11,4 +11,8 @@ alter table school_teachers enable row level security;
 drop policy if exists "teacher list is public" on school_teachers;
 create policy "teacher list is public" on school_teachers for select using (true);
 
+insert into school_teachers (name) values
+  ('Mr Fred'), ('Ms Kamilla'), ('Ms Arzu'), ('Ms Asmar'), ('Ms Olga'), ('Ms Gulnar'), ('Ms Nigar')
+on conflict (name) do nothing;
+
 notify pgrst, 'reload schema';
