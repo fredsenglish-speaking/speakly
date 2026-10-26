@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getT } from "@/lib/i18n/server";
+import { parseStudentDetails } from "@/lib/studentDetails";
 
 export type AuthState = { error?: string; message?: string };
 
@@ -39,13 +40,19 @@ export async function signUp(_: AuthState, form: FormData): Promise<AuthState> {
   const t = await getT();
   if (!fullName) return { error: t.auth.errName };
   if (password.length < 8) return { error: t.auth.errPassword };
+  let details = {};
+  if (role === "student") {
+    const parsed = parseStudentDetails((name) => form.get(name));
+    if ("error" in parsed) return { error: t.auth.details.errors[parsed.error] };
+    details = parsed.details;
+  }
 
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signUp({
     email: String(form.get("email") ?? ""),
     password,
     options: {
-      data: { full_name: fullName, role },
+      data: { full_name: fullName, role, ...details },
       emailRedirectTo: `${await siteUrl()}/auth/confirm`,
     },
   });

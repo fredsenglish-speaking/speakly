@@ -15,6 +15,12 @@ export type Payment = {
 
 export const PAYMENT_COLUMNS = "id, user_id, kind, ref_id, amount, status";
 
+export const PAYMENT_KINDS: PaymentKind[] = ["test", "certificate", "lesson", "practice", "booking", "ai_chat"];
+
+export function hasFreeAccess(freeAccess: string[] | null | undefined, kind: PaymentKind): boolean {
+  return (freeAccess ?? []).includes(kind);
+}
+
 export function paymentProvider() {
   return process.env.PAYMENT_PROVIDER?.trim() || "mock";
 }
@@ -35,11 +41,13 @@ export async function startPayment(opts: {
   successPath: string;
 }): Promise<string> {
   const db = createAdminClient();
-  const { data: payer } = await db.from("profiles").select("role").eq("id", opts.userId).single();
-  // The admin can open every paid section for free; the $0 record keeps the
-  // revenue totals in /admin right.
+  const { data: payer } = await db.from("profiles").select("role, free_access").eq("id", opts.userId).single();
+  // The admin can open every paid section for free, and can give anyone free
+  // access to chosen sections in /admin/users; the $0 record keeps the revenue
+  // totals in /admin right.
   const isAdmin = payer?.role === "admin";
-  const provider = isAdmin ? "admin" : paymentProvider();
+  const isFree = isAdmin || hasFreeAccess(payer?.free_access, opts.kind);
+  const provider = isAdmin ? "admin" : isFree ? "free" : paymentProvider();
 
   if (provider === "whatsapp") {
     // Pressing "buy" twice should not give the admin two payments to check.
@@ -57,12 +65,12 @@ export async function startPayment(opts: {
 
   const { data, error } = await db
     .from("payments")
-    .insert({ user_id: opts.userId, kind: opts.kind, ref_id: opts.refId, amount: isAdmin ? 0 : opts.amount, provider })
+    .insert({ user_id: opts.userId, kind: opts.kind, ref_id: opts.refId, amount: isFree ? 0 : opts.amount, provider })
     .select("id")
     .single();
   if (error || !data) throw new Error(`Could not create payment: ${error?.message}`);
 
-  if (provider === "mock" || isAdmin) {
+  if (provider === "mock" || isFree) {
     await markPaid(data.id, null);
     return opts.successPath;
   }
