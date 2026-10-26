@@ -76,7 +76,11 @@ export default async function AdminPage() {
     <section className="stack">
       <div className="row between">
         <h2>{t.admin.title}</h2>
-        <Link href="/admin/lessons" className="btn ghost small">🎬 {t.admin.videos}</Link>
+        <div className="row">
+          <Link href="/admin/users" className="btn ghost small">🔑 {t.admin.users.link}</Link>
+          <Link href="/admin/students" className="btn ghost small">👥 {t.admin.students.link}</Link>
+          <Link href="/admin/lessons" className="btn ghost small">🎬 {t.admin.videos}</Link>
+        </div>
       </div>
       <div className="steps five">
         <div className="step"><b>{t.admin.tests}</b><h3 className="price">{money(totals.test)}</h3></div>
