@@ -50,3 +50,11 @@ test("age in whole years", () => {
   assert.equal(ageOn("2005-10-26", now), 21);
   assert.equal(ageOn("", now), null);
 });
+
+test("teachers on the list are counted even with no students", () => {
+  const list = teacherCounts([student("a", "ms jane")], ["Ms Jane", "Aygün"]);
+  assert.deepEqual(list, [
+    { teacher: "Ms Jane", count: 1 },
+    { teacher: "Aygün", count: 0 },
+  ]);
+});

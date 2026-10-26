@@ -1,5 +1,6 @@
 // Labels the student report for one language: the same columns on the admin page and in the Excel file.
 import type { Dictionary } from "./i18n/index.ts";
+import { NO_TEACHER } from "./studentDetails.ts";
 import { ageOn, type ReportStudent, type StudentStats } from "./studentReport.ts";
 
 export function studentColumns(t: Dictionary): string[] {
@@ -30,7 +31,7 @@ export function studentRow(s: ReportStudent, st: StudentStats | undefined, t: Di
     d.occupation_place ?? "",
     label(D.goals, d.goal),
     label(D.heard, d.heard_from),
-    d.teacher_name ?? "",
+    teacherLabel(d.teacher_name ?? "", t),
     label(D.places, d.study_place),
     st?.clubMonth ?? 0,
     st?.lessonsMonth ?? 0,
@@ -44,4 +45,9 @@ function occupationLevel(occupation: string | undefined, level: string | undefin
   if (occupation === "pupil") return D.gradeOf(level);
   if (occupation === "student") return D.courseOf(level);
   return level;
+}
+
+/** A teacher name as shown to the admin: "none" becomes "I don't have a teacher". */
+export function teacherLabel(name: string, t: Dictionary): string {
+  return name === NO_TEACHER ? t.auth.details.noTeacher : name;
 }

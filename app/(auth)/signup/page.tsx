@@ -1,4 +1,5 @@
 import { getT } from "@/lib/i18n/server";
+import { loadSchoolTeachers } from "@/lib/schoolTeachers";
 import { AuthForm } from "../AuthForm";
 
 export async function generateMetadata() {
@@ -6,11 +7,11 @@ export async function generateMetadata() {
 }
 
 export default async function SignupPage() {
-  const t = await getT();
+  const [t, teachers] = await Promise.all([getT(), loadSchoolTeachers()]);
   return (
     <section className="panel stack narrow">
       <h2>{t.auth.signupTitle}</h2>
-      <AuthForm mode="signup" />
+      <AuthForm mode="signup" teachers={teachers.map((x) => x.name)} />
     </section>
   );
 }

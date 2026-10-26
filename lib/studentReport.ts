@@ -76,9 +76,13 @@ export function studentStats(
   return stats;
 }
 
-/** How many students named each teacher. Spelling and capitals are ignored when grouping. */
-export function teacherCounts(students: ReportStudent[]): { teacher: string; count: number }[] {
+/**
+ * How many students named each teacher; teachers on the sign-up list show up even with none.
+ * Spelling and capitals are ignored when grouping, for names typed before the list existed.
+ */
+export function teacherCounts(students: ReportStudent[], listed: readonly string[] = []): { teacher: string; count: number }[] {
   const groups = new Map<string, { teacher: string; count: number }>();
+  for (const name of listed) groups.set(name.trim().replace(/\s+/g, " ").toLocaleLowerCase("az"), { teacher: name, count: 0 });
   for (const s of students) {
     const name = (s.details?.teacher_name ?? "").trim().replace(/\s+/g, " ");
     if (!name) continue;

@@ -1,11 +1,12 @@
 import "server-only";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { loadSchoolTeachers } from "@/lib/schoolTeachers";
 import { studentStats, teacherCounts, type ReportStudent } from "@/lib/studentReport";
 
 /** Every student with their sign-up answers and activity. Admin only: the caller must check the role. */
 export async function loadStudentReport() {
   const db = createAdminClient();
-  const [{ data: profiles }, { data: rooms }, { data: results }, { data: lessons }, emails] = await Promise.all([
+  const [{ data: profiles }, { data: rooms }, { data: results }, { data: lessons }, emails, listed] = await Promise.all([
     db
       .from("profiles")
       .select("id, full_name, level, created_at, student_details(phone, birth_date, city, english_level, goal, heard_from, teacher_name, study_place, occupation, occupation_level, occupation_place)")
@@ -15,6 +16,7 @@ export async function loadStudentReport() {
     db.from("lesson_results").select("student_id, lesson_id, updated_at"),
     db.from("lessons").select("id, level"),
     allEmails(db),
+    loadSchoolTeachers(),
   ]);
   const students: ReportStudent[] = (profiles ?? []).map((p) => {
     const d = p.student_details as unknown;
@@ -30,7 +32,8 @@ export async function loadStudentReport() {
   return {
     students,
     stats: studentStats(students, rooms ?? [], results ?? [], lessons ?? []),
-    teachers: teacherCounts(students),
+    teachers: teacherCounts(students, listed.map((x) => x.name)),
+    listed,
   };
 }
 

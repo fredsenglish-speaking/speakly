@@ -16,7 +16,7 @@ const good: Record<string, string> = {
   occupation_place: "20 nömrəli məktəb",
 };
 const today = new Date("2026-10-26T00:00:00Z");
-const parse = (over: Record<string, string> = {}) => parseStudentDetails((k) => ({ ...good, ...over })[k], today);
+const parse = (over: Record<string, string> = {}) => parseStudentDetails((k) => ({ ...good, ...over })[k], ["Ms Jane", "Aygün Əliyeva"], today);
 
 test("a full form is accepted and the phone is cleaned", () => {
   const r = parse();
@@ -47,4 +47,10 @@ test("the extra questions follow the occupation", () => {
   const other = parse({ occupation: "other", occupation_level: "ignored", occupation_place: "Evdar qadınam" });
   assert.ok("details" in other && other.details.occupation_level === "");
   assert.deepEqual(parse({ occupation: "other", occupation_place: "" }), { error: "occupation_place" });
+});
+
+test("the teacher must come from the list, or be none", () => {
+  assert.deepEqual(parse({ teacher_name: "Somebody" }), { error: "teacher_name" });
+  assert.ok("details" in parse({ teacher_name: "none" }));
+  assert.ok("details" in parse({ teacher_name: "Aygün Əliyeva" }));
 });
