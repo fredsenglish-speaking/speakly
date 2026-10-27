@@ -2,28 +2,28 @@
 
 import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
-import { CERTIFICATE_PRICE, TEST_PRICE, levelForAnswers } from "@/lib/levels";
+import { CERTIFICATE_PRICE, levelForAnswers } from "@/lib/levels";
 import { startPayment } from "@/lib/payments";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 export async function startTest() {
   const user = await requireUser("/test");
   const db = createAdminClient();
+  // The level test is free; only the certificate is paid. An unfinished
+  // attempt is picked up again instead of starting a new one.
   const { data: open } = await db
-    .from("payments")
+    .from("test_attempts")
     .select("id")
-    .eq("user_id", user.id)
-    .eq("kind", "test")
-    .eq("status", "pending")
+    .eq("student_id", user.id)
+    .eq("paid", true)
+    .is("finished_at", null)
     .limit(1)
     .maybeSingle();
-  if (open) redirect(`/pay/${open.id}`);
-
-  const { data, error } = await db.from("test_attempts").insert({ student_id: user.id }).select("id").single();
-  if (error || !data) throw new Error("Could not start the test");
-  redirect(
-    await startPayment({ userId: user.id, kind: "test", refId: data.id, amount: TEST_PRICE, successPath: "/test" }),
-  );
+  if (!open) {
+    const { error } = await db.from("test_attempts").insert({ student_id: user.id, paid: true });
+    if (error) throw new Error("Could not start the test");
+  }
+  redirect("/test");
 }
 
 export async function submitTest(form: FormData) {
