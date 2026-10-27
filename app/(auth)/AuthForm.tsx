@@ -56,6 +56,11 @@ export function AuthForm({ mode, next, teachers = [] }: { mode: "login" | "signu
         />
       </label>
       <input type="hidden" name="next" value={next ?? ""} />
+      {mode === "login" && (
+        <Link href="/forgot" className="small self-start">
+          {t.auth.forgotLink}
+        </Link>
+      )}
       {state.error && <p className="error">{state.error}</p>}
       <SubmitButton className="btn self-start">{mode === "login" ? t.auth.loginButton : t.auth.signupButton}</SubmitButton>
       <p className="small muted">

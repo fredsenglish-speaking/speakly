@@ -1,6 +1,6 @@
 "use server";
 
-import { headers } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getT } from "@/lib/i18n/server";
@@ -61,6 +61,32 @@ export async function signUp(_: AuthState, form: FormData): Promise<AuthState> {
   if (error) return { error: error.message };
   if (!data.session) return { message: t.auth.confirmEmail };
   redirect(role === "tutor" ? "/tutor/profile" : "/test");
+}
+
+/** Marks this browser so that /auth/confirm sends the reset link on to /reset-password. */
+const RESET_COOKIE = "pw_reset";
+
+export async function requestPasswordReset(_: AuthState, form: FormData): Promise<AuthState> {
+  const t = (await getT()).auth;
+  const supabase = await createClient();
+  const { error } = await supabase.auth.resetPasswordForEmail(String(form.get("email") ?? "").trim(), {
+    redirectTo: `${await siteUrl()}/auth/confirm`,
+  });
+  // Unknown addresses get the same answer, so nobody can probe who is registered.
+  if (error && error.status !== 400) return { error: error.message };
+  (await cookies()).set(RESET_COOKIE, "1", { httpOnly: true, sameSite: "lax", path: "/", maxAge: 60 * 60 });
+  return { message: t.forgotSent };
+}
+
+export async function updatePassword(_: AuthState, form: FormData): Promise<AuthState> {
+  const t = (await getT()).auth;
+  const password = String(form.get("password") ?? "");
+  if (password.length < 8) return { error: t.errPassword };
+  const supabase = await createClient();
+  const { error } = await supabase.auth.updateUser({ password });
+  if (error) return { error: error.code === "same_password" ? error.message : t.linkExpired };
+  (await cookies()).delete(RESET_COOKIE);
+  redirect("/dashboard");
 }
 
 export async function signOut() {
