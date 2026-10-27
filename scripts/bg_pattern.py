@@ -35,5 +35,5 @@ def svg(color, alpha):
     )
 
 
-open("public/bg-pattern.svg", "w").write(svg("#082d97", 0.115))
-open("public/bg-pattern-dark.svg", "w").write(svg("#ffffff", 0.08))
+open("public/bg-pattern.svg", "w").write(svg("#0b1f4d", 0.115))
+open("public/bg-pattern-dark.svg", "w").write(svg("#d4af6a", 0.07))
