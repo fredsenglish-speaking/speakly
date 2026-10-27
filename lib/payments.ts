@@ -1,5 +1,6 @@
 import "server-only";
 import { randomBytes } from "node:crypto";
+import { levelFromPurchaseRef } from "./levels";
 import { createAdminClient } from "./supabase/admin";
 
 export type PaymentKind = "test" | "certificate" | "booking" | "lesson" | "practice" | "ai_chat";
@@ -128,6 +129,8 @@ export async function successPathFor(p: Pick<Payment, "kind" | "ref_id">): Promi
     case "booking":
       return "/dashboard";
     case "lesson": {
+      const level = levelFromPurchaseRef(p.ref_id);
+      if (level) return `/lessons?level=${level}`;
       const { data } = await createAdminClient().from("lessons").select("slug").eq("id", Number(p.ref_id)).single();
       return data ? `/lessons/${data.slug}` : "/lessons";
     }
@@ -178,9 +181,17 @@ async function fulfil(p: Payment) {
       return;
     }
     case "lesson": {
+      // A whole-level payment opens every published lesson of that level.
+      const level = levelFromPurchaseRef(p.ref_id);
+      let lessonIds = [Number(p.ref_id)];
+      if (level) {
+        const { data } = await db.from("lessons").select("id").eq("level", level).eq("published", true);
+        lessonIds = (data ?? []).map((l) => l.id);
+      }
+      if (lessonIds.length === 0) return;
       await db
         .from("lesson_purchases")
-        .upsert({ student_id: p.user_id, lesson_id: Number(p.ref_id) }, { ignoreDuplicates: true });
+        .upsert(lessonIds.map((id) => ({ student_id: p.user_id, lesson_id: id })), { ignoreDuplicates: true });
       return;
     }
     case "practice": {

@@ -13,14 +13,35 @@ export const LEVEL_NAME: Record<Level, string> = {
 
 export const CERTIFICATE_PRICE = 5;
 
+/** Price of one lesson. */
 export const LESSON_PRICE: Record<Level, number> = {
-  A1: 7,
-  A2: 9,
-  B1: 12,
-  B2: 15,
-  C1: 18,
-  C2: 21,
+  A1: 3,
+  A2: 4,
+  B1: 5,
+  B2: 6,
+  C1: 7,
+  C2: 8,
 };
+
+/** Price of every lesson of a level bought together. */
+export const LEVEL_PRICE: Record<Level, number> = {
+  A1: 30,
+  A2: 40,
+  B1: 50,
+  B2: 60,
+  C1: 70,
+  C2: 40,
+};
+
+/** A whole level is paid as a "lesson" payment whose ref_id is "level:A1". */
+export function levelPurchaseRef(level: Level) {
+  return `level:${level}`;
+}
+
+export function levelFromPurchaseRef(ref: string): Level | null {
+  const level = ref.startsWith("level:") ? ref.slice(6) : null;
+  return isLevel(level) ? level : null;
+}
 
 /** Speaking club: two students of the same level practise one topic together. */
 export const PRACTICE_PRICE = 2;

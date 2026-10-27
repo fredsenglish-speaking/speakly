@@ -3,11 +3,13 @@ import { Avatar } from "@/components/Avatar";
 import { LevelTeacherCard } from "@/components/LevelTeacherCard";
 import { getCurrentUser } from "@/lib/auth";
 import { gradeFor } from "@/lib/grade";
-import { LESSON_PRICE, LEVELS, LEVEL_NAME, isLevel, lessonText, money } from "@/lib/levels";
+import { SubmitButton } from "@/components/SubmitButton";
+import { LESSON_PRICE, LEVEL_PRICE, LEVELS, LEVEL_NAME, isLevel, lessonText, money } from "@/lib/levels";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
 import { LEVEL_TEACHER_COLUMNS, localIntro, type LevelTeacher } from "@/lib/levelTeachers";
 import { createClient } from "@/lib/supabase/server";
+import { buyLevel } from "./actions";
 
 export async function generateMetadata() {
   return { title: DICTIONARIES[await getLocale()].lessons.title };
@@ -69,7 +71,8 @@ export default async function LessonsPage({ searchParams }: { searchParams: Prom
                 <div className="stack" style={{ gap: 2 }}>
                   <h3 lang="en">{LEVEL_NAME[l]}</h3>
                   <span className="small">
-                    {t.lessons.lessonsCount(list.length)} · {money(LESSON_PRICE[l])} {t.lessons.perLesson}
+                    {t.lessons.lessonsCount(list.length)} · {money(LESSON_PRICE[l])} {t.lessons.perLesson} · {money(LEVEL_PRICE[l])}{" "}
+                    {t.lessons.wholeLevel}
                   </span>
                 </div>
               </div>
@@ -91,6 +94,12 @@ export default async function LessonsPage({ searchParams }: { searchParams: Prom
                 </div>
               )}
             </header>
+            {!list.every((x) => ownedIds.has(x.id)) && (
+              <form action={buyLevel} className="row">
+                <input type="hidden" name="level" value={l} />
+                <SubmitButton>{t.lessons.buyLevel(l, money(LEVEL_PRICE[l]))}</SubmitButton>
+              </form>
+            )}
             {teacher && (
               <details className="teacher-more">
                 <summary>{t.lessons.meetTeacher}</summary>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AutoRefresh } from "@/components/AutoRefresh";
 import { requireUser } from "@/lib/auth";
-import { money } from "@/lib/levels";
+import { levelFromPurchaseRef, money } from "@/lib/levels";
 import { PAYMENT_COLUMNS, successPathFor, type Payment } from "@/lib/payments";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { getT } from "@/lib/i18n/server";
@@ -25,7 +25,8 @@ export default async function PayPage({ params }: { params: Promise<{ id: string
   if (!data) notFound();
   const payment = data as Payment;
 
-  const kind = t.kinds[payment.kind];
+  const level = levelFromPurchaseRef(payment.ref_id);
+  const kind = level ? `${t.kinds[payment.kind]} (${t.wholeLevel(level)})` : t.kinds[payment.kind];
   const amount = money(Number(payment.amount));
   const code = paymentCode(payment.id);
   const number = whatsappDigits(process.env.WHATSAPP_NUMBER);
