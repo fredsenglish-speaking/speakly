@@ -30,7 +30,7 @@ export const LEVEL_PRICE: Record<Level, number> = {
   B1: 50,
   B2: 60,
   C1: 70,
-  C2: 80,
+  C2: 40,
 };
 
 /** A whole level is paid as a "lesson" payment whose ref_id is "level:A1". */
