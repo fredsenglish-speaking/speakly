@@ -11,7 +11,6 @@ export const LEVEL_NAME: Record<Level, string> = {
   C2: "Proficiency",
 };
 
-export const TEST_PRICE = 3;
 export const CERTIFICATE_PRICE = 5;
 
 export const LESSON_PRICE: Record<Level, number> = {

@@ -15,7 +15,8 @@ export type Payment = {
 
 export const PAYMENT_COLUMNS = "id, user_id, kind, ref_id, amount, status";
 
-export const PAYMENT_KINDS: PaymentKind[] = ["test", "certificate", "lesson", "practice", "booking", "ai_chat"];
+// "test" stays in PaymentKind for old payments; the level test itself is free now.
+export const PAYMENT_KINDS: PaymentKind[] = ["certificate", "lesson", "practice", "booking", "ai_chat"];
 
 export function hasFreeAccess(freeAccess: string[] | null | undefined, kind: PaymentKind): boolean {
   return (freeAccess ?? []).includes(kind);

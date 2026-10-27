@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { LevelChip } from "@/components/LevelChip";
 import { getT } from "@/lib/i18n/server";
-import { CERTIFICATE_PRICE, LESSON_PRICE, LEVELS, TEST_PRICE, money } from "@/lib/levels";
+import { CERTIFICATE_PRICE, LESSON_PRICE, LEVELS, money } from "@/lib/levels";
 
 const FILL = { A1: 17, A2: 33, B1: 50, B2: 67, C1: 83, C2: 100 } as const;
 
 export default async function HomePage() {
   const t = await getT();
   const steps = [
-    [t.home.s1Title, t.home.s1Text(money(TEST_PRICE), money(CERTIFICATE_PRICE))],
+    [t.home.s1Title, t.home.s1Text(money(CERTIFICATE_PRICE))],
     [t.home.s2Title, t.home.s2Text],
     [t.home.s3Title, t.home.s3Text],
     [t.home.s4Title, t.home.s4Text],
@@ -23,7 +23,7 @@ export default async function HomePage() {
           </p>
           <div className="row">
             <Link href="/test" className="btn">
-              {t.home.startTest} · {money(TEST_PRICE)}
+              {t.home.startTest} · {t.test.free}
             </Link>
             <Link href="/tutors" className="btn ghost">
               {t.home.seeTutors}

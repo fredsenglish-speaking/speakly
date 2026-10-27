@@ -1,6 +1,6 @@
 # Speakly
 
-İngilis dili speaking platforması: səviyyə testi ($3), onlayn sertifikat ($5), müəllimlə canlı speaking dərsləri (15 dəq / 30 dəq / 1 saat) və səviyyəyə görə qrammatika lesson-ları (A1 $7 … C1 $18, C2 $21).
+İngilis dili speaking platforması: pulsuz səviyyə testi, onlayn sertifikat ($5), müəllimlə canlı speaking dərsləri (15 dəq / 30 dəq / 1 saat) və səviyyəyə görə qrammatika lesson-ları (A1 $7 … C1 $18, C2 $21).
 
 ## Nə hazırdır
 
