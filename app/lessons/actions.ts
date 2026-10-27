@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
-import { LESSON_PRICE, isLevel } from "@/lib/levels";
+import { LESSON_PRICE, LEVEL_PRICE, isLevel, levelPurchaseRef } from "@/lib/levels";
 import { startPayment } from "@/lib/payments";
 import { createAdminClient } from "@/lib/supabase/admin";
 
@@ -25,6 +25,23 @@ export async function buyLesson(form: FormData) {
       refId: String(lesson.id),
       amount: LESSON_PRICE[lesson.level],
       successPath: `/lessons/${slug}`,
+    }),
+  );
+}
+
+export async function buyLevel(form: FormData) {
+  const level = String(form.get("level"));
+  const back = String(form.get("back") || `/lessons?level=${level}`);
+  const user = await requireUser(back);
+  if (!isLevel(level)) redirect("/lessons");
+
+  redirect(
+    await startPayment({
+      userId: user.id,
+      kind: "lesson",
+      refId: levelPurchaseRef(level),
+      amount: LEVEL_PRICE[level],
+      successPath: back,
     }),
   );
 }

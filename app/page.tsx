@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { LevelChip } from "@/components/LevelChip";
 import { getT } from "@/lib/i18n/server";
-import { CERTIFICATE_PRICE, LESSON_PRICE, LEVELS, money } from "@/lib/levels";
+import { CERTIFICATE_PRICE, LESSON_PRICE, LEVEL_PRICE, LEVELS, money } from "@/lib/levels";
 
 const FILL = { A1: 17, A2: 33, B1: 50, B2: 67, C1: 83, C2: 100 } as const;
 
@@ -41,7 +41,7 @@ export default async function HomePage() {
                 <span style={{ width: `${FILL[l]}%`, background: `var(--lv-${l.toLowerCase()})` }} />
               </div>
               <span className="small muted price">
-                {t.home.lesson} {money(LESSON_PRICE[l])}
+                {t.home.lesson} {money(LESSON_PRICE[l])} · {t.lessons.wholeLevel} {money(LEVEL_PRICE[l])}
               </span>
             </div>
           ))}

@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { LevelChip } from "@/components/LevelChip";
 import { requireUser } from "@/lib/auth";
-import { formatDate, formatDateTime, money } from "@/lib/levels";
+import { formatDate, formatDateTime, levelFromPurchaseRef, money } from "@/lib/levels";
 import { cancelPayment, markPaid } from "@/lib/payments";
 import { paymentCode } from "@/lib/whatsapp";
 import { createAdminClient } from "@/lib/supabase/admin";
@@ -38,6 +38,7 @@ async function reviewPayment(form: FormData) {
 type PendingRow = {
   id: string;
   kind: string;
+  ref_id: string;
   amount: number;
   created_at: string;
   profiles: { full_name: string } | null;
@@ -63,7 +64,7 @@ export default async function AdminPage() {
     db.from("payments").select("kind, amount").eq("status", "paid"),
     db
       .from("payments")
-      .select("id, kind, amount, created_at, profiles(full_name)")
+      .select("id, kind, ref_id, amount, created_at, profiles(full_name)")
       .eq("status", "pending")
       .order("created_at"),
   ]);
@@ -71,6 +72,10 @@ export default async function AdminPage() {
   const tutors = (data ?? []) as unknown as Row[];
   const totals = { test: 0, certificate: 0, booking: 0, lesson: 0, practice: 0 } as Record<string, number>;
   for (const p of paid ?? []) totals[p.kind] += Number(p.amount);
+  const wholeLevelLabel = (ref: string) => {
+    const level = levelFromPurchaseRef(ref);
+    return level ? `${t.pay.kinds.lesson} (${t.pay.wholeLevel(level)})` : null;
+  };
 
   return (
     <section className="stack">
@@ -97,7 +102,7 @@ export default async function AdminPage() {
             <div className="stack" style={{ gap: 2, minWidth: 0, flex: 1 }}>
               <strong>{p.profiles?.full_name || t.admin.unnamed}</strong>
               <span className="small">
-                {t.pay.kinds[p.kind]} · <span className="price">{money(Number(p.amount))}</span> · {t.pay.code}:{" "}
+                {wholeLevelLabel(p.ref_id) ?? t.pay.kinds[p.kind]} · <span className="price">{money(Number(p.amount))}</span> · {t.pay.code}:{" "}
                 <span className="price">{paymentCode(p.id)}</span>
               </span>
               <span className="small muted">{formatDateTime(p.created_at, locale)}</span>

@@ -3,13 +3,13 @@ import { notFound } from "next/navigation";
 import { LevelChip } from "@/components/LevelChip";
 import { SubmitButton } from "@/components/SubmitButton";
 import { getCurrentUser } from "@/lib/auth";
-import { LESSON_PRICE, isLevel, lessonText, money } from "@/lib/levels";
+import { LESSON_PRICE, LEVEL_PRICE, isLevel, lessonText, money } from "@/lib/levels";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 import type { VocabItem } from "@/lib/vocabQuiz";
-import { buyLesson } from "../actions";
+import { buyLesson, buyLevel } from "../actions";
 import { LessonPlayer } from "./LessonPlayer";
 
 export default async function LessonPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -74,6 +74,12 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
           <form action={buyLesson}>
             <input type="hidden" name="slug" value={lesson.slug} />
             <SubmitButton>{user ? t.lessons.buy : t.lessons.loginBuy}</SubmitButton>
+          </form>
+          <span className="small muted">{t.lessons.or}</span>
+          <form action={buyLevel}>
+            <input type="hidden" name="level" value={lesson.level} />
+            <input type="hidden" name="back" value={`/lessons/${lesson.slug}`} />
+            <SubmitButton>{t.lessons.buyLevel(lesson.level, money(LEVEL_PRICE[lesson.level]))}</SubmitButton>
           </form>
         </div>
       </section>
