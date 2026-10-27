@@ -88,13 +88,15 @@ button { font: inherit; cursor: pointer; }
 
 .bar { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--navy) 94%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(212, 175, 106, 0.55); box-shadow: 0 6px 24px -14px rgba(0, 0, 0, 0.5);
   --ink: #f6efdf; --muted: #c5cada; --line: rgba(212, 175, 106, 0.45); --bg: rgba(255, 255, 255, 0.08); --surface: var(--navy); --accent: #d4af6a; --accent-ink: #0b1f4d; color: var(--ink); }
-.bar .wrap { display: flex; align-items: center; gap: 12px; padding-block: 10px; flex-wrap: wrap; }
+/* Row 1: logo on the left, language / profile / sign-out in the top-right corner. Row 2: the menu. */
+.bar .wrap { display: flex; align-items: center; gap: 8px 12px; padding-block: 10px 6px; flex-wrap: wrap; }
+.bar .wrap > .row { order: 2; margin-left: auto; gap: 10px; }
 .logo { font-family: var(--display); font-weight: 600; font-size: 26px; letter-spacing: 0.04em; text-decoration: none; display: flex; align-items: center; gap: 10px; color: #f6efdf; }
 .logo img { height: 36px; width: auto; display: block; }
 .logo span { display: grid; line-height: 1; }
 .logo small { font-family: var(--body); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-hi); margin-bottom: 3px; }
-.nav { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; }
-.nav a { text-decoration: none; padding: 6px 10px; border-radius: 8px; color: var(--muted); font-weight: 600; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; }
+.nav { order: 3; flex-basis: 100%; display: flex; gap: 2px 4px; flex-wrap: wrap; margin-left: -9px; padding-top: 4px; border-top: 1px solid rgba(212, 175, 106, 0.2); }
+.nav a { text-decoration: none; padding: 6px 9px; border-radius: 8px; color: var(--muted); font-weight: 600; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; }
 .nav a:hover { color: var(--gold-hi); background: var(--bg); }
 
 main { padding-block: 40px 80px; display: grid; gap: 28px; }
@@ -194,7 +196,7 @@ table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
   .cambridge,
   .hero, .tutors, .result, .topics { grid-template-columns: 1fr; }
   .steps, .steps.three, .steps.five, .stepper { grid-template-columns: repeat(2, 1fr); }
-  .nav { margin-left: 0; width: 100%; }
+  .bar .me-name { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 @media print {
