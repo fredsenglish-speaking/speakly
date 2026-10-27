@@ -8,7 +8,7 @@ import "./globals.css";
 export async function generateMetadata(): Promise<Metadata> {
   const t = DICTIONARIES[await getLocale()];
   return {
-    title: { default: "Speakly", template: "%s · Speakly" },
+    title: { default: "Fred's English Speakly", template: "%s · Fred's English Speakly" },
     description: t.meta.description,
     applicationName: "Speakly",
     appleWebApp: { capable: true, title: "Speakly", statusBarStyle: "default" },
