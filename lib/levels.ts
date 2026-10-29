@@ -11,6 +11,8 @@ export const LEVEL_NAME: Record<Level, string> = {
   C2: "Proficiency",
 };
 
+/** The first level test is free; each later attempt costs this. */
+export const TEST_RETAKE_PRICE = 5;
 export const CERTIFICATE_PRICE = 7;
 
 /** Price of one lesson. */

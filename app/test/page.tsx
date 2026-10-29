@@ -2,6 +2,8 @@ import Link from "next/link";
 import { requireUser } from "@/lib/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
+import { TEST_RETAKE_PRICE, money } from "@/lib/levels";
+import { PendingPayments } from "@/components/PendingPayments";
 import { SubmitButton } from "@/components/SubmitButton";
 import { getT } from "@/lib/i18n/server";
 import { startTest } from "./actions";
@@ -44,12 +46,14 @@ export default async function TestPage() {
           {t.test.lastResult} <Link href={`/test/result/${attempt.id}`}>{t.test.see}</Link>
         </p>
       )}
+      <PendingPayments userId={user.id} kind="test" />
       <div className="row between">
         <span>{t.test.price}</span>
-        <span className="price total">{t.test.free}</span>
+        <span className="price total">{attempt ? money(TEST_RETAKE_PRICE) : t.test.free}</span>
       </div>
+      <p className="small muted">{t.test.retakeNote(money(TEST_RETAKE_PRICE))}</p>
       <form action={startTest}>
-        <SubmitButton>{attempt ? t.test.retake : t.test.start}</SubmitButton>
+        <SubmitButton>{attempt ? t.test.payRetake : t.test.start}</SubmitButton>
       </form>
     </section>
   );
