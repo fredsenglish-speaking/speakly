@@ -223,6 +223,14 @@ table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
 .certificate-sheet::after { bottom: 2cqw; right: 2cqw; border-left: 0; border-top: 0; }
 .cert-brand { display: flex; align-items: center; gap: 0.8cqw; font-family: var(--display); font-weight: 700; font-size: 1.9cqw; letter-spacing: 0.25em; text-transform: uppercase; }
 .cert-brand i { display: inline-grid; place-items: center; width: 3cqw; height: 3cqw; border-radius: 0.8cqw; background: var(--c-ink); color: var(--c-paper); font-style: normal; font-size: 1.8cqw; letter-spacing: 0; }
+/* the free preview after the test: no copying or printing until it is paid for */
+.cert-sample .certificate { user-select: none; -webkit-user-select: none; }
+@media print { .cert-sample { display: none !important; } }
+.cert-watermark {
+  position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; pointer-events: none; user-select: none;
+  font-family: "EB Garamond", Georgia, serif; font-weight: 600; font-size: 19cqw; letter-spacing: 0.12em;
+  color: rgba(190, 30, 45, 0.2); transform: rotate(-22deg);
+}
 .cert-wordmark { font-size: 5.6cqw; line-height: 1.1; color: var(--c-ink); }
 .cert-wordmark b { color: var(--c-gold); }
 .cert-centre { font-size: 1.35cqw; letter-spacing: 0.2em; text-transform: uppercase; color: var(--c-gold); margin-top: 0.8cqw; font-weight: 600; }

@@ -1,20 +1,14 @@
-import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import { CertificateCard } from "@/components/CertificateCard";
 import { isLevel } from "@/lib/levels";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { siteHost } from "@/lib/siteHost";
 import { PrintButton } from "./PrintButton";
 import { getLocale } from "@/lib/i18n/server";
 import { DICTIONARIES } from "@/lib/i18n";
 
 export async function generateMetadata() {
   return { title: DICTIONARIES[await getLocale()].cert.title };
-}
-
-async function siteHost() {
-  const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  if (configured) return configured.replace(/^https?:\/\//, "").replace(/\/+$/, "");
-  return (await headers()).get("host") ?? "";
 }
 
 // Public on purpose: anyone with the code can check that the certificate is real.

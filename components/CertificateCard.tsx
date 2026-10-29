@@ -18,16 +18,24 @@ export function CertificateCard({
   issued,
   code,
   verifyUrl,
+  sample = false,
 }: {
   name: string;
   level: Level;
   issued: string;
   code: string;
   verifyUrl: string;
+  /** Shown free after the test with a big "SAMPLE" across it; the clean one is paid. */
+  sample?: boolean;
 }) {
   return (
     <div className="certificate" lang="en">
       <div className="certificate-sheet">
+        {sample && (
+          <span className="cert-watermark" aria-hidden="true">
+            SAMPLE
+          </span>
+        )}
         <p className="cert-wordmark wordmark">
           Speakly<b>.</b>
         </p>

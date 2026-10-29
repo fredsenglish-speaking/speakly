@@ -149,7 +149,8 @@ const en: Dictionary = {
     score: (n, s) => `${s} of ${n} answers correct.`,
     seeTutors: (l) => `See ${l} tutors`,
     myCertificate: "View my certificate",
-    buyCertificate: "Get the certificate",
+    buyCertificate: "Get the PDF certificate",
+    sampleNote: "Your certificate will look like this. After payment you can download it as a PDF without the “SAMPLE” mark.",
   },
   cert: {
     title: "Certificate",
