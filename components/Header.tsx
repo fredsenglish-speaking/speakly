@@ -18,9 +18,9 @@ export async function Header() {
     <header className="bar">
       <div className="wrap">
         <Link href="/" className="logo">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/speakly-mark-gold.png" alt="" width={20} height={36} />
-          <span>Speakly</span>
+          <span className="wordmark">
+            Speakly<b>.</b>
+          </span>
         </Link>
         <nav className="nav">
           <Link href="/test">{t.nav.test}</Link>
