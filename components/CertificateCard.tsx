@@ -32,7 +32,7 @@ export function CertificateCard({
           Speakly<b>.</b>
         </p>
         <p className="cert-centre">Official Cambridge Preparation Centre</p>
-        <h1 className="cert-title">Online Certificate</h1>
+        <h1 className="cert-title">Certificate</h1>
         <p className="cert-sub">of English Language Proficiency</p>
 
         <p className="cert-lead">This is to certify that</p>
