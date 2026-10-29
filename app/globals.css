@@ -126,6 +126,7 @@ main { padding-block: 40px 80px; display: grid; gap: 28px; }
 .lv-A1 { background: var(--lv-a1); } .lv-A2 { background: var(--lv-a2); } .lv-B1 { background: var(--lv-b1); } .lv-B2 { background: var(--lv-b2); } .lv-C1 { background: var(--lv-c1); } .lv-C2 { background: var(--lv-c2); }
 
 .hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; align-items: center; }
+.hero-actions { grid-column: 1 / -1; }
 .ladder { display: grid; gap: 6px; }
 .rung { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 10px; background: var(--bg); }
 .rung .fill { height: 8px; border-radius: 4px; flex: 1; background: var(--line); overflow: hidden; }
@@ -192,6 +193,7 @@ table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
 
 @media (max-width: 720px) {
   .hero, .tutors, .result, .topics { grid-template-columns: 1fr; }
+  .hero .ladder { order: 1; }
   .steps, .steps.three, .steps.five, .stepper { grid-template-columns: repeat(2, 1fr); }
   .bar .me-name { display: none; }
 }

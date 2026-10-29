@@ -21,17 +21,6 @@ export default async function HomePage() {
           <p className="muted" style={{ maxWidth: "52ch" }}>
             {t.home.lead}
           </p>
-          <div className="row">
-            <Link href="/test" className="btn">
-              {t.home.startTest} · {t.test.free}
-            </Link>
-            <Link href="/tutors" className="btn ghost">
-              {t.home.seeTutors}
-            </Link>
-            <Link href="/exercises" className="btn ghost">
-              {t.library.hub}
-            </Link>
-          </div>
         </div>
         <div className="panel ladder" aria-label={t.home.levelsLabel}>
           {LEVELS.map((l) => (
@@ -45,6 +34,17 @@ export default async function HomePage() {
               </span>
             </div>
           ))}
+        </div>
+        <div className="row hero-actions">
+          <Link href="/test" className="btn">
+            {t.home.startTest} · {t.test.free}
+          </Link>
+          <Link href="/tutors" className="btn ghost">
+            {t.home.seeTutors}
+          </Link>
+          <Link href="/exercises" className="btn ghost">
+            {t.library.hub}
+          </Link>
         </div>
       </section>
       <section className="stack">
