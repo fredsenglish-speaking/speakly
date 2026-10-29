@@ -149,7 +149,8 @@ const ru: Dictionary = {
     score: (n, s) => `Правильных ответов: ${s} из ${n}.`,
     seeTutors: (l) => `Преподаватели уровня ${l}`,
     myCertificate: "Мой сертификат",
-    buyCertificate: "Получить сертификат",
+    buyCertificate: "Получить сертификат в PDF",
+    sampleNote: "Так будет выглядеть ваш сертификат. После оплаты вы сможете скачать его в PDF без надписи «SAMPLE».",
   },
   cert: {
     title: "Сертификат",

@@ -153,7 +153,8 @@ const az = {
     score: (n: number, s: number) => `${n} sualdan ${s} düzgün cavab.`,
     seeTutors: (l: string) => `${l} müəllimlərini gör`,
     myCertificate: "Sertifikatıma bax",
-    buyCertificate: "Sertifikat al",
+    buyCertificate: "Sertifikatı PDF kimi al",
+    sampleNote: "Sertifikatınız belə görünəcək. Ödənişdən sonra onu “SAMPLE” yazısı olmadan PDF kimi yükləyə bilərsiniz.",
   },
   cert: {
     title: "Sertifikat",
