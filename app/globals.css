@@ -79,7 +79,7 @@ h2 { font-size: 30px; }
 h3 { font-size: 22px; }
 /* thin gold rule under page titles */
 h1::after { content: ""; display: block; width: 56px; height: 2px; margin-top: 12px; background: linear-gradient(90deg, var(--gold), var(--gold-hi)); }
-.cert-title::after { margin-inline: auto; }
+.cert-title::after { display: none; }
 .cert h1::after { margin-inline: auto; }
 p { margin: 0; }
 a { color: inherit; }
@@ -221,7 +221,7 @@ table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
 .certificate-sheet::after { bottom: 2cqw; right: 2cqw; border-left: 0; border-top: 0; }
 .cert-brand { display: flex; align-items: center; gap: 0.8cqw; font-family: var(--display); font-weight: 700; font-size: 1.9cqw; letter-spacing: 0.25em; text-transform: uppercase; }
 .cert-brand i { display: inline-grid; place-items: center; width: 3cqw; height: 3cqw; border-radius: 0.8cqw; background: var(--c-ink); color: var(--c-paper); font-style: normal; font-size: 1.8cqw; letter-spacing: 0; }
-.cert-wordmark { font-family: var(--display); font-weight: 700; font-size: 5.4cqw; line-height: 1; letter-spacing: 0.06em; color: var(--c-gold); }
+.cert-wordmark { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-weight: 700; font-size: 4.6cqw; line-height: 1; letter-spacing: -0.01em; color: var(--c-ink); }
 .cert-centre { font-size: 1.35cqw; letter-spacing: 0.2em; text-transform: uppercase; color: var(--c-gold); margin-top: 0.8cqw; font-weight: 600; }
 .cert-title { font-family: "EB Garamond", Georgia, serif; font-weight: 600; font-size: 4.6cqw; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1.2cqw; line-height: 1; color: var(--c-ink); }
 .cert-sub { font-size: 1.8cqw; letter-spacing: 0.18em; text-transform: uppercase; color: var(--c-gold); margin-top: 0.8cqw; }
@@ -230,7 +230,7 @@ table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
 .cert-level { display: flex; align-items: center; gap: 2.4cqw; margin-top: 1.6cqw; text-align: left; max-width: 72%; }
 .cert-seal {
   flex: none; display: grid; place-items: center; width: 8.4cqw; height: 8.4cqw; border-radius: 50%;
-  background: var(--c-ink); color: #f3d9a0; font-family: var(--display); font-weight: 700; font-size: 3.2cqw;
+  background: var(--c-ink); color: #f3d9a0; font-family: "Bricolage Grotesque", system-ui, sans-serif; font-weight: 700; font-size: 3.2cqw;
   box-shadow: 0 0 0 0.45cqw var(--c-paper), 0 0 0 0.7cqw var(--c-gold);
 }
 .cert-level-text { display: grid; gap: 0.4cqw; font-size: 1.7cqw; color: var(--c-muted); line-height: 1.3; }
