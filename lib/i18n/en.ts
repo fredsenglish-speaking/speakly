@@ -52,9 +52,6 @@ const en: Dictionary = {
     s3Text: "A live conversation class of 15 min, 30 min or 1 hour.",
     s4Title: "Lesson",
     s4Text: "Buy the grammar lesson your tutor recommends.",
-    cambridgeTitle: "Official Cambridge preparation centre",
-    cambridgeText: "Edustudio-Fred's English is recognised by Cambridge University Press & Assessment as a preparation centre for Cambridge English Qualifications (08/2026 – 07/2027).",
-    cambridgeAlt: "Cambridge English preparation centre certificate: Edustudio-Fred's English, Baku",
   },
   auth: {
     loginTitle: "Sign in",
