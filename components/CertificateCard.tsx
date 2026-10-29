@@ -1,3 +1,4 @@
+import { latinName } from "@/lib/latinName";
 import { LEVEL_NAME, type Level } from "@/lib/levels";
 
 // The certificate itself is always in English, like most language certificates,
@@ -33,7 +34,7 @@ export function CertificateCard({
         <p className="cert-sub">of English Language Proficiency</p>
 
         <p className="cert-lead">This is to certify that</p>
-        <p className="cert-name">{name}</p>
+        <p className="cert-name">{latinName(name)}</p>
         <p className="cert-lead">
           has completed the Speakly Online Level Test and has been assessed at
         </p>
