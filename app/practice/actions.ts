@@ -11,7 +11,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { loadRooms } from "./rooms";
 
 function meetingUrl() {
-  return `https://meet.jit.si/FredsEnglish-${randomBytes(6).toString("hex")}`;
+  return `https://meet.jit.si/Speakly-${randomBytes(6).toString("hex")}`;
 }
 
 /**

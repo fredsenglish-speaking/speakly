@@ -1,3 +1,4 @@
+import { latinName } from "@/lib/latinName";
 import { LEVEL_NAME, type Level } from "@/lib/levels";
 
 // The certificate itself is always in English, like most language certificates,
@@ -27,16 +28,15 @@ export function CertificateCard({
   return (
     <div className="certificate" lang="en">
       <div className="certificate-sheet">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="cert-logo" src="/freds-english-logo.png" alt="Fred's English" />
+        <p className="cert-wordmark">Speakly</p>
         <p className="cert-centre">Official Cambridge Preparation Centre</p>
         <h1 className="cert-title">Online Certificate</h1>
         <p className="cert-sub">of English Language Proficiency</p>
 
         <p className="cert-lead">This is to certify that</p>
-        <p className="cert-name">{name}</p>
+        <p className="cert-name">{latinName(name)}</p>
         <p className="cert-lead">
-          has completed the Fred&apos;s English Online Level Test and has been assessed at
+          has completed the Speakly Online Level Test and has been assessed at
         </p>
 
         <div className="cert-level">
@@ -55,7 +55,7 @@ export function CertificateCard({
             <span className="cert-label">Date of issue</span>
           </div>
           <div>
-            <span className="cert-line cert-sign">Fred&apos;s English</span>
+            <span className="cert-line cert-sign">Speakly</span>
             <span className="cert-label">Issued by</span>
           </div>
           <div>
