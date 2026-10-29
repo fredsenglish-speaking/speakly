@@ -142,6 +142,8 @@ const en: Dictionary = {
     free: "Free",
     start: "Start the test",
     retake: "Take the test again",
+    payRetake: "Pay and take the test again",
+    retakeNote: (p) => `Your first test is free. Each retake costs ${p}.`,
     question: (i, n) => `Question ${i} of ${n}`,
     seeResult: "See my result",
     resultTitle: "Test result",

@@ -146,6 +146,8 @@ const az = {
     free: "Pulsuz",
     start: "Testə başla",
     retake: "Yenidən test ver",
+    payRetake: "Ödə və yenidən test ver",
+    retakeNote: (p: string) => `İlk test ödənişsizdir. Testi yenidən vermək ödənişlidir: ${p}.`,
     question: (i: number, n: number) => `Sual ${i} / ${n}`,
     seeResult: "Nəticəni gör",
     resultTitle: "Test nəticəsi",
