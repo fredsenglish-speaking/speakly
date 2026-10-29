@@ -28,7 +28,9 @@ export function CertificateCard({
   return (
     <div className="certificate" lang="en">
       <div className="certificate-sheet">
-        <p className="cert-wordmark">Speakly</p>
+        <p className="cert-wordmark wordmark">
+          Speakly<b>.</b>
+        </p>
         <p className="cert-centre">Official Cambridge Preparation Centre</p>
         <h1 className="cert-title">Online Certificate</h1>
         <p className="cert-sub">of English Language Proficiency</p>
