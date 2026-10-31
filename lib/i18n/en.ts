@@ -212,7 +212,6 @@ const en: Dictionary = {
     aiBadge: "AI",
     aiLabel: "AI teacher",
     start: "Start Learning",
-    watchIntro: "Intro video",
     note: "These teachers are not real people: they are AI video teachers who explain the video lessons for each level.",
     liveTitle: "Want to talk to a live teacher?",
     liveText: "Book a 15, 30 or 60-minute live speaking class with one of our real tutors.",
