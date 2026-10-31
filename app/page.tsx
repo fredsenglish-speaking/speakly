@@ -32,8 +32,8 @@ export default async function HomePage() {
   const perkLinks = ["/ai-teachers", "/test", "/practice", "/exercises"];
   const serviceIcons = [ICONS.teacher, ICONS.video, ICONS.chat, ICONS.book];
   const serviceLinks = ["/ai-teachers", "/lessons", "/practice", "/exercises"];
-  // Two lines like the banner design: "Discover your level." / "Let your potential <gold>speak.</gold>"
-  const [first, second = ""] = h.title.split(/(?<=\.)\s+/);
+  // One sentence per line; the last one in gold: "Your level." / "Your AI teacher." / "<gold>Your learning pace.</gold>"
+  const lines = h.title.split(/(?<=\.)\s+/);
 
   return (
     <>
@@ -42,9 +42,11 @@ export default async function HomePage() {
         <div className="hero-copy">
           <span className="hero-badge">✦ {h.badge}</span>
           <h1 className="hero-title">
-            {first}
-            <br />
-            <span className="hero-accent">{second}</span>
+            {lines.map((line, i) => (
+              <span key={i} className={i === lines.length - 1 ? "hero-line hero-accent" : "hero-line"}>
+                {line}
+              </span>
+            ))}
           </h1>
           <p className="hero-lead">{h.lead}</p>
           <div className="row hero-actions">
