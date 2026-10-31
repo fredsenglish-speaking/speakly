@@ -36,7 +36,7 @@ const en: Dictionary = {
     noVideo: "No video yet",
   },
   home: {
-    title: "Find out your level and improve your practical English with us",
+    title: "Discover your level. Let your potential speak.",
     lead: "Take the level test, use our free materials and, if you need it, join a class with a tutor.",
     startTest: "Start the level test",
     seeTutors: "Browse tutors",

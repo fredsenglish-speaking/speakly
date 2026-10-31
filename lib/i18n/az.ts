@@ -40,7 +40,7 @@ const az = {
     noVideo: "Video hələ əlavə olunmayıb",
   },
   home: {
-    title: "Səviyyəni öyrən və bizimlə praktiki ingilis dilini inkişaf etdir",
+    title: "Səviyyənizi kəşf edin. Potensialınız danışsın.",
     lead: "Səviyyə testini keç, ödənişsiz materiallardan faydalan və ehtiyac olarsa müəllimlə dərsə qoşul.",
     startTest: "Səviyyə testinə başla",
     seeTutors: "Müəllimlərə bax",
