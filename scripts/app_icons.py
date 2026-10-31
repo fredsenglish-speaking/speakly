@@ -32,3 +32,19 @@ icon(512, 0.84).save("public/icon-512.png")
 icon(192, 0.84).save("public/icon-192.png")
 icon(180, 0.84).save("public/apple-touch-icon.png")
 icon(512, 0.66).save("public/icon-maskable-512.png")
+
+
+def mark(size):
+    """Browser-tab icon: just "S." so it stays readable at 16-32 px."""
+    im = Image.new("RGB", (size, size), NAVY)
+    draw = ImageDraw.Draw(im)
+    font = ImageFont.truetype(FONT, int(size * 0.95))
+    l, t, r, b = draw.textbbox((0, 0), "S.", font=font)
+    x = (size - (r - l)) // 2 - l
+    y = (size - (b - t)) // 2 - t
+    draw.text((x, y), "S", font=font, fill=IVORY)
+    draw.text((x + draw.textlength("S", font=font), y), ".", font=font, fill=GOLD)
+    return im
+
+
+mark(256).save("app/favicon.ico", sizes=[(16, 16), (32, 32), (48, 48), (64, 64)])

@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: t.meta.description,
     applicationName: "Speakly",
     appleWebApp: { capable: true, title: "Speakly", statusBarStyle: "default" },
-    icons: { icon: "/icon-192.png", apple: "/apple-touch-icon.png" },
+    icons: { icon: "/favicon.ico?v=3", apple: "/apple-touch-icon.png?v=3" },
   };
 }
 
