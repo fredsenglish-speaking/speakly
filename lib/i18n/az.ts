@@ -322,6 +322,8 @@ const az = {
   },
   library: {
     hub: "Ödənişsiz materiallar",
+    needTest: "Ödənişsiz materiallar sizin səviyyənizə görə açılır. Əvvəlcə səviyyə testini keçin.",
+    forYourLevel: "Materiallar sizin səviyyənizə görə seçilib:",
     exercisesTab: "Tapşırıqlar",
     freeText: "Orijinal mətni ödənişsiz oxu",
     trailer: "Treyler",
@@ -341,7 +343,7 @@ const az = {
   exercises: {
     title: "Tapşırıqlar",
     free: "Ödənişsiz",
-    lead: "Hər dərs mövzusu üzrə 4 növ tapşırıq: cavab seç, boşluğu doldur, düz/səhv və sözləri sıraya düz. Hamısı ödənişsizdir, qeydiyyat lazım deyil.",
+    lead: "Hər dərs mövzusu üzrə 4 növ tapşırıq: cavab seç, boşluğu doldur, düz/səhv və sözləri sıraya düz. Hamısı ödənişsizdir.",
     topics: (n: number) => `${n} mövzu`,
     tasks: (n: number) => `${n} tapşırıq`,
     back: "← Tapşırıqlar",

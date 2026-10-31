@@ -1,10 +1,12 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { LevelChip } from "@/components/LevelChip";
+import { MaterialsLocked } from "@/components/MaterialsGate";
 import { exercisesFor } from "@/lib/exerciseTopics";
 import { isLevel, lessonText } from "@/lib/levels";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
+import { materialsAccess } from "@/lib/materials";
 import { createClient } from "@/lib/supabase/server";
 import { ExercisePlayer } from "./ExercisePlayer";
 
@@ -21,6 +23,8 @@ export default async function ExercisePage({ params }: { params: Promise<{ slug:
   const { slug } = await params;
   const locale = await getLocale();
   const t = DICTIONARIES[locale];
+  const access = await materialsAccess();
+  if (access.kind === "locked") return <MaterialsLocked t={t} active="exercises" />;
   const supabase = await createClient();
   const { data: lesson } = await supabase
     .from("lessons")
@@ -29,6 +33,8 @@ export default async function ExercisePage({ params }: { params: Promise<{ slug:
     .maybeSingle();
   const tasks = exercisesFor(slug);
   if (!lesson || !isLevel(lesson.level) || tasks.length === 0) notFound();
+  // Students only get the exercises of their own level.
+  if (access.kind === "level" && lesson.level !== access.level) redirect("/exercises");
   const text = lessonText(lesson, locale);
 
   return (
