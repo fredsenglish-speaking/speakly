@@ -93,10 +93,6 @@ button { font: inherit; cursor: pointer; }
 .bar .wrap { display: flex; align-items: center; gap: 8px 12px; padding-block: 10px 6px; flex-wrap: wrap; }
 .bar .wrap > .row { order: 2; margin-left: auto; gap: 10px; }
 .logo { font-family: var(--display); font-weight: 600; font-size: 26px; letter-spacing: 0.04em; text-decoration: none; display: flex; align-items: center; gap: 10px; color: #f6efdf; }
-/* the Speakly wordmark: italic Playfair with a gold full stop */
-.wordmark { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 800; letter-spacing: 0; line-height: 1; }
-.wordmark b { font-weight: inherit; color: var(--gold-hi); }
-.logo .wordmark { font-size: 32px; }
 .logo-img { display: block; height: 52px; width: auto; }
 @media (max-width: 720px) { .logo-img { height: 40px; } }
 .nav { order: 3; flex-basis: 100%; display: flex; gap: 2px 4px; flex-wrap: wrap; margin-left: -9px; padding-top: 4px; border-top: 1px solid rgba(212, 175, 106, 0.2); }
@@ -249,8 +245,7 @@ table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
   font-family: "EB Garamond", Georgia, serif; font-weight: 600; font-size: 19cqw; letter-spacing: 0.12em;
   color: rgba(190, 30, 45, 0.2); transform: rotate(-22deg);
 }
-.cert-wordmark { font-size: 5.6cqw; line-height: 1.1; color: var(--c-ink); }
-.cert-wordmark b { color: var(--c-gold); }
+.cert-logo { display: block; height: 7.5cqw; width: auto; margin-inline: auto; }
 .cert-centre { font-size: 1.35cqw; letter-spacing: 0.2em; text-transform: uppercase; color: var(--c-gold); margin-top: 0.8cqw; font-weight: 600; }
 .cert-title { font-family: "EB Garamond", Georgia, serif; font-weight: 600; font-size: 4.6cqw; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1.2cqw; line-height: 1; color: var(--c-ink); }
 .cert-sub { font-size: 1.8cqw; letter-spacing: 0.18em; text-transform: uppercase; color: var(--c-gold); margin-top: 0.8cqw; }

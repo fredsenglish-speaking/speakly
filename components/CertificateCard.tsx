@@ -36,9 +36,8 @@ export function CertificateCard({
             SAMPLE
           </span>
         )}
-        <p className="cert-wordmark wordmark">
-          Speakly<b>.</b>
-        </p>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-dark.png" alt="Speakly" className="cert-logo" />
         <p className="cert-centre">Official Cambridge Preparation Centre</p>
         <h1 className="cert-title">Certificate</h1>
         <p className="cert-sub">of English Language Proficiency</p>
