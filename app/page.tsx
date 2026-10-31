@@ -13,16 +13,35 @@ export default async function HomePage() {
     [t.home.s3Title, t.home.s3Text],
     [t.home.s4Title, t.home.s4Text],
   ];
+  // Two lines like the banner design: "Discover your level." / "Let your potential <gold>speak.</gold>"
+  const [first, second = ""] = t.home.title.split(/(?<=\.)\s+/);
+  const cut = second.lastIndexOf(" ");
+  const rest = second.slice(0, cut);
+  const accent = second.slice(cut + 1);
   return (
     <>
-      <section className="hero">
-        <div className="stack" style={{ gap: 16 }}>
-          <h1>{t.home.title}</h1>
-          <p className="muted" style={{ maxWidth: "52ch" }}>
-            {t.home.lead}
-          </p>
+      <section className="hero-banner">
+        <div className="hero-photo" aria-hidden="true" />
+        <div className="hero-copy">
+          <h1 className="hero-title">
+            {first}
+            <br />
+            {rest} <span className="hero-accent">{accent}</span>
+          </h1>
+          <p className="hero-lead">{t.home.lead}</p>
+          <div className="row">
+            <Link href="/test" className="btn hero-cta">
+              {t.home.heroCta} <span aria-hidden="true">→</span>
+            </Link>
+            <Link href="/tutors" className="hero-link">
+              {t.home.seeTutors}
+            </Link>
+          </div>
         </div>
-        <div className="panel ladder" aria-label={t.home.levelsLabel}>
+      </section>
+      <section className="stack">
+        <h2>{t.home.levelsLabel}</h2>
+        <div className="panel ladder two">
           {LEVELS.map((l) => (
             <div className="rung" key={l}>
               <LevelChip level={l} />
@@ -34,17 +53,6 @@ export default async function HomePage() {
               </span>
             </div>
           ))}
-        </div>
-        <div className="row hero-actions">
-          <Link href="/test" className="btn">
-            {t.home.startTest} · {t.test.free}
-          </Link>
-          <Link href="/tutors" className="btn ghost">
-            {t.home.seeTutors}
-          </Link>
-          <Link href="/exercises" className="btn ghost">
-            {t.library.hub}
-          </Link>
         </div>
       </section>
       <section className="stack">

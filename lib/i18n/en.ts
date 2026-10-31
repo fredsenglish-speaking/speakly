@@ -37,7 +37,8 @@ const en: Dictionary = {
   },
   home: {
     title: "Discover your level. Let your potential speak.",
-    lead: "Take the level test, use our free materials and, if you need it, join a class with a tutor.",
+    lead: "Your confident future in English begins with knowing your true level.",
+    heroCta: "Start your free level test",
     startTest: "Start the level test",
     seeTutors: "Browse tutors",
     levelsLabel: "Levels and lesson prices",
