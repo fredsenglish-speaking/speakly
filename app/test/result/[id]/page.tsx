@@ -67,7 +67,7 @@ export default async function ResultPage({ params }: { params: Promise<{ id: str
             ) : (
               <form action={buyCertificate}>
                 <input type="hidden" name="attempt_id" value={attempt.id} />
-                <SubmitButton className="btn">
+                <SubmitButton className="btn gold">
                   {t.test.buyCertificate} · {money(CERTIFICATE_PRICE)}
                 </SubmitButton>
               </form>

@@ -26,6 +26,7 @@ export default async function CertificatePage({ params }: { params: Promise<{ co
 
   return (
     <section className="stack">
+      <p className="cert-verified no-print">✓ {t.cert.verified}</p>
       <CertificateCard
         name={cert.full_name}
         level={cert.level}
