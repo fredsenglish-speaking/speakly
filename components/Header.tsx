@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Avatar } from "@/components/Avatar";
 import { NavLinks } from "@/components/NavLinks";
+import { SHOW_LIVE_TUTORS } from "@/lib/features";
 import { Presence } from "@/components/Presence";
 import { getCurrentUser } from "@/lib/auth";
 import { LOCALES } from "@/lib/i18n";
@@ -24,12 +25,12 @@ export async function Header() {
         </Link>
         <NavLinks
           links={[
+            ["/test", t.nav.test],
             ["/ai-teachers", t.nav.aiTeachers],
             ["/lessons", t.nav.lessons],
             ["/practice", t.nav.practice],
             ["/exercises", t.nav.exercises],
-            ["/test", t.nav.test],
-            ["/tutors", t.nav.tutors],
+            ...(SHOW_LIVE_TUTORS ? [["/tutors", t.nav.tutors] as [string, string]] : []),
             ...(user ? [["/dashboard", t.nav.myClasses] as [string, string]] : []),
             ...(isTutor ? [["/tutor", t.nav.tutorPanel] as [string, string]] : []),
             ...(user?.role === "admin" ? [["/admin", t.nav.admin] as [string, string]] : []),

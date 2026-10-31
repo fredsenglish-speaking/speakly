@@ -30,6 +30,15 @@ export default async function PayPage({ params }: { params: Promise<{ id: string
   const amount = money(Number(payment.amount));
   const code = paymentCode(payment.id);
   const number = whatsappDigits(process.env.WHATSAPP_NUMBER);
+  const isCertificate = payment.kind === "certificate";
+  // A certificate order names the test level, so the admin knows what is being paid for.
+  const { data: attempt } = isCertificate
+    ? await createAdminClient().from("test_attempts").select("level").eq("id", payment.ref_id).eq("student_id", user.id).maybeSingle()
+    : { data: null };
+  const text =
+    isCertificate && attempt?.level
+      ? t.certMessage({ code, name: user.full_name, level: String(attempt.level), amount })
+      : t.message({ kind, amount, code, name: user.full_name });
 
   return (
     <section className="panel stack narrow">
@@ -51,11 +60,11 @@ export default async function PayPage({ params }: { params: Promise<{ id: string
 
       {payment.status === "pending" && (
         <>
-          <p>{t.howTo}</p>
+          <p>{isCertificate ? t.certHowTo : t.howTo}</p>
           {number ? (
             <a
-              className="btn self-start"
-              href={whatsappLink(number, t.message({ kind, amount, code, name: user.full_name }))}
+              className="btn gold self-start"
+              href={whatsappLink(number, text)}
               target="_blank"
               rel="noopener noreferrer"
             >

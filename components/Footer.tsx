@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getCurrentUser } from "@/lib/auth";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
+import { SHOW_LIVE_TUTORS } from "@/lib/features";
 
 export async function Footer() {
   const [user, locale] = await Promise.all([getCurrentUser(), getLocale()]);
@@ -12,7 +13,7 @@ export async function Footer() {
     ["/lessons", t.nav.lessons],
     ["/practice", t.nav.practice],
     ["/exercises", t.nav.exercises],
-    ["/tutors", t.nav.tutors],
+    ...(SHOW_LIVE_TUTORS ? [["/tutors", t.nav.tutors] as [string, string]] : []),
   ];
   const account: [string, string][] = user
     ? [
