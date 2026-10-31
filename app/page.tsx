@@ -1,67 +1,122 @@
 import Link from "next/link";
-import { LevelChip } from "@/components/LevelChip";
 import { getT } from "@/lib/i18n/server";
-import { CERTIFICATE_PRICE, LESSON_PRICE, LEVEL_PRICE, LEVELS, money } from "@/lib/levels";
+import { CERTIFICATE_PRICE, LESSON_PRICE, LEVEL_NAME, LEVEL_PRICE, LEVELS, money } from "@/lib/levels";
 
-const FILL = { A1: 17, A2: 33, B1: 50, B2: 67, C1: 83, C2: 100 } as const;
+// Simple line icons for the perks strip and the service cards, drawn in the current text colour.
+const ICONS = {
+  teacher: "M12 3a5 5 0 0 1 5 5v1a5 5 0 0 1-10 0V8a5 5 0 0 1 5-5Zm-7 18a7 7 0 0 1 14 0",
+  chart: "M4 20V14M10 20V9M16 20V12M22 20V4M3 20h20",
+  chat: "M4 5h16v11H9l-5 4V5Zm4 5h.01M12 10h.01M16 10h.01",
+  book: "M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1V5Zm9 1v14",
+  video: "M3 6h13v12H3V6Zm13 4 5-3v10l-5-3",
+};
+
+function Icon({ d }: { d: string }) {
+  return (
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d={d} />
+    </svg>
+  );
+}
 
 export default async function HomePage() {
   const t = await getT();
+  const h = t.home;
   const steps = [
-    [t.home.s1Title, t.home.s1Text(money(CERTIFICATE_PRICE))],
-    [t.home.s2Title, t.home.s2Text],
-    [t.home.s3Title, t.home.s3Text],
-    [t.home.s4Title, t.home.s4Text],
+    [h.s1Title, h.s1Text(money(CERTIFICATE_PRICE))],
+    [h.s2Title, h.s2Text],
+    [h.s3Title, h.s3Text],
+    [h.s4Title, h.s4Text],
   ];
+  const perkIcons = [ICONS.teacher, ICONS.chart, ICONS.chat, ICONS.book];
+  const perkLinks = ["/tutors", "/test", "/practice", "/exercises"];
+  const serviceIcons = [ICONS.teacher, ICONS.video, ICONS.chat, ICONS.book];
+  const serviceLinks = ["/tutors", "/lessons", "/practice", "/exercises"];
   // Two lines like the banner design: "Discover your level." / "Let your potential <gold>speak.</gold>"
-  const [first, second = ""] = t.home.title.split(/(?<=\.)\s+/);
-  const cut = second.lastIndexOf(" ");
-  const rest = second.slice(0, cut);
-  const accent = second.slice(cut + 1);
+  const [first, second = ""] = h.title.split(/(?<=\.)\s+/);
+
   return (
     <>
       <section className="hero-banner">
         <div className="hero-photo" aria-hidden="true" />
         <div className="hero-copy">
+          <span className="hero-badge">✦ {h.badge}</span>
           <h1 className="hero-title">
             {first}
             <br />
-            {rest} <span className="hero-accent">{accent}</span>
+            <span className="hero-accent">{second}</span>
           </h1>
-          <p className="hero-lead">{t.home.lead}</p>
-          <div className="row">
-            <Link href="/test" className="btn hero-cta">
-              {t.home.heroCta} <span aria-hidden="true">→</span>
+          <p className="hero-lead">{h.lead}</p>
+          <div className="row hero-actions">
+            <Link href="/test" className="btn gold hero-cta">
+              {h.heroCta} <span aria-hidden="true">→</span>
             </Link>
-            <Link href="/tutors" className="hero-link">
-              {t.home.seeTutors}
+            <Link href="/tutors" className="btn hero-ghost">
+              {h.heroCta2}
             </Link>
           </div>
         </div>
-      </section>
-      <section className="stack">
-        <h2>{t.home.levelsLabel}</h2>
-        <div className="panel ladder two">
-          {LEVELS.map((l) => (
-            <div className="rung" key={l}>
-              <LevelChip level={l} />
-              <div className="fill">
-                <span style={{ width: `${FILL[l]}%`, background: `var(--lv-${l.toLowerCase()})` }} />
-              </div>
-              <span className="small muted price">
-                {t.home.lesson} {money(LESSON_PRICE[l])} · {t.lessons.wholeLevel} {money(LEVEL_PRICE[l])}
+        <div className="hero-perks">
+          {h.perks.map(([title, text], i) => (
+            <Link key={title} href={perkLinks[i]} className="hero-perk">
+              <Icon d={perkIcons[i]} />
+              <span>
+                <strong>{title}</strong>
+                <small>{text}</small>
               </span>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
-      <section className="stack">
-        <h2>{t.home.howItWorks}</h2>
+
+      <section className="home-section">
+        <header className="section-head">
+          <span className="kicker">{h.levelsKicker}</span>
+          <h2>{h.levelsTitle}</h2>
+          <p className="muted">{h.levelsLead}</p>
+        </header>
+        <div className="level-cards">
+          {LEVELS.map((l) => (
+            <Link key={l} href={`/lessons?level=${l}`} className={`level-card lvl-${l}`}>
+              <span className="level-card-code">{l}</span>
+              <span className="level-card-name" lang="en">
+                {LEVEL_NAME[l]}
+              </span>
+              <span className="level-card-price">
+                {h.lesson} {money(LESSON_PRICE[l])} · {t.lessons.wholeLevel} {money(LEVEL_PRICE[l])}
+              </span>
+              <span className="level-card-cta">{h.levelCta} →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="home-section">
+        <header className="section-head">
+          <span className="kicker">{h.servicesKicker}</span>
+          <h2>{h.servicesTitle}</h2>
+        </header>
+        <div className="service-cards">
+          {h.services.map(([title, text], i) => (
+            <Link key={title} href={serviceLinks[i]} className="service-card">
+              <span className="service-icon">
+                <Icon d={serviceIcons[i]} />
+              </span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+              <span className="service-more">{h.more} →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="home-section">
+        <h2>{h.howItWorks}</h2>
         <div className="steps">
           {steps.map(([title, text], i) => (
             <div className="step" key={i}>
               <b>
-                {t.home.step} {i + 1}
+                {h.step} {i + 1}
               </b>
               <h3>{title}</h3>
               <p className="small muted">{text}</p>
