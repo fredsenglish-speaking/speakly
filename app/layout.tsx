@@ -13,7 +13,15 @@ export async function generateMetadata(): Promise<Metadata> {
     description: t.meta.description,
     applicationName: "Speakly",
     appleWebApp: { capable: true, title: "Speakly", statusBarStyle: "default" },
-    icons: { icon: "/favicon.ico?v=4", apple: "/apple-touch-icon.png?v=4" },
+    // New file names (not just ?v=) so Safari, which caches tab icons hard, fetches the new logo.
+    icons: {
+      icon: [
+        { url: "/speakly-icon-32.png", sizes: "32x32", type: "image/png" },
+        { url: "/speakly-icon-192.png", sizes: "192x192", type: "image/png" },
+      ],
+      shortcut: "/favicon.ico",
+      apple: [{ url: "/speakly-apple-icon.png", sizes: "180x180" }],
+    },
   };
 }
 
