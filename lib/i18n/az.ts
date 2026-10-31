@@ -216,7 +216,6 @@ const az = {
     aiBadge: "AI",
     aiLabel: "AI müəllim",
     start: "Dərsə başlayın",
-    watchIntro: "Tanışlıq videosu",
     note: "Bu müəllimlər real insan deyil: onlar süni intellektlə yaradılmış video müəllimlərdir və hər səviyyənin video dərslərini izah edir.",
     liveTitle: "Canlı müəllimlə danışmaq istəyirsiniz?",
     liveText: "Real müəllimlərimizlə 15, 30 və ya 60 dəqiqəlik canlı danışıq dərsinə yazılın.",

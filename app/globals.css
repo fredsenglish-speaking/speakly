@@ -449,11 +449,6 @@ input[type="datetime-local"] { -webkit-appearance: none; appearance: none; min-w
 .ai-name::after { display: none; }
 .ai-meta { font-size: 12px; font-weight: 700; color: color-mix(in srgb, var(--lc) 75%, #172b50); font-variant-numeric: lining-nums; }
 .ai-tagline { margin: 0; font-size: 14px; line-height: 1.45; color: #2c3a55; }
-.ai-intro { width: 100%; text-align: left; font-size: 13px; }
-.ai-intro summary { cursor: pointer; text-align: center; font-weight: 700; color: #172b50; list-style: none; padding: 4px 0; }
-.ai-intro summary::-webkit-details-marker { display: none; }
-.ai-intro[open] { display: grid; gap: 8px; }
-.ai-intro p { margin: 0; color: #3c4a63; }
 .ai-start { align-self: end; margin-top: auto; width: 100%; justify-content: center; padding: 10px 14px; font-size: 14px; background: linear-gradient(135deg, #e6c27a, #d6aa59); color: #172b50; }
 .ai-note { margin: 0; font-size: 14px; color: rgba(255, 255, 255, 0.78); }
 .ai-live { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }

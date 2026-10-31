@@ -1,16 +1,15 @@
 import Link from "next/link";
-import { Video } from "@/components/Video";
 import { getCurrentUser } from "@/lib/auth";
 import { LEVEL_NAME, LEVELS, isLevel, type Level } from "@/lib/levels";
 import { createClient } from "@/lib/supabase/server";
-import { getLocale, getT } from "@/lib/i18n/server";
-import { LEVEL_TEACHER_COLUMNS, aiTeacherPortrait, localIntro, type LevelTeacher } from "@/lib/levelTeachers";
+import { getT } from "@/lib/i18n/server";
+import { LEVEL_TEACHER_COLUMNS, aiTeacherPortrait, type LevelTeacher } from "@/lib/levelTeachers";
 
 export async function generateMetadata() {
   return { title: (await getT()).nav.aiTeachers };
 }
 
-// The AI avatar who presents each level; the admin page can rename them or add a photo and intro video.
+// The AI avatar who presents each level; the admin page can rename them.
 const DEFAULT_NAMES: Record<Level, string> = {
   A1: "Nicole",
   A2: "Daniel",
@@ -23,7 +22,7 @@ const DEFAULT_NAMES: Record<Level, string> = {
 export default async function AiTeachersPage({ searchParams }: { searchParams: Promise<{ level?: string }> }) {
   const params = await searchParams;
   const level = isLevel(params.level) ? params.level : null;
-  const [t, locale, user] = await Promise.all([getT(), getLocale(), getCurrentUser()]);
+  const [t, user] = await Promise.all([getT(), getCurrentUser()]);
   const a = t.aiTeachers;
 
   const supabase = await createClient();
@@ -68,7 +67,6 @@ export default async function AiTeachersPage({ searchParams }: { searchParams: P
           <div className={level ? "ai-cards single" : "ai-cards"}>
             {teachers.map(({ level: l, row }) => {
               const name = row?.name || DEFAULT_NAMES[l];
-              const intro = row ? (localIntro(row, locale) ?? row.intro) : null;
               return (
                 <article key={l} className={`ai-card lvl-${l}`}>
                   <div className="ai-portrait">
@@ -84,17 +82,6 @@ export default async function AiTeachersPage({ searchParams }: { searchParams: P
                       {l}
                     </span>
                     <p className="ai-tagline">{a.taglines[l]}</p>
-                    {row?.video_url && (
-                      <details className="ai-intro">
-                        <summary>▶ {a.watchIntro}</summary>
-                        <Video url={row.video_url} title={`${name} · ${l}`} emptyText={t.common.noVideo} />
-                        {intro && (
-                          <p className="small" lang={localIntro(row, locale) ? undefined : "en"}>
-                            {intro}
-                          </p>
-                        )}
-                      </details>
-                    )}
                     <Link href={`/lessons?level=${l}`} className="btn gold ai-start">
                       {a.start} <span aria-hidden="true">→</span>
                     </Link>
