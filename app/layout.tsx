@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { DICTIONARIES } from "@/lib/i18n";
 import { I18nProvider } from "@/lib/i18n/client";
@@ -16,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#0b1f4d" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#172b50" };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const locale = await getLocale();
@@ -33,6 +34,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <I18nProvider locale={locale}>
           <Header />
           <main className="wrap">{children}</main>
+          <Footer />
         </I18nProvider>
       </body>
     </html>
