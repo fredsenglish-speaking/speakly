@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FreeTabs } from "@/components/FreeTabs";
-import { MaterialsLocked, YourLevelNote } from "@/components/MaterialsGate";
+import { MaterialsLocked } from "@/components/MaterialsGate";
+import { EXERCISE_KINDS } from "@/lib/exercises";
 import { allExercises } from "@/lib/exerciseTopics";
 import { LEVELS, LEVEL_NAME, isLevel, lessonText } from "@/lib/levels";
 import { DICTIONARIES } from "@/lib/i18n";
@@ -31,59 +32,58 @@ export default async function ExercisesPage({ searchParams }: { searchParams: Pr
   const levels = level ? [level] : LEVELS;
 
   return (
-    <section className="stack">
-      <FreeTabs t={t} active="exercises" level={level} />
-      <p className="muted" style={{ maxWidth: "70ch" }}>
-        {t.exercises.lead}
-      </p>
-      {access.kind === "level" ? (
-        <YourLevelNote t={t} level={access.level} />
-      ) : (
-        <nav className="filters" aria-label={t.common.levelFilter}>
-          <Link href="/exercises" className="chip" aria-current={!level}>
-            {t.common.all}
-          </Link>
-          {LEVELS.map((l) => (
-            <Link key={l} href={`/exercises?level=${l}`} className="chip" aria-current={level === l}>
-              {l}
-            </Link>
-          ))}
-        </nav>
-      )}
+    <>
+      <FreeTabs
+        t={t}
+        active="exercises"
+        level={level}
+        filter={access.kind === "all"}
+        ownLevel={access.kind === "level" ? access.level : undefined}
+      />
+      <p className="muted lib-intro">{t.exercises.lead}</p>
       {levels.map((l) => {
         const list = topics.filter((x) => x.level === l);
         if (list.length === 0) return null;
         return (
-          <div key={l} className={`level-block lvl-${l}`}>
-            <header className="level-banner">
-              <div className="row" style={{ gap: 14 }}>
-                <span className="level-code">{l}</span>
-                <div className="stack" style={{ gap: 2 }}>
-                  <h3 lang="en">{LEVEL_NAME[l]}</h3>
-                  <span className="small">
-                    {t.exercises.topics(list.length)} · {t.exercises.free}
-                  </span>
-                </div>
-              </div>
+          <section key={l} className={`lib-shelf lvl-${l}`}>
+            <header className="lib-shelf-head">
+              <span className="lib-shelf-code">{l}</span>
+              <h2 lang="en">{LEVEL_NAME[l]}</h2>
+              <span className="small muted">
+                {t.exercises.topics(list.length)} · {t.exercises.free}
+              </span>
             </header>
-            <div className="lesson-grid">
-              {list.map((x, i) => (
-                <Link key={x.id} href={`/exercises/${x.slug}`} className="lesson-card">
-                  <span className="lesson-num">{i + 1}</span>
-                  <span className="stack" style={{ gap: 4, minWidth: 0 }}>
-                    <strong>{lessonText(x, locale).title}</strong>
-                    <span className="small muted">{t.exercises.tasks(exercises.get(x.slug)?.length ?? 0)}</span>
-                  </span>
-                  <span className="lesson-status">
-                    <span className="status">{t.exercises.free}</span>
-                    <span aria-hidden="true">→</span>
-                  </span>
-                </Link>
-              ))}
+            <div className="lib-ex-grid">
+              {list.map((x, i) => {
+                const tasks = exercises.get(x.slug) ?? [];
+                const kinds = EXERCISE_KINDS.map((k) => [k, tasks.filter((e) => e.kind === k).length] as const).filter(
+                  ([, n]) => n > 0,
+                );
+                return (
+                  <Link key={x.id} href={`/exercises/${x.slug}`} className="lib-ex">
+                    <span className="lib-ex-top">
+                      <span className="lib-ex-num">{i + 1}</span>
+                      <span className="lib-badge">{l}</span>
+                    </span>
+                    <strong className="lib-ex-title">{lessonText(x, locale).title}</strong>
+                    <span className="lib-kinds">
+                      {kinds.map(([k, n]) => (
+                        <span key={k} className="lib-kind">
+                          {t.library.kindShort[k]} · {n}
+                        </span>
+                      ))}
+                    </span>
+                    <span className="lib-ex-foot">
+                      <span className="small muted">{t.exercises.tasks(tasks.length)}</span>
+                      <span className="lib-open">{t.library.open} →</span>
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
-          </div>
+          </section>
         );
       })}
-    </section>
+    </>
   );
 }

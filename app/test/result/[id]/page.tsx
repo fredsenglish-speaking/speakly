@@ -2,7 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { requireUser } from "@/lib/auth";
 import { CertificateCard } from "@/components/CertificateCard";
-import { CERTIFICATE_PRICE, isLevel, money } from "@/lib/levels";
+import { CERTIFICATE_PRICE, LEVEL_NAME, isLevel, money } from "@/lib/levels";
+import { LevelLadder } from "@/components/LevelLadder";
 import { siteHost } from "@/lib/siteHost";
 import { createClient } from "@/lib/supabase/server";
 import { SubmitButton } from "@/components/SubmitButton";
@@ -37,28 +38,40 @@ export default async function ResultPage({ params }: { params: Promise<{ id: str
 
   return (
     <>
-      <section className="panel result">
-        <div className={`big-lv lv-${attempt.level}`}>{attempt.level}</div>
-        <div className="stack">
-          <h2>{t.test.yourLevel(attempt.level)}</h2>
-          <p className="muted">{t.test.score(attempt.total, attempt.score)}</p>
-          <div className="row">
-            <Link href={`/tutors?level=${attempt.level}`} className="btn">
+      <section className="tx-result">
+        <div className="tx-result-main">
+          <div className={`big-lv lv-${attempt.level}`}>{attempt.level}</div>
+          <div className="stack">
+            <span className="kicker">{t.test.resultTitle}</span>
+            <h1 className="tx-result-title">{t.test.yourLevel(attempt.level)}</h1>
+            <p className="muted">
+              <span lang="en">{LEVEL_NAME[attempt.level]}</span> · {t.test.score(attempt.total, attempt.score)}
+            </p>
+          </div>
+        </div>
+        <LevelLadder label={t.test.scale} current={attempt.level} />
+        <div className="row tx-result-actions">
+            <Link href={`/lessons?level=${attempt.level}`} className="btn gold hero-cta">
+              {t.test.seeLessons(attempt.level)} →
+            </Link>
+            <Link href={`/ai-teachers?level=${attempt.level}`} className="btn ghost">
+              {t.nav.aiTeachers}
+            </Link>
+            <Link href={`/tutors?level=${attempt.level}`} className="btn ghost">
               {t.test.seeTutors(attempt.level)}
             </Link>
             {cert ? (
-              <Link href={`/certificate/${cert.code}`} className="btn gold">
+              <Link href={`/certificate/${cert.code}`} className="btn">
                 {t.test.myCertificate}
               </Link>
             ) : (
               <form action={buyCertificate}>
                 <input type="hidden" name="attempt_id" value={attempt.id} />
-                <SubmitButton className="btn gold">
+                <SubmitButton className="btn">
                   {t.test.buyCertificate} · {money(CERTIFICATE_PRICE)}
                 </SubmitButton>
               </form>
             )}
-          </div>
         </div>
       </section>
       {!cert && (

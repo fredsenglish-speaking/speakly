@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Avatar } from "@/components/Avatar";
+import { NavLinks } from "@/components/NavLinks";
 import { Presence } from "@/components/Presence";
 import { getCurrentUser } from "@/lib/auth";
 import { LOCALES } from "@/lib/i18n";
@@ -21,16 +22,19 @@ export async function Header() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo-light.png" alt="Speakly" className="logo-img" width={152} height={52} />
         </Link>
-        <nav className="nav">
-          <Link href="/test">{t.nav.test}</Link>
-          <Link href="/tutors">{t.nav.tutors}</Link>
-          <Link href="/practice">{t.nav.practice}</Link>
-          <Link href="/lessons">{t.nav.lessons}</Link>
-          <Link href="/exercises">{t.nav.exercises}</Link>
-          {user && <Link href="/dashboard">{t.nav.myClasses}</Link>}
-          {isTutor && <Link href="/tutor">{t.nav.tutorPanel}</Link>}
-          {user?.role === "admin" && <Link href="/admin">{t.nav.admin}</Link>}
-        </nav>
+        <NavLinks
+          links={[
+            ["/ai-teachers", t.nav.aiTeachers],
+            ["/lessons", t.nav.lessons],
+            ["/practice", t.nav.practice],
+            ["/exercises", t.nav.exercises],
+            ["/test", t.nav.test],
+            ["/tutors", t.nav.tutors],
+            ...(user ? [["/dashboard", t.nav.myClasses] as [string, string]] : []),
+            ...(isTutor ? [["/tutor", t.nav.tutorPanel] as [string, string]] : []),
+            ...(user?.role === "admin" ? [["/admin", t.nav.admin] as [string, string]] : []),
+          ]}
+        />
         <div className="row">
           <form action={setLanguage} className="langs" aria-label={t.nav.language}>
             {LOCALES.map((l) => (
