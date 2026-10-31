@@ -41,7 +41,8 @@ const az = {
   },
   home: {
     title: "Səviyyənizi kəşf edin. Potensialınız danışsın.",
-    lead: "Səviyyə testini keç, ödənişsiz materiallardan faydalan və ehtiyac olarsa müəllimlə dərsə qoşul.",
+    lead: "İngilis dilində inamlı gələcəyiniz doğru səviyyəni tanımaqla başlayır.",
+    heroCta: "Ödənişsiz səviyyə testinə başlayın",
     startTest: "Səviyyə testinə başla",
     seeTutors: "Müəllimlərə bax",
     levelsLabel: "Səviyyələr və dərs qiymətləri",
