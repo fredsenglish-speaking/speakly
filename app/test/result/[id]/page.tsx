@@ -103,7 +103,7 @@ export default async function ResultPage({ params }: { params: Promise<{ id: str
             verifyUrl={`${await siteHost()}/certificate`}
             sample
           />
-          <div className="tx-cert-foot">{getCertificate}</div>
+          <p className="tx-cert-note">{t.test.certExplain}</p>
         </section>
       )}
 

@@ -634,7 +634,7 @@ a.club-level:hover { border-color: #d6aa59; }
 .tx-cert-title { font-family: var(--display); font-size: clamp(24px, 2.8vw, 34px); line-height: 1.15; }
 .tx-cert .tx-cert-title { color: #fff; }
 .tx-cert-cta { padding: 16px 30px; font-size: 18px; box-shadow: 0 14px 30px -14px rgba(214, 170, 89, 0.9); }
-.tx-cert-foot { display: flex; justify-content: center; }
+.tx-cert-note { margin: 0; text-align: center; color: rgba(255, 255, 255, 0.85); max-width: 640px; justify-self: center; line-height: 1.5; }
 .tx-order { max-width: 460px; gap: 10px; }
 .tx-cert-done { background: var(--surface); justify-items: start; }
 .tx-result-main { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
