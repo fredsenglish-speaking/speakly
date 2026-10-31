@@ -23,6 +23,7 @@ export async function Header() {
         </Link>
         <nav className="nav">
           <Link href="/test">{t.nav.test}</Link>
+          <Link href="/ai-teachers">{t.nav.aiTeachers}</Link>
           <Link href="/tutors">{t.nav.tutors}</Link>
           <Link href="/practice">{t.nav.practice}</Link>
           <Link href="/lessons">{t.nav.lessons}</Link>

@@ -29,9 +29,9 @@ export default async function HomePage() {
     [h.s4Title, h.s4Text],
   ];
   const perkIcons = [ICONS.teacher, ICONS.chart, ICONS.chat, ICONS.book];
-  const perkLinks = ["/tutors", "/test", "/practice", "/exercises"];
+  const perkLinks = ["/ai-teachers", "/test", "/practice", "/exercises"];
   const serviceIcons = [ICONS.teacher, ICONS.video, ICONS.chat, ICONS.book];
-  const serviceLinks = ["/tutors", "/lessons", "/practice", "/exercises"];
+  const serviceLinks = ["/ai-teachers", "/lessons", "/practice", "/exercises"];
   // Two lines like the banner design: "Discover your level." / "Let your potential <gold>speak.</gold>"
   const [first, second = ""] = h.title.split(/(?<=\.)\s+/);
 
@@ -51,7 +51,7 @@ export default async function HomePage() {
             <Link href="/test" className="btn gold hero-cta">
               {h.heroCta} <span aria-hidden="true">→</span>
             </Link>
-            <Link href="/tutors" className="btn hero-ghost">
+            <Link href="/ai-teachers" className="btn hero-ghost">
               {h.heroCta2}
             </Link>
           </div>
