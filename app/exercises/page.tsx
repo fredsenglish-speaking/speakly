@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { FreeTabs } from "@/components/FreeTabs";
+import { MaterialsLocked, YourLevelNote } from "@/components/MaterialsGate";
 import { allExercises } from "@/lib/exerciseTopics";
 import { LEVELS, LEVEL_NAME, isLevel, lessonText } from "@/lib/levels";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
+import { materialsAccess } from "@/lib/materials";
 import { createClient } from "@/lib/supabase/server";
 
 export async function generateMetadata() {
@@ -12,9 +14,11 @@ export async function generateMetadata() {
 
 export default async function ExercisesPage({ searchParams }: { searchParams: Promise<{ level?: string }> }) {
   const params = await searchParams;
-  const level = isLevel(params.level) ? params.level : null;
   const locale = await getLocale();
   const t = DICTIONARIES[locale];
+  const access = await materialsAccess();
+  if (access.kind === "locked") return <MaterialsLocked t={t} active="exercises" />;
+  const level = access.kind === "level" ? access.level : isLevel(params.level) ? params.level : null;
   const supabase = await createClient();
   // Topic names come from the lessons, so the exercises follow the lesson list.
   const { data: lessons } = await supabase
@@ -32,16 +36,20 @@ export default async function ExercisesPage({ searchParams }: { searchParams: Pr
       <p className="muted" style={{ maxWidth: "70ch" }}>
         {t.exercises.lead}
       </p>
-      <nav className="filters" aria-label={t.common.levelFilter}>
-        <Link href="/exercises" className="chip" aria-current={!level}>
-          {t.common.all}
-        </Link>
-        {LEVELS.map((l) => (
-          <Link key={l} href={`/exercises?level=${l}`} className="chip" aria-current={level === l}>
-            {l}
+      {access.kind === "level" ? (
+        <YourLevelNote t={t} level={access.level} />
+      ) : (
+        <nav className="filters" aria-label={t.common.levelFilter}>
+          <Link href="/exercises" className="chip" aria-current={!level}>
+            {t.common.all}
           </Link>
-        ))}
-      </nav>
+          {LEVELS.map((l) => (
+            <Link key={l} href={`/exercises?level=${l}`} className="chip" aria-current={level === l}>
+              {l}
+            </Link>
+          ))}
+        </nav>
+      )}
       {levels.map((l) => {
         const list = topics.filter((x) => x.level === l);
         if (list.length === 0) return null;

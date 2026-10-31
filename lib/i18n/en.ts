@@ -318,6 +318,8 @@ const en: Dictionary = {
   },
   library: {
     hub: "Free materials",
+    needTest: "Free materials open for your level. Take the level test first.",
+    forYourLevel: "Materials picked for your level:",
     exercisesTab: "Exercises",
     freeText: "Read the original free",
     trailer: "Trailer",
@@ -337,7 +339,7 @@ const en: Dictionary = {
   exercises: {
     title: "Exercises",
     free: "Free",
-    lead: "4 kinds of tasks for every lesson topic: choose the answer, fill the gap, right or wrong, and put the words in order. All free, no sign-up needed.",
+    lead: "4 kinds of tasks for every lesson topic: choose the answer, fill the gap, right or wrong, and put the words in order. All free.",
     topics: (n: number) => `${n} topics`,
     tasks: (n: number) => `${n} tasks`,
     back: "← Exercises",

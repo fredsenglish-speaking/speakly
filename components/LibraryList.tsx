@@ -1,15 +1,19 @@
 import Link from "next/link";
 import { FreeTabs } from "@/components/FreeTabs";
+import { MaterialsLocked, YourLevelNote } from "@/components/MaterialsGate";
 import { libraryFor, libraryLink, trailerLink } from "@/lib/library";
 import { LEVELS, LEVEL_NAME, isLevel } from "@/lib/levels";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
+import { materialsAccess } from "@/lib/materials";
 
 /** The Books and Films tabs: recommendations for each level, with links out. */
 export async function LibraryList({ part, level: rawLevel }: { part: "books" | "films"; level?: string }) {
-  const level = isLevel(rawLevel) ? rawLevel : null;
   const locale = await getLocale();
   const t = DICTIONARIES[locale];
+  const access = await materialsAccess();
+  if (access.kind === "locked") return <MaterialsLocked t={t} active={part} />;
+  const level = access.kind === "level" ? access.level : isLevel(rawLevel) ? rawLevel : null;
   const L = t.library;
   const path = part === "books" ? "/books" : "/films";
   const levels = level ? [level] : LEVELS;
@@ -20,16 +24,20 @@ export async function LibraryList({ part, level: rawLevel }: { part: "books" | "
       <p className="muted" style={{ maxWidth: "70ch" }}>
         {part === "books" ? L.booksLead : L.filmsLead}
       </p>
-      <nav className="filters" aria-label={t.common.levelFilter}>
-        <Link href={path} className="chip" aria-current={!level}>
-          {t.common.all}
-        </Link>
-        {LEVELS.map((l) => (
-          <Link key={l} href={`${path}?level=${l}`} className="chip" aria-current={level === l}>
-            {l}
+      {access.kind === "level" ? (
+        <YourLevelNote t={t} level={access.level} />
+      ) : (
+        <nav className="filters" aria-label={t.common.levelFilter}>
+          <Link href={path} className="chip" aria-current={!level}>
+            {t.common.all}
           </Link>
-        ))}
-      </nav>
+          {LEVELS.map((l) => (
+            <Link key={l} href={`${path}?level=${l}`} className="chip" aria-current={level === l}>
+              {l}
+            </Link>
+          ))}
+        </nav>
+      )}
       {levels.map((l) => {
         const list = libraryFor(l, part);
         return (
