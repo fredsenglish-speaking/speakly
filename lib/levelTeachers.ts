@@ -18,3 +18,8 @@ export function localIntro(t: LevelTeacher, locale: Locale): string | null {
   if (locale === "ru") return t.intro_ru;
   return null;
 }
+
+/** The HeyGen portrait of each level's AI teacher, cropped to the same size (public/ai-teachers). */
+export function aiTeacherPortrait(level: string): string {
+  return `/ai-teachers/${level.toLowerCase()}.jpg`;
+}

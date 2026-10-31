@@ -207,8 +207,8 @@ const en: Dictionary = {
   },
   aiTeachers: {
     title: "Meet Your AI English Teachers",
-    badge: "Teachers created with artificial intelligence",
-    lead: "Meet your AI teachers, created with artificial intelligence. Choose the one that fits your level and your goals.",
+    badge: "AI Teachers",
+    lead: "Meet our professional AI teachers, created with artificial intelligence. Choose the one that fits your level and your goals.",
     aiBadge: "AI",
     aiLabel: "AI teacher",
     start: "Start Learning",
@@ -220,11 +220,11 @@ const en: Dictionary = {
     none: "No AI teacher for this level yet.",
     taglines: {
       A1: "Simple, effective lessons for beginners.",
-      A2: "Conversation and everyday communication.",
-      B1: "Grammar, vocabulary and fluent speaking.",
-      B2: "Academic and professional English.",
-      C1: "English for work and international communication.",
-      C2: "Advanced, precise self-expression.",
+      A2: "Confident everyday conversation through practice.",
+      B1: "Build your grammar, listening and speaking skills.",
+      B2: "Raise your level with academic and professional English.",
+      C1: "Advanced skills for work and international communication.",
+      C2: "The ideal choice for advanced and academic English.",
     } as Record<string, string>,
   },
   tutors: {

@@ -7,7 +7,7 @@ import { SubmitButton } from "@/components/SubmitButton";
 import { LESSON_PRICE, LEVEL_PRICE, LEVELS, LEVEL_NAME, isLevel, lessonText, money, type Level } from "@/lib/levels";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
-import { LEVEL_TEACHER_COLUMNS, localIntro, type LevelTeacher } from "@/lib/levelTeachers";
+import { LEVEL_TEACHER_COLUMNS, aiTeacherPortrait, localIntro, type LevelTeacher } from "@/lib/levelTeachers";
 import { createClient } from "@/lib/supabase/server";
 import { buyLevel } from "./actions";
 
@@ -101,7 +101,7 @@ export default async function LessonsPage({ searchParams }: { searchParams: Prom
         <div className="lx-plan-bar">
           {teacher && (
             <Link href={`/ai-teachers?level=${current}`} className="lx-teacher">
-              <Avatar name={teacher.name} url={teacher.photo_url} size={46} />
+              <Avatar name={teacher.name} url={aiTeacherPortrait(current)} size={46} />
               <span className="stack" style={{ gap: 0 }}>
                 <span className="small muted">
                   <span className="ai-badge inline">AI</span>
@@ -123,7 +123,7 @@ export default async function LessonsPage({ searchParams }: { searchParams: Prom
           <details className="teacher-more">
             <summary>{t.lessons.meetTeacher}</summary>
             <LevelTeacherCard
-              teacher={teacher}
+              teacher={{ ...teacher, photo_url: aiTeacherPortrait(current) }}
               heading={t.lessons.videoTeacher(current, teacher.name)}
               localText={localIntro(teacher, locale)}
               videoLabel={t.lessons.introVideo}
@@ -142,10 +142,8 @@ export default async function LessonsPage({ searchParams }: { searchParams: Prom
               <li key={x.id}>
                 <Link href={`/lessons/${x.slug}`} className="lx-row">
                   <span className="lx-thumb" aria-hidden="true">
-                    {teacher?.photo_url && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={teacher.photo_url} alt="" loading="lazy" />
-                    )}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={aiTeacherPortrait(current)} alt="" loading="lazy" />
                     <span className="lx-play">▶</span>
                   </span>
                   <span className="lx-main">

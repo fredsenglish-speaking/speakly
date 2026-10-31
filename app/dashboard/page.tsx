@@ -5,7 +5,7 @@ import { requireUser } from "@/lib/auth";
 import { Avatar } from "@/components/Avatar";
 import { gradeFor } from "@/lib/grade";
 import { LESSON_PRICE, LEVELS, durationLabel, formatDateTime, isLevel, lessonText, money } from "@/lib/levels";
-import { LEVEL_TEACHER_COLUMNS, type LevelTeacher } from "@/lib/levelTeachers";
+import { LEVEL_TEACHER_COLUMNS, aiTeacherPortrait, type LevelTeacher } from "@/lib/levelTeachers";
 import { DICTIONARIES } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n/server";
 import { createClient } from "@/lib/supabase/server";
@@ -152,10 +152,8 @@ export default async function DashboardPage() {
           {next && level ? (
             <Link href={`/lessons/${next.slug}`} className={`db-next lvl-${level}`}>
               <span className="lx-thumb" aria-hidden="true">
-                {myTeacher?.photo_url && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={myTeacher.photo_url} alt="" />
-                )}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={aiTeacherPortrait(level)} alt="" />
                 <span className="lx-play">▶</span>
               </span>
               <span className="stack" style={{ gap: 6 }}>
@@ -187,7 +185,7 @@ export default async function DashboardPage() {
               const tt = teachers.get(l)!;
               return (
                 <Link key={l} href={`/ai-teachers?level=${l}`} className="db-teacher" aria-current={l === level ? "true" : undefined}>
-                  <Avatar name={tt.name} url={tt.photo_url} size={l === level ? 72 : 52} />
+                  <Avatar name={tt.name} url={aiTeacherPortrait(l)} size={l === level ? 72 : 52} />
                   <span className="small"><strong>{tt.name}</strong> · {l}</span>
                 </Link>
               );

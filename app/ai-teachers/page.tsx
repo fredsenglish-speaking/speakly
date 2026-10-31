@@ -4,7 +4,7 @@ import { getCurrentUser } from "@/lib/auth";
 import { LEVEL_NAME, LEVELS, isLevel, type Level } from "@/lib/levels";
 import { createClient } from "@/lib/supabase/server";
 import { getLocale, getT } from "@/lib/i18n/server";
-import { LEVEL_TEACHER_COLUMNS, localIntro, type LevelTeacher } from "@/lib/levelTeachers";
+import { LEVEL_TEACHER_COLUMNS, aiTeacherPortrait, localIntro, type LevelTeacher } from "@/lib/levelTeachers";
 
 export async function generateMetadata() {
   return { title: (await getT()).nav.aiTeachers };
@@ -37,9 +37,9 @@ export default async function AiTeachersPage({ searchParams }: { searchParams: P
         <div className="ai-inner">
           <header className="ai-head">
             <div className="ai-head-copy">
-              <span className="hero-badge">✦ {a.badge}</span>
+              <span className="hero-badge" lang="en">✦ {a.badge}</span>
               <h1 className="ai-title" lang="en">
-                {a.title}
+                Meet Your <span className="hero-accent">AI</span> English Teachers
               </h1>
               <p className="ai-lead">{a.lead}</p>
             </div>
@@ -72,23 +72,16 @@ export default async function AiTeachersPage({ searchParams }: { searchParams: P
               return (
                 <article key={l} className={`ai-card lvl-${l}`}>
                   <div className="ai-portrait">
-                    {row?.photo_url ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={row.photo_url} alt={`${name}, ${a.aiLabel}`} loading="lazy" />
-                    ) : (
-                      <span className="ai-monogram" aria-hidden="true">
-                        {name.slice(0, 1)}
-                      </span>
-                    )}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={aiTeacherPortrait(l)} alt={`${name}, ${a.aiLabel} ${l}`} width={600} height={667} loading="lazy" />
                     <span className="ai-badge" title={a.aiLabel}>
                       {a.aiBadge}
                     </span>
-                    <span className="ai-level">{l}</span>
                   </div>
                   <div className="ai-body">
                     <h2 className="ai-name">{name}</h2>
-                    <span className="ai-meta">
-                      {a.aiLabel} · <span lang="en">{l} {LEVEL_NAME[l]}</span>
+                    <span className="ai-level-pill" title={`${a.aiLabel} · ${LEVEL_NAME[l]}`}>
+                      {l}
                     </span>
                     <p className="ai-tagline">{a.taglines[l]}</p>
                     {row?.video_url && (
@@ -103,7 +96,7 @@ export default async function AiTeachersPage({ searchParams }: { searchParams: P
                       </details>
                     )}
                     <Link href={`/lessons?level=${l}`} className="btn gold ai-start">
-                      <span lang="en">{a.start}</span> <span aria-hidden="true">→</span>
+                      {a.start} <span aria-hidden="true">→</span>
                     </Link>
                   </div>
                 </article>
