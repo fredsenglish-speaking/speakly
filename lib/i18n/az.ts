@@ -197,11 +197,12 @@ const az = {
     score: (n: number, s: number) => `${n} sualdan ${s} düzgün cavab.`,
     seeTutors: (l: string) => `${l} müəllimlərinə baxın`,
     myCertificate: "Sertifikatıma baxın",
-    buyCertificate: "Sertifikatı PDF kimi alın",
+    buyCertificate: "Sertifikatı əldə edin",
     sampleNote: "Sertifikatınız belə görünəcək. Ödənişdən sonra onu “SAMPLE” yazısı olmadan PDF kimi yükləyə bilərsiniz.",
   },
   cert: {
     title: "Sertifikat",
+    verified: "Bu sertifikat həqiqidir: Speakly tərəfindən verilib.",
     heading: "Speakly · Səviyyə sertifikatı",
     level: "İngilis dili səviyyəsi",
     issued: "Verilmə tarixi",

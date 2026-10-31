@@ -193,11 +193,12 @@ const en: Dictionary = {
     score: (n, s) => `${s} of ${n} answers correct.`,
     seeTutors: (l) => `See ${l} tutors`,
     myCertificate: "View my certificate",
-    buyCertificate: "Get the PDF certificate",
+    buyCertificate: "Get your certificate",
     sampleNote: "Your certificate will look like this. After payment you can download it as a PDF without the “SAMPLE” mark.",
   },
   cert: {
     title: "Certificate",
+    verified: "This certificate is genuine: issued by Speakly.",
     heading: "Speakly · Level certificate",
     level: "English level",
     issued: "Issued on",

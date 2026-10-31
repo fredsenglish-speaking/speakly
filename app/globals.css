@@ -247,7 +247,8 @@ table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 @media print {
-  .bar, .no-print { display: none !important; }
+  .bar, .no-print, .site-footer { display: none !important; }
+  body { background-image: none !important; }
   body { background: #fff; }
 }
 
@@ -256,51 +257,71 @@ table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
 .langs button { border: 0; background: none; padding: 4px 10px; font-size: 13px; font-weight: 700; color: var(--muted); }
 .langs button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
 
-/* Certificate: a fixed A4-landscape sheet that scales with its width (cqw), light even in dark mode */
+/* Certificate: a fixed A4-landscape sheet that scales with its width (cqw), light even in dark mode.
+   Design from Ms Jane's mockup (2026-11-01): navy frame, gold ribbons, laurels, level badge, seal, QR. */
 .certificate { container-type: inline-size; width: 100%; }
 .certificate-sheet {
-  --c-ink: #082d97; --c-gold: #b0873a; --c-paper: #fffdf6; --c-muted: #5d6475;
-  aspect-ratio: 297 / 210; background: var(--c-paper); color: var(--c-ink); position: relative;
-  padding: 5cqw 7cqw 3.4cqw; display: flex; flex-direction: column; align-items: center; text-align: center;
-  border: 0.9cqw solid var(--c-ink); box-shadow: inset 0 0 0 0.35cqw var(--c-paper), inset 0 0 0 0.5cqw var(--c-gold);
-  font-family: "EB Garamond", Georgia, serif; border-radius: 4px;
-  background-image: radial-gradient(ellipse at center, rgba(176, 135, 58, 0.07), transparent 70%);
+  --c-ink: #172b50; --c-gold: #c99a45; --c-gold-soft: #e7c77f; --c-paper: #fbf6ea; --c-muted: #2c3a57;
+  aspect-ratio: 297 / 210; position: relative; overflow: hidden; border-radius: 4px;
+  background: #172b50; padding: 1.6cqw; color: var(--c-ink);
+  font-family: "EB Garamond", Georgia, serif;
 }
-.certificate-sheet::before, .certificate-sheet::after {
-  content: ""; position: absolute; width: 9cqw; height: 9cqw; border: 0.25cqw solid var(--c-gold); pointer-events: none;
+.cert-ribbon { position: absolute; width: 17cqw; height: 17cqw; z-index: 1; pointer-events: none; }
+.cert-ribbon.tl { top: 0; left: 0; }
+.cert-ribbon.br { right: 0; bottom: 0; transform: rotate(180deg); }
+.cert-inner {
+  position: relative; height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;
+  background: radial-gradient(ellipse at center, #fffdf7 0%, var(--c-paper) 70%, #f3ead6 100%);
+  border: 0.18cqw solid var(--c-gold); outline: 0.1cqw solid var(--c-gold); outline-offset: -0.9cqw;
+  padding: 2.4cqw 6cqw 2cqw;
 }
-.certificate-sheet::before { top: 2cqw; left: 2cqw; border-right: 0; border-bottom: 0; }
-.certificate-sheet::after { bottom: 2cqw; right: 2cqw; border-left: 0; border-top: 0; }
-.cert-brand { display: flex; align-items: center; gap: 0.8cqw; font-family: var(--display); font-weight: 700; font-size: 1.9cqw; letter-spacing: 0.25em; text-transform: uppercase; }
-.cert-brand i { display: inline-grid; place-items: center; width: 3cqw; height: 3cqw; border-radius: 0.8cqw; background: var(--c-ink); color: var(--c-paper); font-style: normal; font-size: 1.8cqw; letter-spacing: 0; }
+.cert-inner > * { position: relative; z-index: 2; }
 /* the free preview after the test: no copying or printing until it is paid for */
 .cert-sample .certificate { user-select: none; -webkit-user-select: none; }
 @media print { .cert-sample { display: none !important; } }
 .cert-watermark {
-  position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; pointer-events: none; user-select: none;
+  position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; pointer-events: none; user-select: none;
   font-family: "EB Garamond", Georgia, serif; font-weight: 600; font-size: 19cqw; letter-spacing: 0.12em;
   color: rgba(190, 30, 45, 0.2); transform: rotate(-22deg);
 }
-.cert-logo { display: block; height: 7.5cqw; width: auto; margin-inline: auto; }
-.cert-centre { font-size: 1.35cqw; letter-spacing: 0.2em; text-transform: uppercase; color: var(--c-gold); margin-top: 0.8cqw; font-weight: 600; }
-.cert-title { font-family: "EB Garamond", Georgia, serif; font-weight: 600; font-size: 4.6cqw; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1.2cqw; line-height: 1; color: var(--c-ink); }
-.cert-sub { font-size: 1.8cqw; letter-spacing: 0.18em; text-transform: uppercase; color: var(--c-gold); margin-top: 0.8cqw; }
-.cert-lead { font-size: 1.9cqw; font-style: italic; color: var(--c-muted); margin-top: 1.5cqw; }
-.cert-name { font-size: 4.2cqw; font-weight: 600; line-height: 1.1; margin-top: 0.6cqw; padding: 0 4cqw 0.8cqw; border-bottom: 0.15cqw solid var(--c-gold); min-width: 50%; }
-.cert-level { display: flex; align-items: center; gap: 2.4cqw; margin-top: 1.6cqw; text-align: left; max-width: 72%; }
-.cert-seal {
-  flex: none; display: grid; place-items: center; width: 8.4cqw; height: 8.4cqw; border-radius: 50%;
-  background: var(--c-ink); color: #f3d9a0; font-family: "Bricolage Grotesque", system-ui, sans-serif; font-weight: 700; font-size: 3.2cqw;
-  box-shadow: 0 0 0 0.45cqw var(--c-paper), 0 0 0 0.7cqw var(--c-gold);
+.cert-logo { display: block; height: 6.4cqw; width: auto; margin-inline: auto; }
+.cert-platform { display: flex; align-items: center; gap: 1.2cqw; margin-top: 0.4cqw; font-family: "Source Sans 3", system-ui, sans-serif; font-weight: 600; font-size: 1.15cqw; letter-spacing: 0.22em; text-transform: uppercase; color: var(--c-ink); }
+.cert-platform::before, .cert-platform::after { content: ""; width: 4.5cqw; height: 0.12cqw; background: var(--c-gold); }
+.cert-heading { display: flex; align-items: center; justify-content: center; gap: 2cqw; margin-top: 1.2cqw; width: 100%; }
+.cert-laurel { width: 7cqw; height: 14cqw; color: var(--c-gold); flex: none; }
+.cert-laurel.flip { transform: scaleX(-1); }
+.cert-title { font-family: "EB Garamond", Georgia, serif; font-weight: 800; font-size: 4.6cqw; line-height: 1.05; letter-spacing: 0.02em; text-transform: uppercase; color: var(--c-ink); margin: 0; }
+.cert-title::after { display: none; }
+.cert-divider { display: flex; align-items: center; gap: 1.2cqw; width: 46%; margin-top: 0.6cqw; color: var(--c-gold); }
+.cert-divider::before, .cert-divider::after { content: ""; flex: 1; height: max(1px, 0.12cqw); background: linear-gradient(90deg, transparent, var(--c-gold)); }
+.cert-divider::after { background: linear-gradient(90deg, var(--c-gold), transparent); }
+.cert-divider svg { width: 2.6cqw; height: 1.8cqw; }
+.cert-lead { font-size: 1.85cqw; line-height: 1.3; color: var(--c-muted); margin-top: 1cqw; }
+.cert-name { font-size: 4.6cqw; font-weight: 700; font-style: italic; line-height: 1.15; margin-top: 0.3cqw; color: var(--c-ink); }
+.cert-badge-row { display: flex; align-items: center; width: 62%; margin-top: 1.2cqw; }
+.cert-badge-row::before, .cert-badge-row::after { content: ""; flex: 1; height: 0.14cqw; background: var(--c-gold); }
+.cert-badge {
+  display: grid; justify-items: center; padding: 0.5cqw 6cqw 0.7cqw; background: var(--c-ink); color: #fff;
+  border: 0.3cqw solid var(--c-gold); border-radius: 3.2cqw / 50%; box-shadow: 0 0 0 0.3cqw var(--c-paper), 0 0 0 0.45cqw var(--c-gold);
 }
-.cert-level-text { display: grid; gap: 0.4cqw; font-size: 1.7cqw; color: var(--c-muted); line-height: 1.3; }
-.cert-level-text strong { font-size: 2.3cqw; color: var(--c-ink); font-weight: 600; }
-.cert-foot { margin-top: auto; padding-top: 2cqw; width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 4cqw; }
-.cert-foot > div { display: grid; gap: 0.5cqw; align-content: end; }
-.cert-line { font-size: 1.9cqw; line-height: 1.3; padding-bottom: 0.5cqw; display: flex; align-items: flex-end; justify-content: center; border-bottom: 0.12cqw solid var(--c-ink); min-height: 2.8cqw; }
-.cert-sign { font-style: italic; font-size: 2.4cqw; }
-.cert-code { font-family: ui-monospace, Menlo, monospace; font-size: 1.6cqw; letter-spacing: 0.06em; }
-.cert-label { font-size: 1.35cqw; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-muted); }
+.cert-badge strong { font-size: 4.6cqw; font-weight: 700; line-height: 1; }
+.cert-badge em { font-size: 1.7cqw; line-height: 1.2; }
+.cert-foot { margin-top: auto; width: 100%; display: grid; grid-template-columns: 1.15fr 0.9fr 1.1fr auto; align-items: end; gap: 2cqw; }
+.cert-signature { display: grid; justify-items: center; gap: 0.1cqw; font-size: 1.45cqw; color: var(--c-ink); }
+.cert-sign { font-family: "Great Vibes", "Snell Roundhand", cursive; font-size: 4cqw; line-height: 1; width: 100%; padding-bottom: 0.4cqw; border-bottom: 0.12cqw solid var(--c-gold); }
+.cert-signature b { font-size: 1.6cqw; margin-top: 0.5cqw; }
+.cert-rosette { width: 10cqw; height: 11.7cqw; justify-self: center; }
+.cert-facts { display: grid; gap: 1.2cqw; text-align: left; padding-bottom: 0.6cqw; padding-right: 2cqw; border-right: 0.1cqw solid rgba(23, 43, 80, 0.35); }
+.cert-fact { display: flex; align-items: flex-start; gap: 1cqw; font-size: 1.6cqw; line-height: 1.2; }
+.cert-fact small { display: block; font-size: 1.35cqw; }
+.cert-icon { width: 2.4cqw; height: 2.4cqw; flex: none; color: var(--c-ink); }
+.cert-code { letter-spacing: 0.02em; }
+.cert-qr { display: grid; justify-items: center; gap: 0.5cqw; padding-bottom: 0.4cqw; margin-right: 3.5cqw; }
+.cert-qr.pending .cert-qr-code { filter: blur(0.5cqw); opacity: 0.6; }
+.cert-qr-code { display: block; width: 8.5cqw; height: 8.5cqw; padding: 0.5cqw; background: #fff; border: 0.12cqw solid var(--c-gold); border-radius: 0.4cqw; }
+.cert-qr-code svg { display: block; width: 100%; height: 100%; }
+.cert-verified { margin: 0; padding: 12px 16px; border-radius: 12px; background: rgba(46, 125, 50, 0.1); color: #1f6b2a; font-weight: 600; }
+.cert-qr small { font-size: 1.15cqw; color: var(--c-ink); }
 
 @media print {
   @page { size: A4 landscape; margin: 0; }
@@ -308,7 +329,6 @@ table.list td { padding: 8px 0; border-bottom: 1px solid var(--line); }
   .certificate-sheet { border-radius: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .certificate { width: 297mm; }
 }
-.cert-verify { font-size: 1.2cqw; color: var(--c-muted); margin-top: 1.2cqw; }
 
 /* iOS Safari gives date inputs an intrinsic width and no height when empty */
 input[type="datetime-local"] { -webkit-appearance: none; appearance: none; min-width: 0; max-width: 100%; min-height: 44px; display: block; }
