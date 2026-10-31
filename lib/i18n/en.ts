@@ -44,8 +44,8 @@ const en: Dictionary = {
     noVideo: "No video yet",
   },
   home: {
-    title: "Discover your level. Let your potential speak.",
-    lead: "Learn English at your own level, grow with AI teachers and build real speaking confidence.",
+    title: "Your level. Your AI teacher. Your learning pace.",
+    lead: "Learn English with ease through AI video lessons, interactive tests and rich learning materials matched to your level.",
     heroCta: "Start your free level test",
     heroCta2: "Meet the AI teachers",
     badge: "AI-powered English learning",

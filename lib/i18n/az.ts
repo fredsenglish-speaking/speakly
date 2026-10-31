@@ -48,10 +48,10 @@ const az = {
     noVideo: "Video hələ əlavə olunmayıb",
   },
   home: {
-    title: "Səviyyənizi kəşf edin. Potensialınız danışsın.",
-    lead: "İngilis dilini öz səviyyənizə uyğun öyrənin, AI müəllimlərlə inkişaf edin və danışıq bacarıqlarınızı gücləndirin.",
-    heroCta: "Ödənişsiz səviyyə testinə başlayın",
-    heroCta2: "AI müəllimləri kəşf edin",
+    title: "Sənin səviyyən. Sənin AI müəllimin. Sənin öyrənmə sürətin.",
+    lead: "Öz səviyyənə uyğun AI video dərsləri, interaktiv testlər və zəngin öyrənmə materialları ilə ingilis dilini rahatlıqla öyrən.",
+    heroCta: "Pulsuz səviyyə testinə başla",
+    heroCta2: "AI müəllimləri kəşf et",
     badge: "AI dəstəkli ingilis dili platforması",
     perks: [
       ["AI müəllimlər", "Fərdi yanaşma"],
