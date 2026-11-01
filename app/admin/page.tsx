@@ -53,6 +53,12 @@ type Row = {
   profiles: { full_name: string } | null;
 };
 
+/**
+ * Revenue totals count only payments confirmed from this moment on (Ms Jane, 2026-11-01):
+ * everything before it was testing. The old payments stay in the database, they are just not counted.
+ */
+const REVENUE_FROM = "2026-11-01T12:30:00Z"; // 16:30 Baku time
+
 export default async function AdminPage() {
   const user = await requireUser("/admin");
   if (user.role !== "admin") redirect("/");
@@ -61,7 +67,7 @@ export default async function AdminPage() {
   const db = createAdminClient();
   const [{ data }, { data: paid }, { data: pendingRows }] = await Promise.all([
     db.from("tutors").select("id, approved, bio, levels, created_at, profiles(full_name)").order("created_at", { ascending: false }),
-    db.from("payments").select("kind, amount").eq("status", "paid"),
+    db.from("payments").select("kind, amount").eq("status", "paid").gte("paid_at", REVENUE_FROM),
     db
       .from("payments")
       .select("id, kind, ref_id, amount, created_at, profiles(full_name)")
@@ -88,6 +94,7 @@ export default async function AdminPage() {
           <Link href="/admin/lessons" className="btn ghost small">🎬 {t.admin.videos}</Link>
         </div>
       </div>
+      <p className="small muted">{t.admin.revenueSince(formatDateTime(REVENUE_FROM, locale))}</p>
       <div className="steps five">
         <div className="step"><b>{t.admin.tests}</b><h3 className="price">{money(totals.test)}</h3></div>
         <div className="step"><b>{t.admin.certificates}</b><h3 className="price">{money(totals.certificate)}</h3></div>

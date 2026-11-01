@@ -618,6 +618,7 @@ const en: Dictionary = {
   },
 
   admin: {
+    revenueSince: (d: string) => `Revenue counts payments confirmed since ${d} (earlier ones were tests).`,
     orders: {
       link: "Certificate orders",
       title: "Certificate orders",
