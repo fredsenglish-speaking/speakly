@@ -7,9 +7,10 @@ function azOrdinal(n: string): string {
 const az = {
   langName: "Azərbaycanca",
   meta: {
-    description: "Səviyyənizə uyğun müəllimlə ingiliscə danışın: səviyyə testi, canlı danışıq dərsləri və qrammatika dərsləri.",
+    description: "Ödənişsiz ingilis dili səviyyə testi (A1–C2), ad və soyadınızla onlayn sertifikat, AI video müəllimlərlə dərslər və danışıq klubu.",
   },
   nav: {
+    menu: "Menyu",
     test: "Səviyyə testi",
     aiTeachers: "AI müəllimlər",
     tutors: "Müəllimlər",
@@ -26,6 +27,8 @@ const az = {
     language: "Dil",
   },
   footer: {
+    contact: "Əlaqə",
+    whatsapp: "WhatsApp-a yazın",
     tagline: "AI dəstəkli ingilis dili platforması: səviyyə testi, video dərslər və canlı danışıq praktikası.",
     learn: "Öyrənin",
     account: "Hesab",
@@ -84,9 +87,17 @@ const az = {
     s2Title: "Sertifikat",
     s2Text: "Ad və soyadınız yazılmış onlayn sertifikatı əldə edin.",
     s3Title: "Dərslər",
-    s3Text: "AI video dərslər və ödənişsiz tapşırıqlarla öz səviyyənizdə inkişaf edin.",
+    s3Text: "AI video dərslər və məşq testləri ilə səviyyənizi yüksəldin.",
     s4Title: "Danışıq klubu",
     s4Text: "Danışığınızı inkişaf etdirmək üçün Danışıq klubunun üzvü olun.",
+    levelOr: (price: string) => `və ya dərsi ${price}`,
+    levelSave: (pct: number) => `${pct}% qənaət`,
+    clubPrice: (price: string, min: number) => `${price} · ${min} dəqiqə`,
+    clubCta: "Yer tutun",
+    certKicker: "Onlayn sertifikat",
+    certTitle: "Sertifikatınız belə görünəcək",
+    certText: "Testi bitirəndən sonra ad və soyadınız, səviyyəniz, tarix və unikal ID yazılmış sertifikatı PDF kimi əldə edə bilərsiniz. QR kod sertifikatın həqiqi olduğunu təsdiqləyir.",
+    certCta: "Testə başlayın",
   },
   auth: {
     loginTitle: "Daxil olun",

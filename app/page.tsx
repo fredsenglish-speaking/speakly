@@ -1,6 +1,22 @@
 import Link from "next/link";
+import { CertificateCard } from "@/components/CertificateCard";
 import { getT } from "@/lib/i18n/server";
-import { CERTIFICATE_PRICE, LESSON_PRICE, LEVEL_NAME, LEVEL_PRICE, LEVELS, money } from "@/lib/levels";
+import { CERTIFICATE_PRICE, LESSON_PRICE, LEVEL_NAME, LEVEL_PRICE, LEVELS, PRACTICE_MINUTES, PRACTICE_PRICE, levelSaving, money, type Level } from "@/lib/levels";
+import { siteHost } from "@/lib/siteHost";
+import { createClient } from "@/lib/supabase/server";
+
+/** How many lessons each level has, so the cards can say how much the whole level saves. */
+async function lessonCounts(): Promise<Map<Level, number>> {
+  try {
+    const { data } = await (await createClient()).from("lessons").select("level");
+    const counts = new Map<Level, number>();
+    for (const row of (data ?? []) as { level: Level }[]) counts.set(row.level, (counts.get(row.level) ?? 0) + 1);
+    return counts;
+  } catch {
+    return new Map();
+  }
+}
+
 
 // Simple line icons for the perks strip and the service cards, drawn in the current text colour.
 const ICONS = {
@@ -24,6 +40,8 @@ function Icon({ d }: { d: string }) {
 export default async function HomePage() {
   const t = await getT();
   const h = t.home;
+  const [counts, host] = await Promise.all([lessonCounts(), siteHost()]);
+  const today = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Baku" }).format(new Date());
   const steps = [
     [h.s1Title, h.s1Text(money(CERTIFICATE_PRICE))],
     [h.s2Title, h.s2Text],
@@ -48,6 +66,8 @@ export default async function HomePage() {
             {lines.map((line, i) => (
               <span key={i} className={i === lines.length - 1 ? "hero-line hero-accent" : "hero-line"}>
                 {line}
+                {/* A real space, so copied text and search engines read "səviyyəniz. Sizin". */}
+                {i < lines.length - 1 && " "}
               </span>
             ))}
           </h1>
@@ -89,18 +109,38 @@ export default async function HomePage() {
           <p className="muted">{h.levelsLead}</p>
         </header>
         <div className="level-cards">
-          {LEVELS.map((l) => (
-            <Link key={l} href={`/lessons?level=${l}`} className={`level-card lvl-${l}`}>
-              <span className="level-card-code">{l}</span>
-              <span className="level-card-name" lang="en">
-                {LEVEL_NAME[l]}
-              </span>
-              <span className="level-card-price">
-                {h.lesson} {money(LESSON_PRICE[l])} · {t.lessons.wholeLevel} {money(LEVEL_PRICE[l])}
-              </span>
-              <span className="level-card-cta">{h.levelCta} →</span>
-            </Link>
-          ))}
+          {LEVELS.map((l) => {
+            const saving = levelSaving(l, counts.get(l) ?? 0);
+            return (
+              <Link key={l} href={`/lessons?level=${l}`} className={`level-card lvl-${l}`}>
+                <span className="level-card-code">{l}</span>
+                <span className="level-card-name" lang="en">
+                  {LEVEL_NAME[l]}
+                </span>
+                <span className="level-card-price">
+                  <strong>{money(LEVEL_PRICE[l])}</strong>
+                  <small>{t.lessons.wholeLevel}</small>
+                </span>
+                <span className="level-card-or">{h.levelOr(money(LESSON_PRICE[l]))}</span>
+                {saving && <span className="level-card-save">{h.levelSave(saving)}</span>}
+                <span className="level-card-cta">{h.levelCta} →</span>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="home-section home-cert">
+        <div className="home-cert-copy">
+          <span className="kicker">{h.certKicker}</span>
+          <h2>{h.certTitle}</h2>
+          <p className="muted">{h.certText}</p>
+          <Link href="/test" className="btn gold">
+            {h.certCta} →
+          </Link>
+        </div>
+        <div className="home-cert-sample">
+          <CertificateCard name="Your Name" level="B2" issued={today} code="SPK-B2-SAMPLE" verifyUrl={`${host}/certificate`} sample />
         </div>
       </section>
 
@@ -117,7 +157,14 @@ export default async function HomePage() {
               </span>
               <h3>{title}</h3>
               <p>{text}</p>
-              <span className="service-more">{h.more} →</span>
+              {serviceLinks[i] === "/practice" ? (
+                <>
+                  <span className="service-price">{h.clubPrice(money(PRACTICE_PRICE), PRACTICE_MINUTES)}</span>
+                  <span className="btn small service-btn">{h.clubCta} →</span>
+                </>
+              ) : (
+                <span className="service-more">{h.more} →</span>
+              )}
             </Link>
           ))}
         </div>
