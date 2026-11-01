@@ -3,9 +3,10 @@ import type { Dictionary } from "./az";
 const en: Dictionary = {
   langName: "English",
   meta: {
-    description: "Speak English with a tutor at your level: level test, live speaking classes and grammar lessons.",
+    description: "Free English level test (A1–C2), an online certificate with your name, AI video teacher lessons and a speaking club.",
   },
   nav: {
+    menu: "Menu",
     test: "Level test",
     aiTeachers: "AI Teachers",
     tutors: "Tutors",
@@ -22,6 +23,8 @@ const en: Dictionary = {
     language: "Language",
   },
   footer: {
+    contact: "Contact",
+    whatsapp: "Message us on WhatsApp",
     tagline: "An AI-supported English platform: level test, video lessons and live speaking practice.",
     learn: "Learn",
     account: "Account",
@@ -80,9 +83,17 @@ const en: Dictionary = {
     s2Title: "Certificate",
     s2Text: "Get an online certificate with your full name.",
     s3Title: "Lessons",
-    s3Text: "Grow at your level with AI video lessons and free exercises.",
+    s3Text: "Grow your level with AI video lessons and practice tests.",
     s4Title: "Speaking club",
     s4Text: "Join the Speaking club to improve your speaking.",
+    levelOr: (price: string) => `or ${price} per lesson`,
+    levelSave: (pct: number) => `Save ${pct}%`,
+    clubPrice: (price: string, min: number) => `${price} · ${min} minutes`,
+    clubCta: "Book a slot",
+    certKicker: "Online certificate",
+    certTitle: "Your certificate will look like this",
+    certText: "After the test you can get a PDF certificate with your name, level, date and a unique ID. The QR code proves it is genuine.",
+    certCta: "Start the test",
   },
   auth: {
     loginTitle: "Sign in",

@@ -33,6 +33,13 @@ export const LEVEL_PRICE: Record<Level, number> = {
   C2: 40,
 };
 
+/** Percent saved by buying the whole level instead of each of its `lessons` one by one; null if nothing is saved. */
+export function levelSaving(level: Level, lessons: number): number | null {
+  const separately = lessons * LESSON_PRICE[level];
+  const pct = separately > 0 ? Math.round((1 - LEVEL_PRICE[level] / separately) * 100) : 0;
+  return pct > 0 ? pct : null;
+}
+
 /** A whole level is paid as a "lesson" payment whose ref_id is "level:A1". */
 export function levelPurchaseRef(level: Level) {
   return `level:${level}`;

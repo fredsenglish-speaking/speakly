@@ -112,7 +112,7 @@ main { padding-block: 40px 80px; display: grid; gap: 28px; }
 .btn.small { padding: 6px 14px; font-size: 14px; }
 .btn.ghost { background: none; color: var(--ink); border: 1px solid var(--gold); }
 .btn.gold { background: linear-gradient(135deg, var(--gold-hi), var(--gold)); color: #241803; }
-.bar .btn:not(.ghost) { background: linear-gradient(135deg, var(--gold-hi), var(--gold)); color: var(--ink); }
+.bar .btn:not(.ghost) { background: linear-gradient(135deg, #e6c27a, #d6aa59); color: #172b50; }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
 .price { font-variant-numeric: tabular-nums; font-weight: 700; }
 .total { font-size: 22px; }
@@ -778,7 +778,7 @@ a.club-level:hover { border-color: #d6aa59; }
 /* Shared: active menu item, footer, entrance animation */
 .nav a[aria-current="page"] { color: #fff; box-shadow: inset 0 -2px 0 #d6aa59; border-radius: 0; }
 .site-footer { margin-top: 20px; color: #c5cada; background: linear-gradient(180deg, #172b50, #0f1e3a); border-top: 1px solid rgba(214, 170, 89, 0.45); }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 28px; padding-block: 44px 28px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 28px; padding-block: 44px 28px; }
 .footer-brand { display: grid; gap: 12px; align-content: start; }
 .footer-brand p { margin: 0; max-width: 36ch; font-size: 14px; line-height: 1.55; }
 .site-footer nav { display: grid; gap: 8px; align-content: start; }
@@ -804,7 +804,7 @@ main > *:nth-child(n + 4) { animation-delay: 0.18s; }
   .nav { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: -16px; padding-right: 16px; -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); }
   .nav::-webkit-scrollbar { display: none; }
   .nav a { flex: none; }
-  .footer-grid { grid-template-columns: 1fr 1fr; padding-block: 32px 20px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; grid-auto-flow: row; padding-block: 32px 20px; }
   .footer-brand { grid-column: 1 / -1; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -818,3 +818,58 @@ main > *:nth-child(n + 4) { animation-delay: 0.18s; }
 .order-status.pending { background: rgba(214, 170, 89, 0.2); color: #8a6420; }
 .order-status.paid { background: rgba(46, 125, 50, 0.14); color: #1f6b2a; }
 .order-status.failed, .order-status.refunded { background: rgba(190, 30, 45, 0.12); color: #9b1c2a; }
+
+/* ---- Home page polish (2026-11-01, Ms Jane's review list) ---- */
+/* Abbreviations background about a third fainter. */
+body::after { opacity: 0.65; }
+/* Hero: more room under the sticky header; the photo's floating level tiles fade out before the title. */
+@media (min-width: 721px) { .hero-copy { padding-top: 92px; } }
+.hero-photo { -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, 0.35) 28%, #000 48%); mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, 0.35) 28%, #000 48%); }
+/* Level cards: calmer colours mixed into the navy, gold edge, prices and "See lessons" lined up at the bottom. */
+.level-card { display: flex; flex-direction: column; gap: 4px; background: linear-gradient(165deg, color-mix(in srgb, var(--lc) 55%, #172b50 45%), color-mix(in srgb, var(--lc) 30%, #0f1e3a 70%)); box-shadow: 0 16px 30px -20px rgba(15, 30, 58, 0.8), inset 0 0 0 1px rgba(214, 170, 89, 0.35); }
+.level-card-name { min-height: 2.6em; line-height: 1.3; }
+.level-card-price { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; margin-top: 4px; font-size: 13px; opacity: 1; }
+.level-card-price strong { font-family: var(--display); font-size: 30px; line-height: 1; color: #f6e2b5; font-variant-numeric: lining-nums; }
+.level-card-price small { font-size: 12px; opacity: 0.85; }
+.level-card-or { font-size: 12.5px; opacity: 0.8; }
+.level-card-save { align-self: flex-start; margin-top: 4px; padding: 2px 9px; border-radius: 999px; background: rgba(214, 170, 89, 0.22); border: 1px solid rgba(214, 170, 89, 0.6); color: #f6e2b5; font-size: 11.5px; font-weight: 700; }
+.level-card-cta { margin-top: auto; padding-top: 12px; }
+/* Speaking club card: price and a booking button. */
+.service-card { display: flex; flex-direction: column; }
+.service-card .service-more { margin-top: auto; }
+.service-price { margin-top: auto; font-weight: 700; color: var(--ink); }
+.service-btn { align-self: flex-start; }
+/* Sample certificate on the home page. */
+.home-cert { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 32px; align-items: center; padding: 32px; border-radius: 24px; background: linear-gradient(180deg, #172b50, #10203f); color: #fff; border: 1px solid rgba(214, 170, 89, 0.5); box-shadow: var(--shadow); }
+.home-cert-copy { display: grid; gap: 14px; justify-items: start; }
+.home-cert-copy h2 { color: #fff; }
+.home-cert-copy .kicker { color: #d6aa59; }
+.home-cert-copy .muted { color: rgba(255, 255, 255, 0.8); }
+.home-cert-sample { min-width: 0; }
+.home-cert-sample .certificate { margin: 0; }
+@media (max-width: 860px) { .home-cert { grid-template-columns: 1fr; padding: 22px 16px; } }
+.footer-wa { display: inline-flex; align-items: center; gap: 8px; }
+
+/* Header: one row on wide screens: logo | menu | AZ EN RU | Sign in | Sign up. */
+.nav-toggle, .nav-extra { display: none; }
+@media (min-width: 1180px) {
+  .bar .wrap { max-width: 1240px; flex-wrap: nowrap; padding-block: 8px; }
+  .nav { order: 2; flex: 1 1 auto; flex-basis: auto; min-width: 0; justify-content: center; border-top: 0; padding-top: 0; margin-left: 8px; gap: 2px; }
+  .nav a { padding: 8px 8px; font-size: 12.5px; letter-spacing: 0.04em; white-space: nowrap; }
+  .bar .wrap > .row { order: 3; margin-left: 0; flex: none; flex-wrap: nowrap; }
+}
+/* Phones: logo | Sign up (or avatar) | ☰; the menu opens as a list under the header. */
+@media (max-width: 720px) {
+  .bar .bar-desktop { display: none; }
+  .bar .wrap { flex-wrap: wrap; padding-block: 8px; }
+  .bar .wrap > .row { margin-left: auto; gap: 8px; }
+  .nav-toggle { display: inline-grid; place-items: center; order: 3; width: 42px; height: 42px; border-radius: 12px; border: 1px solid rgba(214, 170, 89, 0.55); background: rgba(255, 255, 255, 0.06); color: #f6efdf; font-size: 20px; line-height: 1; }
+  .nav { order: 4; display: none; flex-direction: column; flex-wrap: nowrap; overflow: visible; margin: 0; padding: 8px 0 6px; -webkit-mask-image: none; mask-image: none; }
+  .nav.open { display: flex; }
+  .nav a { padding: 12px 4px; font-size: 15px; border-bottom: 1px solid rgba(214, 170, 89, 0.15); }
+  .nav a[aria-current="page"] { box-shadow: inset 3px 0 0 #d6aa59; padding-left: 12px; }
+  .nav-extra { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; }
+  /* Hero buttons full width. */
+  .hero-actions { width: 100%; max-width: none; }
+  .hero-actions .btn { flex: 1 1 100%; justify-content: center; text-align: center; }
+}

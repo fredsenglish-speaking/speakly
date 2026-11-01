@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { bakuLocalToIso, levelForAnswers, levelForScore, shortName, topicTitle } from "./levels.ts";
+import { bakuLocalToIso, levelForAnswers, levelForScore, levelSaving, shortName, topicTitle } from "./levels.ts";
 
 test("levelForScore bands for a 24 question test", () => {
   assert.equal(levelForScore(0, 24), "A1");
@@ -64,4 +64,11 @@ test("topicTitle picks the visitor's language", () => {
   assert.equal(topicTitle(t, "az"), "Ailə");
   assert.equal(topicTitle(t, "en"), "Family");
   assert.equal(topicTitle(t, "ru"), "Семья");
+});
+
+test("whole level saving: 12 lessons of A1 at $3 vs $30 saves 17%; nothing to save gives null", () => {
+  assert.equal(levelSaving("A1", 12), 17);
+  assert.equal(levelSaving("C2", 6), 17);
+  assert.equal(levelSaving("A1", 10), null);
+  assert.equal(levelSaving("A1", 0), null);
 });

@@ -24,6 +24,7 @@ export async function Header() {
           <img src="/logo-light.png" alt="Speakly" className="logo-img" width={152} height={52} />
         </Link>
         <NavLinks
+          menuLabel={t.nav.menu}
           links={[
             ["/test", t.nav.test],
             ["/ai-teachers", t.nav.aiTeachers],
@@ -35,9 +36,29 @@ export async function Header() {
             ...(isTutor ? [["/tutor", t.nav.tutorPanel] as [string, string]] : []),
             ...(user?.role === "admin" ? [["/admin", t.nav.admin] as [string, string]] : []),
           ]}
-        />
-        <div className="row">
+        >
+          {/* Phones only: the menu also holds the languages and sign in / out. */}
           <form action={setLanguage} className="langs" aria-label={t.nav.language}>
+            {LOCALES.map((l) => (
+              <button key={l} type="submit" name="locale" value={l} aria-pressed={l === locale}>
+                {l.toUpperCase()}
+              </button>
+            ))}
+          </form>
+          {user ? (
+            <form action={signOut}>
+              <button className="btn ghost small" type="submit">
+                {t.nav.signOut}
+              </button>
+            </form>
+          ) : (
+            <Link href="/login" className="btn ghost small">
+              {t.nav.signIn}
+            </Link>
+          )}
+        </NavLinks>
+        <div className="row">
+          <form action={setLanguage} className="langs bar-desktop" aria-label={t.nav.language}>
             {LOCALES.map((l) => (
               <button
                 key={l}
@@ -57,7 +78,7 @@ export async function Header() {
               <Avatar name={user.full_name} url={user.avatar_url} size={34} online />
               <span className="me-name">{user.full_name}</span>
             </Link>
-            <form action={signOut}>
+            <form action={signOut} className="bar-desktop">
               <button className="btn ghost small" type="submit">
                 {t.nav.signOut}
               </button>
@@ -66,7 +87,7 @@ export async function Header() {
             </>
           ) : (
             <>
-              <Link href="/login" className="btn ghost small">
+              <Link href="/login" className="btn ghost small bar-desktop">
                 {t.nav.signIn}
               </Link>
               <Link href="/signup" className="btn small">
