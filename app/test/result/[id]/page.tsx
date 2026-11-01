@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { requireUser } from "@/lib/auth";
 import { CertificateCard } from "@/components/CertificateCard";
-import { CERTIFICATE_PRICE, LEVEL_NAME, isLevel, money } from "@/lib/levels";
+import { LEVEL_NAME, isLevel } from "@/lib/levels";
 import { LevelLadder } from "@/components/LevelLadder";
 import { siteHost } from "@/lib/siteHost";
 import { createClient } from "@/lib/supabase/server";
@@ -49,7 +49,8 @@ export default async function ResultPage({ params }: { params: Promise<{ id: str
     timeZone: "Asia/Baku",
   }).format(new Date());
 
-  const buyLabel = `${t.test.buyCertificate} — ${money(CERTIFICATE_PRICE)}`;
+  // No price on the button (Ms Jane): the $7 shows on the WhatsApp order page.
+  const buyLabel = t.test.buyCertificate;
   const getCertificate = order ? (
     <div className="tx-order stack">
       <p>{t.test.orderPending(paymentCode(order.id))}</p>

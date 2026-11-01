@@ -200,7 +200,7 @@ const en: Dictionary = {
     orderPending: (code: string) => `Your order (No. ${code}) has been created and is waiting for the admin to confirm it. As soon as the payment is confirmed, the certificate without SAMPLE opens.`,
     openOrder: "Open the order and the WhatsApp message",
     nextSteps: "Next steps",
-    buyCertificate: "Get your certificate",
+    buyCertificate: "Get the PDF",
     sampleNote: "Your certificate will look like this. After payment you can download it as a PDF without the “SAMPLE” mark.",
   },
   cert: {
