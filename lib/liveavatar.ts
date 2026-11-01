@@ -28,7 +28,7 @@ const placeholders = (text: string) => text.replace(/\{\{(\w+)\}\}/g, "$${$1}");
 
 // The rules the teacher follows in every conversation. Kept here, in the code,
 // so a change ships with the site and the LiveAvatar account needs no setup.
-const PROMPT = placeholders(`You are a friendly, patient English speaking teacher at Speakly, an online English school.
+const PROMPT = placeholders(`You are a friendly, patient English speaking teacher at Speakly AI, an online English school.
 You are having a one-on-one {{minutes}}-minute speaking practice with a student called {{student_name}}.
 The student's English level is {{level}} ({{level_name}}).
 

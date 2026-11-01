@@ -63,7 +63,7 @@ const en: Dictionary = {
     levelsTitle: "From A1 to C2, step by step",
     levelsLead: "Video lessons, vocabulary and tests at every level. Buy one lesson at a time or the whole level.",
     levelCta: "See lessons",
-    servicesKicker: "Why Speakly?",
+    servicesKicker: "Why Speakly AI?",
     servicesTitle: "Better English, wider opportunities",
     services: [
       ["Level test and certificate", "Find out your level with a free test. You see the result straight away and can get an online certificate with your full name."],
@@ -216,8 +216,8 @@ const en: Dictionary = {
   },
   cert: {
     title: "Certificate",
-    verified: "This certificate is genuine: issued by Speakly.",
-    heading: "Speakly · Level certificate",
+    verified: "This certificate is genuine: issued by Speakly AI.",
+    heading: "Speakly AI · Level certificate",
     level: "English level",
     issued: "Issued on",
     code: "Verification code",
@@ -429,10 +429,10 @@ const en: Dictionary = {
     waiting: "You have a payment waiting for confirmation:",
     open: "Payment page",
     certMessage: (p: { code: string; name: string; level: string; amount: string }) =>
-      `Hello, I would like to get my Speakly certificate.\nOrder number: ${p.code}\nFull name: ${p.name}\nMy English level: ${p.level}\nCertificate price: ${p.amount}\nPlease send me the payment details.`,
+      `Hello, I would like to get my Speakly AI certificate.\nOrder number: ${p.code}\nFull name: ${p.name}\nMy English level: ${p.level}\nCertificate price: ${p.amount}\nPlease send me the payment details.`,
     certHowTo: "Your order has been created. Press the button below: a ready message opens in WhatsApp, please send it. We will send you the payment details on WhatsApp. As soon as the admin confirms the payment, your certificate opens in your dashboard.",
     message: (p: { kind: string; amount: string; code: string; name: string }) =>
-      `Hello! I would like to pay on Speakly.\nService: ${p.kind}\nAmount: ${p.amount}\nPayment code: ${p.code}\nName: ${p.name}`,
+      `Hello! I would like to pay on Speakly AI.\nService: ${p.kind}\nAmount: ${p.amount}\nPayment code: ${p.code}\nName: ${p.name}`,
   },
   library: {
     hub: "Free materials",
