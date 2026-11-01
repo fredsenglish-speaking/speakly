@@ -204,7 +204,7 @@ const az = {
     orderPending: (code: string) => `Sifarişiniz (№ ${code}) yaradılıb və admin təsdiqini gözləyir. Ödəniş təsdiqlənən kimi SAMPLE yazısı olmayan sertifikat açılacaq.`,
     openOrder: "Sifarişə və WhatsApp mesajına keçin",
     nextSteps: "Növbəti addımlar",
-    buyCertificate: "Sertifikatı əldə edin",
+    buyCertificate: "PDF əldə edin",
     sampleNote: "Sertifikatınız belə görünəcək. Ödənişdən sonra onu “SAMPLE” yazısı olmadan PDF kimi yükləyə bilərsiniz.",
   },
   cert: {
