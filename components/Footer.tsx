@@ -31,9 +31,10 @@ export async function Footer() {
     <footer className="site-footer">
       <div className="wrap footer-grid">
         <div className="footer-brand">
-          <Link href="/" aria-label="Speakly">
+          <Link href="/" aria-label="Speakly AI" className="logo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo-light.png" alt="Speakly" className="logo-img" width={152} height={52} />
+            <img src="/logo-light.png" alt="Speakly AI" className="logo-img" width={152} height={52} />
+            <span className="logo-ai" aria-hidden="true">AI</span>
           </Link>
           <p>{t.footer.tagline}</p>
         </div>
@@ -62,7 +63,7 @@ export async function Footer() {
         )}
       </div>
       <div className="wrap footer-bottom">
-        © {new Date().getFullYear()} Speakly · {t.footer.rights}
+        © {new Date().getFullYear()} Speakly AI · {t.footer.rights}
       </div>
     </footer>
   );

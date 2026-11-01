@@ -9,22 +9,22 @@ import "./globals.css";
 export async function generateMetadata(): Promise<Metadata> {
   const t = DICTIONARIES[await getLocale()];
   const site = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://speakly-jet.vercel.app";
-  const title = `Speakly · ${t.home.title}`;
+  const title = `Speakly AI · ${t.home.title}`;
   return {
     metadataBase: new URL(site),
-    title: { default: title, template: "%s · Speakly" },
+    title: { default: title, template: "%s · Speakly AI" },
     description: t.meta.description,
     // Link previews in WhatsApp, Facebook, Telegram etc.
     openGraph: {
       type: "website",
-      siteName: "Speakly",
+      siteName: "Speakly AI",
       title,
       description: t.meta.description,
-      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Speakly" }],
+      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Speakly AI" }],
     },
     twitter: { card: "summary_large_image", title, description: t.meta.description, images: ["/og-image.jpg"] },
-    applicationName: "Speakly",
-    appleWebApp: { capable: true, title: "Speakly", statusBarStyle: "default" },
+    applicationName: "Speakly AI",
+    appleWebApp: { capable: true, title: "Speakly AI", statusBarStyle: "default" },
     // New file names (not just ?v=) so Safari, which caches tab icons hard, fetches the new logo.
     icons: {
       icon: [

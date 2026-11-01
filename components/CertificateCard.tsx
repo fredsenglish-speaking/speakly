@@ -26,7 +26,7 @@ function Laurel({ flip = false }: { flip?: boolean }) {
   );
 }
 
-/** Gold rosette with navy ribbons and the Speakly name. */
+/** Gold rosette with navy ribbons and the Speakly AI name. */
 function Seal() {
   const points = 28;
   const d = Array.from({ length: points * 2 }, (_, i) => {
@@ -49,8 +49,8 @@ function Seal() {
       <circle cx="60" cy="52" r="38" fill="none" stroke="#fff4d2" strokeWidth="1.2" opacity="0.8" />
       <circle cx="60" cy="52" r="34" fill="none" stroke="#a87a2c" strokeWidth="0.8" />
       <path d="M46 40 q7 -4 14 0 q7 -4 14 0 v12 q-7 -3 -14 0 q-7 -3 -14 0 Z M60 40 v12" fill="none" stroke="#7a5518" strokeWidth="1.4" />
-      <text x="60" y="68" textAnchor="middle" fontFamily="EB Garamond, Georgia, serif" fontWeight="700" fontSize="13" fill="#3d2a0c">
-        Speakly
+      <text x="60" y="68" textAnchor="middle" fontFamily="EB Garamond, Georgia, serif" fontWeight="700" fontSize="11" fill="#3d2a0c">
+        Speakly AI
       </text>
     </svg>
   );
@@ -126,7 +126,10 @@ export async function CertificateCard({
 
         <div className="cert-inner">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-dark.png" alt="Speakly" className="cert-logo" />
+          <span className="cert-logo-row">
+            <img src="/logo-dark.png" alt="Speakly AI" className="cert-logo" />
+            <span className="cert-logo-ai">AI</span>
+          </span>
           <p className="cert-platform">
             <span>English Learning Platform</span>
           </p>
@@ -134,7 +137,7 @@ export async function CertificateCard({
           <div className="cert-heading">
             <Laurel />
             <h1 className="cert-title">
-              Speakly English Level
+              Speakly AI English Level
               <br />
               Certificate
             </h1>
@@ -149,7 +152,7 @@ export async function CertificateCard({
           <p className="cert-lead">This is to certify that</p>
           <p className="cert-name">{latinName(name)}</p>
           <p className="cert-lead">
-            has successfully completed the Speakly English Level Test
+            has successfully completed the Speakly AI English Level Test
             <br />
             and has been assessed at the
           </p>
@@ -163,8 +166,8 @@ export async function CertificateCard({
 
           <div className="cert-foot">
             <div className="cert-signature">
-              <span className="cert-sign">Speakly</span>
-              <b>Speakly Team</b>
+              <span className="cert-sign">Speakly <span className="cert-sign-ai">AI</span></span>
+              <b>Speakly AI Team</b>
               <span>English Learning Platform</span>
             </div>
             <Seal />

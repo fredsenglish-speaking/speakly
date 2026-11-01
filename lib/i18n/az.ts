@@ -67,7 +67,7 @@ const az = {
     levelsTitle: "A1-dən C2-yə qədər addım-addım",
     levelsLead: "Hər səviyyədə video dərslər, söz ehtiyatı və testlər. Dərsi tək-tək və ya bütün səviyyəni birlikdə alın.",
     levelCta: "Dərslərə baxın",
-    servicesKicker: "Niyə Speakly?",
+    servicesKicker: "Niyə Speakly AI?",
     servicesTitle: "Daha yaxşı ingilis dili, daha geniş imkanlar",
     services: [
       ["Səviyyə testi və sertifikat", "Ödənişsiz testlə səviyyənizi öyrənin. Nəticə dərhal göstərilir, istəsəniz ad və soyadınız yazılmış onlayn sertifikat alın."],
@@ -220,8 +220,8 @@ const az = {
   },
   cert: {
     title: "Sertifikat",
-    verified: "Bu sertifikat həqiqidir: Speakly tərəfindən verilib.",
-    heading: "Speakly · Səviyyə sertifikatı",
+    verified: "Bu sertifikat həqiqidir: Speakly AI tərəfindən verilib.",
+    heading: "Speakly AI · Səviyyə sertifikatı",
     level: "İngilis dili səviyyəsi",
     issued: "Verilmə tarixi",
     code: "Yoxlama kodu",
@@ -433,10 +433,10 @@ const az = {
     waiting: "Təsdiq gözləyən ödənişiniz var:",
     open: "Ödəniş səhifəsi",
     certMessage: (p: { code: string; name: string; level: string; amount: string }) =>
-      `Salam, Speakly sertifikatımı əldə etmək istəyirəm.\nSifariş nömrəsi: ${p.code}\nAd və soyad: ${p.name}\nİngilis dili səviyyəm: ${p.level}\nSertifikat qiyməti: ${p.amount}\nZəhmət olmasa, ödəniş məlumatlarını göndərin.`,
+      `Salam, Speakly AI sertifikatımı əldə etmək istəyirəm.\nSifariş nömrəsi: ${p.code}\nAd və soyad: ${p.name}\nİngilis dili səviyyəm: ${p.level}\nSertifikat qiyməti: ${p.amount}\nZəhmət olmasa, ödəniş məlumatlarını göndərin.`,
     certHowTo: "Sifarişiniz yaradıldı. Aşağıdakı düyməni basın: WhatsApp-da hazır mesaj açılacaq, onu göndərin. Ödəniş məlumatlarını sizə WhatsApp-da yazacağıq. Admin ödənişi təsdiqləyən kimi sertifikatınız «Şəxsi kabinet»də açılacaq.",
     message: (p: { kind: string; amount: string; code: string; name: string }) =>
-      `Salam! Speakly-də ödəniş etmək istəyirəm.\nXidmət: ${p.kind}\nMəbləğ: ${p.amount}\nÖdəniş kodu: ${p.code}\nAd: ${p.name}`,
+      `Salam! Speakly AI-da ödəniş etmək istəyirəm.\nXidmət: ${p.kind}\nMəbləğ: ${p.amount}\nÖdəniş kodu: ${p.code}\nAd: ${p.name}`,
   },
   library: {
     hub: "Ödənişsiz materiallar",
