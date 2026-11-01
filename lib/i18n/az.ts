@@ -622,6 +622,7 @@ const az = {
   },
 
   admin: {
+    revenueSince: (d: string) => `Gəlirlər ${d}-dan sonra təsdiqlənən ödənişlərə görə hesablanır (əvvəlkilər test idi).`,
     orders: {
       link: "Sertifikat sifarişləri",
       title: "Sertifikat sifarişləri",
