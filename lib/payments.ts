@@ -1,6 +1,7 @@
 import "server-only";
 import { randomBytes } from "node:crypto";
 import { levelFromPurchaseRef } from "./levels";
+import { resolvePaymentProvider } from "./paymentMode";
 import { createAdminClient } from "./supabase/admin";
 
 export type PaymentKind = "test" | "certificate" | "booking" | "lesson" | "practice" | "ai_chat";
@@ -24,14 +25,15 @@ export function hasFreeAccess(freeAccess: string[] | null | undefined, kind: Pay
 }
 
 export function paymentProvider() {
-  return process.env.PAYMENT_PROVIDER?.trim() || "mock";
+  return resolvePaymentProvider(process.env.PAYMENT_PROVIDER, process.env.VERCEL_ENV);
 }
 
 /**
  * Starts a payment and returns where to send the user next.
  *
  * With PAYMENT_PROVIDER=mock the payment is marked paid straight away, so the
- * whole site can be tested without a bank. With PAYMENT_PROVIDER=whatsapp the
+ * whole site can be tested without a bank (never on the live site, see
+ * lib/paymentMode.ts). With PAYMENT_PROVIDER=whatsapp the
  * student is sent to /pay/<id>, writes to the school on WhatsApp, and the
  * admin confirms the payment by hand in /admin (which calls `markPaid`).
  */

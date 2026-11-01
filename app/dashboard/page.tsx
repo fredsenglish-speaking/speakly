@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { paymentCode } from "@/lib/whatsapp";
+import { SHOW_LIVE_TUTORS } from "@/lib/features";
 import { LevelChip } from "@/components/LevelChip";
 import { PendingPayments } from "@/components/PendingPayments";
 import { requireUser } from "@/lib/auth";
@@ -48,7 +50,7 @@ export default async function DashboardPage() {
   const d = t.dashboard;
   const supabase = await createClient();
 
-  const [{ data: bookingRows }, { data: lessons }, { data: owned }, { data: certs }, { data: resultRows }, { data: attemptRows }, { data: teacherRows }] =
+  const [{ data: bookingRows }, { data: lessons }, { data: owned }, { data: certs }, { data: resultRows }, { data: attemptRows }, { data: teacherRows }, { data: certOrders }] =
     await Promise.all([
       supabase
         .from("bookings")
@@ -68,6 +70,8 @@ export default async function DashboardPage() {
         .order("finished_at", { ascending: false })
         .limit(5),
       supabase.from("level_teachers").select(LEVEL_TEACHER_COLUMNS),
+      // Certificate orders still waiting for the admin's confirmation.
+      supabase.from("payments").select("id").eq("user_id", user.id).eq("kind", "certificate").eq("status", "pending"),
     ]);
   const bookings = (bookingRows ?? []) as unknown as Booking[];
   const allLessons = lessons ?? [];
@@ -251,6 +255,7 @@ export default async function DashboardPage() {
         </div>
       </section>
 
+      {(SHOW_LIVE_TUTORS || bookings.length > 0) && (
       <section className="stack">
         <h2>{d.classesTitle}</h2>
       {bookings.length === 0 && (
@@ -315,6 +320,19 @@ export default async function DashboardPage() {
       })}
 
       </section>
+      )}
+
+      {(certOrders ?? []).length > 0 && (
+        <div className="panel stack">
+          <h3>{t.dashboard.certificates}</h3>
+          {certOrders!.map((o) => (
+            <p key={o.id} className="row between" style={{ gap: 10 }}>
+              <span>{t.test.orderPending(paymentCode(o.id))}</span>
+              <Link href={`/pay/${o.id}`} className="btn small">{t.pay.open}</Link>
+            </p>
+          ))}
+        </div>
+      )}
 
       {(certs ?? []).length > 0 && (
         <div className="panel stack">

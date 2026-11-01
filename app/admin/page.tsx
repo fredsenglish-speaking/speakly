@@ -82,6 +82,7 @@ export default async function AdminPage() {
       <div className="row between">
         <h2>{t.admin.title}</h2>
         <div className="row">
+          <Link href="/admin/certificates" className="btn small">🎓 {t.admin.orders.link}</Link>
           <Link href="/admin/users" className="btn ghost small">🔑 {t.admin.users.link}</Link>
           <Link href="/admin/students" className="btn ghost small">👥 {t.admin.students.link}</Link>
           <Link href="/admin/lessons" className="btn ghost small">🎬 {t.admin.videos}</Link>

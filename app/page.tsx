@@ -9,6 +9,8 @@ const ICONS = {
   chat: "M4 5h16v11H9l-5 4V5Zm4 5h.01M12 10h.01M16 10h.01",
   book: "M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1V5Zm9 1v14",
   video: "M3 6h13v12H3V6Zm13 4 5-3v10l-5-3",
+  award: "M12 3a6 6 0 1 1 0 12a6 6 0 0 1 0-12Zm-3.5 10.5L7 21l5-2.5 5 2.5-1.5-7.5",
+  check: "M4 12.5 9.5 18 20 6",
 };
 
 function Icon({ d }: { d: string }) {
@@ -28,10 +30,11 @@ export default async function HomePage() {
     [h.s3Title, h.s3Text],
     [h.s4Title, h.s4Text],
   ];
-  const perkIcons = [ICONS.teacher, ICONS.chart, ICONS.chat, ICONS.book];
-  const perkLinks = ["/ai-teachers", "/test", "/practice", "/exercises"];
-  const serviceIcons = [ICONS.teacher, ICONS.video, ICONS.chat, ICONS.book];
-  const serviceLinks = ["/ai-teachers", "/lessons", "/practice", "/exercises"];
+  // The free level test and the certificate come first; AI teachers are the second service.
+  const perkIcons = [ICONS.chart, ICONS.award, ICONS.teacher, ICONS.chat];
+  const perkLinks = ["/test", "/test", "/ai-teachers", "/practice"];
+  const serviceIcons = [ICONS.award, ICONS.teacher, ICONS.chat, ICONS.book];
+  const serviceLinks = ["/test", "/ai-teachers", "/practice", "/exercises"];
   // One sentence per line; the last one in gold: "Your level." / "Your AI teacher." / "<gold>Your learning pace.</gold>"
   const lines = h.title.split(/(?<=\.)\s+/);
 
@@ -49,6 +52,14 @@ export default async function HomePage() {
             ))}
           </h1>
           <p className="hero-lead">{h.lead}</p>
+          <ul className="hero-points">
+            {h.heroPoints(money(CERTIFICATE_PRICE)).map((p) => (
+              <li key={p}>
+                <span className="hero-point-icon"><Icon d={ICONS.check} /></span>
+                {p}
+              </li>
+            ))}
+          </ul>
           <div className="row hero-actions">
             <Link href="/test" className="btn gold hero-cta">
               {h.heroCta} <span aria-hidden="true">→</span>

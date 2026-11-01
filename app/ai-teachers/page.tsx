@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SHOW_LIVE_TUTORS } from "@/lib/features";
 import { getCurrentUser } from "@/lib/auth";
 import { LEVEL_NAME, LEVELS, isLevel, type Level } from "@/lib/levels";
 import { createClient } from "@/lib/supabase/server";
@@ -97,6 +98,7 @@ export default async function AiTeachersPage({ searchParams }: { searchParams: P
         </div>
       </section>
 
+      {SHOW_LIVE_TUTORS && (
       <section className="panel ai-live">
         <div className="stack" style={{ gap: 6 }}>
           <h2>{a.liveTitle}</h2>
@@ -106,6 +108,7 @@ export default async function AiTeachersPage({ searchParams }: { searchParams: P
           {a.liveCta} →
         </Link>
       </section>
+      )}
     </>
   );
 }
