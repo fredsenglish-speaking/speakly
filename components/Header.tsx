@@ -21,7 +21,8 @@ export async function Header() {
       <div className="wrap">
         <Link href="/" className="logo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-light.png" alt="Speakly" className="logo-img" width={152} height={52} />
+          <img src="/logo-light.png" alt="Speakly AI" className="logo-img" width={152} height={52} />
+          <span className="logo-ai" aria-hidden="true">AI</span>
         </Link>
         <NavLinks
           menuLabel={t.nav.menu}

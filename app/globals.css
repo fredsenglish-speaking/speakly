@@ -873,3 +873,13 @@ body::after { opacity: 0.65; }
   .hero-actions { width: 100%; max-width: none; }
   .hero-actions .btn { flex: 1 1 100%; justify-content: center; text-align: center; }
 }
+
+/* "Speakly AI" (2026-11-01): the logo image says "Speakly", a gold AI tag follows it. */
+.logo { gap: 8px; text-decoration: none; }
+.logo-ai { display: inline-grid; place-items: center; padding: 3px 8px; border-radius: 8px; background: linear-gradient(135deg, #e6c27a, #d6aa59); color: #172b50; font-family: var(--body); font-size: 15px; font-weight: 800; letter-spacing: 0.06em; line-height: 1; }
+@media (max-width: 720px) { .logo-ai { font-size: 12px; padding: 3px 6px; } }
+.site-footer .logo { display: inline-flex; align-items: center; }
+.cert-logo-row { display: flex; align-items: center; justify-content: center; gap: 0.8cqw; }
+.cert-logo-row .cert-logo { margin-inline: 0; }
+.cert-logo-ai { padding: 0.35cqw 0.8cqw; border-radius: 0.6cqw; background: linear-gradient(135deg, #e6c27a, #d6aa59); color: #172b50; font-family: "Source Sans 3", sans-serif; font-size: 1.9cqw; font-weight: 800; letter-spacing: 0.06em; line-height: 1; }
+.cert-sign-ai { font-family: "EB Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 0.62em; letter-spacing: 0.04em; }

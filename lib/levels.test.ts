@@ -72,3 +72,10 @@ test("whole level saving: 12 lessons of A1 at $3 vs $30 saves 17%; nothing to sa
   assert.equal(levelSaving("A1", 10), null);
   assert.equal(levelSaving("A1", 0), null);
 });
+
+test("60 question test: a level passes with 6 of 10 right, 5 of 10 stops there", () => {
+  const level = (l: string, right: number) => Array.from({ length: 10 }, (_, i) => ({ level: l, correct: i < right }));
+  assert.equal(levelForAnswers([...level("A1", 10), ...level("A2", 6), ...level("B1", 5), ...level("B2", 10)]), "A2");
+  assert.equal(levelForAnswers([...level("A1", 5), ...level("A2", 10)]), "A1");
+  assert.equal(levelForAnswers(["A1", "A2", "B1", "B2", "C1", "C2"].flatMap((l) => level(l, 6))), "C2");
+});
