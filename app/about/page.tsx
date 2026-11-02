@@ -6,7 +6,12 @@ import { whatsappDigits } from "@/lib/whatsapp";
 
 export async function generateMetadata() {
   const a = DICTIONARIES[await getLocale()].about;
-  return { title: a.nav, description: a.lead };
+  return {
+    title: a.seoTitle,
+    description: a.seoDescription,
+    alternates: { canonical: "/about" },
+    openGraph: { title: `${a.seoTitle} | Speakly AI`, description: a.seoDescription, url: "/about" },
+  };
 }
 
 const ICONS = [
@@ -15,9 +20,10 @@ const ICONS = [
   "M3 6h13v12H3V6Zm13 4 5-3v10l-5-3", // video lessons
   "M4 5h16v11H9l-5 4V5Zm4 5h.01M12 10h.01M16 10h.01", // speaking club
   "M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1V5Zm9 1v14", // materials
-  "M12 3a5 5 0 0 1 5 5v1a5 5 0 0 1-10 0V8a5 5 0 0 1 5-5Zm-7 18a7 7 0 0 1 14 0", // account
 ];
-const LINKS = ["/test", "/test", "/lessons", "/practice", "/exercises", "/dashboard"];
+// Same order as about.offers: test, certificate, AI video teachers, lessons, speaking club, free materials.
+const OFFER_ICONS = [ICONS[0], ICONS[1], ICONS[2], "M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Zm0 13a3 3 0 0 1 3-3h11M9 8h6", ICONS[3], ICONS[4]];
+const LINKS = ["/test", "/test", "/ai-teachers", "/lessons", "/practice", "/exercises"];
 
 function Icon({ d }: { d: string }) {
   return (
@@ -57,9 +63,9 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section className="home-section ab-mission">
-        <h2>{a.missionTitle}</h2>
-        {a.mission.map((p) => (
+      <section className="home-section ab-text">
+        <h2>{a.whoTitle}</h2>
+        {a.who.map((p) => (
           <p key={p}>{p}</p>
         ))}
       </section>
@@ -70,48 +76,35 @@ export default async function AboutPage() {
           {offers.map(([title, text], i) => (
             <Link key={title} href={LINKS[i]} className="service-card">
               <span className="service-icon">
-                <Icon d={ICONS[i]} />
+                <Icon d={OFFER_ICONS[i]} />
               </span>
               <h3>{title}</h3>
               <p>{text}</p>
             </Link>
           ))}
         </div>
+        <aside className="ab-cert-note" aria-labelledby="ab-cert-note">
+          <span className="service-icon">
+            <Icon d={ICONS[1]} />
+          </span>
+          <div>
+            <h3 id="ab-cert-note">{a.certNoteTitle}</h3>
+            <p>{a.certNote(money(CERTIFICATE_PRICE))}</p>
+          </div>
+        </aside>
       </section>
 
-      <section className="home-section ab-gains">
-        <h2>{a.gainTitle}</h2>
-        <ul>
-          {a.gains.map((g) => (
-            <li key={g}>
-              <span className="hero-point-icon" aria-hidden="true">
-                <Icon d="M4 12.5 9.5 18 20 6" />
-              </span>
-              {g}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="home-section">
-        <h2>{a.howTitle}</h2>
-        <div className="steps">
-          {a.how.map(([title, text], i) => (
-            <div className="step" key={title}>
-              <b>
-                {t.home.step} {i + 1}
-              </b>
-              <h3>{title}</h3>
-              <p className="small muted">{text}</p>
-            </div>
-          ))}
-        </div>
+      <section className="home-section ab-text">
+        <h2>{a.missionTitle}</h2>
+        {a.mission.map((p) => (
+          <p key={p}>{p}</p>
+        ))}
       </section>
 
       <section className="home-section ab-contact">
         <div>
-          <h2>{a.contactTitle}</h2>
-          <p>{a.contactText}</p>
+          <h2>{a.ctaTitle}</h2>
+          <p>{a.ctaText}</p>
         </div>
         <div className="row">
           <Link href="/test" className="btn gold">
