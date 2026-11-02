@@ -883,3 +883,34 @@ body::after { opacity: 0.65; }
 .cert-logo-row .cert-logo { margin-inline: 0; }
 .cert-logo-ai { padding: 0.35cqw 0.8cqw; border-radius: 0.6cqw; background: linear-gradient(135deg, #e6c27a, #d6aa59); color: #172b50; font-family: "Source Sans 3", sans-serif; font-size: 1.9cqw; font-weight: 800; letter-spacing: 0.06em; line-height: 1; }
 .cert-sign-ai { font-family: "EB Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 0.62em; letter-spacing: 0.04em; }
+
+/* About page (2026-11-02) */
+.ab-hero { position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-top: -40px; color: #fff; background: radial-gradient(60% 80% at 85% 20%, rgba(214, 170, 89, 0.2), transparent 60%), radial-gradient(120% 90% at 0% 0%, #1f3a6b 0%, #172b50 55%, #0f1e3a 100%); }
+.ab-inner { max-width: 1120px; margin: 0 auto; padding: 64px max(20px, env(safe-area-inset-left, 0px)) 48px; display: grid; gap: 18px; justify-items: start; }
+.ab-inner .kicker { color: #d6aa59; }
+.ab-title { max-width: 760px; color: #fff; font-size: clamp(36px, 5vw, 60px); line-height: 1.05; }
+.ab-title::after { display: none; }
+.ab-lead { max-width: 680px; font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, 0.86); }
+.ab-facts { list-style: none; margin: 10px 0 0; padding: 0; width: 100%; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.ab-facts li { display: grid; gap: 4px; padding: 18px; border-radius: 16px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(214, 170, 89, 0.35); }
+.ab-facts strong { font-family: var(--display); font-size: 40px; line-height: 1; color: #d6aa59; font-variant-numeric: lining-nums; }
+.ab-facts span { font-size: 14px; color: rgba(255, 255, 255, 0.8); }
+.ab-mission { display: grid; gap: 12px; max-width: 760px; }
+.ab-mission p { font-size: 17px; line-height: 1.65; color: var(--muted); }
+.ab-offers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.ab-gains ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px; }
+.ab-gains li { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); line-height: 1.5; }
+.ab-gains .hero-point-icon { flex: none; color: var(--gold); }
+.ab-gains .hero-point-icon svg { width: 22px; height: 22px; }
+.ab-contact { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding: 28px; border-radius: 22px; background: linear-gradient(180deg, #172b50, #10203f); color: #fff; border: 1px solid rgba(214, 170, 89, 0.5); }
+.ab-contact h2 { color: #fff; }
+.ab-contact p { color: rgba(255, 255, 255, 0.82); }
+@media (max-width: 860px) {
+  .ab-offers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ab-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .ab-inner { padding-top: 40px; }
+  .ab-offers, .ab-gains ul { grid-template-columns: 1fr; }
+  .ab-contact .row, .ab-contact .btn { width: 100%; justify-content: center; text-align: center; }
+}

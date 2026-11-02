@@ -32,6 +32,7 @@ export async function Header() {
             ["/lessons", t.nav.lessons],
             ["/practice", t.nav.practice],
             ["/exercises", t.nav.exercises],
+            ["/about", t.about.nav],
             ...(SHOW_LIVE_TUTORS ? [["/tutors", t.nav.tutors] as [string, string]] : []),
             ...(user ? [["/dashboard", t.nav.myClasses] as [string, string]] : []),
             ...(isTutor ? [["/tutor", t.nav.tutorPanel] as [string, string]] : []),
