@@ -152,6 +152,7 @@ const ru: Dictionary = {
   footer: {
     contact: "Контакты",
     whatsapp: "Написать в WhatsApp",
+    instagram: "Мы в Instagram",
     tagline: "Платформа английского с поддержкой AI: тест уровня, видеоуроки и живая разговорная практика.",
     learn: "Учиться",
     account: "Аккаунт",
