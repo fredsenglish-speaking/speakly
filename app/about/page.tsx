@@ -105,6 +105,11 @@ export default async function AboutPage() {
         <div>
           <h2>{a.ctaTitle}</h2>
           <p>{a.ctaText}</p>
+          <p>
+            <Link href="/faq" className="ab-faq-link">
+              {t.faq.nav} →
+            </Link>
+          </p>
         </div>
         <div className="row">
           <Link href="/test" className="btn gold">

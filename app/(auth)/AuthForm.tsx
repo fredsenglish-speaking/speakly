@@ -62,6 +62,15 @@ export function AuthForm({ mode, next, teachers = [] }: { mode: "login" | "signu
         </Link>
       )}
       {state.error && <p className="error">{state.error}</p>}
+      {mode === "signup" && (
+        <p className="small muted auth-terms">
+          {t.terms.agreePrefix}{" "}
+          <Link href="/terms" target="_blank">
+            {t.terms.agreeLink}
+          </Link>
+          {t.terms.agreeSuffix}
+        </p>
+      )}
       <SubmitButton className="btn self-start">{mode === "login" ? t.auth.loginButton : t.auth.signupButton}</SubmitButton>
       <p className="small muted">
         {mode === "login" ? (

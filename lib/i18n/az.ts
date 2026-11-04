@@ -67,6 +67,92 @@ const az = {
     ctaTest: "Pulsuz səviyyə testinə başlayın",
     ctaWhatsapp: "WhatsApp-a yazın",
   },
+  terms: {
+    nav: "İstifadə qaydaları",
+    seoTitle: "İstifadə qaydaları",
+    seoDescription: "Speakly AI platformasının istifadə qaydaları: hesab, ödənişlər, sertifikat, geri qaytarma, danışıq klubu qaydaları və şəxsi məlumatlar.",
+    kicker: "Hüquqi məlumat",
+    title: "İstifadə qaydaları",
+    updated: "Son yenilənmə: 4 noyabr 2026",
+    intro: "Bu qaydalar speakly-ai.com saytından və Speakly AI platformasından istifadə qaydalarını izah edir. Saytdan istifadə etməklə və ya qeydiyyatdan keçməklə bu qaydaları qəbul etmiş olursunuz.",
+    sections: (p: { cert: string; club: string; min: number }) =>
+      [
+        ["1. Platforma haqqında", [
+          "Speakly AI ingilis dili öyrənmək üçün onlayn platformadır: səviyyə testi, video dərslər, danışıq klubu və ödənişsiz materiallar.",
+          "Dərslərdəki AI video müəllimlər süni intellektlə əvvəlcədən hazırlanmış videolardır. Onlar canlı insan müəllim deyil və sizinlə real vaxtda danışmırlar.",
+        ]],
+        ["2. Hesab və qeydiyyat", [
+          "Qeydiyyat zamanı düzgün məlumat yazın. Hər şəxs üçün bir hesab nəzərdə tutulub.",
+          "Şifrənizi heç kimlə paylaşmayın. Hesabınızdan edilən əməliyyatlara görə siz məsuliyyət daşıyırsınız.",
+          "18 yaşdan kiçik istifadəçilər platformadan valideynin və ya qəyyumun razılığı ilə istifadə edir.",
+        ]],
+        ["3. Qiymətlər və ödəniş", [
+          "Bütün qiymətlər saytda ABŞ dolları ilə göstərilir. Ödəniş etdiyiniz anda göstərilən qiymət keçərlidir.",
+          "Hazırda ödəniş WhatsApp vasitəsilə qəbul olunur. Ödəniş təsdiqlənəndən sonra dərs, sertifikat və ya danışıq otağı hesabınızda açılır.",
+          "Aldığınız dərslər hesabınızda qalır. Gələcəkdə qiymətlər dəyişsə, artıq aldığınız dərslərə təsir etmir.",
+        ]],
+        ["4. Sertifikat", [
+          `Onlayn səviyyə sertifikatının qiyməti ${p.cert}-dır. Bu sertifikat Speakly AI platformasına aiddir və Speakly AI səviyyə testindəki nəticənizi göstərir.`,
+          "Bu sertifikat IELTS, TOEFL və ya Cambridge kimi beynəlxalq akkreditə olunmuş imtahan sertifikatı deyil.",
+          "Sertifikatda qeydiyyatda yazdığınız ad və soyad göstərilir. Sertifikatın QR kodu ilə onun həqiqi olduğunu saytımızda yoxlamaq olar.",
+        ]],
+        ["5. Geri qaytarma", [
+          "Danışıq klubunda ödəniş etdikdən sonra otaq baş tutmasa və ya yerinizdən imtina etsəniz, pulun qaytarılması üçün bizə WhatsApp-da yazın.",
+          "Açılmış dərs və hazırlanmış sertifikat rəqəmsal məhsuldur, ona görə adətən pulu geri qaytarılmır. Texniki problem olarsa, bizə yazın: araşdırıb həll edəcəyik.",
+        ]],
+        ["6. Danışıq klubunun qaydaları", [
+          `Danışıq ${p.min} dəqiqədir və hər tələbə ${p.club} ödəyir. Partnyorunuz sizinlə eyni səviyyədə olan başqa tələbədir.`,
+          "Partnyorunuza hörmətlə yanaşın. Təhqir, ayrı-seçkilik, uyğunsuz sözlər və görüntülər qadağandır.",
+          "Partnyorunuzun razılığı olmadan söhbəti yazmayın və onun şəxsi məlumatlarını başqaları ilə paylaşmayın.",
+          "Bu qaydaları pozan istifadəçinin hesabı dayandırıla bilər.",
+        ]],
+        ["7. Materiallar və müəllif hüquqları", [
+          "Saytdakı videolar, testlər, dərs mətnləri, loqo və dizayn Speakly AI-yə məxsusdur. Onları icazəsiz kopyalamaq, satmaq və ya yaymaq olmaz.",
+          "Ödənişsiz materiallarda kitab və filmlər üçün yalnız başqa saytlara linklər verilir. O saytların məzmununa görə Speakly AI məsuliyyət daşımır.",
+        ]],
+        ["8. Şəxsi məlumatlar", [
+          "Qeydiyyatda yazdığınız məlumatları (ad, e-poçt, telefon, doğum tarixi, şəhər, məqsəd və s.) yalnız xidmət göstərmək, sizinlə əlaqə saxlamaq və sertifikat hazırlamaq üçün istifadə edirik.",
+          "Məlumatlarınızı satmırıq. Hesabınızı və məlumatlarınızı silmək istəsəniz, bizə WhatsApp-da yazın.",
+        ]],
+        ["9. Məsuliyyət", [
+          "Biz platformanın düzgün işləməsinə çalışırıq, amma texniki işlər və ya problemlər zamanı sayt qısa müddət açılmaya bilər.",
+          "Səviyyə testi və dərslər öyrənməyə kömək edir, amma hər hansı imtahanda müəyyən nəticə əldə edəcəyinizə zəmanət vermir.",
+        ]],
+        ["10. Dəyişikliklər və əlaqə", [
+          "Bu qaydaları yeniləyə bilərik. Yeni versiya bu səhifədə dərc olunduğu gündən qüvvəyə minir.",
+          "Sualınız varsa, bizə WhatsApp-da yazın.",
+        ]],
+      ] as [string, string[]][],
+    agreePrefix: "Qeydiyyatdan keçməklə",
+    agreeLink: "İstifadə qaydalarını",
+    agreeSuffix: " qəbul edirsiniz.",
+  },
+  faq: {
+    nav: "Ən çox verilən suallar",
+    short: "FAQ",
+    seoTitle: "Ən çox verilən suallar",
+    seoDescription: "Speakly AI haqqında suallar və cavablar: ödənişsiz səviyyə testi, $7 sertifikat, dərslər, AI video müəllimlər, danışıq klubu və ödəniş.",
+    kicker: "FAQ",
+    title: "Ən çox verilən suallar",
+    lead: "Burada ən çox soruşulan sualların cavabları var. Cavabını tapmadığınız sual olsa, bizə WhatsApp-da yazın.",
+    items: (p: { cert: string; club: string; min: number; lesson: string; level: string }) =>
+      [
+        ["Səviyyə testi ödənişsizdir?", "Bəli. Test ödənişsizdir: A1-dən C2-yə qədər 60 sualdır və təxminən 25-30 dəqiqə çəkir. Nəticə dərhal göstərilir və hesabınızda saxlanılır."],
+        ["Sertifikat necə alınır və neçəyədir?", `Test bitəndən sonra "PDF əldə edin" düyməsini basın. Sertifikatın qiyməti ${p.cert}-dır, ödəniş WhatsApp vasitəsilə edilir. Ödəniş təsdiqlənəndən sonra PDF sertifikatı yükləyə bilərsiniz.`],
+        ["Sertifikat beynəlxalqdır?", "Xeyr. Bu, Speakly AI platformasının onlayn səviyyə sertifikatıdır. IELTS, TOEFL və ya Cambridge kimi beynəlxalq akkreditə olunmuş imtahan sertifikatı deyil. QR kod ilə onun həqiqi olduğunu saytımızda yoxlamaq olar."],
+        ["AI müəllimlər canlı insandır?", "Xeyr. AI video müəllimlər süni intellektlə əvvəlcədən hazırlanmış izah videolarıdır. Onlar canlı müəllim deyil və sizinlə real vaxtda danışmırlar."],
+        ["Dərslər necə qurulub və neçəyədir?", `Hər dərsdə video izah, məşq testi, 20 yeni söz və 5 phrasal verb, söz testi və yekun test var. Bir dərs ${p.lesson}-dan, bütün səviyyə ${p.level}-dan başlayır.`],
+        ["Aldığım dərs nə qədər açıq qalır?", "Aldığınız dərslər hesabınızda qalır. İstədiyiniz vaxt yenidən baxa və testləri təkrar keçə bilərsiniz."],
+        ["Danışıq klubu necə işləyir?", `Hər gün 09:00-dan 00:00-dək hər 30 dəqiqədən bir otaq var. Vaxt seçib yer tutursunuz, öz səviyyənizdəki başqa tələbə partnyorunuz olur. Mövzunu sistem seçir. Danışıq ${p.min} dəqiqədir və ${p.club}-dır.`],
+        ["Ödənişi necə edirəm?", "Ödəniş səhifəsində WhatsApp düyməsini basın və sifariş nömrənizlə bizə yazın. Ödəniş təsdiqlənəndən sonra aldığınız xidmət hesabınızda açılır."],
+        ["Ödənişsiz materiallar kimə açıqdır?", "Səviyyə testini keçəndən sonra tapşırıqlar, kitablar və filmlər sizin səviyyənizə uyğun açılır."],
+        ["Telefondan istifadə etmək olar?", "Bəli. Sayt telefonda da işləyir. Brauzer menyusundan \"Add to Home Screen\" seçsəniz, Speakly AI telefonunuzda tətbiq kimi açılacaq."],
+        ["Şifrəmi unutmuşam, nə edim?", "Daxil olun səhifəsində \"Şifrəni unutmusunuz?\" linkinə basın və e-poçtunuzu yazın. Gələn linki eyni brauzerdə açıb yeni şifrə qoyun."],
+      ] as [string, string][],
+    homeTitle: "Ən çox verilən suallar",
+    all: "Bütün suallar",
+    moreQuestions: "Başqa sualınız var?",
+  },
   footer: {
     contact: "Əlaqə",
     whatsapp: "WhatsApp-a yazın",

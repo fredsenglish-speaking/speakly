@@ -914,3 +914,35 @@ body::after { opacity: 0.65; }
   .ab-offers { grid-template-columns: 1fr; }
   .ab-contact .row, .ab-contact .btn { width: 100%; justify-content: center; text-align: center; }
 }
+
+/* Terms of use + FAQ (same hero as About) */
+.legal-updated { margin: 0; font-size: 14px; color: #d6aa59; }
+.legal-body { max-width: 820px; display: grid; gap: 14px; }
+.legal-section { display: grid; gap: 8px; padding: 22px 24px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); }
+.legal-section h2 { font-size: 24px; margin: 0; }
+.legal-section h2::after { display: none; }
+.legal-section p { margin: 0; line-height: 1.65; color: var(--muted); }
+.legal-links { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 6px 0 0; font-weight: 600; }
+.faq-list { display: grid; gap: 10px; }
+.faq-item { border-radius: 16px; background: var(--surface); border: 1px solid var(--line); transition: border-color 0.2s; }
+.faq-item[open] { border-color: #d6aa59; }
+.faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary h3 { margin: 0; font-size: 19px; line-height: 1.35; }
+.faq-sign { position: relative; flex: none; width: 28px; height: 28px; border-radius: 50%; border: 1px solid #d6aa59; }
+.faq-sign::before, .faq-sign::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.6px; background: #d6aa59; transform: translate(-50%, -50%); transition: transform 0.2s; }
+.faq-sign::after { transform: translate(-50%, -50%) rotate(90deg); }
+.faq-item[open] .faq-sign::after { transform: translate(-50%, -50%) rotate(0deg); }
+.faq-item p { margin: 0; padding: 0 22px 20px; line-height: 1.65; color: var(--muted); }
+.home-faq { max-width: 820px; display: grid; gap: 16px; }
+.home-faq > .row { justify-content: flex-start; }
+.footer-legal { display: inline-flex; flex-wrap: wrap; gap: 6px 18px; margin-left: 18px; }
+.footer-legal a { color: inherit; }
+.auth-terms a { font-weight: 600; }
+@media (max-width: 720px) {
+  .legal-section { padding: 18px; }
+  .faq-item summary { padding: 16px 18px; }
+  .faq-item p { padding: 0 18px 18px; }
+  .footer-legal { display: flex; margin: 8px 0 0; }
+}
+.ab-faq-link { color: #d6aa59; font-weight: 600; }

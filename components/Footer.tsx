@@ -9,12 +9,13 @@ export async function Footer() {
   const [user, locale] = await Promise.all([getCurrentUser(), getLocale()]);
   const t = DICTIONARIES[locale];
   const learn: [string, string][] = [
+    ["/about", t.about.nav],
     ["/test", t.nav.test],
     ["/ai-teachers", t.nav.aiTeachers],
     ["/lessons", t.nav.lessons],
     ["/practice", t.nav.practice],
     ["/exercises", t.nav.exercises],
-    ["/about", t.about.nav],
+    ["/faq", t.faq.nav],
     ...(SHOW_LIVE_TUTORS ? [["/tutors", t.nav.tutors] as [string, string]] : []),
   ];
   const account: [string, string][] = user
@@ -65,6 +66,10 @@ export async function Footer() {
       </div>
       <div className="wrap footer-bottom">
         © {new Date().getFullYear()} Speakly AI · {t.footer.rights}
+        <span className="footer-legal">
+          <Link href="/terms">{t.terms.nav}</Link>
+          <Link href="/faq">{t.faq.nav}</Link>
+        </span>
       </div>
     </footer>
   );
