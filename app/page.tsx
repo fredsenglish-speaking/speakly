@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { CertificateCard } from "@/components/CertificateCard";
+import { FaqList } from "@/components/FaqList";
+import { priceFacts } from "@/lib/priceFacts";
 import { getT } from "@/lib/i18n/server";
 import { CERTIFICATE_PRICE, LESSON_PRICE, LEVEL_NAME, LEVEL_PRICE, LEVELS, PRACTICE_MINUTES, PRACTICE_PRICE, levelSaving, money, type Level } from "@/lib/levels";
 import { siteHost } from "@/lib/siteHost";
@@ -182,6 +184,16 @@ export default async function HomePage() {
               <p className="small muted">{text}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="home-section home-faq">
+        <h2>{t.faq.homeTitle}</h2>
+        <FaqList items={t.faq.items(priceFacts()).slice(0, 5)} />
+        <div className="row">
+          <Link href="/faq" className="btn ghost">
+            {t.faq.all} →
+          </Link>
         </div>
       </section>
     </>

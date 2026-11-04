@@ -63,6 +63,92 @@ const en: Dictionary = {
     ctaTest: "Start your free level test",
     ctaWhatsapp: "Message us on WhatsApp",
   },
+  terms: {
+    nav: "Terms of use",
+    seoTitle: "Terms of use",
+    seoDescription: "Speakly AI terms of use: account, payments, certificate, refunds, speaking club rules and personal data.",
+    kicker: "Legal",
+    title: "Terms of use",
+    updated: "Last updated: 4 November 2026",
+    intro: "These terms explain how to use speakly-ai.com and the Speakly AI platform. By using the site or signing up, you accept these terms.",
+    sections: (p: { cert: string; club: string; min: number }) =>
+      [
+        ["1. About the platform", [
+          "Speakly AI is an online platform for learning English: a level test, video lessons, a speaking club and free materials.",
+          "The AI video teachers in the lessons are videos made in advance with artificial intelligence. They are not live human teachers and they do not talk with you in real time.",
+        ]],
+        ["2. Account and sign-up", [
+          "Give correct information when you sign up. Each person should have one account.",
+          "Do not share your password with anyone. You are responsible for what is done from your account.",
+          "Users under 18 use the platform with the consent of a parent or guardian.",
+        ]],
+        ["3. Prices and payment", [
+          "All prices on the site are in US dollars. The price shown at the moment you pay is the one that applies.",
+          "For now, payment is accepted via WhatsApp. Once your payment is confirmed, the lesson, certificate or speaking room opens in your account.",
+          "Lessons you buy stay in your account. If prices change later, lessons you have already bought are not affected.",
+        ]],
+        ["4. Certificate", [
+          `The online level certificate costs ${p.cert}. It is a Speakly AI platform certificate and shows your result in the Speakly AI level test.`,
+          "It is not an internationally accredited exam certificate such as IELTS, TOEFL or Cambridge.",
+          "The certificate shows the name you entered when you signed up. Its QR code lets anyone check on our site that it is genuine.",
+        ]],
+        ["5. Refunds", [
+          "If you have paid for a speaking club session and it does not take place, or you give up your seat, message us on WhatsApp to get your money back.",
+          "An opened lesson or an issued certificate is digital content, so it is usually not refunded. If there is a technical problem, message us and we will look into it and fix it.",
+        ]],
+        ["6. Speaking club rules", [
+          `A conversation lasts ${p.min} minutes and each student pays ${p.club}. Your partner is another student at your level.`,
+          "Treat your partner with respect. Insults, discrimination and inappropriate words or images are not allowed.",
+          "Do not record the conversation without your partner's consent, and do not share their personal information.",
+          "The account of a user who breaks these rules may be suspended.",
+        ]],
+        ["7. Materials and copyright", [
+          "The videos, tests, lesson texts, logo and design on the site belong to Speakly AI. Do not copy, sell or share them without permission.",
+          "For books and films, the free materials only give links to other sites. Speakly AI is not responsible for the content of those sites.",
+        ]],
+        ["8. Personal data", [
+          "We use the information you give when signing up (name, email, phone, date of birth, city, goal and so on) only to provide our services, contact you and prepare your certificate.",
+          "We do not sell your data. If you want your account and data deleted, message us on WhatsApp.",
+        ]],
+        ["9. Liability", [
+          "We work to keep the platform running well, but during maintenance or technical problems the site may be unavailable for a short time.",
+          "The level test and lessons help you learn, but they do not guarantee any particular result in an exam.",
+        ]],
+        ["10. Changes and contact", [
+          "We may update these terms. A new version applies from the day it is published on this page.",
+          "If you have a question, message us on WhatsApp.",
+        ]],
+      ] as [string, string[]][],
+    agreePrefix: "By signing up you accept the",
+    agreeLink: "Terms of use",
+    agreeSuffix: ".",
+  },
+  faq: {
+    nav: "FAQ",
+    short: "FAQ",
+    seoTitle: "Frequently asked questions",
+    seoDescription: "Questions and answers about Speakly AI: the free level test, the $7 certificate, lessons, AI video teachers, the speaking club and payment.",
+    kicker: "FAQ",
+    title: "Frequently asked questions",
+    lead: "Here are answers to the questions we hear most. If yours is not here, message us on WhatsApp.",
+    items: (p: { cert: string; club: string; min: number; lesson: string; level: string }) =>
+      [
+        ["Is the level test free?", "Yes. The test is free: 60 questions from A1 to C2, about 25–30 minutes. Your result appears right away and is saved in your account."],
+        ["How do I get the certificate and how much is it?", `When the test ends, press "Get the PDF". The certificate costs ${p.cert} and you pay via WhatsApp. Once the payment is confirmed you can download the PDF.`],
+        ["Is the certificate international?", "No. It is a Speakly AI platform online level certificate. It is not an internationally accredited exam certificate such as IELTS, TOEFL or Cambridge. Its QR code lets anyone check on our site that it is genuine."],
+        ["Are the AI teachers real people?", "No. The AI video teachers are explanation videos made in advance with artificial intelligence. They are not live teachers and they do not talk with you in real time."],
+        ["How are the lessons built and how much are they?", `Each lesson has a video explanation, a practice test, 20 new words and 5 phrasal verbs, a vocabulary test and a final test. Lessons from ${p.lesson}, a whole level from ${p.level}.`],
+        ["How long do I keep a lesson I bought?", "Lessons you buy stay in your account. You can watch them again and retake the tests whenever you like."],
+        ["How does the speaking club work?", `There is a room every 30 minutes, every day from 09:00 to midnight. You pick a time and book a seat; another student at your level becomes your partner. The system picks the topic. A conversation lasts ${p.min} minutes and costs ${p.club}.`],
+        ["How do I pay?", "On the payment page, press the WhatsApp button and message us with your order number. Once the payment is confirmed, what you bought opens in your account."],
+        ["Who can use the free materials?", "After you take the level test, exercises, books and films for your level open for you."],
+        ["Can I use it on my phone?", "Yes. The site works on phones. Choose \"Add to Home Screen\" in your browser menu and Speakly AI opens like an app."],
+        ["I forgot my password. What do I do?", "On the sign-in page press \"Forgot your password?\" and enter your email. Open the link you receive in the same browser and set a new password."],
+      ] as [string, string][],
+    homeTitle: "Frequently asked questions",
+    all: "All questions",
+    moreQuestions: "Have another question?",
+  },
   footer: {
     contact: "Contact",
     whatsapp: "Message us on WhatsApp",
