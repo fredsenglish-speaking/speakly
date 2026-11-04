@@ -152,6 +152,7 @@ const en: Dictionary = {
   footer: {
     contact: "Contact",
     whatsapp: "Message us on WhatsApp",
+    instagram: "Follow us on Instagram",
     tagline: "An AI-supported English platform: level test, video lessons and live speaking practice.",
     learn: "Learn",
     account: "Account",

@@ -156,6 +156,7 @@ const az = {
   footer: {
     contact: "Əlaqə",
     whatsapp: "WhatsApp-a yazın",
+    instagram: "Instagram-da izləyin",
     tagline: "AI dəstəkli ingilis dili platforması: səviyyə testi, video dərslər və canlı danışıq praktikası.",
     learn: "Öyrənin",
     account: "Hesab",
