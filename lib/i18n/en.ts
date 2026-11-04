@@ -22,6 +22,47 @@ const en: Dictionary = {
     signOut: "Sign out",
     language: "Language",
   },
+  about: {
+    nav: "About",
+    seoTitle: "About us: the smart way to learn English",
+    seoDescription: "About Speakly AI: a free English level test (A1–C2), a $7 online level certificate, lessons with AI video teachers, a speaking club and free materials.",
+    kicker: "About us",
+    heroTitle: "Speakly AI — the smart way to learn English",
+    lead: "Find out your level for free, move forward with AI video lessons made for your level and practise speaking with other students.",
+    facts: [
+      ["6", "levels: A1 to C2"],
+      ["60", "questions in the level test"],
+      ["66", "AI video lessons"],
+      ["3", "languages: AZ, EN, RU"],
+    ] as [string, string][],
+    whoTitle: "Who we are",
+    who: [
+      "Speakly AI is an online platform for people who want to learn English. Everything starts from your level: first you find your level, then you see only the lessons, materials and speaking rooms that fit you.",
+      "Our lessons are explained by video teachers created with artificial intelligence. These videos are prepared in advance: they are not live human teachers and they do not talk with you in real time. You practise speaking in the speaking club, with other students at your level.",
+    ],
+    offerTitle: "What we offer",
+    offers: (p: { cert: string; club: string; min: number; lesson: string; level: string }) =>
+      [
+        ["Free level test", "60 questions from A1 to C2. Your result appears right away and is saved in your account."],
+        ["Online level certificate", `A PDF certificate with your name, level, date and a unique ID: ${p.cert}. Its QR code lets anyone check on our site that it is genuine.`],
+        ["AI video teachers", "Every level has its own AI video teacher. These are pre-recorded explanation videos, not a live teacher or a real-time conversation."],
+        ["Lessons", `Each lesson: a video explanation, a practice test, 20 new words and 5 phrasal verbs, a vocabulary test and a final test. Lessons from ${p.lesson}, a whole level from ${p.level}.`],
+        ["Speaking Club", `A ${p.min}-minute online conversation with another student at your level: ${p.club}. Rooms every day from 09:00 to midnight; the system picks the topic.`],
+        ["Free materials", "Exercises, books to read and films to watch, matched to your level."],
+      ] as [string, string][],
+    certNoteTitle: "About the certificate",
+    certNote: (cert: string) =>
+      `The online level certificate costs ${cert}. It is a Speakly AI platform certificate: it shows your result in the Speakly AI level test. It is not an internationally accredited exam certificate such as IELTS, TOEFL or Cambridge.`,
+    missionTitle: "Our mission",
+    mission: [
+      "Many people study English for years but are still afraid to speak. The main reasons are lessons that don't match their level and too little speaking practice.",
+      "Our mission is to make English clear, accessible and learnable at your own pace: an exact level, step-by-step lessons for that level and real speaking practice. Whenever you like, on your phone or computer.",
+    ],
+    ctaTitle: "Find out your level today",
+    ctaText: "The test is free and your result appears right away. If you have questions, message us on WhatsApp.",
+    ctaTest: "Start your free level test",
+    ctaWhatsapp: "Message us on WhatsApp",
+  },
   footer: {
     contact: "Contact",
     whatsapp: "Message us on WhatsApp",

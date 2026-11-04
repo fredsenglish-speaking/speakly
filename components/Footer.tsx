@@ -14,6 +14,7 @@ export async function Footer() {
     ["/lessons", t.nav.lessons],
     ["/practice", t.nav.practice],
     ["/exercises", t.nav.exercises],
+    ["/about", t.about.nav],
     ...(SHOW_LIVE_TUTORS ? [["/tutors", t.nav.tutors] as [string, string]] : []),
   ];
   const account: [string, string][] = user

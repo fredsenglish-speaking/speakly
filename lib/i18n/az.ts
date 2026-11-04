@@ -26,6 +26,47 @@ const az = {
     signOut: "Çıxış",
     language: "Dil",
   },
+  about: {
+    nav: "Haqqımızda",
+    seoTitle: "Haqqımızda: İngilis dili öyrənməyin ağıllı yolu",
+    seoDescription: "Speakly AI haqqında: ödənişsiz ingilis dili səviyyə testi (A1–C2), $7-lıq onlayn səviyyə sertifikatı, AI video müəllimlərlə dərslər, danışıq klubu və ödənişsiz materiallar.",
+    kicker: "Haqqımızda",
+    heroTitle: "Speakly AI — İngilis dili öyrənməyin ağıllı yolu",
+    lead: "Səviyyənizi ödənişsiz öyrənin, öz səviyyənizə uyğun AI video dərslərlə irəliləyin və digər tələbələrlə danışıq təcrübəsi qazanın.",
+    facts: [
+      ["6", "səviyyə: A1-dən C2-yə"],
+      ["60", "sual səviyyə testində"],
+      ["66", "AI video dərs"],
+      ["3", "dil: AZ, EN, RU"],
+    ] as [string, string][],
+    whoTitle: "Biz kimik?",
+    who: [
+      "Speakly AI ingilis dilini öyrənmək istəyənlər üçün onlayn platformadır. Burada hər şey sizin səviyyənizdən başlayır: əvvəlcə səviyyənizi müəyyən edirsiniz, sonra yalnız sizə uyğun dərsləri, materialları və danışıq otaqlarını görürsünüz.",
+      "Dərslərimizi süni intellektlə yaradılmış video müəllimlər izah edir. Bu videolar əvvəlcədən hazırlanır: onlar canlı insan müəllim deyil və sizinlə real vaxtda danışmırlar. Danışıq təcrübəsini isə danışıq klubunda öz səviyyənizdəki digər tələbələrlə qazanırsınız.",
+    ],
+    offerTitle: "Nələr təklif edirik?",
+    offers: (p: { cert: string; club: string; min: number; lesson: string; level: string }) =>
+      [
+        ["Ödənişsiz səviyyə testi", "A1-dən C2-yə qədər 60 sual. Nəticə dərhal ekranda göstərilir və şəxsi kabinetinizdə saxlanılır."],
+        ["Onlayn səviyyə sertifikatı", `Ad və soyadınız, səviyyəniz, tarix və unikal ID yazılmış PDF sertifikat: ${p.cert}. QR kod ilə sertifikatın saytımızda həqiqi olduğunu yoxlamaq olar.`],
+        ["AI video müəllimlər", "Hər səviyyənin öz AI video müəllimi var. Bunlar əvvəlcədən hazırlanmış izah videolarıdır: canlı müəllim və ya real vaxtda danışıq deyil."],
+        ["Dərslər", `Hər dərs: video izah, məşq testi, 20 yeni söz və 5 phrasal verb, söz testi və yekun test. Dərs ${p.lesson}-dan, bütün səviyyə ${p.level}-dan.`],
+        ["Danışıq klubu (Speaking Club)", `Öz səviyyənizdəki başqa tələbə ilə ${p.min} dəqiqəlik onlayn danışıq: ${p.club}. Otaqlar hər gün 09:00-dan 00:00-a qədər, mövzunu sistem seçir.`],
+        ["Ödənişsiz materiallar", "Səviyyənizə uyğun tapşırıqlar, oxumaq üçün kitablar və baxmaq üçün filmlər."],
+      ] as [string, string][],
+    certNoteTitle: "Sertifikat haqqında",
+    certNote: (cert: string) =>
+      `Onlayn səviyyə sertifikatının qiyməti ${cert}-dır. Bu sertifikat Speakly AI platformasına aiddir: Speakly AI səviyyə testinin nəticəsini göstərir. O, IELTS, TOEFL və ya Cambridge kimi beynəlxalq akkreditə olunmuş imtahan sertifikatı deyil.`,
+    missionTitle: "Missiyamız",
+    mission: [
+      "Çox insan ingilis dilini illərlə öyrənir, amma danışmağa çəkinir. Bunun əsas səbəbi dərslərin səviyyəyə uyğun olmaması və danışıq təcrübəsinin azlığıdır.",
+      "Missiyamız ingilis dilini hər kəs üçün aydın, əlçatan və öz sürətinizlə öyrənilən etməkdir: dəqiq səviyyə, ona uyğun addım-addım dərslər və real danışıq təcrübəsi. İstədiyiniz vaxt, telefonda və ya kompüterdə.",
+    ],
+    ctaTitle: "Səviyyənizi bu gün öyrənin",
+    ctaText: "Test ödənişsizdir, nəticə dərhal göstərilir. Sualınız olsa, bizə WhatsApp-da yazın.",
+    ctaTest: "Pulsuz səviyyə testinə başlayın",
+    ctaWhatsapp: "WhatsApp-a yazın",
+  },
   footer: {
     contact: "Əlaqə",
     whatsapp: "WhatsApp-a yazın",
